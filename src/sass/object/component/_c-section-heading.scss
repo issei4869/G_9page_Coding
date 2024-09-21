@@ -1,0 +1,45 @@
+@use "global" as *;
+
+.c-section-heading {
+  display: inline-block;
+}
+
+.c-section-heading__ja,
+.c-section-heading__eng {
+    font-weight: $bold;
+    color: $black;
+}
+
+.c-section-heading__ja {
+    font-size: rem(16);
+    position: relative;
+    padding-left: rem(10);
+    @include mq("md") {
+  
+    }
+}
+
+.c-section-heading__ja::before {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background-color: $accent-yellow;
+    border-radius: 50%;
+    width: rem(6);
+    height: rem(6);
+}
+
+.c-section-heading__eng {
+    font-family: $second-font-family;
+    font-size: rem(80);
+    margin-top: rem(10);
+    @include mq("md") {
+
+    }
+}
+
+.c-section-heading__eng::first-letter {
+	text-transform: capitalize;
+}

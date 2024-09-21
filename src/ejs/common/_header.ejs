@@ -1,3 +1,24 @@
-<header class="l-header p-header">
-  これはヘッダーです
+<header class="p-header">
+  <div class="p-header__inner">
+    <h1 class="p-header__logo">
+      <!-- colorが空（''）であれば白いロゴ、『green』なら緑色のロゴが表示される -->
+      <%- include(ejsPath + './component/_c-logo', { link: '#' }) %>
+    </h1>
+    <!-- prettier-ignore -->
+    <%- include(ejsPath + './project/_p-hamburger') %>
+    <nav class="p-header__pc-nav">
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + './project/_p-pc-nav') %>
+    </nav>
+    <nav class="p-header__sp-nav p-sp-nav js-sp-nav">
+      <div class="p-header__sp-nav-top">
+        <p class="p-header__sp-nav-logo">
+          <!-- colorが空（''）であれば白いロゴ、『green』なら緑色のロゴが表示される -->
+          <%- include(ejsPath + './component/_c-logo', { link: '#' }) %>
+        </p>
+      </div>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + './project/_p-sp-nav') %>
+    </nav>
+  </div>
 </header>

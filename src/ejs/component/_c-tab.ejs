@@ -1,0 +1,10 @@
+<!-- prettier-ignore -->
+<% const validTab = ['black']; %>
+
+<!-- prettier-ignore -->
+<% const tabClass = validTab.includes(color) ? ` c-tab--${color}` : ''; %>
+
+<!-- prettier-ignore -->
+<div class="c-tab<%- tabClass %>">
+    <%= text %>
+</div>

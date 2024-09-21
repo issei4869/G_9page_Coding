@@ -1,0 +1,66 @@
+@use 'global' as *;
+
+.p-sp-nav {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: scroll;
+  height: 100dvh;
+  background-color: $accent-white;
+}
+
+.p-sp-nav.is-active {
+  display: block;
+}
+
+.p-sp-nav__wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: rem(24) rem(15) rem(111) rem(15);
+  max-width: rem(375);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.p-sp-nav__items {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-sp-nav__item {
+  width: 100%;
+}
+
+.p-sp-nav__link {
+  position: relative;
+  display: block;
+  font-size: rem(16);
+  font-weight: $bold;
+  color: $accent-black;
+  line-height: calc(18 / 16);
+  padding-top: rem(20);
+  padding-bottom: rem(20);
+  padding-left: rem(22);
+}
+
+.p-sp-nav__link::before {
+  content: '';
+  position: absolute;
+  top: rem(18);
+  left: 0;
+  mask-image: url(../images/common/black-btn.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  width: rem(18);
+  height: rem(18);
+}
+
+.p-sp-nav__submenu {
+}
+
+.p-sp-nav__submenu-item {
+}

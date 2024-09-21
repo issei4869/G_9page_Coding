@@ -1,0 +1,21 @@
+@use 'global' as *;
+
+.c-tab {
+    position: relative;
+    display: inline-block;
+    max-width: rem(173);
+    width: 100%;
+    padding: rem(10) 0;
+    color: $black;
+    background-color: $accent-white;
+    font-size: rem(13);
+    font-weight: $bold;
+    line-height: calc(19 / 13);
+    border: 1px solid $black;
+    text-align: center;
+}
+
+.c-tab--black {
+    color: $accent-white;
+    background-color: $black;
+}

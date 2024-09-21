@@ -1,0 +1,89 @@
+<!-- 左側のメニュー -->
+<% var navTitleLeft = [
+<!-- prettier-ignore -->
+{
+		title: 'キャンペーン',
+    link: 'campaign',
+    submenu: [
+			{ title: 'ライセンス取得', link: '#' },
+      { title: '貸切体験ダイビング', link: '#' },
+      { title: 'ナイトダイビング', link: '#' }
+    ]
+  },
+<!-- prettier-ignore -->
+{ title: '私たちについて', link: 'about' },
+<!-- prettier-ignore -->
+{
+		title: 'ダイビング情報',
+    link: '#',
+    submenu: [
+			{ title: 'ライセンス講習', link: '#' },
+      { title: '体験ダイビング', link: '#' },
+      { title: 'ファンダイビング', link: '#' }
+    ]
+  },
+<!-- prettier-ignore -->
+{ title: 'ブログ', link: 'blog' }
+];
+%>
+
+<!-- 右側のメニュー -->
+<% var navTitleRight = [ { title: 'お客様の声', link: 'voice' },
+<!-- prettier-ignore -->
+{
+		title: '料金一覧',
+    link: '#',
+    submenu: [
+			{ title: 'ライセンス講習', link: '#' },
+      { title: '体験ダイビング', link: '#' },
+      { title: 'ファンダイビング', link: '#' }
+    ]
+  },
+<!-- prettier-ignore -->
+{ title: 'よくある質問', link: '#' },
+<!-- prettier-ignore -->
+{ title: 'プライバシー<br />ポリシー', link: '#' },
+<!-- prettier-ignore -->
+{ title: '利用規約', link: '#' },
+<!-- prettier-ignore -->
+{ title: 'お問い合せ', link: 'contact' }
+];
+%>
+
+<div class="p-sp-nav__wrapper">
+  <!-- 左メニュー -->
+  <ul class="p-sp-nav__items p-sp-nav__items-left">
+    <% navTitleLeft.forEach(function(item) { %>
+    <li class="p-sp-nav__item">
+      <a href="<%= item.link %>.html" class="p-sp-nav__link"><%- item.title %></a>
+      <% if (item.submenu && item.submenu.length > 0) { %>
+      <ul class="p-sp-nav__submenu">
+        <% item.submenu.forEach(function(subitem) { %>
+        <li class="p-sp-nav__submenu-item">
+          <a href="<%= subitem.link %>.html" class="p-sp-nav__submenu-link"><%- subitem.title %></a>
+        </li>
+        <% }); %>
+      </ul>
+      <% } %>
+    </li>
+    <% }); %>
+  </ul>
+
+  <!-- 右メニュー -->
+  <ul class="p-sp-nav__items p-sp-nav__items-right">
+    <% navTitleRight.forEach(function(item) { %>
+    <li class="p-sp-nav__item">
+      <a href="<%= item.link %>.html" class="p-sp-nav__link"><%- item.title %></a>
+      <% if (item.submenu && item.submenu.length > 0) { %>
+      <ul class="p-sp-nav__submenu">
+        <% item.submenu.forEach(function(subitem) { %>
+        <li class="p-sp-nav__submenu-item">
+          <a href="<%= subitem.link %>.html" class="p-sp-nav__submenu-link"><%- subitem.title %></a>
+        </li>
+        <% }); %>
+      </ul>
+      <% } %>
+    </li>
+    <% }); %>
+  </ul>
+</div>

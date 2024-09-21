@@ -1,0 +1,54 @@
+@use 'global' as *;
+
+.c-breadcrumb {
+  width: 100%;
+  margin: auto;
+  @include mq(md) {
+  }
+}
+
+.c-breadcrumb__items {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* パンくずリストが長くなったときに折り返す */
+}
+
+.c-breadcrumb__item {
+  display: inline-block;
+  font-size: rem(24);
+  font-family: $second-font-family;
+  font-weight: $bold;
+  display: flex;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+/* エリプシス処理｜ブログやニュース記事タイトルが表示されることを想定 */
+.c-breadcrumb__item:last-of-type {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; /* 表示する行数を2行に設定 */
+  overflow: hidden;
+  color: $black;
+}
+
+.c-breadcrumb--white .c-breadcrumb__item:last-of-type {
+  color: $accent-white;
+}
+
+.c-breadcrumb__item:not(last-of-type) {
+  color: #8A8A8A;
+}
+
+.c-breadcrumb__item::after {
+  content: '>';
+  display: inline-block;
+  color: $accent-black;
+  margin: 0 rem(5);
+}
+
+.c-breadcrumb__item:last-of-type::after {
+  content: '';
+  margin: 0;
+}

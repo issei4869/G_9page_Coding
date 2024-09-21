@@ -1,0 +1,47 @@
+@use "global" as *;
+
+.c-btn1 {
+  position: relative;
+  display: inline-block;
+  max-width: rem(280);
+  width: 100%;
+  padding: rem(14) 0;
+  background-color: $accent-yellow;
+  text-align: center;
+  transition: all 0.3s;
+  border-radius: 25px;
+
+  
+  // padding-bottom: 3px; /* テキストと下線の間隔 */
+  // background-image: linear-gradient(#000, #000);
+  // background-position: bottom left; /* 下線の初期位置 */
+  // background-size: 100% 1px; /* 下線のサイズ（横幅、高さ） */
+  // transition: background-size 0.3s;
+}
+
+.c-btn1__text {
+  position: relative;
+  font-size: rem(17);
+  font-weight: $bold;
+}
+
+.c-btn1__text::after {
+  content: '';
+  position: absolute;
+  top: 49%;
+  right: -130%;
+  transform: translateY(-49%);
+  mask-image: url(../../assets/images/common/arrow.svg);
+  background-color: $black;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  width: rem(40);
+  height: rem(11);
+}
+
+.c-btn1:hover {
+  background-position: bottom left; /* 下線のホバー時位置 */
+  background-size: 100% 1px; /* 下線の横幅を100%にする */
+}
+

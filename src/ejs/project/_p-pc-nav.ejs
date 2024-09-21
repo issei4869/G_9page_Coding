@@ -1,0 +1,28 @@
+<% var navTitle=[
+<!-- prettier-ignore -->
+{ en: 'campaign' , link: 'campaign' },
+<!-- prettier-ignore -->
+{ en: 'about us' , link: 'about' },
+<!-- prettier-ignore -->
+{ en: 'information' , link: 'information' },
+<!-- prettier-ignore -->
+{ en: 'blog' , link: 'blog' },
+<!-- prettier-ignore -->
+{ en: 'voice' , link: 'voice' },
+<!-- prettier-ignore -->
+{ en: 'price' , link: 'price' },
+<!-- prettier-ignore -->
+{ en: 'fAQ' , link: 'fAQ' },
+<!-- prettier-ignore -->
+{ en: 'contact' , link: 'contact' } ];
+%>
+
+<ul class="p-pc-nav p-pc-nav__items">
+  <% navTitle.forEach(function(title) { %>
+  <li class="p-pc-nav__item">
+    <a href="<%- title.link %>.html">
+      <p class="p-pc-nav__title"><%- title.en %></p>
+    </a>
+  </li>
+  <% }); %>
+</ul>

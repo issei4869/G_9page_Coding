@@ -1,0 +1,22 @@
+<!-- パンくずリストのカラースタイルを指定するためのクラスを生成 -->
+<% const colorClass = breadcrumb[0].color ? ` c-breadcrumb--${breadcrumb[0].color}` : ''; %>
+
+<!-- prettier-ignore -->
+<% const validBreadcrumb = ['white']; %>
+
+<!-- prettier-ignore -->
+<% const BreadcrumbClass = validBreadcrumb.includes(color) ? ` c-breadcrumb--${color}` : ''; %>
+
+<!-- パンくずリスト（Breadcrumb NavXT） -->
+<nav class="c-breadcrumb<%= colorClass %><%= BreadcrumbClass %>" aria-label="現在位置">
+  <ul class="c-breadcrumb__items">
+    <li class="c-breadcrumb__item"><a href="index.html">top</a></li>
+    <% for (let i = 0; i < breadcrumb.length; i++) { %> <% if (i === breadcrumb.length - 1) { %>
+    <li class="c-breadcrumb__item active"><%= breadcrumb[i].title %></li>
+    <% } else { %>
+    <li class="c-breadcrumb__item">
+      <a href="<%= breadcrumb[i].url %>"><%= breadcrumb[i].title %></a>
+    </li>
+    <% } %> <% } %>
+  </ul>
+</nav>

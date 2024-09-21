@@ -1,0 +1,65 @@
+<% baseUrlPath='.' ; ejsPath='.' ; pageData="top" %>
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath, page:
+  json[pageData] }) %>
+
+  <style>
+    .ejs-style-title {
+      margin-top: 120px;
+      margin-bottom: 20px;
+      background-color: rgba(0, 213, 255, 0.304);
+      color: black;
+    }
+    .ejs-style-background {
+      background-color: rgba(0, 174, 255, 0.304);
+    }
+  </style>
+
+  <body>
+    <%- include(ejsPath + '/common/_header' ) %>
+    <main>
+      <!-- page topボタン -->
+      <h2 class="ejs-style-title">page top</h2>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/component/_c-totop', { link: '#', text: 'PAGE TOP' }) %>
+
+      <!-- ボタン① -->
+      <h2 class="ejs-style-title">ボタン①</h2>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/component/_c-btn1', { link: '#', text: '特殊機材' }) %>
+
+      <!-- ボタン② -->
+      <h2 class="ejs-style-title">ボタン②</h2>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/component/_c-btn2', { link: '#', text: '機材一覧へ' }) %>
+
+      <!--タブ -->
+      <h2 class="ejs-style-title">タブ</h2>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/component/_c-tab' ,{text:'単体レンタル可', color:''}) %>
+
+      <!--セクションタイトル -->
+      <h2 class="ejs-style-title">セクションタイトル</h2>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/component/_c-section-heading', { heading_eng:'About', heading_ja:'有限会社グリフィス' }) %>
+
+      <!--機材一覧用のパーツ -->
+      <h2 class="ejs-style-title">機材一覧用のパーツ</h2>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/project/_p-crane-item' ) %>
+
+      <!--パンくずリスト -->
+      <h2 class="ejs-style-title">パンくずリスト</h2>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/component/_c-breadcrumb', { color:'', breadcrumb: [ { title:"equipment", url: "" },
+      { title:"crane", url: "" } ] }); %>
+
+      <!--サイドナビゲーション -->
+      <h2 class="ejs-style-title">サイドナビゲーション</h2>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/project/_p-sidebar-nav' ) %>
+    </main>
+    <%- include(ejsPath + '/common/_footer' ) %>
+  </body>
+</html>

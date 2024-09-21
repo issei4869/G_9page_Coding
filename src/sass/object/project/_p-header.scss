@@ -1,0 +1,77 @@
+@use 'global' as *;
+
+.p-header {
+  height: rem(80);
+  background-color: rgba(13, 41, 54, 0.68);
+  z-index: 1000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.p-header__inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: inherit;
+  margin: auto;
+  padding-left: rem(50);
+  padding-right: rem(50);
+  @include mq(md) {
+    padding-left: rem(12);
+    padding-right: rem(10);
+  }
+}
+
+.p-header__logo {
+  display: grid;
+  place-items: center;
+  width: rem(50);
+  @include mq(md) {
+    width: rem(88);
+  }
+}
+
+.p-header__logoLink {
+  display: block;
+}
+
+.p-header__logoLink img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.p-header__drawer {
+  @include mq(md) {
+    display: none;
+  }
+}
+
+.p-header__pc-nav {
+  height: inherit;
+  display: none;
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.p-header__logo-sp-nav {
+  width: rem(109);
+  padding-top: rem(17);
+  padding-left: rem(20);
+}
+
+.p-header__sp-nav-top {
+  padding: rem(21) 0 rem(21) rem(15);
+}
+
+.p-header__sp-nav-logo {
+  width: rem(102);
+}
+
+/* ドロワーメニューオープン時、body要素をスクロールさせない */
+body.is-scroll {
+  overflow: hidden;
+}
