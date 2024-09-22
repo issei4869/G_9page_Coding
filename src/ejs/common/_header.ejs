@@ -4,8 +4,10 @@
       <!-- colorが空（''）であれば白いロゴ、『green』なら緑色のロゴが表示される -->
       <%- include(ejsPath + './component/_c-logo', { link: '#' }) %>
     </h1>
-    <!-- prettier-ignore -->
-    <%- include(ejsPath + './project/_p-hamburger') %>
+    <div class="p-header__drawer">
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + './project/_p-hamburger') %>
+    </div>
     <nav class="p-header__pc-nav">
       <!-- prettier-ignore -->
       <%- include(ejsPath + './project/_p-pc-nav') %>

@@ -2,38 +2,56 @@
 
 .p-hamburger {
   position: relative;
-  top: rem(28);
+  top: rem(35);
   right: rem(15);
-  width: rem(32);
-  height: rem(24);
+  width: rem(56);
+  height: rem(56);
   z-index: 100;
   cursor: pointer;
   transition: opacity 0.3s;
+  background-color: $font-color;
+  border-radius: 50%;
+}
+
+.p-hamburger.is-active {
+  background-color: $accent-white;
 }
 
 .p-hamburger span {
   position: absolute;
-  width: inherit;
+  left: 50%;
+  transform: translateX(-50%);
   height: 1px;
   background-color: $accent-white;
   transition: all 0.3s;
 }
 
 .p-hamburger span:nth-child(1) {
-  top: 0;
+  top: rem(16);
+  width: rem(12);
 }
 
 .p-hamburger span:nth-child(2) {
-  top: rem(12);
+  top: rem(28);
+  width: rem(10);
   opacity: 1;
 }
 
 .p-hamburger span:nth-child(3) {
-  top: rem(24);
+  top: rem(42);
+  width: rem(14);
 }
+
+.p-hamburger.is-active span {
+  background-color: $font-color;
+    left: 36%;
+    transform: translateX(-36%);
+}
+
 .p-hamburger.is-active span:nth-child(1) {
-  top: 60%;
+  top: 50%;
   transform: rotate(45deg);
+  width: rem(16);
 }
 
 .p-hamburger.is-active span:nth-child(2) {
@@ -42,6 +60,7 @@
 }
 
 .p-hamburger.is-active span:nth-child(3) {
-  top: 60%;
+  top: 50%;
   transform: rotate(-45deg);
+  width: rem(16);
 }

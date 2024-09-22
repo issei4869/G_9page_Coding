@@ -1,14 +1,16 @@
 @use 'global' as *;
 
 .p-header {
-  height: rem(80);
-  background-color: rgba(13, 41, 54, 0.68);
+  height: rem(85);
   z-index: 1000;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
+  @include mq('md') {
+    // background-color: transparent;
+  }
 }
 
 .p-header__inner {
@@ -17,13 +19,14 @@
   width: 100%;
   height: inherit;
   margin: auto;
-  padding-left: rem(50);
-  padding-right: rem(50);
+  padding-left: rem(12);
+  padding-right: rem(10);
   @include mq(md) {
-    padding-left: rem(12);
-    padding-right: rem(10);
+    padding-left: rem(50);
+    padding-right: rem(50);
   }
 }
+
 
 .p-header__logo {
   display: grid;
@@ -65,6 +68,7 @@
 
 .p-header__sp-nav-top {
   padding: rem(21) 0 rem(21) rem(15);
+  background-color: $font-color;
 }
 
 .p-header__sp-nav-logo {

@@ -1,0 +1,93 @@
+@use "global" as *;
+
+.c-send-btn {
+  max-width: rem(246);
+  width: 100%;
+  max-height: rem(56);
+  height: 100%;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.c-send-btn a {
+    display: block;
+}
+
+// .c-send-btn::after {
+//     position: absolute;
+//     content: '';
+//     top: 50%;
+//     left: rem(20);
+//     transform: translateY(-50%);
+//     mask-image: url(../../assets/images/common/phone-icon.svg);
+//     mask-repeat: no-repeat;
+//     mask-position: center;
+//     mask-size: contain;
+//     background-color: $black;
+//     width: rem(22);
+//     height: rem(21);
+// }
+
+.c-send-btn__phone {
+  position: absolute;
+  top: 50%;
+  left: rem(8);
+  transform: translateY(-50%);
+  font-size: rem(17);
+  font-family: $second-font-family;
+  font-weight: $medium;
+  line-height: calc(12 / 17);
+  letter-spacing: 0.02em;
+  color: $black;
+  background-color: $accent-white;
+  padding: rem(14) rem(12) rem(14) rem(42);
+  border-radius: 35px;
+  z-index: 2;
+}
+
+.c-send-btn__telicon {
+  position: relative;
+}
+
+.c-send-btn__telicon::before {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: rem(-30);
+    transform: translateY(-50%);
+    mask-image: url(../../assets/images/common/phone-icon.svg);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    background-color: $black;
+    width: rem(22);
+    height: rem(21);
+}
+
+.c-send-btn__mail {
+    background-color: #222222;
+    padding: rem(28) rem(12) rem(28) rem(200);
+    border-radius: 25px;
+    position: relative;
+}
+
+.c-send-btn__mail::after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    right: rem(20);
+    transform: translateY(-50%);
+    mask-image: url(../../assets/images/common/mail-icon.svg);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    background-color: $accent-white;
+    width: rem(25);
+    height: rem(24);
+}
+
+.c-send-btn__mail img {
+    width: rem(25);
+    height: rem(24);
+}
+
