@@ -4,14 +4,22 @@
       <!-- colorが空（''）であれば白いロゴ、『green』なら緑色のロゴが表示される -->
       <%- include(ejsPath + './component/_c-logo', { link: '#' }) %>
     </h1>
-    <div class="p-header__drawer">
-      <!-- prettier-ignore -->
-      <%- include(ejsPath + './project/_p-hamburger') %>
-    </div>
     <nav class="p-header__pc-nav">
       <!-- prettier-ignore -->
       <%- include(ejsPath + './project/_p-pc-nav') %>
     </nav>
+    <div class="p-header__drawer">
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + './project/_p-hamburger') %>
+    </div>
+    <div class="p-header__send-btn">
+      <%- include(ejsPath + './component/_c-send-btn', { 
+        maillink: 'mailto:g.info1994@gmail.com', 
+        phonelink: '042-486-1420',
+        img: './assets/images/common/mail-icon.svg',
+        alt: 'メールアイコン',
+      }) %>
+    </div>
     <nav class="p-header__sp-nav p-sp-nav js-sp-nav">
       <div class="p-header__sp-nav-top">
         <p class="p-header__sp-nav-logo">

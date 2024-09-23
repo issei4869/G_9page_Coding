@@ -1,0 +1,8 @@
+@use 'global' as *;
+
+.p-header__send-btn {
+    display: none;
+    @include mq(md) {
+        display: block;
+    }
+}

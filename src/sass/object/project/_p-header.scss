@@ -16,6 +16,7 @@
 .p-header__inner {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   height: inherit;
   margin: auto;
@@ -24,6 +25,7 @@
   @include mq(md) {
     padding-left: rem(50);
     padding-right: rem(50);
+    position: relative;
   }
 }
 

@@ -1,0 +1,42 @@
+@use "global" as *;
+
+.p-sub-mv {
+    background-color: $accent-yellow;
+    height: rem(670);
+    width: 100%;
+    position: relative;
+    @include mq('md') {
+        height: rem(574);
+    }
+}
+
+.p-sub-mv__title {
+    position: absolute;
+    top: 75%;
+    left: rem(52);
+    transform: translateY(-75%)
+}
+
+
+.p-sub-mv__eng {
+    font-family: $second-font-family;
+    font-weight: $bold;
+    font-size: rem(40);
+    color: $accent-white;
+    text-transform: uppercase;
+    line-height: 1;
+    @include mq("md") {
+        font-size: rem(160);
+    }
+}
+
+.p-sub-mv__ja {
+    font-weight: $bold;
+    font-size: rem(12);
+    color: $accent-white;
+    margin-top: rem(4);
+    @include mq("md") {
+        font-size: rem(32);
+        margin-top: rem(54);
+    }
+}

@@ -1,10 +1,8 @@
 @use "global" as *;
 
 .c-send-btn {
-  max-width: rem(246);
-  width: 100%;
-  max-height: rem(56);
-  height: 100%;
+  width: rem(246);
+  height: rem(56);
   transition: all 0.3s;
   position: relative;
 }

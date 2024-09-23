@@ -2,43 +2,44 @@
 
 .p-pc-nav {
   @include mq(md) {
+    position: absolute;
+    top: rem(214);
+    right: rem(211);
   }
 }
 
 .p-pc-nav__items {
   @include mq(md) {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: inherit;
+    
   }
 }
 
 .p-pc-nav__item {
-  display: grid;
-  place-items: center;
+  // display: grid;
+  // place-items: center;
+  line-height: 1;
 }
 
 .p-pc-nav__item,
 .p-pc-nav__item a {
   @include mq(md) {
-    height: inherit;
+    
   }
 }
 
 .p-pc-nav__item a {
   @include mq(md) {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    padding: rem(26) rem(20);
+    // display: flex;
+    // align-items: center;
+    // flex-direction: column;
+    padding: rem(8) rem(5);
+    line-height: 1;
   }
 }
 
 .p-pc-nav__title {
-  font-size: rem(10);
-  font-weight: $regular;
-  color: $accent-white;
+  font-size: rem(16);
+  font-weight: $bold;
+  color: #333333;
   line-height: 1;
-  margin-top: rem(6);
 }
