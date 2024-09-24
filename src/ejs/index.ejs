@@ -3,11 +3,32 @@
 <html lang="ja">
   <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath, page:
   json[pageData] }) %>
+  
+  <style>
+    .text {
+      margin-top: rem(500);
+      overflow: hidden; /* 1つ目の影を隠す */
+      color: transparent; /* テキスト本体は透明にする */
+      font-size: 60px;
+      /*
+      影の設定
+      1つ目：Y方向の位置にマイナスに設定してテキスト本体の上に配置、ぼかしなし
+      2つ目：位置はテキスト本体と同じ、ぼかしなし
+      */
+      text-shadow: 0 -1.5em 0 #000, 0 0 0 #000;
+      transition: text-shadow 0.3s;
+    }
+
+    .text:hover {
+      text-shadow: 0 0 0 #000, 0 1.5em 0 #000; /* 2つの影の位置を上方向に1.5emずつずらす */
+    }
+
+  </style>
 
   <body>
     <%- include(ejsPath + '/common/_header' ) %>
     <main>
-      
+      <a href="#" class="text">LINK TEXT</a>
     </main>
     <%- include(ejsPath + '/common/_footer' ) %>
   </body>

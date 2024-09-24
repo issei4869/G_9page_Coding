@@ -33,7 +33,8 @@
 .p-header__logo {
   display: grid;
   place-items: center;
-  width: rem(50);
+  width: rem(63);
+  z-index: 1;
   @include mq(md) {
     width: rem(88);
   }
@@ -62,19 +63,8 @@
   }
 }
 
-.p-header__logo-sp-nav {
-  width: rem(109);
-  padding-top: rem(17);
-  padding-left: rem(20);
-}
-
-.p-header__sp-nav-top {
-  padding: rem(21) 0 rem(21) rem(15);
-  background-color: $font-color;
-}
-
 .p-header__sp-nav-logo {
-  width: rem(102);
+  width: rem(63);
 }
 
 /* ドロワーメニューオープン時、body要素をスクロールさせない */

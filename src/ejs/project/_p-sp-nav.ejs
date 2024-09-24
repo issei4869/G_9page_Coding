@@ -1,89 +1,36 @@
-<!-- 左側のメニュー -->
-<% var navTitleLeft = [
+<% var navTitle=[
 <!-- prettier-ignore -->
-{
-		title: 'キャンペーン',
-    link: 'campaign',
-    submenu: [
-			{ title: 'ライセンス取得', link: '#' },
-      { title: '貸切体験ダイビング', link: '#' },
-      { title: 'ナイトダイビング', link: '#' }
-    ]
-  },
+{ en: 'TOP' , link: 'index' },
 <!-- prettier-ignore -->
-{ title: '私たちについて', link: 'about' },
+{ en: '機材一覧' , link: 'equipment' },
 <!-- prettier-ignore -->
-{
-		title: 'ダイビング情報',
-    link: '#',
-    submenu: [
-			{ title: 'ライセンス講習', link: '#' },
-      { title: '体験ダイビング', link: '#' },
-      { title: 'ファンダイビング', link: '#' }
-    ]
-  },
+{ en: '会社概要' , link: 'about' },
 <!-- prettier-ignore -->
-{ title: 'ブログ', link: 'blog' }
-];
+{ en: '採用情報' , link: 'about' },
+<!-- prettier-ignore -->
+{ en: 'トピックス' , link: 'topics' }
+]
 %>
 
-<!-- 右側のメニュー -->
-<% var navTitleRight = [ { title: 'お客様の声', link: 'voice' },
-<!-- prettier-ignore -->
-{
-		title: '料金一覧',
-    link: '#',
-    submenu: [
-			{ title: 'ライセンス講習', link: '#' },
-      { title: '体験ダイビング', link: '#' },
-      { title: 'ファンダイビング', link: '#' }
-    ]
-  },
-<!-- prettier-ignore -->
-{ title: 'よくある質問', link: '#' },
-<!-- prettier-ignore -->
-{ title: 'プライバシー<br />ポリシー', link: '#' },
-<!-- prettier-ignore -->
-{ title: '利用規約', link: '#' },
-<!-- prettier-ignore -->
-{ title: 'お問い合せ', link: 'contact' }
-];
-%>
 
-<div class="p-sp-nav__wrapper">
-  <!-- 左メニュー -->
-  <ul class="p-sp-nav__items p-sp-nav__items-left">
-    <% navTitleLeft.forEach(function(item) { %>
-    <li class="p-sp-nav__item">
-      <a href="<%= item.link %>.html" class="p-sp-nav__link"><%- item.title %></a>
-      <% if (item.submenu && item.submenu.length > 0) { %>
-      <ul class="p-sp-nav__submenu">
-        <% item.submenu.forEach(function(subitem) { %>
-        <li class="p-sp-nav__submenu-item">
-          <a href="<%= subitem.link %>.html" class="p-sp-nav__submenu-link"><%- subitem.title %></a>
-        </li>
-        <% }); %>
-      </ul>
-      <% } %>
-    </li>
+<nav class="p-sp-nav js-sp-nav">
+  <div class="p-sp-nav__head">
+  </div>
+  <ul class="p-sp-nav__items">
+    <% navTitle.forEach(function(title) { %>
+      <li class="p-sp-nav__item">
+        <a href="<%- title.link %>.html">
+          <p class="p-sp-nav__title"><%- title.en %></p>
+        </a>
+      </li>
     <% }); %>
   </ul>
-
-  <!-- 右メニュー -->
-  <ul class="p-sp-nav__items p-sp-nav__items-right">
-    <% navTitleRight.forEach(function(item) { %>
-    <li class="p-sp-nav__item">
-      <a href="<%= item.link %>.html" class="p-sp-nav__link"><%- item.title %></a>
-      <% if (item.submenu && item.submenu.length > 0) { %>
-      <ul class="p-sp-nav__submenu">
-        <% item.submenu.forEach(function(subitem) { %>
-        <li class="p-sp-nav__submenu-item">
-          <a href="<%= subitem.link %>.html" class="p-sp-nav__submenu-link"><%- subitem.title %></a>
-        </li>
-        <% }); %>
-      </ul>
-      <% } %>
-    </li>
-    <% }); %>
-  </ul>
-</div>
+  <div class="l-send-btn">
+    <%- include(ejsPath + './component/_c-send-btn', { 
+      maillink: 'mailto:g.info1994@gmail.com', 
+      phonelink: '042-486-1420',
+      img: './assets/images/common/mail-icon.svg',
+      alt: 'メールアイコン',
+    }) %>
+  </div>
+</nav>

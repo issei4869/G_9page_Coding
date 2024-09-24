@@ -20,17 +20,22 @@
 }
 
 .c-btn1__text {
-  position: relative;
   font-size: rem(17);
+  padding-bottom: rem(3);
   font-weight: $bold;
+  background-image: linear-gradient(#000, #000);
+  background-repeat: no-repeat;
+  background-position: bottom right; /* 下線の初期位置 */
+  background-size: 0 1px; /* 下線のサイズ（横幅、高さ） */
+  transition: background-size 0.3s;
 }
 
-.c-btn1__text::after {
+.c-btn1::after {
   content: '';
   position: absolute;
-  top: 49%;
-  right: -130%;
-  transform: translateY(-49%);
+  top: 50%;
+  right: rem(10);
+  transform: translateY(-50%);
   mask-image: url(../../assets/images/common/arrow.svg);
   background-color: $black;
   mask-repeat: no-repeat;
@@ -38,10 +43,14 @@
   mask-size: contain;
   width: rem(40);
   height: rem(11);
+  transition: all 0.3s;
 }
 
-.c-btn1:hover {
+.c-btn1:hover .c-btn1__text {
   background-position: bottom left; /* 下線のホバー時位置 */
   background-size: 100% 1px; /* 下線の横幅を100%にする */
 }
 
+.c-btn1:hover::after {
+  right: rem(5);
+}

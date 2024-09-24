@@ -1,0 +1,139 @@
+@use 'global' as *;
+
+.p-footer {
+  background-color: $black;
+  @include mq('md') {
+    display: flex;
+    justify-content: space-between;
+    padding: rem(124) rem(113) rem(93) 0;
+    position: relative;
+  }
+}
+
+.p-footer__navigation {
+
+}
+
+.p-footer__nav-list {
+
+}
+
+.p-footer__nav-item {
+
+}
+
+.p-footer__nav-item a {
+  color: $accent-white;
+  font-family: $second-font-family;
+  font-weight: $bold;
+  display: inline-block;
+  text-transform: uppercase;
+  width: 100%;
+  @include mq('md') {
+    font-size: rem(68);
+    letter-spacing: -0.01em;
+    padding: rem(13) 0  rem(13) rem(54);
+  }
+}
+
+.p-footer__nav-item:nth-child(6) a {
+  @include mq('md') {
+    font-size: rem(140);
+    padding-top: rem(70);
+    letter-spacing: -0.05em;
+  }
+}
+
+.p-footer__nav-item:last-child a {
+  @include mq('md') {
+    content: "";
+    position: absolute;
+    bottom: rem(6);
+    text-align: center;
+    font-family: $second-font-family;
+    font-weight: $bold;
+    font-size: rem(17);
+    letter-spacing: 0.06em;
+  }
+}
+
+.p-footer__content {
+  @include mq('md') {
+    margin-top: rem(38);
+  }
+}
+
+.p-footer__content-logo {
+  max-width: rem(250);
+}
+
+.p-footer__contact-info {
+  @include mq('md') {
+    margin-top: rem(260);
+  }
+}
+
+.p-footer__address {
+
+}
+
+.p-footer__address p {
+  color: $accent-white;
+}
+
+.p-footer__address p:nth-child(1) {
+  font-weight: $bold;
+  font-size: rem(18);
+  letter-spacing: 0.08em;
+}
+.p-footer__address p:nth-child(2) {
+  font-size: rem(18);
+  margin-top: rem(50);
+  letter-spacing: 0.07em;
+}
+.p-footer__address p:nth-child(3) {
+  font-weight: $bold;
+  font-size: rem(16);
+  margin-top: rem(3);
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+.p-footer__address p:nth-child(3)::after {
+  content: "MAP";
+  position: absolute;
+  background-color: $accent-white;
+  color: $black;
+  font-weight: $bold;
+  font-size: rem(12);
+  font-family: $second-font-family;
+  letter-spacing: -0.09em;
+  border-radius: 20px;
+  padding: rem(3) rem(20);
+  margin-left: rem(18);
+}
+
+.p-footer__address p:nth-child(n + 4) {
+  font-family: $second-font-family;
+  font-size: rem(18);
+}
+
+.p-footer__address p:nth-child(4) {
+  letter-spacing: 0.15em;  
+  margin-top: rem(3);
+}
+
+.p-footer__address p:nth-child(5) {
+  letter-spacing: 0.04em;
+  margin-top: rem(-1);
+}
+
+.p-footer__copyright {
+  display: block;
+  color: $accent-white;
+  font-family: $second-font-family;
+  font-size: rem(13);
+  letter-spacing: 0.03em;
+  margin-top: rem(54);
+}
+
