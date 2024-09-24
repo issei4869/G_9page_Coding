@@ -1,4 +1,14 @@
-<% project='.' ; ejsPath='.' %>
+<% project='.' ; ejsPath='.' 
+
+let lists = [
+    {subtitie: '全長' , text: '4.79 ～ 14 m'},
+    {subtitie: '最大搭載重量' , text: '70 kg（下付け）'},
+    {subtitie: '本体重量' , text: '1316 kg（ウェイト別）'},
+    {subtitie: '最大レンズ高' , text: '12.19 m'},
+    {subtitie: 'Max. Speed' , text: '2.6 m/s'}
+]
+
+%>
 
 
 <div class="p-crane-item">
@@ -7,16 +17,17 @@
     </div>
     <div class="p-crane-item__content">
         <div class="p-crane-item__wrapper">
-            <h3 class="p-crane-item__title">GF-8</h3>
+            <h3 class="p-crane-item__title"><%- title %></h3>
             <!-- prettier-ignore -->
             <%- include(project + ejsPath + '/component/_c-tab' ,{text:'単体レンタル可', color:''}) %>
         </div>
-        <ul>
-            <li>aaaa</li>
-            <li>bbbbb</li>
-            <li>fffff</li>
-            <li>hhhhh</li>
-            <li>fffff</li>
-        </ul>
+        <dl class="p-crane-item__list-items">
+            <% lists.forEach(function(list) { %>
+              <div class="p-crane-item__list-item">
+                <dt><%- list.subtitie %></dt>
+                <dd><%- list.text %></dd>
+              </div>
+            <% }); %>
+        </dl>
     </div>
 </div>
