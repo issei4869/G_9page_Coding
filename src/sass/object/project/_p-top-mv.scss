@@ -1,0 +1,56 @@
+@use 'global' as *;
+
+.p-top-mv {
+    @include mq('md') {
+        display: flex;
+    }
+}
+
+.p-top-mv__left {
+
+}
+
+.p-top-mv__left-img {
+
+}
+
+.p-top-mv__maintext {
+
+}
+
+.p-top-mv__subtext {
+
+}
+
+.p-top-mv__right {
+
+}
+
+.p-top-mv__title {
+
+}
+
+.u-mobile {
+
+}
+
+.p-top-mv__right-img {
+
+}
+
+.p-top-mv__blog {
+
+}
+
+.p-top-mv__news {
+
+}
+
+.p-top-mv__date {
+
+}
+
+.p-top-mv__text {
+
+}
+

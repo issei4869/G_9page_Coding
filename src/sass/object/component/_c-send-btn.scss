@@ -1,10 +1,10 @@
 @use "global" as *;
 
 .c-send-btn {
-  width: rem(246);
-  height: rem(56);
-  transition: all 0.3s;
-  position: relative;
+    width: rem(246);
+    height: rem(56);
+    transition: all 0.3s;
+    position: relative;
 }
 
 .c-send-btn a {
@@ -27,24 +27,24 @@
 // }
 
 .c-send-btn__phone {
-  position: absolute;
-  top: 50%;
-  left: rem(8);
-  transform: translateY(-50%);
-  font-size: rem(17);
-  font-family: $second-font-family;
-  font-weight: $medium;
-  line-height: calc(12 / 17);
-  letter-spacing: 0.02em;
-  color: $black;
-  background-color: $accent-white;
-  padding: rem(14) rem(12) rem(14) rem(42);
-  border-radius: 35px;
-  z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: rem(8);
+    transform: translateY(-50%);
+    font-size: rem(17);
+    font-family: $second-font-family;
+    font-weight: $medium;
+    line-height: calc(12 / 17);
+    letter-spacing: 0.02em;
+    color: $black;
+    background-color: $accent-white;
+    padding: rem(14) rem(12) rem(14) rem(42);
+    border-radius: 35px;
+    z-index: 2;
 }
 
 .c-send-btn__telicon {
-  position: relative;
+    position: relative;
 }
 
 .c-send-btn__telicon::before {
@@ -60,6 +60,20 @@
     background-color: $black;
     width: rem(22);
     height: rem(21);
+}
+
+.c-send-btn__phone:hover .c-send-btn__telicon::before {
+    animation: hoverPulsate 1s infinite;
+    // scale: 1;
+}
+
+@keyframes hoverPulsate {
+  0%{transform:translate(0px, -50%)}
+  7%{transform:translate(-3px, -50%)}
+  14%{transform:translate(3px, -50%)}
+  20%{transform:translate(-3px, -50%)}
+  32%{transform:translate(3px, -50%)}
+  40%{transform:translate(0px, -50%)}
 }
 
 .c-send-btn__mail {
@@ -82,6 +96,13 @@
     background-color: $accent-white;
     width: rem(25);
     height: rem(24);
+    transition: all 0.5s;
+}
+
+.c-send-btn__mail:hover::after {
+  transform: scale(1.2);
+  top: 30%;
+  transition: all 0.5s;
 }
 
 .c-send-btn__mail img {

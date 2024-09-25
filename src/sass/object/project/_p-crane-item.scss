@@ -60,14 +60,16 @@
 
 .p-crane-item__list-item {
   display: flex;
-  padding: 0 rem(10); 
+  padding: 0 rem(10);
   font-size: rem(13);
   font-weight: $bold;
   color: #333333;
   letter-spacing: 0.01em;
+  gap: rem(124);
   @include mq('md') {
     gap: rem(54);
-    padding: 0; 
+    padding: 0;
+    text-align: left;
   }
 }
 
@@ -79,10 +81,15 @@
 }
 
 .p-crane-item__list-item dd {
-  width: calc(100% - rem(85));
+  width: 100%;
   @include mq('md') {
-    width: ;
+    
   }
+}
+
+.p-crane-item__list-item dd span {
+  display: inline-block;
+  text-align: left;
 }
 
 .p-crane-item__list-item + .p-crane-item__list-item {
