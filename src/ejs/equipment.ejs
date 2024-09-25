@@ -6,7 +6,11 @@
   <body>
     <%- include(ejsPath + '/common/_header' ) %>
     <main>
-      <%- include(ejsPath + '/project/_p-top-mv' ) %>
+      <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:' EQUIPMENT', heading_ja:'機材一覧'}) %>
+
+      <%- include(ejsPath + '/component/_c-breadcrumb', { color:'', breadcrumb: [ 
+      { title:"equipment", url: "" },
+      { title:"crane", url: "" } ] }); %>
 
       <div class="l-top-160">
         <%- include(ejsPath + '/project/_p-top-about' ) %>

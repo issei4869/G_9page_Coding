@@ -1,0 +1,39 @@
+@use 'global' as *;
+
+.p-top-about {
+
+}
+
+.p-top-about__inner {
+
+}
+
+.l-inner {
+
+}
+
+.p-top-about__heading {
+
+}
+
+.p-top-about__text {
+    @include mq('md') {
+        font-size: rem(17);
+        line-height: calc(36 / 17);
+        letter-spacing: 0.02em;
+        color: $font-color;
+    }
+}
+
+.p-top-about__items {
+    @include mq('md') {
+        margin-top: rem(80);
+    }
+}
+
+.p-top-about__item + .p-top-about__item {
+    @include mq('md') {
+        margin-top: rem(80);
+    }
+}
+

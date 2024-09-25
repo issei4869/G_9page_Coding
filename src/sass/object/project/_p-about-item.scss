@@ -1,0 +1,98 @@
+@use 'global' as *;
+
+.p-about-item {
+  background-color: $font-color;
+  border-radius: 20px;
+  position: relative;
+  // height: 100svh;
+  @include mq('md') {
+    
+    padding: rem(54);
+  }
+}
+
+.p-about-item__inner {
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  // width: 100%;
+  // height: inherit;
+  // // display: grid;
+  // place-items: center;
+  // font-size: 10vw;
+  @include mq('md') {
+    display: flex;
+    gap: rem(54);
+  }
+}
+
+.p-about-item::before {
+  position: absolute;
+  content: "Service";
+  top: rem(23);
+  left: rem(27);
+  width: rem(43);
+  height: rem(12);
+  color: $accent-white;
+}
+
+
+.p-about-item__content {
+  @include mq('md') {
+    margin-top: rem(50);
+  }
+}
+
+.p-about-item__text {
+  font-weight: $bold;
+  color: $accent-white;
+  @include mq('md') {
+    font-size: rem(24);
+    letter-spacing: 0.03em;
+  }
+}
+
+.p-about-item__btn {
+  @include mq('md') {
+    margin-top: rem(24);
+  }
+}
+
+.p-about-item__img {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 18px;
+  @include mq('md') {
+      aspect-ratio: 579 / 508;
+      max-width: rem(579);
+  }
+}
+
+.p-about-item__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-about-item__number {
+  position: absolute;
+  bottom: 0;
+  left: rem(54);
+  font-family: $second-font-family;
+  color: $accent-white;
+  @include mq('md') {
+    font-size: rem(138);
+    letter-spacing: 0.02em;
+  }
+}
+
+.p-about-item--inversion {
+  background-color: $accent-white;
+}
+
+.p-about-item--inversion .p-about-item__text,
+.p-about-item--inversion .p-about-item__number,
+.p-about-item--inversion::before {
+  color: $font-color;
+}

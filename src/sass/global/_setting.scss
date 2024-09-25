@@ -18,6 +18,8 @@ $padding-sp: 20px;
 
 $base-font-family: "Noto Sans JP", sans-serif;
 $second-font-family: "Inter", sans-serif;
+$third-font-family: "Josefin Sans", sans-serif;
+
 // ※検証ツールでしっかり反映されているか確認する
 
 // フォントウェイト
@@ -42,6 +44,7 @@ $black: #000000;
 body {
   font-family: $base-font-family;
   color: $font-color;
+  background-color: #F5F5F5;
   font-weight: $regular;
   line-height: 1;
 }

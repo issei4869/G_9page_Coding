@@ -9,20 +9,32 @@
 }
 
 .cat-item {
-    position: relative; 
+    position: relative;
+    font-size: rem(18);
+    line-height: calc(42 / 18);
+    font-weight: $bold;
+    color: $accent-black;
+    display: inline-block;
+    width: 100%;
+}
+
+
+.cat-item > a {
+    
 }
 
 .current-cat-parent {
     
 }
 
+
 //大項目
 .side_equipment_cat > .cat-item > a {
-    font-size: rem(18);
-    line-height: calc(26 / 18);
-    font-weight: $bold;
-    color: $accent-black;
-    padding: rem(6) 0 rem(6) rem(12);
+    // font-size: rem(18);
+    // line-height: calc(26 / 18);
+    // font-weight: $bold;
+    // color: $accent-black;
+    padding-left: rem(12);
     display: inline-block;
     width: 100%;
 }
@@ -31,43 +43,54 @@
 //     position: relative;
 // }
 
-//大項目 数字
-.side_equipment_cat > .cat-item > span {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-}
 
 //背景色グレー
 .side_equipment_cat > .current-cat-parent > a {
     background-color: #D1D0D0;
+    border-radius: 5px;
 }
 
 
-.children {
-
+.children > .cat-item {
+    font-size: rem(16);
+    line-height: calc(33 / 16);
+    font-weight: $medium;
+    color: #323031;
 }
 
 //中項目
 .children > .cat-item > a {
-    font-size: rem(16);
-    line-height: calc(23 / 16);
+    
+    padding-left: rem(35);
+    // display: inline-block;
+    // width: 100%;
+}
+
+
+//項目 数字
+.cat-item > span {
+    position: absolute;
+    top: 0.5lh;
+    transform: translateY(-50%);
+    right: rem(12);
     font-weight: $medium;
-    color: #323031;
-    padding: rem(5) rem(149) rem(5) rem(35);
-    display: inline-block;
-    width: 100%;
+    font-family: $second-font-family;
+    color: $black;
+}
+
+//大項目 数字
+.side_equipment_cat > .cat-item > span {
+    // padding: rem(8) 0;
+    font-size: rem(18);
 }
 
 //中項目　数字
 .children > .cat-item > span {
-    position: absolute;
-    top: 50%;
-    right: rem(12);
-    transform: translateY(-50%);
+    // padding: rem(5) 0;
+    font-size: rem(16);
 }
 
 .current-cat {
     background-color: $accent-yellow;
+    border-radius: 5px;
 }

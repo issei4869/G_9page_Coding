@@ -1,0 +1,7 @@
+@use 'global' as *;
+
+.l-top-newequipment {
+    @include mq('md') {
+        margin-top: rem(209);
+    }
+}

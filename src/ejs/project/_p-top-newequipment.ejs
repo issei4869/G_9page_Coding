@@ -1,0 +1,76 @@
+<%
+project='.' ; ejsPath='.'
+
+let cards = [
+  {
+    url: '',
+    img: './assets/images/common/dummy.jpg',
+    alt: '',
+    tab: 'NEW',
+    date: '2023.08.28',
+    datetime: '2023-08-28', 
+    text: 'パンサ－社製VarioLongジブ導入しました。'
+  },
+  {
+    url: '',
+    img: './assets/images/common/dummy.jpg',
+    alt: '',
+    tab: 'NEW',
+    date: '2023.08.28',
+    datetime: '2023-08-28', 
+    text: 'パンサ－社製VarioLongジブ導入しました。'
+  },
+  {
+    url: '',
+    img: './assets/images/common/dummy.jpg',
+    alt: '',
+    tab: 'NEW',
+    date: '2023.08.28',
+    datetime: '2023-08-28', 
+    text: 'パンサ－社製VarioLongジブ導入しました。'
+  },
+  {
+    url: '',
+    img: './assets/images/common/dummy.jpg',
+    alt: '',
+    tab: 'NEW',
+    date: '2023.08.28',
+    datetime: '2023-08-28', 
+    text: 'パンサ－社製VarioLongジブ導入しました。'
+  },
+
+]
+%>
+
+
+<div class="p-top-newequipment">
+  <div class="p-top-newequipment__inner l-inner">
+    <div class="p-top-about__heading">
+      <%- include(ejsPath + './component/_c-section-heading', { heading_eng:'New Equipment', heading_ja:'機材新入荷のお知らせ' }) %>
+    </div>
+    <div class="p-top-newequipment__swiper">
+      <div class="p-top-newequipment__js swiper js-newequipment-swiper">
+        <ul class="p-top-newequipment__wrapper swiper-wrapper">
+          <% cards.forEach(function(card) { %>
+            <li class="p-top-newequipment__slide swiper-slide">
+              <%- include(project + '/_p-newequipment-card', {
+                url: card.url,
+                img: card.img,
+                alt: card.alt,
+                tab: card.tab,
+                date: card.date,
+                datetime: card.datetime,
+                text: card.text
+              }) %>
+            </li>
+          <% }); %>
+        </ul>
+      </div>
+    </div>
+    <div class="p-top-newequipment__button">
+      <div class="p-top-newequipment__prev swiper-button-prev js-newequipment-arrow"></div>
+      <div class="p-top-newequipment__next swiper-button-next js-newequipment-arrow"></div>
+    </div>
+    <div class="p-top-newequipment__scrollbar swiper-scrollbar"></div>
+  </div>
+</div>

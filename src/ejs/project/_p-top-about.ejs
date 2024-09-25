@@ -1,0 +1,54 @@
+<% project='.' ; ejsPath='.' 
+
+let cards = [
+    {
+        img: './assets/images/common/top-about1.jpg' , 
+        alt: '',
+        text: 'クレーン、リモートヘッド、ドリー等あらゆる撮影に最適な機材を取り揃えております。',
+        number: '01',
+        btntext: '特殊機材',
+        color: ''
+    },
+    {
+        img: './assets/images/common/top-about2.jpg' , 
+        alt: '',
+        text: 'あらゆる天候を人工的につくりだす装置を取り揃えております。',
+        number: '02',
+        btntext: '特殊効果',
+        color: 'inversion'
+    },
+    {
+        img: './assets/images/common/top-about3.jpg' , 
+        alt: '',
+        text: '便利なスポット利用を可能にするレンタル機材を各種取り揃えております',
+        number: '03',
+        btntext: 'レンタル機材',
+        color: ''
+    }
+]
+
+%>
+
+
+<div class="p-top-about">
+    <div class="p-top-about__inner l-inner">
+        <div class="p-top-about__heading">
+            <%- include(ejsPath + './component/_c-section-heading', { heading_eng:'About', heading_ja:'有限会社グリフィス' }) %>
+        </div>
+        <p class="p-top-about__text">映画・CM・TV等あらゆる撮影に関する　機材オペレーティング・レンタルを行う会社です。</p>
+        <ul class="p-top-about__items">
+            <% cards.forEach(function(card) { %>
+                <li class="p-top-about__item">
+                    <%- include(project + '/_p-about-item', {
+                        img: card.img,
+                        alt: card.alt,
+                        text: card.text,
+                        number: card.number,
+                        btntext: card.btntext,
+                        color: card.color,
+                    }) %>
+                </li>
+            <% }); %>
+        </ul>
+    </div>
+</div>

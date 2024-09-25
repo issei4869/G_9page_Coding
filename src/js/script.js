@@ -33,4 +33,47 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         }
     });
 
+
+    /////////////////////// Campaignスライダー ///////////////////////
+    // Campaignリサイズ処理（PC時のみ矢印表示）
+    const service_slideLength = document.querySelectorAll('.js-newequipment-swiper .swiper-slide').length;
+    $(window).resize(function () {
+        service_arrow();
+    });
+    service_arrow();
+    function service_arrow() {
+        if (window.matchMedia('(max-width: 767px)').matches || service_slideLength <= 3) {
+        $('.js-newequipment-arrow').hide();
+        } else {
+        $('.js-newequipment-arrow').show();
+        }
+    }
+
+    /*****Campaignスライダー*****/
+    var service_swiper = new Swiper('.js-newequipment-swiper', {
+        loop: true,
+        speed: 2000,
+        slidesPerView: 1.27,
+        spaceBetween: 24,
+        // autoplay: {
+        // delay: 2000,
+        // disableOnInteraction: false,
+        // },
+        breakpoints: {
+        768: {
+            slidesPerView: 3.485,
+            spaceBetween: 39,
+        },
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        scrollbar: {
+            el: ".swiper-scrollbar",
+            hide: false,
+            draggable: true 
+        }
+    });
+
 });
