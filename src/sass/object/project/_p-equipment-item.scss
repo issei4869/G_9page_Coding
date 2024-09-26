@@ -1,0 +1,47 @@
+@use 'global' as *;
+
+.p-equipment-item {
+    @include mq('md') {
+        
+    }
+}
+
+.p-equipment-item__img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.p-equipment-item__img img {
+    width: 100%;
+    aspect-ratio: 280 / 188;
+    object-fit: cover;
+    transition: .6s;
+    @include mq('md') {
+        aspect-ratio: 409 / 409;
+    }
+}
+
+.p-equipment-item__text {
+    width: 100%;
+    font-weight: $bold;
+    color: #333333;
+    position: relative;
+    @include mq('md') {
+        margin-top: rem(15);
+        line-height: calc(35 / 24);
+        letter-spacing: 0.28em;
+    }
+}
+
+.p-equipment-item__text::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: ""; 
+    mask-image: url(../../assets/images/common/black-btn.svg);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+    width: rem(36);
+    height: rem(36);
+}

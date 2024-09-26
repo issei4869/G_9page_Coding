@@ -1,0 +1,105 @@
+@use 'global' as *;
+
+.p-sub-equipment {
+
+}
+
+.p-sub-equipment--white {
+    background-color: $accent-white;
+    @include mq('md') {
+        padding: rem(160) 0;
+    }
+}
+
+.p-sub-equipment__heading {
+    font-weight: $bold;
+    font-family: $second-font-family;
+    color: $black;
+    @include mq('md') {
+        font-size: rem(80);
+    }
+}
+
+.p-sub-equipment__category {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    @include mq('md') {
+        margin-top: rem(24);
+    }
+}
+
+.p-sub-equipment__tab {
+    font-weight: $bold;
+    color: $black;
+    background-color: $accent-yellow;
+    border-radius: 22px;
+    @include mq('md') {
+        font-size: rem(17);
+        line-height: calc(25 / 17);
+        letter-spacing: 0.04em;
+        padding: rem(8) rem(24);
+    }
+}
+
+.p-sub-equipment__category span {
+    border-bottom: 1px solid #DCDCDC;
+    flex-grow: 1;
+    
+}
+
+.p-sub-equipment__items {
+    display: grid;
+    @include mq('md') {
+        gap: rem(64) rem(8);
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: rem(54);
+    }
+}
+
+.p-sub-equipment__item {
+    @include mq('md') {
+        
+    }
+}
+
+.p-sub-equipment__img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.p-sub-equipment__img img {
+    width: 100%;
+    aspect-ratio: 280 / 188;
+    object-fit: cover;
+    transition: .6s;
+    @include mq('md') {
+        aspect-ratio: 409 / 409;
+    }
+}
+
+.p-sub-equipment__text {
+    width: 100%;
+    font-weight: $bold;
+    color: #333333;
+    position: relative;
+    @include mq('md') {
+        margin-top: rem(15);
+        line-height: calc(35 / 24);
+        letter-spacing: 0.28em;
+    }
+}
+
+.p-sub-equipment__text::after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    content: ""; 
+    background-image: url(../../assets/images/common/black-btn.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: rem(36);
+    height: rem(36);
+}

@@ -8,20 +8,14 @@
     <main>
       <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:' EQUIPMENT', heading_ja:'機材一覧'}) %>
 
-      <%- include(ejsPath + '/component/_c-breadcrumb', { color:'', breadcrumb: [ 
-      { title:"equipment", url: "" },
-      { title:"crane", url: "" } ] }); %>
-
-      <div class="l-top-160">
-        <%- include(ejsPath + '/project/_p-top-about' ) %>
-      </div>
-
-      <div class="l-top-newequipment">
-        <%- include(ejsPath + '/project/_p-top-newequipment' ) %>
+      <div class="l-breadcrumb">
+        <%- include(ejsPath + '/component/_c-breadcrumb', { color:'', breadcrumb: [ 
+        { title:"equipment", url: "" },
+        ] }); %>
       </div>
 
       <div class="l-top-160">
-        <%- include(ejsPath + '/project/_p-top-recruit' ) %>
+        <%- include(ejsPath + '/project/_p-sub-equipment' ) %>
       </div>
 
     </main>
