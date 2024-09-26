@@ -5,12 +5,14 @@
   @include mq('md') {
     display: flex;
     gap: rem(50);
+    // position: relative;
   }
 }
 
 .p-crane-item__img {
   aspect-ratio: 409 / 308;
-  width: rem(409);
+  max-width: rem(409);
+  width: 100%;
   height: 100%;
   overflow: hidden;
   @include mq("md") {
@@ -26,11 +28,12 @@
 
 .p-crane-item__content {
   margin-top: rem(10);
-  max-width: rem(413);
+  max-width: rem(821);
   width: 100%;
   @include mq("md") {
     // flex: 1;
     // margin-top: 0;
+    
   }
 }
 
@@ -38,6 +41,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include mq('md') {
+      max-width: rem(413);
+    }
 }
 
 .p-crane-item__title {
@@ -73,6 +79,12 @@
   }
 }
 
+.p-sub-crane__item + .p-sub-crane__item {
+  @include mq('md') {
+    margin-top: rem(124);
+  }
+}
+
 .p-crane-item__list-item dt {
   width: 100%;
   max-width: rem(85);
@@ -95,5 +107,19 @@
 .p-crane-item__list-item + .p-crane-item__list-item {
   @include mq('md') {
     margin-top: rem(8);
+  }
+}
+
+.p-crane-item__btn {
+
+  @include mq('md') {
+    // margin-top: rem(24);
+    // position: absolute;
+    // bottom: 0;
+    // right: 0;
+    width: 100%;
+    max-width: rem(216);
+    margin-left: auto;
+    margin-top: rem(24);
   }
 }

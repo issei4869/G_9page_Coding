@@ -1,11 +1,9 @@
 @use 'global' as *;
 
 .p-sidebar-nav {
-
-}
-
-.side_equipment_cat {
-
+    border-top: 1px solid #D1D0D0;
+    border-bottom: 1px solid #D1D0D0;
+    padding: rem(12) 0;
 }
 
 .cat-item {

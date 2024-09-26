@@ -1,0 +1,7 @@
+@use 'global' as *;
+
+.l-crane-footer {
+    @include mq('md') {
+        margin-top: rem(156);
+    }
+}

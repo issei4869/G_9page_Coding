@@ -76,4 +76,16 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         }
     });
 
+    /////////////////////// 矢印が一方通行で戻ってくる ///////////////////////
+    const arrowLinks = document.querySelectorAll('.p-sub-equipment__item');
+    if(arrowLinks.length > 0) {
+    arrowLinks.forEach((arrowLink) => {
+        arrowLink.addEventListener('mouseenter', function() {
+        arrowLink.classList.add('is-hover');
+        },{
+        once: true
+        });
+    });
+    }
+
 });

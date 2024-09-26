@@ -12,10 +12,10 @@ $mediaquerys: (
 @if $startFrom == sp {
   //スマホファースト
   $breakpoints: (
-    sm: 600,
-    md: 768,
-    lg: 1024,
-    xl: 1440,
+    sm: 320,
+    md: 900,
+    lg: 1280,
+    xl: 1921,
   );
 
   //メディアクエリー
@@ -27,10 +27,10 @@ $mediaquerys: (
   );
 } @else {
   $breakpoints: (
-    xl: 1440,
-    lg: 1023,
-    md: 767,
-    sm: 600,
+    xl: 1920,
+    lg: 1279,
+    md: 899,
+    sm: 319,
   );
   $mediaquerys: (
     sm: "screen and (max-width: #{map-get($breakpoints,'sm')}px)",

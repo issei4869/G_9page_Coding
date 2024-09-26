@@ -8,13 +8,13 @@ let cards = [
     tab: '特殊機材',
     bgcolor: '',
     content: [
-      {img: './assets/images/common/special_equipment1.jpg', alt: 'クレーン', text: 'クレーン'},
-      {img: './assets/images/common/special_equipment2.jpg', alt: 'リモートヘッド', text: 'リモートヘッド'},
-      {img: './assets/images/common/special_equipment3.jpg', alt: 'ドリー', text: 'ドリー'},
-      {img: './assets/images/common/special_equipment4.jpg', alt: 'ジフ', text: 'ジフ'},
-      {img: './assets/images/common/special_equipment5.jpg', alt: 'ジンバル', text: 'ジンバル'},
-      {img: './assets/images/common/special_equipment6.jpg', alt: '電気自動車', text: '電気自動車'},
-      {img: './assets/images/common/special_equipment7.jpg', alt: 'カーマウント', text: 'カーマウント'}
+      {link: 'crane.htmlcrane.html', img: './assets/images/common/special_equipment1.jpg', alt: 'クレーン', text: 'クレーン'},
+      {link: 'crane.html', img: './assets/images/common/special_equipment2.jpg', alt: 'リモートヘッド', text: 'リモートヘッド'},
+      {link: 'crane.html', img: './assets/images/common/special_equipment3.jpg', alt: 'ドリー', text: 'ドリー'},
+      {link: 'crane.html', img: './assets/images/common/special_equipment4.jpg', alt: 'ジフ', text: 'ジフ'},
+      {link: 'crane.html', img: './assets/images/common/special_equipment5.jpg', alt: 'ジンバル', text: 'ジンバル'},
+      {link: 'crane.html', img: './assets/images/common/special_equipment6.jpg', alt: '電気自動車', text: '電気自動車'},
+      {link: 'crane.html', img: './assets/images/common/special_equipment7.jpg', alt: 'カーマウント', text: 'カーマウント'}
     ]
   },
   {
@@ -22,10 +22,10 @@ let cards = [
     tab: '特殊効果',
     bgcolor: 'white',
     content: [
-      {img: './assets/images/common/special_effects1.jpg', alt: '雨', text: '雨'},
-      {img: './assets/images/common/special_effects2.jpg', alt: '風', text: '風'},
-      {img: './assets/images/common/special_effects3.jpg', alt: '雪', text: '雪'},
-      {img: './assets/images/common/special_effects4.jpg', alt: '煙', text: '煙'}
+      {link: 'crane.html', img: './assets/images/common/special_effects1.jpg', alt: '雨', text: '雨'},
+      {link: 'crane.html', img: './assets/images/common/special_effects2.jpg', alt: '風', text: '風'},
+      {link: 'crane.html', img: './assets/images/common/special_effects3.jpg', alt: '雪', text: '雪'},
+      {link: 'crane.html', img: './assets/images/common/special_effects4.jpg', alt: '煙', text: '煙'}
     ]
   },
   {
@@ -33,15 +33,15 @@ let cards = [
     tab: '特殊機材',
     bgcolor: '',
     content: [
-      {img: './assets/images/common/rental_equipment1.jpg', alt: 'イントレ', text: 'イントレ'},
-      {img: './assets/images/common/rental_equipment2.jpg', alt: '移動車', text: '移動者'},
-      {img: './assets/images/common/rental_equipment3.jpg', alt: 'レール', text: 'レール'},
-      {img: './assets/images/common/rental_equipment4.jpg', alt: '円形レール', text: '円形レール'},
-      {img: './assets/images/common/rental_equipment5.jpg', alt: 'ミニジフ', text: 'ミニジフ'},
-      {img: './assets/images/common/rental_equipment6.jpg', alt: '防振', text: '防振'},
-      {img: './assets/images/common/rental_equipment7.jpg', alt: 'スライダー', text: 'スライダー'},
-      {img: './assets/images/common/rental_equipment8.jpg', alt: 'グリップキット', text: 'グリップキット'},
-      {img: './assets/images/common/rental_equipment9.jpg', alt: 'その他', text: 'その他'},
+      {link: 'crane.html', img: './assets/images/common/rental_equipment1.jpg', alt: 'イントレ', text: 'イントレ'},
+      {link: 'crane.html', img: './assets/images/common/rental_equipment2.jpg', alt: '移動車', text: '移動者'},
+      {link: 'crane.html', img: './assets/images/common/rental_equipment3.jpg', alt: 'レール', text: 'レール'},
+      {link: 'crane.html', img: './assets/images/common/rental_equipment4.jpg', alt: '円形レール', text: '円形レール'},
+      {link: 'crane.html', img: './assets/images/common/rental_equipment5.jpg', alt: 'ミニジフ', text: 'ミニジフ'},
+      {link: 'crane.html', img: './assets/images/common/rental_equipment6.jpg', alt: '防振', text: '防振'},
+      {link: 'crane.html', img: './assets/images/common/rental_equipment7.jpg', alt: 'スライダー', text: 'スライダー'},
+      {link: 'crane.html', img: './assets/images/common/rental_equipment8.jpg', alt: 'グリップキット', text: 'グリップキット'},
+      {link: 'crane.html', img: './assets/images/common/rental_equipment9.jpg', alt: 'その他', text: 'その他'},
     ]
   }
 ]
@@ -55,16 +55,21 @@ let cards = [
             <div class="p-sub-equipment__tab"><%- card.tab %></div>
             <span></span>
         </div>
-        <ul class="p-sub-equipment__items">
+        <div class="p-sub-equipment__items">
             <% card.content.forEach(function(item) { %>
-                <li class="p-sub-equipment__item">
+                <a href="<%- item.link %>" class="p-sub-equipment__item">
                   <div class="p-sub-equipment__img">
                     <img src="<%- item.img %>" alt="<%- item.alt %>">
                   </div>
-                  <p class="p-sub-equipment__text"><%- item.text %></p>
-                </li>
+                  <div class="p-sub-equipment__wrapper">
+                    <p class="p-sub-equipment__text"><%- item.text %></p>
+                    <span class="p-sub-equipment__iconbg">
+                      <i class="p-sub-equipment__icon"></i>
+                    </span>
+                  </div>
+                </a>
             <% }); %>
-        </ul>
+        </div>
     </div>
   </div>
 <% }); %>

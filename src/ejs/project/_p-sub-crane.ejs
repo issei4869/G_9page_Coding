@@ -4,24 +4,58 @@ project='.' ; ejsPath='.'
 let items = [
   {
     img: "./assets/images/common/crane1.jpg",
-    alt: "クレーン",
+    alt: "",
     title: 'GF-8',
     tabtext: '単体レンタル可',
-    tabcolor: ''
+    tabcolor: '',
+    btnlink: 'crane01.html'
   },
   {
-    img: "",
+    img: "./assets/images/common/crane2.jpg",
     alt: "",
     title: 'GF-16',
+    tabtext: '要オペレーター',
+    tabcolor: 'black',
+    btnlink: 'crane01.html',
+  },
+  {
+    img: "./assets/images/common/crane3.jpg",
+    alt: "",
+    title: 'GF CRANE',
+    tabtext: '要オペレーター',
+    tabcolor: 'black',
+    btnlink: 'crane01.html',
+  },
+  {
+    img: "./assets/images/common/crane4.jpg",
+    alt: "",
+    title: 'GF CRANE',
     tabtext: '単体レンタル可',
-    tabcolor: 'black'
-  }
+    tabcolor: '',
+    btnlink: 'crane01.html',
+  },
+  {
+    img: "./assets/images/common/crane5.jpg",
+    alt: "",
+    title: 'GF CRANE',
+    tabtext: '要オペレーター',
+    tabcolor: 'black',
+    btnlink: 'crane01.html',
+  },
+  {
+    img: "./assets/images/common/crane6.jpg",
+    alt: "",
+    title: 'GF CRANE',
+    tabtext: '要オペレーター',
+    tabcolor: 'black',
+    btnlink: 'crane01.html',
+  },
 ]
 %>
 
 
 <div class="p-sub-crane">
-    <div class="p-sub-crane__inner">
+    <div class="p-sub-crane__inner l-inner">
         <aside class="archive-blog__sidebar">
             <%- include(ejsPath + './project/_p-sidebar-nav' ) %>
         </aside>
@@ -33,7 +67,8 @@ let items = [
                         alt: item.alt,
                         title: item.title,
                         tabtext: item.tabtext,
-                        tabcolor: item.tabcolor
+                        tabcolor: item.tabcolor,
+                        btnlink: item.btnlink
                     }) %>
                 </li>
             <% }); %>

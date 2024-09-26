@@ -2,6 +2,16 @@
 
 .p-sub-crane {
     @include mq('md') {
+        // padding-left: rem(60);
+        // padding-right: rem(109);
+    }
+}
+
+.p-sub-crane__inner.l-inner {
+    @include mq('md') {
+        // padding-left: rem(60);
+        // padding-right: rem(109);
+        max-width: rem(1751);
         padding-left: rem(60);
         padding-right: rem(109);
     }
@@ -22,7 +32,7 @@
 }
 
 .p-sub-crane__items {
-
+    width: 100%;
 }
 
 .p-sub-crane__item {

@@ -13,6 +13,7 @@
     line-height: calc(19 / 13);
     border: 1px solid $black;
     text-align: center;
+    flex-shrink: 0;
 }
 
 .c-tab--black {

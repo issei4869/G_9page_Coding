@@ -66,6 +66,7 @@
 .p-sub-equipment__img {
     width: 100%;
     overflow: hidden;
+    
 }
 
 .p-sub-equipment__img img {
@@ -78,28 +79,197 @@
     }
 }
 
+// .p-sub-equipment__text::after {
+//     position: absolute;
+//     top: 50%;
+//     right: 0;
+//     transform: translateY(-50%);
+//     content: ""; 
+//     background-image: url(../../assets/images/common/black-btn.svg);
+//     background-repeat: no-repeat;
+//     background-position: center;
+//     background-size: contain;
+//     width: rem(36);
+//     height: rem(36);
+// }
+
+.p-sub-equipment__wrapper {
+    display: flex;
+    align-items: center;
+    @include mq('md') {
+        margin-top: rem(15);
+    }
+}
+
 .p-sub-equipment__text {
     width: 100%;
     font-weight: $bold;
     color: #333333;
     position: relative;
     @include mq('md') {
-        margin-top: rem(15);
         line-height: calc(35 / 24);
         letter-spacing: 0.28em;
     }
 }
 
-.p-sub-equipment__text::after {
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    content: ""; 
-    background-image: url(../../assets/images/common/black-btn.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: rem(36);
-    height: rem(36);
+.p-sub-equipment__iconbg {
+    position: relative;
+    background-color: $black;
+    border-radius: 50%;
+    width: rem(40);
+    height: rem(40);
+    // padding: 20px;
 }
+
+.p-sub-equipment__icon {
+    // overflow: hidden;
+    // position: absolute;
+    // background-color: $black;
+    // border-radius: 50%;
+    // width: rem(40);
+    // height: rem(40);
+    // line-height: 1;
+
+    overflow: hidden;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    // transform: translate(-50%, -50%);
+    width: rem(10);
+    height: rem(10);
+    margin: auto 0;
+    line-height: 1;
+}
+
+.p-sub-equipment__icon::before,
+.p-sub-equipment__icon::after {
+    animation-fill-mode: both;
+    animation-duration: 0.6s;
+    content: "";
+    // display: block;
+    position: absolute;
+    width: rem(10);
+    height: rem(8);
+    mask-image: url(../../assets/images/common/arrow.svg);
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    background-color: $accent-white;
+    top: 0;
+    left: 0;
+}
+
+.p-sub-equipment__icon:after {
+    transform: translateX(-100%);
+}
+
+.p-sub-equipment__item.is-hover .p-sub-equipment__icon:before {
+    animation-name: transformLeftRight;
+    animation-delay: 0.2s;
+}
+.p-sub-equipment__item.is-hover .p-sub-equipment__icon:after {
+    animation-name: transformRightLeft;
+}
+.p-sub-equipment__item.is-hover:hover .p-sub-equipment__icon:before {
+    animation-name: transformRightLeft;
+    animation-delay: 0s;
+}
+.p-sub-equipment__item.is-hover:hover .p-sub-equipment__icon:after {
+    animation-name: transformLeftRight;
+    animation-delay: 0.2s;
+}
+
+@keyframes transformLeftRight {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+}
+@keyframes transformRightLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+.p-sub-equipment__item:hover .p-sub-equipment__img img {
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.c-arrow-link {
+    position: relative;
+    padding-right: 40px;
+   
+  }
+  .c-arrow-link--icon {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    margin: auto 0;
+    line-height: 1;
+    // background-color: #fff;
+  }
+  .c-arrow-link--icon:before,
+  .c-arrow-link--icon:after {
+    content: "→";
+    position: absolute;
+    top: 0;
+    right: 0;
+    animation-fill-mode: both;
+    animation-duration: 0.6s;
+  }
+  .c-arrow-link--icon:after {
+    transform: translateX(-100%);
+  }
+  .c-arrow-link.is-hover .c-arrow-link--icon:before {
+    animation-name: transformLeftRight;
+    animation-delay: 0.2s;
+  }
+  .c-arrow-link.is-hover .c-arrow-link--icon:after {
+    animation-name: transformRightLeft;
+  }
+  .c-arrow-link.is-hover:hover .c-arrow-link--icon:before {
+    animation-name: transformRightLeft;
+    animation-delay: 0s;
+  }
+  .c-arrow-link.is-hover:hover .c-arrow-link--icon:after {
+    animation-name: transformLeftRight;
+    animation-delay: 0.2s;
+  }
+  
+  @keyframes transformLeftRight {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes transformRightLeft {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
