@@ -1,0 +1,7 @@
+@use 'global' as *;
+
+.l-sub-crane {
+    @include mq('md') {
+        margin-top: rem(48);
+    }
+}

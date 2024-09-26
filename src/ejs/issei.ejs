@@ -61,7 +61,13 @@
       <!--機材一覧用のパーツ -->
       <h2 class="ejs-style-title">機材一覧用のパーツ</h2>
       <!-- prettier-ignore -->
-      <%- include(ejsPath + '/project/_p-crane-item', { title:'GF-8'}) %>
+      <%- include(ejsPath + '/project/_p-crane-item', {
+        img: "./assets/images/common/crane1.jpg",
+        alt: "クレーン",
+        title: 'GF-8',
+        tabtext: '単体レンタル可',
+        tabcolor: ''
+      }) %>
 
       <!--パンくずリスト -->
       <h2 class="ejs-style-title">パンくずリスト</h2>

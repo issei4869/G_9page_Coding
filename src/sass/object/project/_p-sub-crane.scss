@@ -1,0 +1,30 @@
+@use 'global' as *;
+
+.p-sub-crane {
+    @include mq('md') {
+        padding-left: rem(60);
+        padding-right: rem(109);
+    }
+}
+
+.p-sub-crane__inner {
+    @include mq('md') {
+        display: flex;
+        gap: rem(144);
+    }
+}
+
+.archive-blog__sidebar {
+    width: 100%;
+    @include mq('md') {
+        max-width: rem(297);
+    }
+}
+
+.p-sub-crane__items {
+
+}
+
+.p-sub-crane__item {
+
+}
