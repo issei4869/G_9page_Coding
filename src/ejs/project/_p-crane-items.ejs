@@ -1,0 +1,76 @@
+<%
+project='.' ; ejsPath='.'
+
+let items = [
+  {
+    img: "./assets/images/common/crane1.jpg",
+    alt: "",
+    title: 'GF-8',
+    tabtext: '単体レンタル可',
+    tabcolor: '',
+    btnlink: 'crane01.html',
+    color: ''
+  },
+  {
+    img: "./assets/images/common/crane2.jpg",
+    alt: "",
+    title: 'GF-16',
+    tabtext: '要オペレーター',
+    tabcolor: 'black',
+    btnlink: 'crane01.html',
+    color: ''
+  },
+  {
+    img: "./assets/images/common/crane3.jpg",
+    alt: "",
+    title: 'GF CRANE',
+    tabtext: '要オペレーター',
+    tabcolor: 'black',
+    btnlink: 'crane01.html',
+    color: ''
+  },
+  {
+    img: "./assets/images/common/crane4.jpg",
+    alt: "",
+    title: 'GF CRANE',
+    tabtext: '単体レンタル可',
+    tabcolor: '',
+    btnlink: 'crane01.html',
+    color: ''
+  },
+  {
+    img: "./assets/images/common/crane5.jpg",
+    alt: "",
+    title: 'GF CRANE',
+    tabtext: '要オペレーター',
+    tabcolor: 'black',
+    btnlink: 'crane01.html',
+    color: ''
+  },
+  {
+    img: "./assets/images/common/crane6.jpg",
+    alt: "",
+    title: 'GF CRANE',
+    tabtext: '要オペレーター',
+    tabcolor: 'black',
+    btnlink: 'crane01.html',
+    color: ''
+  },
+]
+%>
+
+<ul class="p-crane-items">
+    <% items.forEach(function(item) { %>
+        <li class="p-crane-items__item">
+            <%- include(project + '/_p-crane-item', {
+                img: item.img,
+                alt: item.alt,
+                title: item.title,
+                tabtext: item.tabtext,
+                tabcolor: item.tabcolor,
+                btnlink: item.btnlink,
+                color: item.color
+            }) %>
+        </li>
+    <% }); %>
+</ul>

@@ -1,77 +1,22 @@
-<%
-project='.' ; ejsPath='.'
-
-let items = [
-  {
-    img: "./assets/images/common/crane1.jpg",
-    alt: "",
-    title: 'GF-8',
-    tabtext: '単体レンタル可',
-    tabcolor: '',
-    btnlink: 'crane01.html'
-  },
-  {
-    img: "./assets/images/common/crane2.jpg",
-    alt: "",
-    title: 'GF-16',
-    tabtext: '要オペレーター',
-    tabcolor: 'black',
-    btnlink: 'crane01.html',
-  },
-  {
-    img: "./assets/images/common/crane3.jpg",
-    alt: "",
-    title: 'GF CRANE',
-    tabtext: '要オペレーター',
-    tabcolor: 'black',
-    btnlink: 'crane01.html',
-  },
-  {
-    img: "./assets/images/common/crane4.jpg",
-    alt: "",
-    title: 'GF CRANE',
-    tabtext: '単体レンタル可',
-    tabcolor: '',
-    btnlink: 'crane01.html',
-  },
-  {
-    img: "./assets/images/common/crane5.jpg",
-    alt: "",
-    title: 'GF CRANE',
-    tabtext: '要オペレーター',
-    tabcolor: 'black',
-    btnlink: 'crane01.html',
-  },
-  {
-    img: "./assets/images/common/crane6.jpg",
-    alt: "",
-    title: 'GF CRANE',
-    tabtext: '要オペレーター',
-    tabcolor: 'black',
-    btnlink: 'crane01.html',
-  },
-]
-%>
-
-
 <div class="p-sub-crane">
     <div class="p-sub-crane__inner l-inner">
-        <aside class="archive-blog__sidebar">
-            <%- include(ejsPath + './project/_p-sidebar-nav' ) %>
+        <aside class="p-sub-crane__sidebar">
+            <% if (type === 'small') { %>
+                <%- include(ejsPath + './project/_p-sidebar-nav' , {
+                    color: 'white',
+                }) %>         
+            <% } else { %>
+                <%- include(ejsPath + './project/_p-sidebar-nav' , {
+                    color: '',
+                }) %>
+            <% } %>
         </aside>
-        <ul class="p-sub-crane__items">
-            <% items.forEach(function(item) { %>
-                <li class="p-sub-crane__item">
-                    <%- include(project + '/_p-crane-item', {
-                        img: item.img,
-                        alt: item.alt,
-                        title: item.title,
-                        tabtext: item.tabtext,
-                        tabcolor: item.tabcolor,
-                        btnlink: item.btnlink
-                    }) %>
-                </li>
-            <% }); %>
-        </ul>
+        <div class="p-sub-crane__content">
+            <% if (type === 'small') { %>
+                <%- include(ejsPath + './project/_p-crane-detail' ) %> 
+            <% } else { %>
+                <%- include(ejsPath + './project/_p-crane-items' ) %>
+            <% } %>
+        </div>
     </div>
 </div>

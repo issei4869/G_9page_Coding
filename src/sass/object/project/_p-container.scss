@@ -1,0 +1,47 @@
+@use 'global' as *;
+
+.p-container {
+    @include mq('md') {
+        display: grid;
+        row-gap: rem(40);
+        column-gap: rem(20);
+    }
+}
+
+.p-container__item {
+    background: #D9D9D9;
+    width: 100%;
+    
+}
+
+.p-container--1 {
+    
+}
+
+.p-container--2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.p-container--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.p-container--4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.p-container--1 .p-container__item {
+    height: rem(956);
+}
+
+.p-container--2 .p-container__item {
+    height: rem(470);
+}
+
+.p-container--3 .p-container__item {
+    height: rem(308);
+}
+
+.p-container--4 .p-container__item {
+    height: rem(228);   
+}

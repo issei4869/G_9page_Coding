@@ -1,5 +1,11 @@
+<!-- 有効な色のリストを定義 -->
+<% const validColors = ['white']; %>
 
-<ul class="p-sidebar-nav side_equipment_cat">
+<!-- 有効な色が指定された場合、その色に応じたクラス名を生成。そうでなければ、空文字列を代入 -->
+<% const colorClass = validColors.includes(color) ? ` p-sidebar-nav--${color}` : ''; %>
+
+
+<ul class="p-sidebar-nav side_equipment_cat<%- colorClass %>">
     <li class="cat-item current-cat-parent"><a href="#">特殊機材</a> <span>35</span>
       <ul class="children">
         <li class="cat-item current-cat"><a href="#">クレーン</a> <span>5</span></li>

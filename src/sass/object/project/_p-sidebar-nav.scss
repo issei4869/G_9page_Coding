@@ -17,8 +17,8 @@
 }
 
 
-.cat-item > a {
-    
+.cat-item  a {
+    color: #262626;
 }
 
 .current-cat-parent {
@@ -27,7 +27,7 @@
 
 
 //大項目
-.side_equipment_cat > .cat-item > a {
+.p-sidebar-nav > .cat-item > a {
     // font-size: rem(18);
     // line-height: calc(26 / 18);
     // font-weight: $bold;
@@ -43,8 +43,9 @@
 
 
 //背景色グレー
-.side_equipment_cat > .current-cat-parent > a {
+.p-sidebar-nav > .current-cat-parent > a {
     background-color: #D1D0D0;
+    color: #323031;
     border-radius: 5px;
 }
 
@@ -53,7 +54,6 @@
     font-size: rem(16);
     line-height: calc(33 / 16);
     font-weight: $medium;
-    color: #323031;
 }
 
 //中項目
@@ -77,7 +77,7 @@
 }
 
 //大項目 数字
-.side_equipment_cat > .cat-item > span {
+.p-sidebar-nav > .cat-item > span {
     // padding: rem(8) 0;
     font-size: rem(18);
 }
@@ -88,7 +88,55 @@
     font-size: rem(16);
 }
 
+//黄色背景
 .current-cat {
     background-color: $accent-yellow;
     border-radius: 5px;
 }
+
+.current-cat > a {
+    color: #323031;
+}
+
+
+// モディファイア
+.p-sidebar-nav--white {
+    border-top: 1px solid $accent-white;
+    border-bottom: 1px solid $accent-white;
+}
+
+//全体の文字を白に
+.p-sidebar-nav--white .cat-item  a {
+    color: $accent-white;
+}
+
+//白背景
+.p-sidebar-nav--white > .current-cat-parent > a {
+    background-color: $accent-white;
+    color: #323031;
+}
+
+//黄色背景
+.p-sidebar-nav--white li .children > .current-cat > a {
+    color: #323031;
+}
+
+.p-sidebar-nav--white li .children > .cat-item {
+    // color: $accent-white;
+}
+
+//項目 数字
+.p-sidebar-nav--white .cat-item > span {
+    color: $accent-white;
+}
+
+//背景白　数字
+.p-sidebar-nav--white .current-cat-parent > span {
+    color: $black;
+}
+
+//背景黄色　数字
+.p-sidebar-nav--white .cat-item > .children > .current-cat > span {
+    color: $black;
+}
+

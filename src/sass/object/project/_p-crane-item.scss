@@ -79,12 +79,6 @@
   }
 }
 
-.p-sub-crane__item + .p-sub-crane__item {
-  @include mq('md') {
-    margin-top: rem(124);
-  }
-}
-
 .p-crane-item__list-item dt {
   width: 100%;
   max-width: rem(85);
@@ -122,4 +116,17 @@
     margin-left: auto;
     margin-top: rem(24);
   }
+}
+
+
+// モディファイア
+.p-crane-item--white .p-crane-item__content .p-crane-item__wrapper .p-crane-item__title,
+.p-crane-item--white .p-crane-item__list-items .p-crane-item__list-item {
+  color: $accent-white;
+}
+
+.p-crane-item--white .p-crane-item__img {
+  background-color: #C4C4C4;
+  aspect-ratio: 623 / 469;
+  max-width: rem(623);
 }

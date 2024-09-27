@@ -24,17 +24,13 @@
     }
 }
 
-.archive-blog__sidebar {
+.p-sub-crane__sidebar {
     width: 100%;
     @include mq('md') {
         max-width: rem(297);
     }
 }
 
-.p-sub-crane__items {
+.p-sub-crane__content {
     width: 100%;
-}
-
-.p-sub-crane__item {
-
 }

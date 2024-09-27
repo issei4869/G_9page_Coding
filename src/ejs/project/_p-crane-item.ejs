@@ -10,8 +10,11 @@ let lists = [
 
 %>
 
+<% const validColor = ['white']; %>
+<% const colorClass = validColor.includes(color) ? ` p-crane-item--${color}` : ''; %>
 
-<div class="p-crane-item">
+
+<div class="p-crane-item<%- colorClass %>">
     <div class="p-crane-item__img">
         <img src="<%- img %>" alt="<%- alt %>" />
     </div>
@@ -29,8 +32,10 @@ let lists = [
               </div>
             <% }); %>
         </dl>
-        <div class="p-crane-item__btn">
-            <%- include(ejsPath + './component/_c-btn2', { link: btnlink, text: '詳細はこちら' }) %>
-        </div>
+        <% if (color !== 'white') { %>
+            <div class="p-crane-item__btn">
+                <%- include(ejsPath + './component/_c-btn2', { link: btnlink, text: '詳細はこちら' }) %>
+            </div>
+        <% } %>
     </div>
 </div>

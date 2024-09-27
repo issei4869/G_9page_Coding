@@ -1,0 +1,14 @@
+@use "global" as *;
+
+.p-crane-items {
+  
+  @include mq('md') {
+    
+  }
+}
+
+.p-crane-items__item + .p-crane-items__item {
+  @include mq('md') {
+    margin-top: rem(124);
+  }
+}
