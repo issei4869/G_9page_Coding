@@ -126,6 +126,22 @@
       <%- include(ejsPath + '/project/_p-sidebar-nav' , {
         color: ''
        }) %>
+
+      <!--機材詳細　カード1枚のパーツ -->
+      <h2 class="ejs-style-title">機材詳細　カード1枚のパーツ </h2>
+      <%- include(ejsPath + '/project/_p-container-item' , {
+        img: '',
+        alt: '',
+        text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'
+      }) %>
+
+      <!--機材詳細　カード3枚のパーツ -->
+      <h2 class="ejs-style-title">機材詳細　カード3枚のパーツ </h2>
+      <%- include(ejsPath + '/project/_p-container-item-3' ) %>
+
+      <!--機材詳細　カード4枚のパーツ -->
+      <h2 class="ejs-style-title">機材詳細　カード4枚のパーツ </h2>
+      <%- include(ejsPath + '/project/_p-container-item-4' ) %>
        
     </main>
     <%- include(ejsPath + '/common/_footer' ) %>

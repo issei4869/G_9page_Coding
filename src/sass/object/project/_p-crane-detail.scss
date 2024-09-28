@@ -1,1 +1,50 @@
 @use 'global' as *;
+
+.p-crane-detail {
+
+}
+
+.p-crane-detail__item {
+
+}
+
+.p-crane-detail__margin {
+    @include mq('md') {
+        margin-top: rem(40);
+    }
+}
+
+.p-crane-detail__container {
+    @include mq('md') {
+        display: grid;
+        column-gap: rem(20);
+    }
+}
+
+.p-crane-detail__container-1 {
+    @include mq('md') {
+    }
+}
+
+.p-crane-detail__container-2 {
+    @include mq('md') {
+        display: grid;
+        column-gap: rem(20);
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+.p-crane-detail__container-3 {
+    @include mq('md') {
+        display: grid;
+        column-gap: rem(20);
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+.p-crane-detail__container-4 {
+    @include mq('md') {
+        display: grid;
+        column-gap: rem(20);
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+

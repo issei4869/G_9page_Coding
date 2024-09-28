@@ -1,3 +1,63 @@
+<%
+project='.' ; ejsPath='.'
+
+let cards = [
+  {
+    content: [
+        {img: '', alt: '', text: ''},
+        {img: '', alt: '', text: ''},
+        {img: '', alt: '', text: ''},
+        {img: '', alt: '', text: ''}
+    ]
+  },
+  {
+    content: [
+        {img: '', alt: '', text: ''},
+        {img: '', alt: '', text: ''},
+        {img: '', alt: '', text: ''}
+    ]
+  },
+  {
+    content: [
+        {img: '', alt: '', text: ''},
+        {img: '', alt: '', text: ''}
+    ]
+  },
+  {
+    content: [
+        {img: '', alt: '', text: ''}
+    ]
+  },
+  {
+    content: [
+      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'},
+      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'},
+      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'},
+      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'}
+    ]
+  },
+  {
+    content: [
+      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'},
+      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'},
+      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'}
+    ]
+  },
+  {
+    content: [
+      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'},
+      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'}
+    ]
+  },
+  {
+    content: [
+      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'}
+    ]
+  }
+  
+]
+%>
+
 <div class="p-crane-detail">
     <div class="p-crane-detail__item">
         <%- include(project + '/_p-crane-item', {
@@ -10,5 +70,32 @@
             color: 'white'
         }) %>
     </div>
-    <%- include(project + '/_p-container') %>
+    
+    <% cards.forEach(function(card) { %>
+        <div class="p-crane-detail__margin">
+            <div class="p-crane-detail__container-<%- card.content.length %>">
+                <% card.content.forEach(function(item) { %>
+                    <%- include(project + '/_p-container-item' , {
+                        img: item.img,
+                        alt: item.alt,
+                        text: item.text
+                    }) %>
+                <% }); %>
+            </div>
+        </div>
+    <% }); %>
+    
+
+    <div class="p-crane-detail__margin">
+        
+    </div>
+    <div class="p-crane-detail__margin">
+        
+    </div>
+    <div class="p-crane-detail__margin">
+        
+    </div>
+    <div class="p-crane-detail__margin">
+        
+    </div>
 </div>

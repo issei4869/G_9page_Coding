@@ -1,0 +1,13 @@
+@use 'global' as *;
+
+@use 'global' as *;
+
+.p-container-item-3 {
+
+}
+
+.p-container-item-3__margin {
+    display: grid;
+    gap: rem(20);
+    grid-template-columns: repeat(3, 1fr);
+}
