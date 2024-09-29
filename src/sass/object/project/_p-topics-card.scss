@@ -1,0 +1,37 @@
+@use 'global' as *;
+
+
+.p-topics-card {
+
+}
+
+.p-topics-card__role {
+    display: flex;
+    gap: rem(16);
+    margin-top: rem(32);
+}
+
+.p-topics-card__category,
+.p-topics-card__date {
+    font-size: rem(12);
+    font-weight: $medium;
+    font-family: second-font-family;
+    color: #262626;
+    line-height: 1;
+}
+
+.p-topics-card__category {
+    
+}
+
+.p-topics-card__date {
+
+}
+
+.p-topics-card__title {
+    font-size: rem(16);
+    font-weight: $bold;
+    color: #262626;
+    margin-top: rem(16);
+    line-height: 1;
+}

@@ -23,7 +23,6 @@
     font-weight: $bold;
     font-size: rem(40);
     color: $accent-white;
-    text-transform: uppercase;
     line-height: 1;
     @include mq("md") {
         font-size: rem(160);

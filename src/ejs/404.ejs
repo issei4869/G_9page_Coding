@@ -1,0 +1,28 @@
+<% baseUrlPath='.' ; ejsPath='.' ; pageData="top" %>
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath, page:
+  json[pageData] }) %>
+  <body>
+    <%- include(ejsPath + '/common/_header' ) %>
+    <main>
+      <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:'404 Not Found', heading_ja:'お探しのページは存在しません'}) %>
+
+      <div class="l-404">
+        <div class="p-404">
+            <div class="p-404__inner l-inner">
+                <p class="p-404__eng">Sorry, the page you're looking for can't be found.</p>
+                <p class="p-404__ja">お探しのページは存在しませんでした</p>
+                <div class="p-404__btn">
+                    <%- include(ejsPath + '/component/_c-404-btn' ) %>
+                </div>
+            </div>
+        </div>
+      </div>
+
+    </main>
+    <div class="l-top-160">
+      <%- include(ejsPath + '/common/_footer' ) %>
+    </div>
+  </body>
+</html>

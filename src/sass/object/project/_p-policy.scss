@@ -1,0 +1,69 @@
+@use 'global' as *;
+
+
+
+.p-policy {
+
+}
+
+.p-policy__introduction {
+    font-size: rem(18);
+    font-weight: $bold;
+    line-height: calc(240 / 100);
+    letter-spacing: 0.06em;
+    color: $accent-black;
+    @include mq(md){
+        font-size: rem(21);
+    }
+}
+
+.p-policy__items {
+    margin-top: rem(20);
+    @include mq(md){
+        margin-top: rem(40);
+    }
+}
+
+.p-policy__item {
+    
+}
+
+.p-policy__item + .p-policy__item {
+    margin-top: rem(20);
+    @include mq(md){
+        margin-top: rem(40);
+    }
+}
+
+.p-policy__term {
+    font-size: rem(14);
+    font-weight: $medium;
+    line-height: calc(39 / 18);
+    letter-spacing: 0.02em;
+    color: $black;
+    @include mq(md){
+        font-size: rem(18);
+    }
+}
+
+.p-policy__description {
+    font-size: rem(10);
+    line-height: calc(240 / 100);
+    @include mq(md){
+        font-size: rem(15);
+    }
+}
+
+.p-policy__description-numbers {
+    counter-reset: number;
+}
+
+.p-policy__description-number {
+    padding-left: rem(15);
+    text-indent: rem(-15);
+}
+
+.p-policy__description-number::before {
+    content: counter(number) ". ";
+    counter-increment: number;
+}

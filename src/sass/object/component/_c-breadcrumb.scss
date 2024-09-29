@@ -15,12 +15,15 @@
 
 .c-breadcrumb__item {
   display: inline-block;
-  font-size: rem(24);
+  font-size: rem(16);
   font-family: $second-font-family;
   font-weight: $bold;
   display: flex;
   text-transform: capitalize;
   white-space: nowrap;
+  @include mq('md') {
+    font-size: rem(24);
+  }
 }
 
 /* エリプシス処理｜ブログやニュース記事タイトルが表示されることを想定 */

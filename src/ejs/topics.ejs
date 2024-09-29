@@ -1,0 +1,26 @@
+<% baseUrlPath='.' ; ejsPath='.' ; pageData="top" %>
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath, page:
+  json[pageData] }) %>
+  <body>
+    <%- include(ejsPath + '/common/_header' ) %>
+    <main>
+      <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:' TOPICS', heading_ja:'トピックス'}) %>
+
+      <div class="l-breadcrumb">
+        <%- include(ejsPath + '/component/_c-breadcrumb', { color:'', breadcrumb: [ 
+        { title:"Topics", url: "" },
+        ] }); %>
+      </div>
+
+      <div class="l-top-160">
+        <%- include(ejsPath + '/project/_p-sub-topics' ) %>
+      </div>
+
+    </main>
+    <div class="l-top-160">
+      <%- include(ejsPath + '/common/_footer' ) %>
+    </div>
+  </body>
+</html>

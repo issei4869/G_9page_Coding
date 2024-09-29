@@ -11,9 +11,9 @@
     @include mq('md') {
         // padding-left: rem(60);
         // padding-right: rem(109);
-        max-width: rem(1751);
-        padding-left: rem(60);
-        padding-right: rem(109);
+        max-width: 1751px + strip-unit($padding-pc) * 2;
+        // padding-left: rem(60);
+        // padding-right: rem(109);
     }
 }
 
@@ -33,4 +33,7 @@
 
 .p-sub-crane__content {
     width: 100%;
+    @include mq('md') {
+        max-width: rem(1270);
+    }
 }

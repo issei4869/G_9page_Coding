@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.c-404-btn {
+  display: inline-block;
+  max-width: rem(190);
+  width: 100%;
+  padding: rem(5) 0;
+  border: 1px solid $font-color;
+  text-align: center;
+  transition: all 0.3s;
+  @include mq('md') {
+    max-width: rem(321);
+    padding: rem(20) 0;
+  }
+}
+
+.c-404-btn__text {
+  font-size: rem(10);
+  font-weight: $bold;
+  font-family: $second-font-family;
+  color: $font-color;
+  transition: all 0.3s;
+  line-height: 1;
+  @include mq('md') {
+    font-size: rem(16);
+  }
+}
+
+.c-404-btn:hover {
+  background-color: $font-color;
+}
+
+.c-404-btn:hover .c-404-btn__text {
+  color: $accent-white;
+}

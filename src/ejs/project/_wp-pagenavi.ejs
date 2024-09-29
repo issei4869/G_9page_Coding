@@ -1,0 +1,14 @@
+<!-- prettier-ignore -->
+
+<% var number =['1', '2' , '3' , '4', '5' , '6',  '7' , '8', '9' , '10' ]; %>
+
+<div class='wp-pagenavi' role='navigation'>
+        <% for(var i=0; i < number.length; i++) { %>
+          <% if (number[i] === '1') { %>
+            <span class='current'><%= number[i] %></span>
+          <% } else { %>
+            <a class="page larger" href="#"><%= number[i] %></a>
+          <% } %>
+        <% } %> <!-- 繰り返し終了 -->
+  <!-- WP-PageNaviで出力される部分 ここまで -->
+</div>

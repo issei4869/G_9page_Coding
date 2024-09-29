@@ -1,0 +1,38 @@
+@use 'global' as *;
+
+.p-404 {
+
+}
+
+.p-404__eng,
+.p-404__ja {
+    text-align: center;
+    color: $black;
+    line-height: 1;
+}
+
+.p-404__eng {
+    font-size: rem(16);
+    @include mq('md') {
+        font-size: rem(32);
+    }
+}
+
+.p-404__ja {
+    font-size: rem(12);
+    margin-top: rem(30);
+    font-family: $second-font-family;
+    @include mq('md') {
+        margin-top: rem(43);
+        font-size: rem(18);
+    }
+}
+
+.p-404__btn {
+    margin-top: rem(80);
+    text-align: center;
+    @include mq('md') {
+        margin-top: rem(140);
+    }
+}
+

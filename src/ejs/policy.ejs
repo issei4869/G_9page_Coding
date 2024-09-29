@@ -1,0 +1,20 @@
+<% baseUrlPath='.' ; ejsPath='.' ; pageData="top" %>
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath, page:
+  json[pageData] }) %>
+  <body>
+    <%- include(ejsPath + '/common/_header' ) %>
+    <main>
+      <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:' Privacy Policy', heading_ja:'個人情報保護方針'}) %>
+
+      <div class="l-policy">
+        <%- include(ejsPath + '/project/_p-policy' ) %>
+      </div>
+
+    </main>
+    <div class="l-top-160">
+      <%- include(ejsPath + '/common/_footer' ) %>
+    </div>
+  </body>
+</html>
