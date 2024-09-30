@@ -43,3 +43,15 @@
 .c-section-heading__eng::first-letter {
 	text-transform: capitalize;
 }
+
+
+/////////////// モディファイア //////////////////
+.c-section-heading--company .c-section-heading__ja {
+    color: $font-color;
+}
+
+.c-section-heading--company .c-section-heading__eng {
+    font-size: rem(64);
+    color: $font-color;
+    margin-top: rem(13);
+}

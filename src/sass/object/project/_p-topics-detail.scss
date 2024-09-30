@@ -9,9 +9,9 @@
 }
 
 .p-topics-detail__content {
-    margin-top: rem(56);
+    margin-top: rem(30);
     @include mq('md') {
-        
+        margin-top: rem(56);
     }
 }
 
@@ -56,22 +56,34 @@
 
 .p-topics-detail__content h1 {
     font-weight: $bold;
-    font-size: rem(32);
+    font-size: rem(28);
     margin-top: rem(37);
+    @include mq('md') {
+        font-size: rem(32);
+    }
 }
 
 .p-topics-detail__content h2 {
-    font-size: rem(24);
+    font-size: rem(20);
     margin-top: rem(77);
+    @include mq('md') {
+        font-size: rem(24);
+    }
 }
 
 .p-topics-detail__content h3 {
-    font-size: rem(20);
+    font-size: rem(16);
     margin-top: rem(52);
+    @include mq('md') {
+        font-size: rem(20);
+    }
 }
 
 .p-topics-detail__content p {
-    font-size: rem(16);
+    font-size: rem(12);
+    @include mq('md') {
+        font-size: rem(16);  
+    }
 }
 
 .p-topics-detail__content p:nth-of-type(1) {
@@ -85,6 +97,7 @@
 
 .p-topics-detail__btn {
     text-align: center;
+    margin-top: rem(80);
     @include mq('md') {
         margin-top: rem(216);
     }

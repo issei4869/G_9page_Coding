@@ -14,49 +14,7 @@
     .ejs-style-background {
       background-color: rgba(0, 174, 255, 0.304);
     }
-
-    * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-        }
-        .container {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: auto auto auto;
-            gap: 10px;
-            max-width: 1000px;
-            margin: 20px auto;
-            padding: 10px;
-            background-color: #333;
-        }
-        .container div {
-            background-color: #c4c4c4;
-            height: 100px;
-            border: 3px solid #000;
-        }
-        .header {
-            grid-column: span 4;
-            background-color: #333;
-            color: white;
-            text-align: center;
-            font-size: 20px;
-            padding: 10px;
-        }
-        .box1 { grid-column: span 1; }
-        .box2 { grid-column: span 1; }
-        .box3 { grid-column: span 1; }
-        .box4 { grid-column: span 4; height: 200px; }
-        .box5 { grid-column: span 2; height: 150px; }
-        .box6 { grid-column: span 2; height: 150px; }
-        .large-box {
-            grid-column: span 4;
-            height: 300px;
-        }
+      
   </style>
 
   <body>
@@ -99,7 +57,7 @@
       <!--セクションタイトル -->
       <h2 class="ejs-style-title">セクションタイトル</h2>
       <!-- prettier-ignore -->
-      <%- include(ejsPath + '/component/_c-section-heading', { heading_eng:'About', heading_ja:'有限会社グリフィス' }) %>
+      <%- include(ejsPath + '/component/_c-section-heading', { page: "", heading_eng:'About', heading_ja:'有限会社グリフィス' }) %>
 
       <!--機材一覧用のパーツ -->
       <h2 class="ejs-style-title">機材一覧用のパーツ</h2>
@@ -127,7 +85,6 @@
         color: ''
        }) %>
 
-      
        
     </main>
     <%- include(ejsPath + '/common/_footer' ) %>

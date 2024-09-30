@@ -1,0 +1,124 @@
+@use 'global' as *;
+
+.p-about-recruit {
+    
+}
+
+.p-about-recruit__content {
+    background-color: $accent-white;
+    @include mq('md') {
+        padding: rem(102) rem(107) rem(89);
+        margin-top: rem(124);
+    }
+}
+
+.p-about-recruit__checkbox {
+    counter-reset: total;   
+    counter-reset: checked;
+    position: relative;
+    @include mq('md') {
+        
+    }
+}
+
+.p-about-recruit__checkbox label {
+    display: block;
+    counter-increment: total; /* "checkbox"クラスの数をカウント */
+    @include mq(md){
+        
+    }
+}
+
+.p-about-recruit__checkbox label:not(:first-of-type) {
+    margin-top: rem(10);
+    @include mq(md){
+        margin-top: 0;
+    }   
+}
+
+.p-about-recruit__checkbox input {
+	display: none;
+}
+
+.p-about-recruit__checkbox input + span {
+    cursor: pointer;
+    display: inline-block;
+    padding: 0 0 0 rem(24);
+    position: relative;
+}
+
+.p-about-recruit__checkbox input + span::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background: $accent-white;
+    border: 1px solid #3B3B3B;
+    display: block;
+    width: rem(12);
+    height: rem(12);
+}
+
+.p-about-recruit__checkbox input + span::after {
+    content: "";
+    margin-top: rem(-2);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%) rotate(-45deg);
+    display: block;
+    width: rem(15);
+    height: rem(8);
+    border-bottom: rem(3) solid #000;
+    border-left: rem(3) solid #000;
+    transition:  .3s;
+    opacity: 0;
+}
+
+.p-about-recruit__checkbox input:checked + span::after {
+    opacity: 1;
+    counter-increment: checked; /* チェックされているcheckboxの数をカウント */
+}
+
+.p-about-recruit__result {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    right: 0;
+}
+
+.p-about-recruit__checked-count {
+    font-size: rem(32);
+    font-weight: $bold;
+    color: $black;
+}
+
+.p-about-recruit__total-count {
+    font-size: rem(16);
+    font-weight: $bold;
+    color: $black;
+}
+
+.p-about-recruit__heading,
+.p-about-recruit__checkbox input + span,
+.p-about-recruit__text {
+    @include mq('md') {
+        font-size: rem(20);
+        line-height: calc(34 / 20);
+        color: $black;
+    }
+}
+
+.p-about-recruit__heading {
+    letter-spacing: 0.01em;
+}
+
+.p-about-recruit__text {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    @include mq('md') {
+        margin-top: rem(67);
+    }
+}

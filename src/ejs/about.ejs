@@ -1,0 +1,59 @@
+<% baseUrlPath='.' ; ejsPath='.' ; pageData="top" %>
+<!DOCTYPE html>
+<html lang="ja">
+  <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath, page:
+  json[pageData] }) %>
+  <body>
+    <%- include(ejsPath + '/common/_header' ) %>
+    <main>
+      <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:' COMPANY', heading_ja:'会社概要'}) %>
+
+      <%- include(ejsPath + '/project/_p-about-img' ) %>
+
+      <div class="p-about__bgcolor">
+        <div class="p-about__inner l-inner">
+          <div class="p-about__contents">
+            <div class="p-about__info">
+              <div class="p-about__heading">
+                  <%- include(ejsPath + '/component/_c-section-heading', { page: 'company', heading_eng:'Company Info', heading_ja:'企業情報' }) %>
+              </div>
+              <div class="p-about__content">
+                  <%- include(ejsPath + '/project/_p-about-info' ) %>
+              </div>
+            </div>
+            <div class="p-about__access">
+                <div class="p-about__heading">
+                    <%- include(ejsPath + '/component/_c-section-heading', { page: 'company', heading_eng:'Access', heading_ja:'アクセス' }) %>
+                </div>
+                <div class="p-about__content">
+                    <%- include(ejsPath + '/project/_p-about-access' ) %>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-about__inner l-inner">
+        <div class="p-about__contents">
+          <div class="p-about__recruit">
+              <div class="p-about__heading">
+                  <%- include(ejsPath + '/component/_c-section-heading', { page: 'company', heading_eng:'Recruit', heading_ja:'採用情報' }) %>
+              </div>
+              <div class="p-about__content">
+                  <%- include(ejsPath + '/project/_p-about-recruit' ) %>
+              </div>
+          </div>
+          <div class="p-about__description">
+              <div class="p-about__heading">
+                  <%- include(ejsPath + '/component/_c-section-heading', { page: 'company', heading_eng:'「エンドロールに名を刻め」', heading_ja:'仕事内容について' }) %>
+              </div>
+              <div class="p-about__content">
+                  <%- include(ejsPath + '/project/_p-about-description' ) %>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </main>
+    <%- include(ejsPath + '/common/_footer' ) %>
+  </body>
+</html>

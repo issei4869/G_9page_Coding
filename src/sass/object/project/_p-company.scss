@@ -1,0 +1,38 @@
+@use 'global' as *;
+
+
+.p-company {
+    
+}
+
+.p-company__heading {
+    position: absolute;
+    content: "";
+    left: 0;
+    max-width: calc((451 / 1533) * 100%);
+    width: 100%;
+}
+
+.p-company__content {
+    max-width: calc((944 / 1533) * 100%);
+    width: 100%;
+    margin-left: auto;
+}
+
+.p-company__info {
+
+}
+
+.p-company__access {
+    @include mq('md') {
+        margin-top: rem(170);
+    }
+}
+
+.p-company__recruit {
+
+}
+
+.p-company__description {
+
+}

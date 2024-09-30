@@ -1,0 +1,61 @@
+@use 'global' as *;
+
+.p-about__bgcolor {
+    background-color: #FBFBFB;
+    @include mq('md') {
+        padding-top: rem(152);
+        padding-bottom: rem(150);
+    }
+}
+
+.p-about__inner {
+
+}
+
+.p-about__inner.l-inner {
+    @include mq('md') {
+        padding: 0 rem(48);
+        margin-left: 0;
+        margin-right: auto;
+        max-width: rem(1629);
+    }
+}
+
+.p-about__contents {
+    position: relative;
+    @include mq('md') {
+        
+    }
+}
+
+.p-about__heading {
+    position: absolute;
+    content: "";
+    left: 0;
+    max-width: calc((451 / 1533) * 100%);
+    width: 100%;
+}
+
+.p-about__content {
+    max-width: calc((944 / 1533) * 100%);
+    width: 100%;
+    margin-left: auto;
+}
+
+.p-about__info {
+
+}
+
+.p-about__access {
+    @include mq('md') {
+        margin-top: rem(170);
+    }
+}
+
+.p-about__recruit {
+
+}
+
+.p-about__description {
+
+}

@@ -88,4 +88,27 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     });
     }
 
+
+    /////////////////////// チェックボックスカウント ///////////////////////
+    const checkboxes = document.querySelectorAll('.p-about-recruit__checkbox input[type="checkbox"]');
+    const checkedCountElem = document.querySelector('.p-about-recruit__checked-count');
+    const totalCountElem = document.querySelector('.p-about-recruit__total-count');
+
+    // 初期の合計数をセット
+    totalCountElem.textContent = String(checkboxes.length).padStart(2, '0');
+
+    // チェックされた数を数えて表示する関数
+    function updateCheckedCount() {
+        const checkedCount = document.querySelectorAll('.p-about-recruit__checkbox input:checked').length;
+        checkedCountElem.textContent = String(checkedCount).padStart(2, '0');
+    }
+
+    // ページ読み込み時に一度実行
+    updateCheckedCount();
+
+    // 各チェックボックスにイベントリスナーを追加
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', updateCheckedCount);
+    });
+
 });
