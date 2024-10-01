@@ -3,16 +3,16 @@
 .c-totop {
     position: relative;
     display: inline-block;
-    max-width: rem(145);
-    width: 100%;
+    width: rem(145);
+    // width: 100%;
     padding: rem(59) 0;
     background-color: $black;
     border: 1px solid $accent-white;
     text-align: center;
     transition: all 0.3s;
     border-radius: 50%;
-    // opacity: 0;
-    // visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
 
   @include mq('md') {
 

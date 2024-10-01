@@ -8,7 +8,10 @@
 .p-topics-card__role {
     display: flex;
     gap: rem(16);
-    margin-top: rem(32);
+    margin-top: rem(24);
+    @include mq('md') {
+        margin-top: rem(32);
+    }
 }
 
 .p-topics-card__category,

@@ -1,0 +1,39 @@
+@use 'global' as *;
+
+/* ローディングアニメーション */
+.loading-animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $accent-white;  /* 初期状態は赤背景 */
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    transition: all 1s;
+    z-index: 9999;
+    opacity: 0;  /* 背景をフェードアウト */
+    visibility: hidden;  /* 完全に非表示にする */
+}
+
+/* ローディング終了後のアニメーション */
+.loading-animation.is-active {
+    transition: all 0s;
+    opacity: 1;
+    visibility: visible;
+    
+}
+  
+  /*SVGのサイズ*/
+  svg{
+    max-width: 600px;/*SVGタグの横幅*/
+    width: 100%;/* レスポンシブ対応にするため100%を指定*/
+    height: auto;
+  }
+  /*========= 手書き風にするためのCSS ===============*/
+  /* マスクをするパスの設定*/
+  #mask .st0{
+    fill:none;
+    stroke:#FFFFFF;
+    stroke-width: 5.5;/*線の太さを指定する*/
+    stroke-miterlimit: 10;
+  }

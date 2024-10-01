@@ -14,12 +14,34 @@
     .ejs-style-background {
       background-color: rgba(0, 174, 255, 0.304);
     }
+
+    /* .loading {
+      width: 100vw;
+      height: 100vh;
+      transition: all 10s;
+      background-color: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .loading.is-active {
+      opacity: 0;
+      visibility: hidden;
+    } */
+
       
   </style>
 
   <body>
+
     <%- include(ejsPath + '/common/_header' ) %>
     <main>
+
+      
       
       <!-- 下層ページMV -->
       <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:' EQUIPMENT', heading_ja:'機材一覧'}) %>

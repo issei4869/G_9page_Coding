@@ -18,13 +18,17 @@
 }
 
 .p-sub-topics__tab {
-    margin-top: rem(136);
+    margin-top: rem(80);
+    padding: 0 rem(10);
     display: flex;
     justify-content: center;
+    @include mq('md') {
+        margin-top: rem(136);
+    }
 }
 
 .p-sub-topics__text {
-    padding: 0 rem(50);
+    padding: 0 rem(32);
     border-left: 1px solid #8A8A8A;
     text-transform: uppercase;
     font-weight: $bold;
@@ -32,6 +36,9 @@
     color: #8A8A8A;
     letter-spacing: 0.05em;
     line-height: 1;
+    @include mq('md') {
+        padding: 0 rem(50);
+    }
 }
 
 .p-sub-topics__text.is-active {
@@ -52,6 +59,7 @@
 }
 
 .p-sub-topics__cards {
+    margin-top: rem(40);
     @include mq('md') {
         margin-top: rem(56);
     }
@@ -59,6 +67,7 @@
 
 .p-sub-topics__card {
     display: grid;
+    row-gap: rem(50);
     @include mq('md') {
         grid-template-columns: repeat(3, 1fr);
         row-gap: rem(36);
@@ -67,7 +76,8 @@
 }
 
 .p-sub-topics__pagenation {
+    margin-top: rem(80);
     @include mq('md') {
-        margin-top: rem(80);
+        
     }
 }

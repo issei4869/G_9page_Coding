@@ -1,5 +1,19 @@
-
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
+    /////////////////////// ページトップへ戻るボタン ///////////////////////
+    var pagetop = $('#page-topbtn');
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+        jQuery('.c-totop').addClass('is-show');
+        } else {
+        jQuery('.c-totop').removeClass('is-show');
+        }
+    });
+
+    pagetop.click(function () {
+        $('body, html').animate({ scrollTop: 0 }, 500);
+        return false;
+    });
+    
     /////////////////////// ドロワーメニュー ///////////////////////
     $('.js-hamburger').click(function () {
         if ($('.js-hamburger').hasClass('is-active')) {
@@ -111,4 +125,34 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         checkbox.addEventListener('change', updateCheckedCount);
     });
 
+    
 });
+
+new Vivus('mask', {//svgに指定したid名
+    type: 'oneByOne',// アニメーションのタイプを設定
+    duration: 350,//アニメーションの時間。数字が小さくなれば速くなり、大きくなれば遅くなる
+     animTimingFunction:Vivus.EASE_OUT,
+     start: 'autostart'
+    });
+
+$(function () {
+    var webStorage = function () {
+        if (sessionStorage.getItem('access')) {
+            // 2回目以降アクセス時の処理
+            // $(".loading-animation").removeClass('is-active');  // ローディングアニメーションを即座に非表示
+            $(".loading-animation").addClass('is-active');  // ローディングアニメーションを表示 
+            setTimeout(function () {
+                $(".loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
+            }, 5000);  // ローディング表示の時間（5秒）
+        } else {
+            // 初回アクセス時の処理
+            sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
+            $(".loading-animation").addClass('is-active');  // ローディングアニメーションを表示
+
+            setTimeout(function () {
+                $(".loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
+            }, 5000);  // ローディング表示の時間（5秒）
+        }
+    };
+    webStorage();
+  });

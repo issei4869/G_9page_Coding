@@ -8,9 +8,10 @@
 
 .wp-pagenavi a,
 .wp-pagenavi span {
-    width: rem(56);
-    height: rem(56);
-    // padding: rem(8) rem(14) rem(9) rem(13);
+    // width: rem(56);
+    // height: rem(56);
+
+    padding: rem(19) rem(22) rem(18) rem(23);
     line-height: calc(19 / 16);
     font-family: $second-font-family;
     font-weight: $bold;
@@ -33,16 +34,18 @@
     margin-left: 0;
 }
 
-.wp-pagenavi a:last-child {
-
-}
-
-.wp-pagenavi .page:nth-child(n + 6) {
+.wp-pagenavi a:nth-of-type(3),
+.wp-pagenavi a:nth-of-type(4) {
     display: none;
     @include mq('md') {
         display: inline-flex;
     }
 }
+
+.wp-pagenavi a:last-child {
+
+}
+
 
 .wp-pagenavi a:hover {
     color: $accent-white;
