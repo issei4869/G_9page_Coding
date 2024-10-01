@@ -9,9 +9,10 @@
     }
   </style>
   <body>
-    <%- include(ejsPath + '/common/_header' ) %>
+    <%- include(ejsPath + '/common/_header' , { btncolor:'yellow' }); %>
+
     <main>
-      <div class="l-breadcrumb">
+      <div class="l-breadcrumb l-breadcrumb--crane01">
         <%- include(ejsPath + '/component/_c-breadcrumb', { color:'', breadcrumb: [ 
         { title:"equipment", url: "equipment.html" },
         { title:"crane", url: "crane.html" },

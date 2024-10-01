@@ -1,6 +1,7 @@
 @use 'global' as *;
 
 .l-sub-equipment + .l-sub-equipment {
+    margin-top: rem(80);
     @include mq('md') {
         margin-top: rem(160);
     }

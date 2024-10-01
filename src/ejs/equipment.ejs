@@ -4,7 +4,7 @@
   <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath, page:
   json[pageData] }) %>
   <body>
-    <%- include(ejsPath + '/common/_header' ) %>
+    <%- include(ejsPath + '/common/_header' , { btncolor:'' }); %>
     <main>
       <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:' EQUIPMENT', heading_ja:'機材一覧'}) %>
 

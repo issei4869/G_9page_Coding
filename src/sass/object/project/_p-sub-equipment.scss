@@ -6,6 +6,7 @@
 
 .p-sub-equipment--white {
     background-color: $accent-white;
+    padding: rem(80) 0;
     @include mq('md') {
         padding: rem(160) 0;
     }
@@ -21,6 +22,7 @@
 }
 
 .p-sub-equipment__category {
+    margin-top: rem(10);
     display: flex;
     align-items: center;
     gap: rem(10);
@@ -30,10 +32,12 @@
 }
 
 .p-sub-equipment__tab {
+    font-size: rem(12);
     font-weight: $bold;
     color: $black;
     background-color: $accent-yellow;
     border-radius: 22px;
+    padding: rem(3) rem(10);
     @include mq('md') {
         font-size: rem(17);
         line-height: calc(25 / 17);
@@ -49,6 +53,7 @@
 }
 
 .p-sub-equipment__items {
+    margin-top: rem(40);
     display: grid;
     @include mq('md') {
         gap: rem(64) rem(8);
@@ -58,8 +63,16 @@
 }
 
 .p-sub-equipment__item {
+    
     @include mq('md') {
         
+    }
+}
+
+.p-sub-equipment__item + .p-sub-equipment__item {
+    margin-top: rem(32);
+    @include mq('md') {
+        margin-top: 0;
     }
 }
 
@@ -96,6 +109,7 @@
 .p-sub-equipment__wrapper {
     display: flex;
     align-items: center;
+    margin-top: rem(10);
     @include mq('md') {
         margin-top: rem(15);
     }
@@ -199,77 +213,3 @@
 .p-sub-equipment__item:hover .p-sub-equipment__img img {
     transform: scale(1.2);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.c-arrow-link {
-    position: relative;
-    padding-right: 40px;
-   
-  }
-  .c-arrow-link--icon {
-    overflow: hidden;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 30px;
-    margin: auto 0;
-    line-height: 1;
-    // background-color: #fff;
-  }
-  .c-arrow-link--icon:before,
-  .c-arrow-link--icon:after {
-    content: "→";
-    position: absolute;
-    top: 0;
-    right: 0;
-    animation-fill-mode: both;
-    animation-duration: 0.6s;
-  }
-  .c-arrow-link--icon:after {
-    transform: translateX(-100%);
-  }
-  .c-arrow-link.is-hover .c-arrow-link--icon:before {
-    animation-name: transformLeftRight;
-    animation-delay: 0.2s;
-  }
-  .c-arrow-link.is-hover .c-arrow-link--icon:after {
-    animation-name: transformRightLeft;
-  }
-  .c-arrow-link.is-hover:hover .c-arrow-link--icon:before {
-    animation-name: transformRightLeft;
-    animation-delay: 0s;
-  }
-  .c-arrow-link.is-hover:hover .c-arrow-link--icon:after {
-    animation-name: transformLeftRight;
-    animation-delay: 0.2s;
-  }
-  
-  @keyframes transformLeftRight {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-  @keyframes transformRightLeft {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(100%);
-    }
-  }

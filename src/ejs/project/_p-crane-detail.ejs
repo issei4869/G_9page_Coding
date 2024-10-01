@@ -45,17 +45,18 @@ let cards = [
   },
   {
     content: [
-      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'},
-      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'}
+      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'},
+      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'}
     ]
   },
   {
     content: [
-      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'}
+      {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'}
     ]
   }
   
 ]
+
 %>
 
 <div class="p-crane-detail">
@@ -70,32 +71,42 @@ let cards = [
             color: 'white'
         }) %>
     </div>
+
+    <div class="p-crane-detail__heading">
+      <h2 class="p-crane-detail__h2">
+        GF CRANEが入荷しました。（中見出し）
+      </h2>
+      <p class="p-crane-detail__h3">
+        〇〇TYPE（小見出し）
+      </p>
+      <p class="p-crane-detail__p">
+        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+      </p>
+    </div>
     
     <% cards.forEach(function(card) { %>
-        <div class="p-crane-detail__margin">
+        <div class="p-crane-detail__cards">
             <div class="p-crane-detail__container-<%- card.content.length %>">
-                <% card.content.forEach(function(item) { %>
-                    <%- include(project + '/_p-container-item' , {
-                        img: item.img,
-                        alt: item.alt,
-                        text: item.text
-                    }) %>
-                <% }); %>
+              <% card.content.forEach(function(item) { %>
+                <div class="p-crane-detail__card">
+                      <%- include(project + '/_p-container-item' , {
+                          img: item.img,
+                          alt: item.alt,
+                          text: item.text
+                      }) %>
+                  </div>
+              <% }); %>
             </div>
         </div>
     <% }); %>
     
-
     <div class="p-crane-detail__margin">
-        
+      <div class="p-crane-detail__img">
+        <img src="" alt="">
+      </div>
+      <p class="p-crane-detail__text">
+        テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テ
+      </p>
     </div>
-    <div class="p-crane-detail__margin">
-        
-    </div>
-    <div class="p-crane-detail__margin">
-        
-    </div>
-    <div class="p-crane-detail__margin">
-        
-    </div>
+    
 </div>

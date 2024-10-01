@@ -140,10 +140,7 @@ $(function () {
         if (sessionStorage.getItem('access')) {
             // 2回目以降アクセス時の処理
             // $(".loading-animation").removeClass('is-active');  // ローディングアニメーションを即座に非表示
-            $(".loading-animation").addClass('is-active');  // ローディングアニメーションを表示 
-            setTimeout(function () {
-                $(".loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
-            }, 5000);  // ローディング表示の時間（5秒）
+            
         } else {
             // 初回アクセス時の処理
             sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存

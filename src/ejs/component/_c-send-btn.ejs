@@ -1,4 +1,10 @@
-<div class="c-send-btn">
+<!-- prettier-ignore -->
+<% const validColor = ['yellow']; %>
+<% const colorClass = validColor.includes(color) ? ` c-send-btn--${color}` : ''; %>
+
+
+
+<div class="c-send-btn<%- colorClass %>">
     <a href="tel:<%= phonelink %>" class="c-send-btn__phone">
         <div class="c-send-btn__telicon">
             <%= phonelink %>

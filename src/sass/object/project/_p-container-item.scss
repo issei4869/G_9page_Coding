@@ -18,6 +18,7 @@
 }
 
 .p-container-item__text {
+    margin-top: rem(13);
     color: $accent-white;
     @include mq('md') {
         font-size: rem(16);

@@ -111,3 +111,12 @@
     height: rem(24);
 }
 
+
+//モディファイア
+.c-send-btn--yellow .c-send-btn__mail {
+    background-color: $accent-yellow;
+}
+
+.c-send-btn--yellow  .c-send-btn__mail::after {
+    background-color: $font-color;
+}

@@ -38,7 +38,7 @@
 
   <body>
 
-    <%- include(ejsPath + '/common/_header' ) %>
+    <%- include(ejsPath + '/common/_header' , { btncolor:'' }); %>
     <main>
 
       
@@ -69,6 +69,7 @@
         phonelink: '042-486-1420',
         img: './assets/images/common/mail-icon.svg',
         alt: 'メールアイコン',
+        color: 'yellow'
       }) %>
 
       <!--タブ -->
