@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $accent-white;  /* 初期状態は赤背景 */
+    background-color: $black;  /* 初期状態は赤背景 */
     width: 100vw;
     height: 100vh;
     position: fixed;
@@ -13,6 +13,9 @@
     z-index: 9999;
     opacity: 0;  /* 背景をフェードアウト */
     visibility: hidden;  /* 完全に非表示にする */
+
+    // opacity: 1;
+    // visibility: visible;
 }
 
 /* ローディング終了後のアニメーション */
@@ -31,13 +34,21 @@
   }
   /*========= 手書き風にするためのCSS ===============*/
   /* マスクをするパスの設定*/
-  #mask .st0{
+  // #mask .st0{
+  //   fill:none;
+  //   stroke:#FFFFFF;
+  //   stroke-width: 5.5;/*線の太さを指定する*/
+  //   stroke-miterlimit: 10;
+  // }
+
+  /* マスクをするパスの設定*/
+  #mask .cls-1{
     fill:none;
     stroke:#FFFFFF;
     stroke-width: 5.5;/*線の太さを指定する*/
     stroke-miterlimit: 10;
   }
 
-  #mask .st0 d {
+  #mask .cls-1 d {
     
   }
