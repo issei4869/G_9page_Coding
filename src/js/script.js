@@ -13,6 +13,19 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         $('body, html').animate({ scrollTop: 0 }, 500);
         return false;
     });
+
+    // 現在のURLを取得
+    const href = location.href;
+    // ヘッダーの中のaタグを全部取得
+    var links = document.querySelectorAll(".p-pc-nav__items > li > a");
+
+    // ループでURLと一致したaタグに current を付ける。
+    for (var i = 0; i < links.length; i++) {
+    if (links[i].href == href) {
+        document.querySelectorAll(".p-pc-nav__items > li")[i].classList.add("current");
+    }
+    }
+
     
     /////////////////////// ドロワーメニュー ///////////////////////
     $('.js-hamburger').click(function () {
@@ -135,6 +148,31 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     text.classList.toggle('is-active');
     }, 3000);
 
+
+    //スクロールエフェクト
+  const sections = document.querySelectorAll("[data-section]");
+  sections.forEach((section) => {
+    const inner = section.querySelector("[data-section-inner]");
+  
+    ScrollTrigger.create({
+      // markers: 'true',
+      trigger: section,
+      start: "bottom bottom",
+      onEnter: () => {
+        gsap.set(inner, {
+          position: "fixed",
+          bottom: 0,
+        });
+      },
+      onLeaveBack: () => {
+        gsap.set(inner, {
+          position: "absolute",
+          bottom: "auto",
+        });
+      },
+    });
+  });
+
     
 });
 
@@ -151,6 +189,9 @@ $(function () {
             // 2回目以降アクセス時の処理
             // $(".loading-animation").removeClass('is-active');  // ローディングアニメーションを即座に非表示
             // 初回アクセス時の処理
+           
+        } else {
+            // 初回アクセス時の処理
             sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
             $(".loading-animation").addClass('is-active');  // ローディングアニメーションを表示
 
@@ -160,15 +201,10 @@ $(function () {
             setTimeout(function () {
                 $(".loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
             }, 7500);  // ローディング表示の時間（5秒）
-        } else {
-            // 初回アクセス時の処理
-            sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
-            $(".loading-animation").addClass('is-active');  // ローディングアニメーションを表示
-
-            setTimeout(function () {
-                $(".loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
-            }, 6500);  // ローディング表示の時間（5秒）
         }
     };
     webStorage();
   });
+
+  
+  

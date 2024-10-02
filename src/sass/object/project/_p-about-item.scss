@@ -4,7 +4,7 @@
   background-color: $font-color;
   border-radius: 20px;
   position: relative;
-  // height: 100svh;
+  height: rem(616);
   @include mq('md') {
     
     padding: rem(54);
@@ -21,6 +21,7 @@
   // // display: grid;
   // place-items: center;
   // font-size: 10vw;
+  height: inherit;
   @include mq('md') {
     display: flex;
     gap: rem(54);

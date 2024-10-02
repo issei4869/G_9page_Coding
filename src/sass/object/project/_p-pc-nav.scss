@@ -42,4 +42,18 @@
   font-weight: $bold;
   color: #333333;
   line-height: 1;
+
+  padding-bottom: rem(3);
+  background-image: linear-gradient(#000, #000);
+  background-repeat: no-repeat;
+  background-position: bottom right; /* 下線の初期位置 */
+  background-size: 0 1px; /* 下線のサイズ（横幅、高さ） */
+  transition: background-size 0.3s;
+}
+
+
+
+.p-pc-nav__item:hover .p-pc-nav__title {
+  background-position: bottom left; /* 下線のホバー時位置 */
+  background-size: 100% 1px; /* 下線の横幅を100%にする */
 }

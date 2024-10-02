@@ -2,9 +2,13 @@
 
 .p-top-mv {
     background-color: $accent-yellow;
+    width: 100%;
+    height: 100dvh;
 }
 
-.p-top-mv__inner.l-inner {
+.p-top-mv__inner {
+    padding: 0 rem(10);
+    height: inherit;
     @include mq('md') {
         padding: 0 rem(10);
         max-width: rem(1900);
@@ -12,25 +16,67 @@
 }
 
 .p-top-mv__wrapper {
+    margin: 0 auto;
+    padding: 0px;
+    overflow: hidden;
+    display: flex;
+    height: inherit;
+    position: relative;
     @include mq('md') {
-        // display: grid;
-        // grid-template-columns: rem(1005) rem(895);
+        display: none;
+    }
+}
+
+.p-top-mv__title {
+    position: absolute;
+    display: inline-block;
+    
+    // content: "";
+    padding: 0;
+    margin: 0;
+    bottom: 0;
+    color: $accent-white;
+    left: 100%;
+    // width: 100%;
+    transform-origin: top left;
+    transform: rotate(90deg) translateX(-100%);
+    // font-size: clamp(120px,30.77vw,489px);
+    font-size: rem(120);
+    z-index: 1;
+    line-height: 1;
+    font-weight: $bold;
+    @include mq('md') {
+        font-size: rem(489);
+        line-height: 1;
+    }
+}
+
+.p-top-mv__content {
+    @include mq('md') {
         display: flex;
     }
 }
 
-.p-top-mv__left {
-    @include mq('md') {
-        max-width: calc(1005 / 1900 * 100%);
-    }
-}
+// .p-top-mv__left {
+
+//     @include mq('md') {
+//         max-width: calc(1005 / 1900 * 100%);
+//     }
+// }
 
 .p-top-mv__left-img {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    aspect-ratio: 260 / 346;
+    max-width: calc(100% - rem(120));
     width: 100%;
     overflow: hidden;
     @include mq('md') {
         aspect-ratio: 1005 / 652;
         max-width: rem(1005);
+        position: relative;
     }
 }
 
@@ -38,6 +84,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+.p-top-mv__pctitle {
+    display: none;
+    @include mq('md') {
+        display: block;
+        font-size: rem(489);
+        color: $accent-white;
+        font-weight: $bold;
+    }
 }
 
 .p-top-mv__maintext {
@@ -69,20 +125,6 @@
     }
 }
 
-.p-top-mv__title {
-    font-weight: $bold;
-    font-family: $third-font-family;
-    color: #fffcec;
-    @include mq('md') {
-        font-size: rem(489);
-        line-height: 1;
-    }
-}
-
-.u-mobile {
-
-}
-
 .p-top-mv__right-img {
     width: 100%;
     overflow: hidden;
@@ -99,6 +141,13 @@
     height: 100%;
     object-fit: cover;
 }
+
+
+.u-mobile {
+
+}
+
+
 
 .p-top-mv__blog {
     display: flex;
