@@ -51,7 +51,20 @@
 }
 
 .c-section-heading--company .c-section-heading__eng {
-    font-size: rem(64);
     color: $font-color;
-    margin-top: rem(13);
+    font-size: rem(50);
+    @include mq('md') {
+        font-size: rem(64);
+        margin-top: rem(13);
+    }
+    
+    
+}
+
+.c-section-heading--endroll .c-section-heading__eng {
+    color: $font-color;
+    font-size: rem(50);
+    @include mq('md') {
+        font-size: rem(54);
+    }
 }

@@ -125,6 +125,16 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         checkbox.addEventListener('change', updateCheckedCount);
     });
 
+
+    // クラスの付け外しのみ
+    const text = document.querySelector('.text');
+
+    text.classList.add('is-active');
+
+    setInterval(() => {
+    text.classList.toggle('is-active');
+    }, 3000);
+
     
 });
 
@@ -145,8 +155,11 @@ $(function () {
             $(".loading-animation").addClass('is-active');  // ローディングアニメーションを表示
 
             setTimeout(function () {
+                $(".loading-animation").addClass('is-color');  // ローディングを非表示にして背景をフェードアウト
+            }, 6500);  // ローディング表示の時間（5秒）
+            setTimeout(function () {
                 $(".loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
-            }, 6000);  // ローディング表示の時間（5秒）
+            }, 7500);  // ローディング表示の時間（5秒）
         } else {
             // 初回アクセス時の処理
             sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
@@ -154,7 +167,7 @@ $(function () {
 
             setTimeout(function () {
                 $(".loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
-            }, 6000);  // ローディング表示の時間（5秒）
+            }, 6500);  // ローディング表示の時間（5秒）
         }
     };
     webStorage();

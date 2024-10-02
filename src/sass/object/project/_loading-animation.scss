@@ -18,12 +18,20 @@
     // visibility: visible;
 }
 
-/* ローディング終了後のアニメーション */
+/* ローディングアニメーション中 */
 .loading-animation.is-active {
     transition: all 0s;
     opacity: 1;
     visibility: visible;
     
+}
+
+.loading-animation svg #mask .cls-1 {
+  
+}
+
+.loading-animation.is-color #mask .cls-1 {
+  fill: $accent-white;
 }
   
   /*SVGのサイズ*/

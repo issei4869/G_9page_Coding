@@ -33,6 +33,30 @@
       visibility: hidden;
     } */
 
+    
+
+    .container {
+      height: 100px; /* 見える範囲の高さを設定 */
+      width: 300px; /* 幅を設定 */
+      overflow: hidden; /* テキストが外に出ないように隠す */
+    }
+
+    .scrolling-text {
+      font-size: 24px;
+      animation: scroll 9s linear infinite;
+    }
+
+    /* アニメーションの設定 */
+    @keyframes scroll {
+      0% {
+        transform: translateY(100%); /* 画面外からスタート */
+      }
+      100% {
+        transform: translateY(-100%); /* 画面の上に出ていく */
+      }
+    }
+
+    
       
   </style>
 
@@ -50,6 +74,15 @@
       <h2 class="ejs-style-title">page top</h2>
       <!-- prettier-ignore -->
       <%- include(ejsPath + '/component/_c-totop', { link: '#', text: 'PAGE TOP' }) %>
+      
+      <div class="container">
+        <div class="scrolling-text">
+          <p>記事1: これが最初の記事です。</p>
+          <p>記事2: これが2番目の記事です。</p>
+          <p>記事3: これが3番目の記事です。</p>
+        </div>
+      </div>
+
 
       <!-- ボタン① -->
       <h2 class="ejs-style-title">ボタン①</h2>

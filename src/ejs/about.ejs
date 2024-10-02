@@ -43,13 +43,18 @@
               </div>
           </div>
           <div class="p-about__description">
-              <div class="p-about__heading">
-                  <%- include(ejsPath + '/component/_c-section-heading', { page: 'company', heading_eng:'「エンドロールに名を刻め」', heading_ja:'仕事内容について' }) %>
+              <div class="p-about__heading p-about__heading--endroll">
+                  <%- include(ejsPath + '/component/_c-section-heading', { page: 'endroll', heading_eng:'「エンドロールに名を刻め」', heading_ja:'仕事内容について' }) %>
               </div>
               <div class="p-about__content">
                   <%- include(ejsPath + '/project/_p-about-description' ) %>
               </div>
           </div>
+        </div>
+      </div>
+      <div class="p-about__inner p-about__inner--company l-inner">
+        <div class="p-about__company">
+          <%- include(ejsPath + '/project/_p-about-company' ) %>
         </div>
       </div>
     </div>

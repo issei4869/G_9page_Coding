@@ -2,7 +2,10 @@
 <% const validPage = ['company']; %>
 <% const pageClass = validPage.includes(page) ? ` c-section-heading--${page}` : ''; %>
 
-<div class="c-section-heading<%- pageClass %>">
+<% const validend = ['endroll']; %>
+<% const endClass = validend.includes(page) ? ` c-section-heading--${page}` : ''; %>
+
+<div class="c-section-heading<%- pageClass %><%- endClass %>">
     <h2 class="c-section-heading__ja"><%- heading_ja %></h2>
     <p class="c-section-heading__eng"><%- heading_eng %></p>
 </div>

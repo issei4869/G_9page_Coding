@@ -6,6 +6,9 @@
 
 .p-about-recruit__content {
     background-color: $accent-white;
+    border-radius: 16px;
+    padding: rem(60) rem(40);
+    margin-top: rem(50);
     @include mq('md') {
         padding: rem(102) rem(107) rem(89);
         margin-top: rem(124);
@@ -118,6 +121,7 @@
     text-align: left;
     display: flex;
     justify-content: center;
+    margin-top: rem(30);
     @include mq('md') {
         margin-top: rem(67);
     }

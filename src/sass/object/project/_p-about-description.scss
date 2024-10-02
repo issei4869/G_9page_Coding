@@ -1,0 +1,72 @@
+@use 'global' as *;
+
+.p-about-description {
+
+    
+}
+
+.p-about-description__content {
+    background-color: $accent-white;
+    border-radius: 16px;
+    padding: rem(60) rem(40);
+    margin-top: rem(50);
+    @include mq('md') {
+        padding: rem(66) rem(103) rem(61);
+    }
+}
+
+.p-about-description__text {
+    color: $black;
+    @include mq('md') {
+        font-size: rem(18);
+        line-height: 1.8;
+        letter-spacing: 0.02em;
+    }
+}
+
+.p-about-description__work {
+    margin-top: rem(30);
+    padding: 0 rem(24);
+    font-weight: $bold;
+    font-size: rem(16);
+    letter-spacing: 0.03em;
+    color: $black;
+    @include mq('md') {
+        margin-top: rem(71);
+        padding-left: rem(87);
+        padding-right: rem(126);
+        
+    }
+}
+
+.p-about-description__title {
+
+}
+
+.p-about-description__list {
+    display: flex;
+    gap: rem(32);
+    margin-top: rem(16);
+    @include mq('md') {
+        margin-top: rem(28);
+    }
+}
+
+.p-about-description__list + .p-about-description__list {
+    @include mq('md') {
+        margin-top: rem(20);
+    }
+}
+
+.p-about-description__term {
+    width: 100%;
+    max-width: rem(120);
+    @include mq('md') {
+    
+    }
+}
+
+.p-about-description__description {
+
+}
+
