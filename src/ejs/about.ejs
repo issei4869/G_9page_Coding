@@ -3,13 +3,20 @@
 <html lang="ja">
   <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath, page:
   json[pageData] }) %>
+  <style>
+    body {
+      display: none;
+    }
+  </style>
   <body>
     <%- include(ejsPath + '/common/_header' , { btncolor:'' }); %>
     <main>
       <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:' COMPANY', heading_ja:'会社概要'}) %>
 
       <%- include(ejsPath + '/project/_p-about-img' ) %>
-
+      <div class="p-about__img">
+        <img src="./assets/images/common/company1.jpg" alt="桜の木の前に配置された大型クレーン">
+      </div>
       <div class="p-about__bgcolor">
         <div class="p-about__inner l-inner">
           <div class="p-about__contents">

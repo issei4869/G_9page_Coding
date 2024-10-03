@@ -1,0 +1,17 @@
+@use 'global' as *;
+
+.l-box {
+    // width: 100%;        /* 横幅いっぱい */
+    // height: 300px;      /* 高さを300pxに指定 */
+    // background: #aaa;   /* 背景色を灰色にする */
+    // margin: 0 0 50px;   /* 下方向に適度な余白 */
+    opacity: 0;         /* 初期値は透明にしておく */
+    transition: 1.5s;    /* 動くスピードを0.5秒に指定 */
+    position: relative; /* 相対位置の設定 */
+    top: 50px;          /* 事前に下に50pxずらしておく */
+}
+
+.active {
+    opacity: 1;         /* 透明度を元に戻す */
+    top: 0;             /* ずらしていた位置を戻すことで上に上がっているようにみえる */
+}

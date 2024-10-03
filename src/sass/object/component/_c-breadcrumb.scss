@@ -16,6 +16,7 @@
 .c-breadcrumb__item {
   display: inline-block;
   font-size: rem(16);
+  letter-spacing: 0.03em;
   font-family: $second-font-family;
   font-weight: $bold;
   display: flex;
@@ -47,8 +48,9 @@
 .c-breadcrumb__item::after {
   content: '>';
   display: inline-block;
-  color: $accent-black;
-  margin: 0 rem(5);
+  color: #8A8A8A;
+  margin-left: rem(6);
+  margin-right: rem(13);
 }
 
 .c-breadcrumb__item:last-of-type::after {

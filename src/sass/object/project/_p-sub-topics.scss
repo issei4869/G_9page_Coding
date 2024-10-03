@@ -19,11 +19,11 @@
 
 .p-sub-topics__tab {
     margin-top: rem(80);
-    padding: 0 rem(10);
+    // padding: 0 rem(9);
     display: flex;
     justify-content: center;
     @include mq('md') {
-        margin-top: rem(136);
+        margin-top: rem(133);
     }
 }
 
@@ -37,7 +37,7 @@
     letter-spacing: 0.05em;
     line-height: 1;
     @include mq('md') {
-        padding: 0 rem(50);
+        padding: 0 rem(47);
     }
 }
 
@@ -61,7 +61,7 @@
 .p-sub-topics__cards {
     margin-top: rem(40);
     @include mq('md') {
-        margin-top: rem(56);
+        margin-top: rem(54);
     }
 }
 

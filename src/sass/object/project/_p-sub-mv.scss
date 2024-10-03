@@ -6,15 +6,15 @@
     width: 100%;
     position: relative;
     @include mq('md') {
-        height: rem(574);
+        height: rem(564);
     }
 }
 
 .p-sub-mv__title {
     position: absolute;
-    top: 75%;
-    left: rem(52);
-    transform: translateY(-75%)
+    top: 38%;
+    left: rem(65);
+    // transform: translateY(-75%)
 }
 
 
@@ -36,6 +36,6 @@
     margin-top: rem(4);
     @include mq("md") {
         font-size: rem(32);
-        margin-top: rem(54);
+        margin-top: rem(22);
     }
 }

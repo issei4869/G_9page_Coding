@@ -1,0 +1,7 @@
+@use 'global' as *;
+
+.l-sub-topics {
+    @include mq('md') {
+        margin-top: rem(140);
+    }
+}
