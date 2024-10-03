@@ -11,7 +11,8 @@
 .p-topics-detail__content {
     margin-top: rem(30);
     @include mq('md') {
-        margin-top: rem(56);
+        margin-top: rem(40);
+        margin-left: rem(7);
     }
 }
 
@@ -57,7 +58,7 @@
 .p-topics-detail__content h1 {
     font-weight: $bold;
     font-size: rem(28);
-    margin-top: rem(37);
+    margin-top: rem(26);
     @include mq('md') {
         font-size: rem(32);
     }
@@ -65,7 +66,7 @@
 
 .p-topics-detail__content h2 {
     font-size: rem(20);
-    margin-top: rem(77);
+    margin-top: rem(71);
     @include mq('md') {
         font-size: rem(24);
     }
@@ -73,7 +74,7 @@
 
 .p-topics-detail__content h3 {
     font-size: rem(16);
-    margin-top: rem(52);
+    margin-top: rem(47);
     @include mq('md') {
         font-size: rem(20);
     }
@@ -87,18 +88,19 @@
 }
 
 .p-topics-detail__content p:nth-of-type(1) {
-    margin-top: rem(50);
+    margin-top: rem(37);
     line-height: 2;
 }
 
 .p-topics-detail__content p:nth-of-type(2) {
-    margin-top: rem(37);
+    margin-top: rem(26);
+    letter-spacing: 0.02em;
 }
 
 .p-topics-detail__btn {
     text-align: center;
     margin-top: rem(80);
     @include mq('md') {
-        margin-top: rem(216);
+        margin-top: rem(214);
     }
 }
