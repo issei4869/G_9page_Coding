@@ -9,18 +9,21 @@
 
 .p-sub-crane__inner.l-inner {
     @include mq('md') {
-        // padding-left: rem(60);
-        // padding-right: rem(109);
-        max-width: 1751px + strip-unit($padding-pc) * 2;
-        // padding-left: rem(60);
-        // padding-right: rem(109);
+        margin: initial;
+        padding-left: rem(60);
+        padding-right: rem(109);
+        max-width: 1920px + strip-unit($padding-pc) * 2;
+    }
+    @include mq('xl') {
+        margin: 0 auto;
+
     }
 }
 
 .p-sub-crane__inner {
     @include mq('md') {
         display: flex;
-        gap: rem(144);
+        gap: rem(184);
     }
 }
 
@@ -36,6 +39,6 @@
     width: 100%;
     @include mq('md') {
         max-width: rem(1270);
-        margin-top: 0;
+        margin-top: rem(8);
     }
 }

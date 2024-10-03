@@ -8,10 +8,63 @@
 
 }
 
-.p-crane-detail__cards {
+.p-crane-detail__container {
     margin-top: rem(50);
     @include mq('md') {
+        margin-top: rem(63);
+    }
+
+    @include mq('md') {
+        display: grid;
+        column-gap: rem(20);
+        margin-top: 0;
+    }
+}
+
+.p-crane-detail__cards-1,
+.p-crane-detail__cards-2,
+.p-crane-detail__cards-3,
+.p-crane-detail__cards-4 {
+    margin-top: rem(24);
+    @include mq('md') {
         margin-top: rem(40);
+    }
+}
+
+.p-crane-detail__container-1,
+.p-crane-detail__container-2,
+.p-crane-detail__container-3,
+.p-crane-detail__container-4 {
+    margin-top: rem(30);
+    @include mq('md') {
+        margin-top: rem(76);
+    }
+}
+
+.p-crane-detail__cards-2,
+.p-crane-detail__container-2 {
+    @include mq('md') {
+        display: grid;
+        column-gap: rem(20);
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.p-crane-detail__cards-3,
+.p-crane-detail__container-3 {
+    @include mq('md') {
+        display: grid;
+        column-gap: rem(20);
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.p-crane-detail__cards-4,
+.p-crane-detail__container-4 {
+    @include mq('md') {
+        display: grid;
+        column-gap: rem(20);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 
@@ -22,41 +75,15 @@
     }
 }
 
-.p-crane-detail__container {
-    margin-top: rem(24);
+.p-crane-detail__margin-1 {
     @include mq('md') {
-        display: grid;
-        column-gap: rem(20);
-        margin-top: 0;
+        margin-top: rem(62);
     }
 }
 
-.p-crane-detail__container-1 {
-    margin-top: rem(24);
+.p-crane-detail__margin-2 {
     @include mq('md') {
-        margin-top: 0;
-    }
-}
-
-.p-crane-detail__container-2 {
-    @include mq('md') {
-        display: grid;
-        column-gap: rem(20);
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-.p-crane-detail__container-3 {
-    @include mq('md') {
-        display: grid;
-        column-gap: rem(20);
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-.p-crane-detail__container-4 {
-    @include mq('md') {
-        display: grid;
-        column-gap: rem(20);
-        grid-template-columns: repeat(4, 1fr);
+        margin-top: rem(157);
     }
 }
 
@@ -96,15 +123,15 @@
         font-size: rem(18);
         letter-spacing: 0.03em;
         line-height: 1.5;
-        margin-top: rem(10);
+        margin-top: rem(16);
     }
 }
 
-.p-crane-detail__margin {
+.p-crane-detail__content {
     margin-top: rem(50);
     @include mq('md') {
         display: flex;
-        margin-top: rem(64);
+        margin-top: rem(95);
         gap: rem(55);
     }
 }
@@ -134,5 +161,6 @@
         line-height: 1.7;
         letter-spacing: 0.08em;
         max-width: rem(580);
+        margin-top: rem(-4)
     }
 }

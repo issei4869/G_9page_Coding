@@ -16,6 +16,7 @@
     font-weight: $bold;
     font-family: $second-font-family;
     color: $black;
+    letter-spacing: 0.035em;
     @include mq('md') {
         font-size: rem(80);
     }
@@ -56,7 +57,7 @@
     margin-top: rem(40);
     display: grid;
     @include mq('md') {
-        gap: rem(64) rem(8);
+        gap: rem(64) rem(20);
         grid-template-columns: repeat(3, 1fr);
         margin-top: rem(54);
     }
@@ -120,9 +121,11 @@
     font-weight: $bold;
     color: #333333;
     position: relative;
+    font-size: rem(16);
     @include mq('md') {
         line-height: calc(35 / 24);
         letter-spacing: 0.28em;
+        font-size: rem(24);
     }
 }
 

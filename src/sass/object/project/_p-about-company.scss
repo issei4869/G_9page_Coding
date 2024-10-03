@@ -36,7 +36,7 @@
     border-top: 1px solid #E9E9E9;
     font-weight: $bold;
     @include mq(md){
-        padding: rem(24) rem(40);
+        padding: rem(22) rem(40);
         font-size: rem(16);
     }
 }

@@ -27,7 +27,10 @@ let cards = [
     content: [
         {img: '', alt: '', text: ''}
     ]
-  },
+  }
+]
+
+let items = [
   {
     content: [
       {img: '', alt: '', text: 'テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。'},
@@ -84,23 +87,39 @@ let cards = [
       </p>
     </div>
     
+    <div class="p-crane-detail__margin-1"></div>
+
     <% cards.forEach(function(card) { %>
-        <div class="p-crane-detail__cards">
-            <div class="p-crane-detail__container-<%- card.content.length %>">
-              <% card.content.forEach(function(item) { %>
-                <div class="p-crane-detail__card">
-                      <%- include(project + '/_p-container-item' , {
-                          img: item.img,
-                          alt: item.alt,
-                          text: item.text
-                      }) %>
-                  </div>
-              <% }); %>
-            </div>
+      <div class="p-crane-detail__cards-<%- card.content.length %>">
+            <% card.content.forEach(function(item) { %>
+              <div class="p-crane-detail__card">
+                    <%- include(project + '/_p-container-item' , {
+                        img: item.img,
+                        alt: item.alt,
+                        text: item.text
+                    }) %>
+                </div>
+            <% }); %>
+          </div>
+    <% }); %>
+    
+    <div class="p-crane-detail__margin-2"></div>
+      
+    <% items.forEach(function(item) { %>
+      <div class="p-crane-detail__container-<%- item.content.length %>">
+          <% item.content.forEach(function(item) { %>
+            <div class="p-crane-detail__card">
+                  <%- include(project + '/_p-container-item' , {
+                      img: item.img,
+                      alt: item.alt,
+                      text: item.text
+                  }) %>
+              </div>
+          <% }); %>
         </div>
     <% }); %>
     
-    <div class="p-crane-detail__margin">
+    <div class="p-crane-detail__content">
       <div class="p-crane-detail__img">
         <img src="" alt="">
       </div>

@@ -26,13 +26,6 @@
     
 }
 
-.loading-animation svg #mask .cls-1 {
-  
-}
-
-.loading-animation.is-color #mask .cls-1 {
-  fill: $accent-white;
-}
   
   /*SVGのサイズ*/
   svg{
@@ -40,23 +33,33 @@
     width: 100%;/* レスポンシブ対応にするため100%を指定*/
     height: auto;
   }
-  /*========= 手書き風にするためのCSS ===============*/
-  /* マスクをするパスの設定*/
-  // #mask .st0{
-  //   fill:none;
-  //   stroke:#FFFFFF;
-  //   stroke-width: 5.5;/*線の太さを指定する*/
-  //   stroke-miterlimit: 10;
-  // }
+
 
   /* マスクをするパスの設定*/
   #mask .cls-1{
     fill:none;
-    stroke:#FFFFFF;
+    stroke:$accent-white;
     stroke-width: 5.5;/*線の太さを指定する*/
     stroke-miterlimit: 10;
   }
 
   #mask .cls-1 d {
     
+  }
+
+
+
+
+  /* 背景色のフェードインアニメーション */
+  @keyframes fadeInBackground {
+    0% {
+      fill: transparent;
+    }
+    100% {
+      fill: $accent-white; /* お好みの背景色 */
+    }
+  }
+
+  .svg-container svg #mask .cls-1 {
+    animation: fadeInBackground 2s ease forwards;
   }

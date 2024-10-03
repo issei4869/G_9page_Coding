@@ -10,7 +10,7 @@
     padding: rem(60) rem(40);
     margin-top: rem(50);
     @include mq('md') {
-        padding: rem(102) rem(107) rem(89);
+        padding: rem(102) rem(107) rem(85);
         margin-top: rem(124);
     }
 }
@@ -88,7 +88,7 @@
     position: absolute;
     content: "";
     bottom: 0;
-    right: 0;
+    right: rem(5);
 }
 
 .p-about-recruit__checked-count {
@@ -123,6 +123,6 @@
     justify-content: center;
     margin-top: rem(30);
     @include mq('md') {
-        margin-top: rem(67);
+        margin-top: rem(91);
     }
 }

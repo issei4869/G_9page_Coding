@@ -15,10 +15,10 @@
 
 .p-about__inner.l-inner {
     @include mq('md') {
-        padding: 0 rem(48);
+        padding: 0 rem(66);
         margin-left: 0;
         margin-right: auto;
-        max-width: rem(1629);
+        max-width: rem(1664);
     }
     @include mq('xl') {
         padding: 0 rem(48);
@@ -45,10 +45,11 @@
     @include mq('md') {
         position: absolute;
         content: "";
-        top: 0;
+        top: rem(-65);
         left: 0;
         max-width: calc((451 / 1533) * 100%);
         text-align: left;
+        letter-spacing: 0.138em;
     }
 }
 
@@ -57,7 +58,7 @@
     margin-top: rem(30);
     // text-align: center;
     @include mq('md') {
-        max-width: calc((944 / 1533) * 100%);
+        max-width: rem(944);
         margin-left: auto;
         text-align: left;
         margin-top: 0;
@@ -74,7 +75,7 @@
     margin-top: rem(80);
     @include mq('md') {
         position: relative;
-        margin-top: rem(170);
+        margin-top: rem(241);
     }
 }
 
@@ -82,7 +83,7 @@
 
     @include mq('md') {
         position: relative;
-        margin-top: rem(197);
+        margin-top: rem(275);
     }
 }
 

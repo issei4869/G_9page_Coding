@@ -3,7 +3,7 @@
 .p-sidebar-nav {
     border-top: 1px solid #D1D0D0;
     border-bottom: 1px solid #D1D0D0;
-    padding: rem(12) 0;
+    padding: rem(7) 0;
 }
 
 .cat-item {
@@ -19,6 +19,8 @@
 
 .cat-item  a {
     color: #262626;
+    display: inline-block;
+    width: 100%;
 }
 
 .current-cat-parent {
@@ -33,8 +35,6 @@
     // font-weight: $bold;
     // color: $accent-black;
     padding-left: rem(12);
-    display: inline-block;
-    width: 100%;
 }
 
 // .side_equipment_cat > .cat-item > a {
@@ -58,7 +58,7 @@
 
 //中項目
 .children > .cat-item > a {
-    
+    padding: 0 0;
     padding-left: rem(35);
     // display: inline-block;
     // width: 100%;

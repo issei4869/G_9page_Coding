@@ -4,7 +4,7 @@
   width: 100%;
   @include mq('md') {
     display: flex;
-    gap: rem(50);
+    gap: rem(40);
     // position: relative;
   }
 }
@@ -75,7 +75,6 @@
     gap: rem(54);
     padding: 0;
     text-align: left;
-    padding: 0 rem(10);
   }
 }
 
@@ -117,9 +116,45 @@
 
 
 // モディファイア
+.p-crane-item--white {
+  @include mq('md') {
+    gap: rem(72);
+  }
+}
+
+.p-crane-item--white .p-crane-item__content {
+  @include mq('md') {
+    max-width: rem(414);
+    margin-top: rem(5);
+  }
+}
+
+.p-crane-item--white .p-crane-item__list-items {
+  margin-top: rem(39);
+}
+
 .p-crane-item--white .p-crane-item__content .p-crane-item__wrapper .p-crane-item__title,
 .p-crane-item--white .p-crane-item__list-items .p-crane-item__list-item {
-  color: $accent-white;
+  color: $accent-white; 
+}
+
+.p-crane-item--white .p-crane-item__content .p-crane-item__wrapper .p-crane-item__title {
+  letter-spacing: 0.315em;
+}
+
+.p-crane-item--white .p-crane-item__list-items .p-crane-item__list-item {
+  font-size: rem(16);
+  gap: rem(63);
+  letter-spacing: 0.02em;
+}
+
+.p-crane-item--white .p-crane-item__list-items .p-crane-item__list-item dt{
+  max-width: rem(105);
+  letter-spacing: 0.09em;
+}
+.p-crane-item--white .p-crane-item__list-items .p-crane-item__list-item dd{
+  letter-spacing: 0.1em;
+  
 }
 
 .p-crane-item--white .p-crane-item__img {

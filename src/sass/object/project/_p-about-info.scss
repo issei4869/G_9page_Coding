@@ -34,13 +34,13 @@
 
 .p-about-info__point + .p-about-info__point {
     @include mq('md') {
-        margin-top: rem(8);
+        margin-top: rem(24);
     }
 }
 
 .p-about-info__margin + .p-about-info__margin{
     @include mq('md') {
-        margin-top: rem(50);
+        margin-top: rem(80);
     }
 }
 
@@ -52,12 +52,14 @@
     width: 100%;
     @include mq('md') {
         max-width: rem(693);
+        margin-top: rem(32);
+        padding-left: rem(9);
     }
 }
 
 .p-about-info__text-ja {
     @include mq('md') {
         font-size: rem(20);
-        margin-top: rem(5);
+        margin-top: rem(12);
     }
 }
