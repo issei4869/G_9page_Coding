@@ -38,15 +38,17 @@ let cards = [
         <p class="p-top-about__text">映画・CM・TV等あらゆる撮影に関する　機材オペレーティング・レンタルを行う会社です。</p>
         <ul class="p-top-about__items">
             <% cards.forEach(function(card) { %>
-                <li class="p-top-about__item">
-                    <%- include(project + '/_p-about-item', {
-                        img: card.img,
-                        alt: card.alt,
-                        text: card.text,
-                        number: card.number,
-                        btntext: card.btntext,
-                        color: card.color,
-                    }) %>
+                <li class="p-top-about__item" data-section>
+                    <div class="p-top-about__item-inner" data-section-inner>
+                        <%- include(project + '/_p-about-item', {
+                            img: card.img,
+                            alt: card.alt,
+                            text: card.text,
+                            number: card.number,
+                            btntext: card.btntext,
+                            color: card.color,
+                        }) %>
+                    </div>
                 </li>
             <% }); %>
         </ul>

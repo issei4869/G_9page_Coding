@@ -31,9 +31,32 @@
     }
 }
 
+.p-top-about__item {
+    position: relative;
+    height: rem(616);
+}
+
+.p-top-about__item-inner {
+    position: absolute;
+    max-width: rem(500);
+    padding: 0 rem(20);
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: inherit;
+    margin: 0 auto;
+    @include mq('md') {
+        max-width: rem(1266);
+        
+    }
+}
+
 .p-top-about__item + .p-top-about__item {
     @include mq('md') {
         margin-top: rem(80);
     }
 }
+
+
 
