@@ -1,0 +1,84 @@
+@use 'global' as *;
+
+.p-news {
+    display: flex;
+    align-items: center;
+    background-color: #010101;
+    opacity: 0.62;
+    max-width: rem(748);
+    width: 100%;
+    max-height: rem(72);
+    height: 100%;
+    padding-left: rem(40);
+    overflow: hidden;
+}
+
+.p-news__category {
+    font-weight: $bold;
+    font-size: rem(17);
+    color: $accent-white;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    padding-right: rem(22);
+    border-right: 1px solid $accent-white;
+}
+
+.p-news__contents  {
+    // display : inline-block;
+    // white-space : nowrap;
+    animation: flowing 7s linear infinite;    /*アニメーション*/
+}
+
+.p-news__content {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    gap: rem(22);
+    padding: rem(29) rem(40) rem(29) rem(25);
+    margin-top: 0;
+}
+
+.p-news__date,
+.p-news__title {
+    font-size: rem(20);
+    letter-spacing: 0.02em;
+    color: $accent-white;
+}
+
+.p-news__date {
+
+}
+
+.p-news__title {
+    font-weight: $bold;
+}
+
+@keyframes flowing {
+    0% { 
+        transform: translateY(-55%);
+    }
+    25% {
+        transform: translateY(-34%); /* p-news__content 要素3つ目 */
+        animation-play-state: paused; /* 停止 */
+    }
+    35% {
+        transform: translateY(-34%); /* 再生 */
+    }
+    50% {
+        transform: translateY(0); /* p-news__content 要素2つ目 */
+        animation-play-state: paused; /* 停止 */
+    }
+    60% {
+        transform: translateY(0); /* 再生 */
+    }
+    75% {
+        transform: translateY(33%); /* p-news__content 要素1つ目 */
+        animation-play-state: paused; /* 停止 */
+    }
+    85% {
+        transform: translateY(33%); /* 再生 */
+    }
+    100% { 
+    transform: translateY(55%);
+    }
+}

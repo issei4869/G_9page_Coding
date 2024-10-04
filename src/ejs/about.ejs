@@ -13,26 +13,25 @@
     <main>
       <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:' COMPANY', heading_ja:'会社概要'}) %>
 
-      <%- include(ejsPath + '/project/_p-about-img' ) %>
-      <div class="p-about__img">
+      <div class="p-about__img p-about__img">
         <img src="./assets/images/common/company1.jpg" alt="桜の木の前に配置された大型クレーン">
       </div>
       <div class="p-about__bgcolor">
         <div class="p-about__inner l-inner">
           <div class="p-about__contents">
             <div class="p-about__info">
-              <div class="p-about__heading">
+              <div class="p-about__heading l-box fadeIn">
                   <%- include(ejsPath + '/component/_c-section-heading', { page: 'company', heading_eng:'Company Info', heading_ja:'企業情報' }) %>
               </div>
-              <div class="p-about__content">
+              <div class="p-about__content l-box fadeIn">
                   <%- include(ejsPath + '/project/_p-about-info' ) %>
               </div>
             </div>
             <div class="p-about__access">
-                <div class="p-about__heading">
+                <div class="p-about__heading l-box fadeIn">
                     <%- include(ejsPath + '/component/_c-section-heading', { page: 'company', heading_eng:'Access', heading_ja:'アクセス' }) %>
                 </div>
-                <div class="p-about__content">
+                <div class="p-about__content l-box fadeIn">
                     <%- include(ejsPath + '/project/_p-about-access' ) %>
                 </div>
             </div>
@@ -42,25 +41,25 @@
       <div class="p-about__inner l-inner">
         <div class="p-about__contents">
           <div class="p-about__recruit">
-              <div class="p-about__heading">
+              <div class="p-about__heading l-box fadeIn">
                   <%- include(ejsPath + '/component/_c-section-heading', { page: 'company', heading_eng:'Recruit', heading_ja:'採用情報' }) %>
               </div>
-              <div class="p-about__content">
+              <div class="p-about__content l-box fadeIn">
                   <%- include(ejsPath + '/project/_p-about-recruit' ) %>
               </div>
           </div>
           <div class="p-about__description">
-              <div class="p-about__heading p-about__heading--endroll">
+              <div class="p-about__heading p-about__heading--endroll l-box fadeIn">
                   <%- include(ejsPath + '/component/_c-section-heading', { page: 'endroll', heading_eng:'「エンドロールに名を刻め」', heading_ja:'仕事内容について' }) %>
               </div>
-              <div class="p-about__content">
+              <div class="p-about__content l-box fadeIn">
                   <%- include(ejsPath + '/project/_p-about-description' ) %>
               </div>
           </div>
         </div>
       </div>
       <div class="p-about__inner p-about__inner--company l-inner">
-        <div class="p-about__company">
+        <div class="p-about__company l-box fadeIn">
           <%- include(ejsPath + '/project/_p-about-company' ) %>
         </div>
       </div>

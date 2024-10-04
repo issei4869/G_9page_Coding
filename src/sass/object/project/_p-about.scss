@@ -42,6 +42,7 @@
 .p-about__heading {
     width: 100%;
     text-align: center;
+    z-index: 1;
     @include mq('md') {
         position: absolute;
         content: "";

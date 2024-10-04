@@ -1,7 +1,7 @@
 @use 'global' as *;
 
 /* ローディングアニメーション */
-.loading-animation {
+.p-loading-animation {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,8 +19,8 @@
 }
 
 /* ローディングアニメーション中 */
-.loading-animation.is-active {
-    transition: all 0s;
+.p-loading-animation.is-active {
+    transition: all -1s;
     opacity: 1;
     visibility: visible;
     

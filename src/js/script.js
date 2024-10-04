@@ -206,28 +206,7 @@ new Vivus('mask', {//svgに指定したid名
      start: 'autostart'
     });
 
-$(function () {
-    var webStorage = function () {
-        if (sessionStorage.getItem('access')) {
-            // 2回目以降アクセス時の処理
-            $(".loading-animation").removeClass('is-active');  // ローディングアニメーションを即座に非表示
-            // 初回アクセス時の処理
-            
-        } else {
-            // 初回アクセス時の処理
-            sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
-            $(".loading-animation").addClass('is-active');  // ローディングアニメーションを表示
 
-            setTimeout(function () {
-                $(".loading-animation").addClass('svg-container');  //最後の白塗り
-            }, 6500);  // ローディング表示の時間（5秒）
-            setTimeout(function () {
-                $(".loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
-            }, 7500);  // ローディング表示の時間（5秒）
-        }
-    };
-    webStorage();
-  });
 
   
   

@@ -134,12 +134,19 @@
       <%- include(ejsPath + '/component/_c-breadcrumb', { color:'', breadcrumb: [ { title:"equipment", url: "" },
       { title:"crane", url: "" } ] }); %>
 
+      <!--お知らせ -->
+      <h2 class="ejs-style-title">お知らせ</h2>
+      <!-- prettier-ignore -->
+      <%- include(ejsPath + '/project/_p-news' ) %>
+
       <!--サイドナビゲーション -->
       <h2 class="ejs-style-title">サイドナビゲーション</h2>
       <!-- prettier-ignore -->
       <%- include(ejsPath + '/project/_p-sidebar-nav' , {
         color: ''
        }) %>
+
+       
 
        
     </main>

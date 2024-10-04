@@ -54,7 +54,7 @@
 .p-about-access__google::after {
     position: absolute;
     content: "";
-    top: rem(8);
+    top: 0;
     right: rem(-12);
     background-image: url(../images/common/map-pin.svg);
     background-repeat: no-repeat;
@@ -62,6 +62,9 @@
     background-size: contain;
     width: rem(13);
     height: rem(17);
+    @include mq('md') {
+        top: rem(8);
+    }
 }
 
 .p-about-access__address {

@@ -63,7 +63,7 @@ let items = [
 %>
 
 <div class="p-crane-detail">
-    <div class="p-crane-detail__item">
+    <div class="p-crane-detail__item l-box fadeIn">
         <%- include(project + '/_p-crane-item', {
             img: "",
             alt: "",
@@ -76,13 +76,13 @@ let items = [
     </div>
 
     <div class="p-crane-detail__heading">
-      <h2 class="p-crane-detail__h2">
+      <h2 class="p-crane-detail__h2 l-box fadeIn">
         GF CRANEが入荷しました。（中見出し）
       </h2>
-      <p class="p-crane-detail__h3">
+      <p class="p-crane-detail__h3 l-box fadeIn">
         〇〇TYPE（小見出し）
       </p>
-      <p class="p-crane-detail__p">
+      <p class="p-crane-detail__p l-box fadeIn">
         テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
       </p>
     </div>
@@ -90,7 +90,7 @@ let items = [
     <div class="p-crane-detail__margin-1"></div>
 
     <% cards.forEach(function(card) { %>
-      <div class="p-crane-detail__cards-<%- card.content.length %>">
+      <div class="p-crane-detail__cards-<%- card.content.length %> l-box fadeIn">
             <% card.content.forEach(function(item) { %>
               <div class="p-crane-detail__card">
                     <%- include(project + '/_p-container-item' , {
@@ -106,7 +106,7 @@ let items = [
     <div class="p-crane-detail__margin-2"></div>
       
     <% items.forEach(function(item) { %>
-      <div class="p-crane-detail__container-<%- item.content.length %>">
+      <div class="p-crane-detail__container-<%- item.content.length %> l-box fadeIn">
           <% item.content.forEach(function(item) { %>
             <div class="p-crane-detail__card">
                   <%- include(project + '/_p-container-item' , {
@@ -119,7 +119,7 @@ let items = [
         </div>
     <% }); %>
     
-    <div class="p-crane-detail__content">
+    <div class="p-crane-detail__content l-box fadeIn">
       <div class="p-crane-detail__img">
         <img src="" alt="">
       </div>
