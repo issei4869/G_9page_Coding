@@ -161,15 +161,21 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         });
     }   
     
-    if (document.querySelectorAll('.text').length) {
-        // クラスの付け外しのみ
-        const text = document.querySelector('.text');
-        text.classList.add('is-active');
-    
-        setInterval(() => {
-        text.classList.toggle('is-active');
-        }, 3000);
-    }
+
+    //横から1文字ずつ表示させる
+    // クラスの付け外しのみ
+    const text1 = document.querySelector('.text1');
+    setTimeout(function () {
+        text1.classList.add('is-text');
+    }, 10);
+    const text2 = document.querySelector('.text2');
+    setTimeout(function () {
+        text2.classList.add('is-text');
+    }, 1000);
+
+    // setInterval(() => {
+    // text.classList.toggle('is-active');
+    // }, 3000);
 
 
     //スクロールエフェクト
@@ -194,6 +200,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         });
       },
     });
+
   });
 
     
@@ -206,7 +213,52 @@ new Vivus('mask', {//svgに指定したid名
      start: 'autostart'
     });
 
+// document.addEventListener('DOMContentLoaded', function() {
+//     var webStorage = function () {
+//         if (sessionStorage.getItem('access')) {
+//             // 2回目以降アクセス時の処理
+            
+            
+//         } else {
+//             // 初回アクセス時の処理
+//             sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
+//             $(".p-loading-animation").addClass('is-active');  // ローディングアニメーションを表示
+
+//             setTimeout(function () {
+//                 $(".p-loading-animation").addClass('svg-container');  //最後の白塗り
+//             }, 6500);  // ローディング表示の時間（6.5秒）
+//             setTimeout(function () {
+//                 $(".p-loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
+//             }, 7500);  // ローディング表示の時間（7.5秒）
+//         }
+//     };
+//     webStorage();
+// });
 
 
-  
-  
+document.addEventListener('DOMContentLoaded', function() {
+    var webStorage = function () {
+        if (sessionStorage.getItem('access')) {
+            // 2回目以降アクセス時の処理
+            $(".p-top-mv__left-img").addClass('fadeInleft');
+            $(".p-top-mv__right-img").addClass('fadeInbottom');
+        } else {
+            // 初回アクセス時の処理
+            sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
+            $(".p-loading-animation").addClass('is-active');  // ローディングアニメーションを表示
+
+            // 最初に6.5秒間の遅延後にsvg-containerクラスを追加
+            setTimeout(function () {
+                $(".p-loading-animation").addClass('svg-container');  // 最後の白塗り
+            }, 6500);  // ローディング表示の時間（6.5秒）
+
+            // 7.5秒後にローディングアニメーションを非表示にする
+            setTimeout(function () {
+                $(".p-loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
+                    $(".p-top-mv__left-img").addClass('fadeInleft');
+                    $(".p-top-mv__right-img").addClass('fadeInbottom');
+            }, 7500);  // ローディング表示の時間（7.5秒）
+        }
+    };
+    webStorage();
+});
