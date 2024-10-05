@@ -56,6 +56,162 @@
       }
     }
 
+    .recruit-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    border-radius: 15px;
+    overflow: hidden;
+    width: 80%;
+    max-width: 1200px;
+    margin: 50px auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-section {
+        padding: 40px;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    }
+
+    .text-section h2 {
+        font-size: 20px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .text-section h1 {
+        font-size: 48px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 30px;
+    }
+
+    .cta-button {
+        display: inline-block;
+        background-color: #ffd400;
+        color: #000;
+        font-size: 18px;
+        padding: 15px 30px;
+        text-decoration: none;
+        border-radius: 50px;
+        position: relative;
+    }
+
+    .cta-button::after {
+        content: '→';
+        display: inline-block;
+        margin-left: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .cta-button:hover::after {
+        transform: translateX(5px);
+    }
+
+    .image-section {
+        width: 50%;
+        clip-path: polygon(34% 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    .image-section img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+
+
+
+    .main-content {
+    display: flex;
+    height: 100vh;
+    background-color: #ffdb00;
+}
+
+.left-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-content img {
+    width: 80%;
+    height: auto;
+}
+
+.right-content {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.right-content h1 {
+    font-size: 10vw;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.right-content .slogan {
+    font-size: 2vw;
+    margin-bottom: 10px;
+}
+
+.right-content .sub-text {
+    font-size: 1.5vw;
+    margin-bottom: 20px;
+}
+
+.right-content .second-image img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.right-content .news {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .right-content {
+        order: 1;
+        text-align: center;
+    }
+
+    .right-content h1 {
+        font-size: 15vw;
+        writing-mode: vertical-rl;
+        text-orientation: mixed;
+    }
+
+    .right-content .slogan, .right-content .sub-text {
+        font-size: 4vw;
+    }
+
+    .left-content {
+        order: 2;
+    }
+
+    .left-content img {
+        width: 100%;
+    }
+
+    .contact button {
+        padding: 10px 20px;
+    }
+}
     
       
   </style>
@@ -82,7 +238,26 @@
           <p>記事3: これが3番目の記事です。</p>
         </div>
       </div>
-
+      
+      <!-- ボタン① -->
+      <h2 class="ejs-style-title">FV</h2>
+      <!-- prettier-ignore -->
+      <section class="main-content">
+        <div class="left-content">
+            <img src="./assets/images/common/top-fv1.jpg" alt="機材">
+        </div>
+        <div class="right-content">
+            <h1>GRIFFITH</h1>
+            <p class="slogan">THE EQUIPMENT YOU NEED, WHEN YOU NEED IT.</p>
+            <p class="sub-text">必要な機材、必要なときに。</p>
+            <div class="second-image">
+                <img src="./assets/images/common/top-fv2.jpg" alt="機材の使用例">
+            </div>
+            <div class="news">
+                <span>NEWS | 2024.06.24 年末年始休暇のご連絡</span>
+            </div>
+        </div>
+    </section>
 
       <!-- ボタン① -->
       <h2 class="ejs-style-title">ボタン①</h2>
@@ -127,6 +302,17 @@
         btnlink: '#',
         color: 'white'
       }) %>
+
+      <div class="recruit-section">
+        <div class="text-section">
+            <h2>採用情報</h2>
+            <h1>RECRUIT</h1>
+            <a href="#" class="cta-button">募集要項へ</a>
+        </div>
+        <div class="image-section">
+            <img src="./assets/images/common/top-recruit.jpg" alt="Camera setup">
+        </div>
+    </div>
 
       <!--パンくずリスト -->
       <h2 class="ejs-style-title">パンくずリスト</h2>

@@ -3,15 +3,20 @@
 .p-top-mv {
     background-color: $accent-yellow;
     width: 100%;
-    height: 100dvh;
+    height: rem(670);
+    @include mq('md') {
+        height: rem(1080);
+    }
+    // height: 100vh;
 }
 
-.p-top-mv__inner {
+.p-top-mv__inner.l-inner {
     padding: 0 rem(10);
     height: inherit;
+    position: relative;
     @include mq('md') {
         padding: 0 rem(10);
-        max-width: rem(1900);
+        max-width: rem(1920);
     }
 }
 
@@ -21,7 +26,6 @@
     overflow: hidden;
     display: flex;
     height: inherit;
-    position: relative;
     @include mq('md') {
         display: none;
     }
@@ -34,20 +38,31 @@
     // content: "";
     padding: 0;
     margin: 0;
-    bottom: 0;
+    top: 0;
     color: $accent-white;
-    left: 100%;
+    right: 0;
     // width: 100%;
-    transform-origin: top left;
-    transform: rotate(90deg) translateX(-100%);
+    transform-origin: top right;
+    transform: rotate(90deg) translateX(100%);
     // font-size: clamp(120px,30.77vw,489px);
     font-size: rem(120);
     z-index: 1;
     line-height: 1;
     font-weight: $bold;
+    color: #FFFCEC;
+    @include mq('md') {
+
+    }
+}
+
+.p-top-mv__pctitle {
     @include mq('md') {
         font-size: rem(489);
         line-height: 1;
+        font-weight: $bold;
+        letter-spacing: 0.02em;
+        font-family: $third-font-family;
+        color: #FFFCEC;
     }
 }
 
@@ -67,10 +82,9 @@
 .p-top-mv__left-img {
     position: absolute;
     content: "";
-    top: 0;
-    left: 0;
+    top: rem(10);
     aspect-ratio: 260 / 346;
-    max-width: calc(100% - rem(120));
+    max-width: rem(260);
     width: 100%;
     overflow: hidden;
     @include mq('md') {
@@ -84,6 +98,9 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    @include mq('md') {
+        height: initial;
+    }
 }
 
 .p-top-mv__pctitle {
@@ -96,11 +113,20 @@
     }
 }
 
+.p-top-mv__detail {
+    position: absolute;
+    content: "";
+    bottom: rem(100);
+    left: rem(20);
+    margin-top: rem(140);
+}
+
 .p-top-mv__maintext {
     font-weight: $bold;
     font-family: $third-font-family;
     color: $accent-white;
-    margin-top: rem(140);
+    line-height: 1.1;
+    letter-spacing: 0.02em;
     @include mq('md') {
         font-size: rem(60);
         line-height: 1;
@@ -110,7 +136,10 @@
 .p-top-mv__subtext {
     font-weight: $bold;
     color: $accent-white;
-
+    font-size: rem(15);
+    margin-top: rem(15);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
     @include mq('md') {
         font-size: rem(24);
         line-height: 1;
@@ -119,9 +148,13 @@
 }
 
 .p-top-mv__right {
+    position: absolute;
+    content: "";
+    bottom: rem(84);
+    right: rem(10);
     
     @include mq('md') {
-        max-width: calc(895 / 1900 * 100%);
+        
     }
 }
 
@@ -129,6 +162,8 @@
     width: 100%;
     overflow: hidden;
     margin-left: auto;
+    aspect-ratio: 288 / 182;
+    max-width: rem(288);
     @include mq('md') {
         aspect-ratio: 738 / 467;
         max-width: rem(738);
@@ -150,8 +185,10 @@
 
 
 .p-top-mv__blog {
-    display: flex;
-    justify-content: right;
+    position: absolute;
+    content: "";
+    bottom: rem(10);
+    right: 0;
     @include mq('md') {
         
     }
