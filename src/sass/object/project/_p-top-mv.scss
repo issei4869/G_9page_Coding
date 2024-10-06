@@ -4,6 +4,7 @@
     background-color: $accent-yellow;
     width: 100%;
     height: rem(670);
+    padding-top: rem(10);
     @include mq('md') {
         height: rem(1080);
     }
@@ -14,61 +15,19 @@
     padding: 0 rem(10);
     height: inherit;
     position: relative;
+    overflow: hidden;
     @include mq('md') {
         padding: 0 rem(10);
         max-width: rem(1920);
     }
 }
 
-.p-top-mv__wrapper {
-    margin: 0 auto;
-    padding: 0px;
-    overflow: hidden;
-    display: flex;
-    height: inherit;
-    @include mq('md') {
-        display: none;
-    }
-}
 
-.p-top-mv__title {
-    position: absolute;
-    display: inline-block;
-    
-    // content: "";
-    padding: 0;
-    margin: 0;
-    top: 0;
-    color: $accent-white;
-    right: 0;
-    // width: 100%;
-    transform-origin: top right;
-    transform: rotate(90deg) translateX(100%);
-    // font-size: clamp(120px,30.77vw,489px);
-    font-size: rem(120);
-    z-index: 1;
-    line-height: 1;
-    font-weight: $bold;
-    color: #FFFCEC;
-    @include mq('md') {
-
-    }
-}
-
-.p-top-mv__pctitle {
-    @include mq('md') {
-        font-size: rem(489);
-        line-height: 1;
-        font-weight: $bold;
-        letter-spacing: 0.02em;
-        font-family: $third-font-family;
-        color: #FFFCEC;
-    }
-}
 
 .p-top-mv__content {
+    position: relative;
     @include mq('md') {
-        display: flex;
+        overflow: hidden;
     }
 }
 
@@ -89,6 +48,7 @@
     overflow: hidden;
     @include mq('md') {
         aspect-ratio: 1005 / 652;
+        width: 65%;
         max-width: rem(1005);
         position: relative;
     }
@@ -104,12 +64,53 @@
 }
 
 .p-top-mv__pctitle {
+    position: absolute;
+    display: inline-block;
+    
+    // content: "";
+    padding: 0;
+    margin: 0;
+    top: 0;
+    color: $accent-white;
+    right: 0;
+    // width: 100%;
+    transform-origin: top right;
+    transform: rotate(90deg) translateX(100%);
+    // font-size: clamp(120px,30.77vw,489px);
+    font-size: rem(120);
+    z-index: 1;
+    line-height: 1;
+    font-weight: $bold;
+    color: #FFFCEC;
+    @include mq('md') {
+        transform: rotate(0) translateX(0%);
+        font-size: rem(489);
+        line-height: 1;
+        font-weight: $bold;
+        letter-spacing: 0.02em;
+        font-family: $third-font-family;
+        color: #FFFCEC;
+        z-index: 0;
+        display: flex;
+        gap: rem(40);
+        margin-top: rem(100);
+        animation: scrollSample01 50s linear infinite;
+    }
+}
+
+.p-top-mv__pctitle span {
+    @include mq('md') {
+        font-size: rem(489);;
+        color: $accent-white;
+        font-weight: $bold;
+        white-space : nowrap;
+    }
+}
+
+.p-top-mv__pctitle span:not(:first-child)  {
     display: none;
     @include mq('md') {
         display: block;
-        font-size: rem(489);
-        color: $accent-white;
-        font-weight: $bold;
     }
 }
 
@@ -148,10 +149,7 @@
 }
 
 .p-top-mv__right {
-    position: absolute;
-    content: "";
-    bottom: rem(84);
-    right: rem(10);
+    
     
     @include mq('md') {
         
@@ -159,6 +157,10 @@
 }
 
 .p-top-mv__right-img {
+    position: absolute;
+    content: "";
+    bottom: rem(84);
+    right: rem(10);
     width: 100%;
     overflow: hidden;
     margin-left: auto;
@@ -206,6 +208,12 @@
 
 }
 
+// ロゴタイトルが自動で流れる
+@keyframes scrollSample01{
+    0% { transform: translateX(100%)}
+    100% { transform: translateX(-1%)}
+}
+
 
 /* 0.5秒間かけてフェードイン */
 .fadeInleft {
@@ -244,7 +252,7 @@
 }
 
 
-
+// 横から1文字アニメーション
 .text1,
 .text2 {
     display: flex;
