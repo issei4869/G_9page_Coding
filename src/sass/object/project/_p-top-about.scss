@@ -34,6 +34,7 @@
 .p-top-about__item {
     position: relative;
     height: rem(616);
+    z-index: -1;
 }
 
 .p-top-about__item-inner {

@@ -22,8 +22,6 @@
     }
 }
 
-
-
 .p-top-mv__content {
     position: relative;
     @include mq('md') {
@@ -38,10 +36,11 @@
 //     }
 // }
 
+
 .p-top-mv__left-img {
     position: absolute;
     content: "";
-    top: rem(10);
+    top: 0;
     aspect-ratio: 260 / 346;
     max-width: rem(260);
     width: 100%;
@@ -94,7 +93,13 @@
         display: flex;
         gap: rem(40);
         margin-top: rem(100);
-        animation: scrollSample01 50s linear infinite;
+        animation: scrollSample01 50s infinite linear .5s both;
+    }
+}
+
+.p-top-mv__pctitle:nth-child(1)  {
+    @include mq('md') {
+        
     }
 }
 
@@ -210,8 +215,8 @@
 
 // ロゴタイトルが自動で流れる
 @keyframes scrollSample01{
-    0% { transform: translateX(100%)}
-    100% { transform: translateX(-1%)}
+    from { transform: translateX(0)}
+    to { transform: translateX(-100%)}
 }
 
 

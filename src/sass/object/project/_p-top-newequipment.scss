@@ -2,10 +2,16 @@
 
 .p-top-newequipment {
   overflow: hidden;
+  padding-bottom: 80px;
+  height: 100%;
+  position: relative;
+
 }
 
 .p-top-newequipment__inner {
-  position: relative;
+  @include mq('md') {
+    position: relative;
+  }
   
 }
 
@@ -14,10 +20,14 @@
   content: "";
   background-color: $accent-white;
   top: rem(69);
-  left: rem(-79);
-  width: rem(1266);
-  height: rem(702);
+  left: 0;
+  width: 100vw;
+  height: 100%;
   z-index: -1;
+  @include mq('md') {
+    width: rem(1266);
+    left: rem(-79);
+  }
 }
 
 
@@ -28,17 +38,36 @@
   }
 }
 
+.p-top-newequipment__title {
+  
+}
+
 .p-top-newequipment__heading {
+  // text-align: center;
+}
+
+.p-top-newequipment__btn {
+  margin-top: rem(60);
   text-align: center;
+  @include mq('md') {
+    position: absolute;
+    content: "";
+    top: 6%;
+    right: rem(25);
+    width: rem(215);
+    margin-top: 0;
+  }
 }
 
 .p-top-newequipment__swiper {
   overflow: hidden;
   margin-top: rem(24);
-  margin-right: calc(50% - 50vw);
-  //width: 100vw;
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
   @include mq('md') {
     margin-top: rem(40);
+    margin-left: 0;
+    margin-right: calc(50% - 50vw);
   }
 }
 
@@ -57,7 +86,7 @@
   gap: rem(30);
   justify-content: left;
   align-items: center;
-  // position: relative;
+  position: relative;
   @include mq('md') {
     margin-top: rem(70);
   }
@@ -135,5 +164,9 @@
 
 
 .swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
-  position: relative;
+  left: 24%!important;
+  bottom: 17px!important;
+  @include mq('md') {
+    left: 10%!important;
+  }
 }

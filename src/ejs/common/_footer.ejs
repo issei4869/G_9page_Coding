@@ -1,44 +1,51 @@
 <div class="p-footer">
   <!-- Navigation -->
-  <nav class="p-footer__navigation">
-    <ul class="p-footer__nav-list">
-        <li class="p-footer__nav-item">
-          <a href="index.html" class="p-footer__nav-link">TOP</a>
-        </li>
-        <li class="p-footer__nav-item">
-          <a href="equipment.html">NEW EQUIPMENT</a>
-        </li>
-        <li class="p-footer__nav-item">
-          <a href="about.html">ABOUT</a>
-        </li>
-        <li class="p-footer__nav-item">
-          <a href="about.html">RECRUIT</a>
-        </li>
-        <li class="p-footer__nav-item">
-          <a href="topics.html">TOPICS</a>
-        </li>
-        <li class="p-footer__nav-item">
-          <a href="#">CONTACT</a>
-        </li>
-        <li class="p-footer__nav-item">
-          <a href="policy.html">PRIVACY POLICY</a>
-        </li>
-    </ul>
-  </nav>
-  <div class="p-footer__content">
-    <!-- Logo -->
-    <header class="p-footer__content-logo">
-     <%- include(ejsPath + './component/_c-logo', { link: 'index.html' }) %>
-    </header>
-    <!-- Contact Information -->
-    <div class="p-footer__contact-info">
-      <div class="p-footer__address">
-          <p>有限会社グリフィス</p>
-          <p>〒182-0025</p>
-          <p>東京都調布市多摩川1-11-3</p>
-          <p>042-485-4552</p>
-          <p>g.info1994@gmail.com</p>
-          <small class="p-footer__copyright">&copy; 2024 GRIFFITH. All Rights Reserved.</small>
+  <div class="p-footer__inner">
+    <div class="p-footer__wrapper">
+      <nav class="p-footer__navigation">
+        <ul class="p-footer__nav-list">
+            <li class="p-footer__nav-item">
+              <a href="index.html" class="p-footer__nav-link">TOP</a>
+            </li>
+            <li class="p-footer__nav-item">
+              <a href="equipment.html">NEW EQUIPMENT</a>
+            </li>
+            <li class="p-footer__nav-item">
+              <a href="about.html">ABOUT</a>
+            </li>
+            <li class="p-footer__nav-item">
+              <a href="about.html">RECRUIT</a>
+            </li>
+            <li class="p-footer__nav-item">
+              <a href="topics.html">TOPICS</a>
+            </li>
+            <li class="p-footer__nav-item">
+              <a href="#">CONTACT</a>
+            </li>
+            <li class="p-footer__nav-item">
+              <a href="policy.html">PRIVACY POLICY</a>
+            </li>
+        </ul>
+      </nav>
+      <div class="p-footer__contents">
+        <!-- Logo -->
+        <div class="p-footer__contents-logo">
+        <%- include(ejsPath + './component/_c-logo', { link: 'index.html' }) %>
+        </div>
+        <!-- Contact Information -->
+        <div class="p-footer__contacts-info">
+          <div class="p-footer__contact">
+              <h3 class="p-footer__name">有限会社グリフィス</h3>
+              <p class="p-footer__post">〒182-0025</p>
+              <div class="p-footer__flex">
+                <p class="p-footer__address">東京都調布市多摩川1-11-3</p>
+                <p class="p-footer__map">MAP</p>
+              </div>
+              <p class="p-footer__phone">042-485-4552</p>
+              <p class="p-footer__mail">g.info1994@gmail.com</p>
+              <small class="p-footer__copyright">&copy; 2024 GRIFFITH. All Rights Reserved.</small>
+          </div>
+        </div>
       </div>
     </div>
   </div>

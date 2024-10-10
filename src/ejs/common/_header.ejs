@@ -4,10 +4,6 @@
       <!-- colorが空（''）であれば白いロゴ、『green』なら緑色のロゴが表示される -->
       <%- include(ejsPath + './component/_c-logo', { link: 'index.html' }) %>
     </h1>
-    <nav class="p-header__pc-nav">
-      <!-- prettier-ignore -->
-      <%- include(ejsPath + './project/_p-pc-nav') %>
-    </nav>
     <div class="p-header__drawer">
       <!-- prettier-ignore -->
       <%- include(ejsPath + './project/_p-hamburger') %>
@@ -20,6 +16,10 @@
         alt: 'メールアイコン',
         color: btncolor
       }) %>
+      <nav class="p-header__pc-nav">
+        <!-- prettier-ignore -->
+        <%- include(ejsPath + './project/_p-pc-nav') %>
+      </nav>
     </div>
     
      

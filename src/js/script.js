@@ -22,18 +22,35 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         
       
 
-
+    /*********************カレントページのヘッダーナビに下線**************************/
     // 現在のURLを取得
-    const href = location.href;
-    // ヘッダーの中のaタグを全部取得
-    var links = document.querySelectorAll(".p-pc-nav__items > li > a");
+    // const href = location.href;
+    // // ヘッダーの中のaタグを全部取得
+    // var links = document.querySelectorAll(".p-pc-nav > li > a");
 
-    // ループでURLと一致したaタグに current を付ける。
+    // // ループでURLと一致したpタグに current を付ける。
+    // for (var i = 0; i < links.length; i++) {
+    //     if (links[i].href == href) {
+    //         document.querySelectorAll(".p-pc-nav > li > a > p")[i].classList.add("current");
+    //     }
+    // }
+
+    const href = location.href.split("#")[0].split("?")[0]; // ハッシュやクエリを除外
+
+    var links = document.querySelectorAll(".p-pc-nav > li > a");
+
     for (var i = 0; i < links.length; i++) {
-    if (links[i].href == href) {
-        document.querySelectorAll(".p-pc-nav__items > li")[i].classList.add("current");
+        const linkHref = links[i].href.split("#")[0].split("?")[0]; // リンクのハッシュやクエリを除外
+
+        if (linkHref == href) {
+            const pTag = links[i].querySelector("p"); // aタグ内のpタグを取得
+            if (pTag) { // pタグが存在するか確認
+                pTag.classList.add("current");
+            }
+        }
     }
-    }
+
+
 
     
     /////////////////////// ドロワーメニュー ///////////////////////
@@ -98,32 +115,79 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         }
     }
 
+    
     /*****Campaignスライダー*****/
-    var service_swiper = new Swiper('.js-newequipment-swiper', {
-        loop: true,
-        speed: 2000,
-        slidesPerView: 1.27,
-        spaceBetween: 24,
-        // autoplay: {
-        // delay: 2000,
-        // disableOnInteraction: false,
-        // },
-        breakpoints: {
-        768: {
-            slidesPerView: 3.485,
-            spaceBetween: 39,
-        },
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        scrollbar: {
-            el: ".swiper-scrollbar",
-            hide: false,
-            draggable: true 
-        }
+        var service_swiper = new Swiper('.js-newequipment-swiper', {
+            loop: true,
+            speed: 2000,
+            slidesPerView: 1.5,
+            spaceBetween: 24,
+            centeredSlides: true,
+            autoplay: {
+                delay: 2000,
+                disableOnInteraction: false,
+            },
+            breakpoints: {
+                900: {
+                    slidesPerView: 3.485,
+                    spaceBetween: 39,
+                    centeredSlides: false,
+                },
+                1920: {
+                    slidesPerView: 4,
+                    spaceBetween: 39,
+                    centeredSlides: false,
+                },
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            scrollbar: {
+                el: '.swiper-scrollbar',
+                hide: false,
+                draggable: true,
+            }
+        });
+    
+
+
+    /****************上スクロールでナビゲーション表示**************/
+    $(function() {
+        var startPos = 0,winScrollTop = 0;
+        $(window).on('scroll',function(){
+            winScrollTop = $(this).scrollTop();
+            if (winScrollTop >= startPos) {
+                if(winScrollTop >= 200){
+                    $('.p-pc-nav').addClass('hide');
+                }
+            } else {
+                $('.p-pc-nav').removeClass('hide');
+            }
+            startPos = winScrollTop;
+        });
     });
+
+
+    ////////// Recruitセクションのボタンにホバーしたときに画像を拡大////////////////
+    // ボタンのホバー時に画像を拡大
+
+    const btn = document.querySelector('.p-top-recruit__btn');
+    const img = document.querySelector('.p-top-recruit__img img');
+    
+    if (btn && img) {
+        // ボタンにホバーしたときに画像を拡大
+        btn.addEventListener('mouseenter', () => {
+            img.style.transform = 'scale(1.2)';
+            img.style.transition = 'transform 0.3s ease-in-out';
+        });
+
+        // ボタンからホバーを外したときに画像を元のサイズに戻す
+        btn.addEventListener('mouseleave', () => {
+            img.style.transform = 'scale(1)';
+        });
+    }
+
 
     /////////////////////// 矢印が一方通行で戻ってくる ///////////////////////
     const arrowLinks = document.querySelectorAll('.p-sub-equipment__item');
@@ -162,103 +226,196 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     }   
     
 
-    //横から1文字ずつ表示させる
-    // クラスの付け外しのみ
-    const text1 = document.querySelector('.text1');
-    setTimeout(function () {
-        text1.classList.add('is-text');
-    }, 10);
-    const text2 = document.querySelector('.text2');
-    setTimeout(function () {
-        text2.classList.add('is-text');
-    }, 1000);
+    // setTimeout(function () {
+    //     animation.classList.add('is-text');
+    // }, 1000);
+    
 
     // setInterval(() => {
     // text.classList.toggle('is-active');
     // }, 3000);
 
 
-    //スクロールエフェクト
+    /*********************スクロールエフェクト**************************/
     const sections = document.querySelectorAll("[data-section]");
-    sections.forEach((section) => {
-    const inner = section.querySelector("[data-section-inner]");
-  
-    ScrollTrigger.create({
-    //   markers: 'true',
-      trigger: section,
-      start: "center center",
-      onEnter: () => {
-        gsap.set(inner, {
-          position: "fixed",
-          top: "25%",
-        });
-      },
-      onLeaveBack: () => {
-        gsap.set(inner, {
-          position: "absolute",
-          bottom: "auto",
-        });
-      },
+    window.addEventListener('load', () => {
+        ScrollTrigger.refresh();
     });
+    // sections.forEach((section) => {
+    //     const inner = section.querySelector("[data-section-inner]");
+        // ScrollTrigger.create({
+        //     markers: 'true',
+        //     trigger: section,
+        //     start: "center center",
+        //     end: "bottom 30%",
+        //     onEnter: () => {
+        //         gsap.set(inner, {
+        //         position: "fixed",
+        //         top: "15%",
+        //         });
+        //     },
+        //     onLeaveBack: () => {
+        //         gsap.set(inner, {
+        //         position: "absolute",
+        //         bottom: "auto",
+        //         //   top: "0%",
+        //         top: "initial",
+        //         });
+        //     },
+    //         onLeave: () => {
+    //             gsap.to(inner, {
+    //                 position: "absolute",
+    //                 top: "initial", // 元の位置に戻す
+    //                 duration: 0.5, // アニメーションのスピード
+    //                 ease: "power2.inOut"
+    //             });
+    //         }
+    //     });
+    // });
 
-  });
+    sections.forEach((section) => {
+        const inner = section.querySelector("[data-section-inner]");
+        const lastElement = sections.lastElementChild; // sectionsの最後の要素を取得
+    
+        // 全体のスクロール用トリガー
+        ScrollTrigger.create({
+            trigger: section,
+            // markers: 'true',
+            start: "center center",
+            end: "bottom 30%",
+            onEnter: () => {
+                gsap.set(inner, {
+                    position: "fixed",
+                    top: "15%",
+                    // duration: 0.5, // アニメーションのスピード
+                    // ease: "power2.out"
+                });
+            },
+            onLeaveBack: () => {
+                gsap.set(inner, {
+                    position: "absolute",
+                    top: "initial",
+                    bottom: "auto",
+                    // duration: 0.5, // アニメーションのスピード
+                    // ease: "power2.inOut"
+                });
+            },
+            // onLeave: () => {
+            //     gsap.set(inner, {
+            //         position: "absolute", // fixedを解除してabsoluteに変更
+            //         top: "auto",          // 元の位置に戻すための調整
+            //         bottom: "0",          // absoluteの時にボトムに固定
+            //         // duration: 0.5,        // アニメーションのスピード
+            //         // ease: "power2.out"
+            //     });
+            // }
+        });
+    
+        // 最後の要素のスクロール用トリガー
+        ScrollTrigger.create({
+            trigger: lastElement,  // innerの最後の要素をトリガーに
+            start: "bottom bottom", // 最後の要素が画面下に到達した時に発火
+            // end: "bottom top", // 最後の要素が画面下に到達した時に発火
+            onLeave: () => {
+                gsap.set(inner, {
+                    position: "absolute", // fixedを解除してabsoluteに変更
+                    top: "auto",          // 元の位置に戻すための調整
+                    bottom: "0",          // absoluteの時にボトムに固定
+                    // duration: 0.5,        // アニメーションのスピード
+                    // ease: "power2.out"
+                });
+            },
+        });
+    });
+    
 
     
-});
+    /***************** ローディングアニメーション ***********************/
+        // document.addEventListener('DOMContentLoaded', function() {
+        // トップページでのみ実行するための条件分岐
+        if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+            // Vivusの初期化
+            new Vivus('mask', {
+                type: 'oneByOne',
+                duration: 350,
+                animTimingFunction: Vivus.EASE_OUT,
+                start: 'autostart'
+            });
+        }
+    // });
 
-new Vivus('mask', {//svgに指定したid名
-    type: 'oneByOne',// アニメーションのタイプを設定
-    duration: 350,//アニメーションの時間。数字が小さくなれば速くなり、大きくなれば遅くなる
-     animTimingFunction:Vivus.EASE_OUT,
-     start: 'autostart'
+    
+    // const animation = document.querySelector('.p-one-animation');
+
+    $(window).scroll(function () {
+        var target = $(".p-top-about__heading");
+        
+        if (target.length > 0) { // ターゲットが存在するか確認
+          var top = target.offset().top;
+          var position = top - $(window).height();
+          if ($(window).scrollTop() > position) {
+            animation.classList.add('is-text');
+          }
+        }
     });
 
-// document.addEventListener('DOMContentLoaded', function() {
-//     var webStorage = function () {
-//         if (sessionStorage.getItem('access')) {
-//             // 2回目以降アクセス時の処理
-            
-            
-//         } else {
-//             // 初回アクセス時の処理
-//             sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
-//             $(".p-loading-animation").addClass('is-active');  // ローディングアニメーションを表示
+    // var text1 = document.querySelector('.text1');
+    // var text2 = document.querySelector('.text2');  
+    var animation = document.querySelector('.p-one-animation');
+    
+            if (sessionStorage.getItem('access')) {
+                // 2回目以降アクセス時の処理
+                
+                setTimeout(function () {
+                    $(".p-top-mv__left-img").addClass('fadeInleft');
+                    $(".text1").addClass('is-text');
+                    $(".text2").addClass('is-text');
+                }, 1);
+                setTimeout(function () {
+                    $(".p-top-mv__right-img").addClass('fadeInbottom');
+                    
+                }, 100);
+                //横から1文字ずつ表示させる
+                // クラスの付け外しのみ
+                   
+                    // if (text1) {
+                    //   text1.classList.add('is-text');
+                    // }
+                    // if (text2) {
+                    //   text2.classList.add('is-text');
+                    // }
+ 
+                  
+                
+            } else {
+                // 初回アクセス時の処理
+                sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
+                $(".p-loading-animation").addClass('is-active');  // ローディングアニメーションを表示
 
-//             setTimeout(function () {
-//                 $(".p-loading-animation").addClass('svg-container');  //最後の白塗り
-//             }, 6500);  // ローディング表示の時間（6.5秒）
-//             setTimeout(function () {
-//                 $(".p-loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
-//             }, 7500);  // ローディング表示の時間（7.5秒）
-//         }
-//     };
-//     webStorage();
-// });
+                // 最初に6.5秒間の遅延後にsvg-containerクラスを追加
+                setTimeout(function () {
+                    $(".p-loading-animation").addClass('svg-container');  // 最後の白塗り
+                }, 6500);  // ローディング表示の時間（6.5秒）
 
-
-document.addEventListener('DOMContentLoaded', function() {
-    var webStorage = function () {
-        if (sessionStorage.getItem('access')) {
-            // 2回目以降アクセス時の処理
-            $(".p-top-mv__left-img").addClass('fadeInleft');
-            $(".p-top-mv__right-img").addClass('fadeInbottom');
-        } else {
-            // 初回アクセス時の処理
-            sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
-            $(".p-loading-animation").addClass('is-active');  // ローディングアニメーションを表示
-
-            // 最初に6.5秒間の遅延後にsvg-containerクラスを追加
-            setTimeout(function () {
-                $(".p-loading-animation").addClass('svg-container');  // 最後の白塗り
-            }, 6500);  // ローディング表示の時間（6.5秒）
-
-            // 7.5秒後にローディングアニメーションを非表示にする
-            setTimeout(function () {
-                $(".p-loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
+                // 7.5秒後にローディングアニメーションを非表示にする
+                setTimeout(function () {
+                    $(".p-loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
                     $(".p-top-mv__left-img").addClass('fadeInleft');
                     $(".p-top-mv__right-img").addClass('fadeInbottom');
-            }, 7500);  // ローディング表示の時間（7.5秒）
-        }
-    };
-    webStorage();
+                    $(".text1").addClass('is-text');
+                    $(".text2").addClass('is-text');
+                      
+                        // if (text1) {
+                        //   text1.classList.add('is-text');
+                        // }
+                        // if (text2) {
+                        //   text2.classList.add('is-text');
+                        // }
+                
+                }, 7500);  // ローディング表示の時間（7.5秒）
+            }
+        
+        // webStorage();
+
+    
 });

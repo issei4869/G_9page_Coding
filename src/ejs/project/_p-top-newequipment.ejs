@@ -45,8 +45,13 @@ let cards = [
 
 <div class="p-top-newequipment">
   <div class="p-top-newequipment__inner l-inner">
-    <div class="p-top-about__heading">
-      <%- include(ejsPath + './component/_c-section-heading', { page: "", heading_eng:'New Equipment', heading_ja:'機材新入荷のお知らせ' }) %>
+    <div class="p-top-newequipment__heading">
+      <%- include(ejsPath + './component/_c-section-heading', {
+        page: "",
+        heading_eng:'New Equipment',
+        heading_ja:'機材新入荷のお知らせ',
+        anima:''
+      }) %>
     </div>
     <div class="p-top-newequipment__swiper">
       <div class="p-top-newequipment__js swiper js-newequipment-swiper">
@@ -70,7 +75,11 @@ let cards = [
     <div class="p-top-newequipment__button">
       <div class="p-top-newequipment__prev swiper-button-prev js-newequipment-arrow"></div>
       <div class="p-top-newequipment__next swiper-button-next js-newequipment-arrow"></div>
+      <div class="p-top-newequipment__scrollbar swiper-scrollbar"></div>
     </div>
-    <div class="p-top-newequipment__scrollbar swiper-scrollbar"></div>
+
+    <div class="p-top-newequipment__btn">
+      <%- include(project + './component/_c-btn2', { link: 'equipment.html', text: '機材一覧へ' }) %>
+    </div>
   </div>
 </div>

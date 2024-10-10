@@ -22,8 +22,10 @@
   // place-items: center;
   // font-size: 10vw;
   // height: inherit;
+  display: flex;
+  flex-direction: column-reverse;
   @include mq('md') {
-    display: flex;
+    flex-direction: row;
     gap: rem(54);
   }
 }
@@ -40,12 +42,15 @@
 
 
 .p-about-item__content {
+  padding: rem(10) rem(10) rem(30) rem(10);
   @include mq('md') {
     margin-top: rem(50);
+    padding: 0;
   }
 }
 
 .p-about-item__text {
+  font-size: rem(16);
   font-weight: $bold;
   color: $accent-white;
   @include mq('md') {
@@ -55,8 +60,14 @@
 }
 
 .p-about-item__btn {
+  max-width: rem(200);
+  margin: 0 auto;
+  margin-top: rem(24);
   @include mq('md') {
     margin-top: rem(24);
+    margin-left: 0;
+    margin-right: 0;
+    max-width: initial;
   }
 }
 

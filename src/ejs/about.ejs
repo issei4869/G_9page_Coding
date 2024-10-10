@@ -21,7 +21,12 @@
           <div class="p-about__contents">
             <div class="p-about__info">
               <div class="p-about__heading l-box fadeIn">
-                  <%- include(ejsPath + '/component/_c-section-heading', { page: 'company', heading_eng:'Company Info', heading_ja:'企業情報' }) %>
+                  <%- include(ejsPath + '/component/_c-section-heading', 
+                  { page: 'company', 
+                    heading_eng:'Company Info', 
+                    heading_ja:'企業情報' ,
+                    anima:''
+                  }) %>
               </div>
               <div class="p-about__content l-box fadeIn">
                   <%- include(ejsPath + '/project/_p-about-info' ) %>
@@ -29,7 +34,11 @@
             </div>
             <div class="p-about__access">
                 <div class="p-about__heading l-box fadeIn">
-                    <%- include(ejsPath + '/component/_c-section-heading', { page: 'company', heading_eng:'Access', heading_ja:'アクセス' }) %>
+                    <%- include(ejsPath + '/component/_c-section-heading', 
+                    { page: 'company', 
+                      heading_eng:'Access', 
+                      heading_ja:'アクセス',
+                      anima:'' }) %>
                 </div>
                 <div class="p-about__content l-box fadeIn">
                     <%- include(ejsPath + '/project/_p-about-access' ) %>
@@ -42,7 +51,11 @@
         <div class="p-about__contents">
           <div class="p-about__recruit">
               <div class="p-about__heading l-box fadeIn">
-                  <%- include(ejsPath + '/component/_c-section-heading', { page: 'company', heading_eng:'Recruit', heading_ja:'採用情報' }) %>
+                  <%- include(ejsPath + '/component/_c-section-heading', 
+                  { page: 'company', 
+                    heading_eng:'Recruit', 
+                    heading_ja:'採用情報',
+                    anima:'' }) %>
               </div>
               <div class="p-about__content l-box fadeIn">
                   <%- include(ejsPath + '/project/_p-about-recruit' ) %>
@@ -50,7 +63,12 @@
           </div>
           <div class="p-about__description">
               <div class="p-about__heading p-about__heading--endroll l-box fadeIn">
-                  <%- include(ejsPath + '/component/_c-section-heading', { page: 'endroll', heading_eng:'「エンドロールに名を刻め」', heading_ja:'仕事内容について' }) %>
+                  <%- include(ejsPath + '/component/_c-section-heading', 
+                  { page: 'endroll', 
+                    heading_eng:'「エンドロールに名を刻め」', 
+                    heading_ja:'仕事内容について' ,
+                    anima:''
+                  }) %>
               </div>
               <div class="p-about__content l-box fadeIn">
                   <%- include(ejsPath + '/project/_p-about-description' ) %>

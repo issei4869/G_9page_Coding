@@ -29,9 +29,12 @@
   
   /*SVGのサイズ*/
   svg{
-    max-width: 600px;/*SVGタグの横幅*/
+    max-width: rem(270);
     width: 100%;/* レスポンシブ対応にするため100%を指定*/
     height: auto;
+    @include mq('md') {
+      max-width: rem(600);/*SVGタグの横幅*/
+    }
   }
 
 

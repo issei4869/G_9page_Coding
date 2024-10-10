@@ -4,7 +4,7 @@
 <div class="p-one-animation" aria-hidden="true">
     <% for(var i=0; i < string.length; i++) { %>
     
-    <span class="p-one-animation_char" style="--char-index: 0">
+    <span class="p-one-animation_char" style="--char-index: <% i %><">
       <span class="p-one-animation_char-text"><%- arraySplit[i] %></span>
     </span>
     <% } %>
