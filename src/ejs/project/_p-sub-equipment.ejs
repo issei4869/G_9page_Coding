@@ -7,6 +7,7 @@ let cards = [
     title: 'Special equipment',
     tab: '特殊機材',
     bgcolor: '',
+    id: 'equipment',
     content: [
       {link: 'crane.html', img: './assets/images/common/special_equipment1.jpg', alt: 'クレーン', text: 'クレーン'},
       {link: 'crane.html', img: './assets/images/common/special_equipment2.jpg', alt: 'リモートヘッド', text: 'リモートヘッド'},
@@ -21,6 +22,7 @@ let cards = [
     title: 'Special effects',
     tab: '特殊効果',
     bgcolor: 'white',
+    id: 'effects',
     content: [
       {link: 'crane.html', img: './assets/images/common/special_effects1.jpg', alt: '雨', text: '雨'},
       {link: 'crane.html', img: './assets/images/common/special_effects2.jpg', alt: '風', text: '風'},
@@ -32,6 +34,7 @@ let cards = [
     title: 'Rental equipment',
     tab: 'レンタル機材',
     bgcolor: '',
+    id: 'rental',
     content: [
       {link: 'crane.html', img: './assets/images/common/rental_equipment1.jpg', alt: 'イントレ', text: 'イントレ'},
       {link: 'crane.html', img: './assets/images/common/rental_equipment2.jpg', alt: '移動車', text: '移動者'},
@@ -48,7 +51,7 @@ let cards = [
 %>
 
 <% cards.forEach(function(card) { %>
-  <div class="l-sub-equipment p-sub-equipment p-sub-equipment--<%- card.bgcolor %>">
+  <div id="<%- card.id %>" class="l-sub-equipment p-sub-equipment p-sub-equipment--<%- card.bgcolor %>">
     <div class="p-sub-equipment__inner l-inner">
         <h2 class="p-sub-equipment__heading l-box fadeIn"><%- card.title %></h2>
         <div class="p-sub-equipment__category l-box fadeIn">

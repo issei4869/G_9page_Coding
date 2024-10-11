@@ -3,10 +3,14 @@
 .p-about-item {
   background-color: $font-color;
   border-radius: 20px;
+  padding: rem(40) rem(20);
   // position: relative;
+  display: flex;
+  flex-direction: column-reverse;
   
   @include mq('md') {
-    
+    flex-direction: row;
+    gap: rem(54);
     padding: rem(54);
   }
 }
@@ -22,27 +26,30 @@
   // place-items: center;
   // font-size: 10vw;
   // height: inherit;
-  display: flex;
-  flex-direction: column-reverse;
-  @include mq('md') {
-    flex-direction: row;
-    gap: rem(54);
-  }
+  // display: flex;
+  // flex-direction: column-reverse;
+  // @include mq('md') {
+  //   flex-direction: row;
+  //   gap: rem(54);
+  // }
 }
 
 .p-about-item::before {
   position: absolute;
   content: "Service";
-  top: rem(23);
+  top: rem(10);
   left: rem(27);
   width: rem(43);
   height: rem(12);
   color: $accent-white;
+  @include mq('md') {
+    top: rem(23);
+  }
 }
 
 
 .p-about-item__content {
-  padding: rem(10) rem(10) rem(30) rem(10);
+  // padding: rem(10) rem(10) rem(30) rem(10);
   @include mq('md') {
     margin-top: rem(50);
     padding: 0;
@@ -53,7 +60,9 @@
   font-size: rem(16);
   font-weight: $bold;
   color: $accent-white;
+  margin-top: rem(10);
   @include mq('md') {
+    margin-top: 0;
     font-size: rem(24);
     letter-spacing: 0.03em;
   }
@@ -88,12 +97,14 @@
 }
 
 .p-about-item__number {
-  position: absolute;
-  bottom: 0;
-  left: rem(54);
-  font-family: $second-font-family;
-  color: $accent-white;
+  display: none;
   @include mq('md') {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: rem(54);
+    font-family: $second-font-family;
+    color: $accent-white;
     font-size: rem(138);
     letter-spacing: 0.02em;
   }
@@ -107,4 +118,8 @@
 .p-about-item--inversion .p-about-item__number,
 .p-about-item--inversion::before {
   color: $font-color;
+}
+
+.p-about-item__btn:hover.p-about-item__img img {
+  transform: scale(1.2);
 }

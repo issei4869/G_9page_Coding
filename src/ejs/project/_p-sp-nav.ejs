@@ -1,14 +1,14 @@
 <% var navTitle=[
 <!-- prettier-ignore -->
-{ en: 'TOP' , link: 'index' },
+{ en: 'TOP' , link: 'index.html' },
 <!-- prettier-ignore -->
-{ en: '機材一覧' , link: 'equipment' },
+{ en: '機材一覧' , link: 'equipment.html' },
 <!-- prettier-ignore -->
-{ en: '会社概要' , link: 'about' },
+{ en: '会社概要' , link: 'about.html' },
 <!-- prettier-ignore -->
-{ en: '採用情報' , link: 'about' },
+{ en: '採用情報' , link: 'about.html#recruit' },
 <!-- prettier-ignore -->
-{ en: 'トピックス' , link: 'topics' }
+{ en: 'トピックス' , link: 'topics.html' }
 ]
 %>
 
@@ -19,7 +19,7 @@
   <ul class="p-sp-nav__items">
     <% navTitle.forEach(function(title) { %>
       <li class="p-sp-nav__item">
-        <a href="<%- title.link %>.html">
+        <a href="<%- title.link %>">
           <p class="p-sp-nav__title"><%- title.en %></p>
         </a>
       </li>

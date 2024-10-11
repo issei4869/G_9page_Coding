@@ -26,6 +26,7 @@
 }
 
 .p-top-about__items {
+    margin-top: rem(60);
     @include mq('md') {
         margin-top: rem(80);
     }
@@ -34,7 +35,6 @@
 .p-top-about__item {
     position: relative;
     height: rem(616);
-    z-index: -1;
 }
 
 .p-top-about__item-inner {
@@ -54,6 +54,7 @@
 }
 
 .p-top-about__item + .p-top-about__item {
+    margin-top: rem(60);
     @include mq('md') {
         margin-top: rem(80);
     }
