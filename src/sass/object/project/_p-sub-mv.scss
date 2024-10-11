@@ -12,9 +12,13 @@
 
 .p-sub-mv__title {
     position: absolute;
-    top: 38%;
-    left: rem(65);
+    left: rem(20);
+    top: 50%;
     // transform: translateY(-75%)
+    @include mq('md') {
+        left: rem(58);
+        top: 35%;
+    }
 }
 
 
@@ -24,6 +28,7 @@
     font-size: rem(40);
     color: $accent-white;
     line-height: 1;
+    letter-spacing: 0.01em;
     @include mq("md") {
         font-size: rem(160);
     }
@@ -36,6 +41,6 @@
     margin-top: rem(4);
     @include mq("md") {
         font-size: rem(32);
-        margin-top: rem(22);
+        margin-top: rem(47);
     }
 }

@@ -13,9 +13,10 @@
 .c-section-heading__ja {
     font-size: rem(16);
     position: relative;
-    padding-left: rem(10);
+    padding-left: rem(13);
+    text-align: left;
     @include mq("md") {
-  
+        
     }
 }
 

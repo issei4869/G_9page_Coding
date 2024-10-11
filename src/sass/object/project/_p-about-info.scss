@@ -50,6 +50,8 @@
     color: #262626;
     line-height: 1;
     width: 100%;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
     @include mq('md') {
         max-width: rem(693);
         margin-top: rem(32);
@@ -60,6 +62,6 @@
 .p-about-info__text-ja {
     @include mq('md') {
         font-size: rem(20);
-        margin-top: rem(12);
+        // margin-top: rem(12);
     }
 }

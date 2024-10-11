@@ -1,12 +1,12 @@
 @use "global" as *;
 
 .l-totop {
-  right: rem(12);
-  bottom: rem(150);
+  right: rem(60);
+  bottom: rem(30);
   position: fixed;
   z-index: 1000;
   @include mq('md') {
-    right: rem(20);
-    bottom: rem(94);
+    // right: rem(20);
+    // bottom: rem(94);
   }
 }

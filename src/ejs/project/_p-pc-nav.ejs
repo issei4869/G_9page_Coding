@@ -12,7 +12,11 @@
 ]
 %>
 
-<ul class="p-pc-nav">
+<!-- prettier-ignore -->
+<% const validColor = ['yellow']; %>
+<% const colorClass = validColor.includes(color) ? ` p-pc-nav--${color}` : ''; %>
+
+<ul class="p-pc-nav<%- colorClass %>">
   <% navTitle.forEach(function(title) { %>
     <li class="p-pc-nav__item">
       <a href="<%- title.link %>">

@@ -5,6 +5,7 @@
     display: inline-block;
     width: rem(145);
     // width: 100%;
+    height: rem(145);
     padding: rem(59) 0;
     background-color: $black;
     border: 1px solid $accent-white;
@@ -13,7 +14,7 @@
     border-radius: 50%;
     opacity: 0;
     visibility: hidden;
-
+    
   @include mq('md') {
 
   }
@@ -22,15 +23,17 @@
 .c-totop__text {
     position: relative;
     font-size: rem(13);
+    line-height: calc(27 / 13);
     font-family: $second-font-family;
     color: $accent-white;
     transition: all 0.3s;
+    letter-spacing: 0.06em;
 }
 
 .c-totop::before {
     content: '';
     position: absolute;
-    top: 5%;
+    top: 11%;
     left: 50%;
     transform: translateX(-50%);
     background-color: $accent-white;

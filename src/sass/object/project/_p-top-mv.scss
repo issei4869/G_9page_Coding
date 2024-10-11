@@ -122,9 +122,9 @@
 .p-top-mv__detail {
     position: absolute;
     content: "";
-    bottom: rem(100);
-    left: rem(20);
-    margin-top: rem(140);
+    bottom: rem(133);
+    left: rem(60);
+    // margin-top: rem(140);
 }
 
 .p-top-mv__maintext {
@@ -149,7 +149,7 @@
     @include mq('md') {
         font-size: rem(24);
         line-height: 1;
-        margin-top: rem(40);
+        margin-top: rem(21);
     }
 }
 
@@ -174,7 +174,7 @@
     @include mq('md') {
         aspect-ratio: 738 / 467;
         max-width: rem(738);
-        
+        bottom: rem(132);
     }
 }
 
@@ -194,7 +194,7 @@
 .p-top-mv__blog {
     position: absolute;
     content: "";
-    bottom: rem(10);
+    bottom: rem(20);
     right: 0;
     @include mq('md') {
         

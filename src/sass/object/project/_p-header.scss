@@ -10,7 +10,7 @@
   width: 100%;
   @include mq('md') {
     // background-color: transparent;
-    height: rem(129);
+    height: rem(137);
   }
 }
 
@@ -73,7 +73,7 @@
     content: "";
     top: 50%;
     transform: translateY(-50%);
-    right: 117%;
+    right: 116%;
 
   }
 }

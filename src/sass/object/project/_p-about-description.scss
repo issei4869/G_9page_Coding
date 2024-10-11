@@ -45,10 +45,10 @@
 }
 
 .p-about-description__list {
-    display: flex;
     gap: rem(32);
     margin-top: rem(16);
     @include mq('md') {
+        display: flex;
         margin-top: rem(26);
     }
 }
@@ -68,6 +68,9 @@
 }
 
 .p-about-description__description {
-
+    margin-top: rem(8);
+    @include mq('md') {
+        margin-top: 0;
+    }
 }
 

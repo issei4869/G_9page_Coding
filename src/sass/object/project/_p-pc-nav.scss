@@ -5,7 +5,7 @@
     transition: all .5s;
     display: inline-flex;
     justify-content: right;
-    width: rem(520);
+    width: rem(650);
   }
 }
 
@@ -31,7 +31,7 @@
     // display: flex;
     // align-items: center;
     // flex-direction: column;
-    padding: rem(13) rem(19);
+    padding: rem(13) rem(17);
     line-height: 1;
   }
 }
@@ -41,8 +41,8 @@
   font-weight: $bold;
   color: #333333;
   line-height: 1;
-
-  padding-bottom: rem(6);
+  padding: 0 rem(4) rem(9) rem(4);
+  padding-bottom: rem(9);
   background-image: linear-gradient(#000, #000);
   background-repeat: no-repeat;
   background-position: bottom right; /* 下線の初期位置 */
@@ -55,4 +55,9 @@
 .p-pc-nav__title.current {
   background-position: bottom left; /* 下線のホバー時位置 */
   background-size: 100% 1px; /* 下線の横幅を100%にする */
+}
+
+.p-pc-nav--yellow li a .p-pc-nav__title {
+  color: $accent-white;
+  background-image: linear-gradient($accent-white, $accent-white);
 }
