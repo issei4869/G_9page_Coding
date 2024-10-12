@@ -100,55 +100,53 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     });
 
 
-    /////////////////////// Campaignスライダー ///////////////////////
-    // Campaignリサイズ処理（PC時のみ矢印表示）
+    /////////////////////// スライダー ///////////////////////
+    // リサイズ処理（PC時のみ矢印表示）
     const service_slideLength = document.querySelectorAll('.js-newequipment-swiper .swiper-slide').length;
     $(window).resize(function () {
         service_arrow();
     });
     service_arrow();
     function service_arrow() {
-        if (window.matchMedia('(max-width: 767px)').matches || service_slideLength <= 3) {
-        $('.js-newequipment-arrow').hide();
-        } else {
+       
         $('.js-newequipment-arrow').show();
-        }
+        
     }
 
-    
-    /*****Campaignスライダー*****/
-        var service_swiper = new Swiper('.js-newequipment-swiper', {
-            loop: true,
-            speed: 2000,
-            slidesPerView: 1.5,
-            spaceBetween: 24,
-            centeredSlides: true,
-            autoplay: {
-                delay: 2000,
-                disableOnInteraction: false,
+    /*****スライダー*****/
+    var service_swiper = new Swiper('.js-newequipment-swiper', {
+        loop: true,
+        speed: 2000,
+        slidesPerView: 1.5,
+        spaceBetween: 24,
+        slidesPerGroup: 1,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            900: {
+                slidesPerView: 3.485,
+                spaceBetween: 39,
+                centeredSlides: false,
             },
-            breakpoints: {
-                900: {
-                    slidesPerView: 3.485,
-                    spaceBetween: 39,
-                    centeredSlides: false,
-                },
-                1920: {
-                    slidesPerView: 4,
-                    spaceBetween: 39,
-                    centeredSlides: false,
-                },
+            1920: {
+                slidesPerView: 4,
+                spaceBetween: 39,
+                centeredSlides: false,
             },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            scrollbar: {
-                el: '.swiper-scrollbar',
-                hide: false,
-                draggable: true,
-            }
-        });
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            hide: false,
+            draggable: true,
+        }
+    });
     
 
 
@@ -237,96 +235,65 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 
     /*********************スクロールエフェクト**************************/
-    const sections = document.querySelectorAll("[data-section]");
-    window.addEventListener('load', () => {
-        ScrollTrigger.refresh();
-    });
-    // sections.forEach((section) => {
-    //     const inner = section.querySelector("[data-section-inner]");
-        // ScrollTrigger.create({
-        //     markers: 'true',
-        //     trigger: section,
-        //     start: "center center",
-        //     end: "bottom 30%",
-        //     onEnter: () => {
-        //         gsap.set(inner, {
-        //         position: "fixed",
-        //         top: "15%",
-        //         });
-        //     },
-        //     onLeaveBack: () => {
-        //         gsap.set(inner, {
-        //         position: "absolute",
-        //         bottom: "auto",
-        //         //   top: "0%",
-        //         top: "initial",
-        //         });
-        //     },
-    //         onLeave: () => {
-    //             gsap.to(inner, {
-    //                 position: "absolute",
-    //                 top: "initial", // 元の位置に戻す
-    //                 duration: 0.5, // アニメーションのスピード
-    //                 ease: "power2.inOut"
-    //             });
-    //         }
-    //     });
+    // const sections = document.querySelectorAll("[data-section]");
+    // window.addEventListener('load', () => {
+    //     ScrollTrigger.refresh();
     // });
 
-    sections.forEach((section) => {
-        const inner = section.querySelector("[data-section-inner]");
-        const lastElement = sections.lastElementChild; // sectionsの最後の要素を取得
+    // sections.forEach((section) => {
+    //     const inner = section.querySelector("[data-section-inner]");
+    //     const lastElement = sections.lastElementChild; // sectionsの最後の要素を取得
     
-        // 全体のスクロール用トリガー
-        ScrollTrigger.create({
-            trigger: section,
-            // markers: 'true',
-            start: "center center",
-            end: "bottom 30%",
-            onEnter: () => {
-                gsap.set(inner, {
-                    position: "fixed",
-                    top: "15%",
-                    // duration: 0.5, // アニメーションのスピード
-                    // ease: "power2.out"
-                });
-            },
-            onLeaveBack: () => {
-                gsap.set(inner, {
-                    position: "absolute",
-                    top: "initial",
-                    bottom: "auto",
-                    // duration: 0.5, // アニメーションのスピード
-                    // ease: "power2.inOut"
-                });
-            },
-            // onLeave: () => {
-            //     gsap.set(inner, {
-            //         position: "absolute", // fixedを解除してabsoluteに変更
-            //         top: "auto",          // 元の位置に戻すための調整
-            //         bottom: "0",          // absoluteの時にボトムに固定
-            //         // duration: 0.5,        // アニメーションのスピード
-            //         // ease: "power2.out"
-            //     });
-            // }
-        });
+    //     // 全体のスクロール用トリガー
+    //     ScrollTrigger.create({
+    //         trigger: section,
+    //         // markers: 'true',
+    //         start: "center center",
+    //         end: "bottom 30%",
+    //         onEnter: () => {
+    //             gsap.set(inner, {
+    //                 position: "fixed",
+    //                 top: "15%",
+    //                 // duration: 0.5, // アニメーションのスピード
+    //                 // ease: "power2.out"
+    //             });
+    //         },
+    //         onLeaveBack: () => {
+    //             gsap.set(inner, {
+    //                 position: "absolute",
+    //                 top: "initial",
+    //                 bottom: "auto",
+    //                 // duration: 0.5, // アニメーションのスピード
+    //                 // ease: "power2.inOut"
+    //             });
+    //         },
+    //         // onLeave: () => {
+    //         //     gsap.set(inner, {
+    //         //         position: "absolute", // fixedを解除してabsoluteに変更
+    //         //         top: "auto",          // 元の位置に戻すための調整
+    //         //         bottom: "0",          // absoluteの時にボトムに固定
+    //         //         // duration: 0.5,        // アニメーションのスピード
+    //         //         // ease: "power2.out"
+    //         //     });
+    //         // }
+    //     });
     
-        // 最後の要素のスクロール用トリガー
-        ScrollTrigger.create({
-            trigger: lastElement,  // innerの最後の要素をトリガーに
-            start: "bottom bottom", // 最後の要素が画面下に到達した時に発火
-            // end: "bottom top", // 最後の要素が画面下に到達した時に発火
-            onLeave: () => {
-                gsap.set(inner, {
-                    position: "absolute", // fixedを解除してabsoluteに変更
-                    top: "auto",          // 元の位置に戻すための調整
-                    bottom: "0",          // absoluteの時にボトムに固定
-                    // duration: 0.5,        // アニメーションのスピード
-                    // ease: "power2.out"
-                });
-            },
-        });
-    });
+    //     // 最後の要素のスクロール用トリガー
+    //     ScrollTrigger.create({
+    //         trigger: lastElement,  // innerの最後の要素をトリガーに
+    //         start: "bottom bottom", // 最後の要素が画面下に到達した時に発火
+    //         // end: "bottom top", // 最後の要素が画面下に到達した時に発火
+    //         onLeave: () => {
+    //             gsap.set(inner, {
+    //                 position: "absolute", // fixedを解除してabsoluteに変更
+    //                 top: "auto",          // 元の位置に戻すための調整
+    //                 bottom: "0",          // absoluteの時にボトムに固定
+    //                 // duration: 0.5,        // アニメーションのスピード
+    //                 // ease: "power2.out"
+    //             });
+    //         },
+    //     });
+    // });
     
 
     

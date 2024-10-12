@@ -120,6 +120,7 @@
   color: $font-color;
 }
 
-.p-about-item__btn:hover.p-about-item__img img {
+.p-about-item__btn:hover + .p-about-item__img img {
   transform: scale(1.2);
+  transition: all .6s;
 }

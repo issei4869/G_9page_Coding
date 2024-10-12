@@ -164,9 +164,10 @@
 
 
 .swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
-  left: 24%!important;
+  left: 26%!important;
   bottom: 17px!important;
   @include mq('md') {
     left: 10%!important;
+    bottom: 85%!important;
   }
 }
