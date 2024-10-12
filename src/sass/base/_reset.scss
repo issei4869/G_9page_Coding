@@ -36,6 +36,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  scroll-behavior: smooth;
 }
 
 /* Remove list styles on ul, ol elements with a class attribute */
@@ -109,4 +110,16 @@ select {
 
 select::-ms-expand {
   display: none;
+}
+
+[data-section] {
+  position: relative; /* これにより子要素のfixedが正しく動作することを保障 */
+}
+
+[data-section-inner] {
+  will-change: position, transform;
+  position: absolute; /* 初期描画時はabsoluteで固定 */
+  top: 0;
+  left: 0;
+  width: 100%;
 }

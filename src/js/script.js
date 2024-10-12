@@ -16,7 +16,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
     $(function () {
         
-        $('body').fadeIn(1500); //1秒かけてフェードイン！
+        
 	
     });
 
@@ -24,39 +24,113 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     /*********************アンカーリンク（ヘッダー分の高さを引く）**************************/
 
      //別ページのリンククリックによるスムーススクロール
-     $(window).on('load', function() {
-        // ページのURLを取得
-        const url = $(location).attr('href'),
-        // headerの高さを取得してそれに30px追加した値をheaderHeightに代入
-        headerHeight = $('.p-header').outerHeight() + 30;
+    //  function smoothScroll() {
+    //     // ページのURLを取得
+    //     const url = $(location).attr('href'),
+    //     // headerの高さを取得してそれに30px追加した値をheaderHeightに代入
+    //     headerHeight = $('.p-header').outerHeight() + 30;
     
-        // urlに「#」が含まれていれば
-        if(url.indexOf("#") != -1){
-            // urlを#で分割して配列に格納
-            const anchor = url.split("#"),
-            // 分割した最後の文字列（#◯◯の部分）をtargetに代入
-            target = $('#' + anchor[anchor.length - 1]),
-            // リンク先の位置からheaderHeightの高さを引いた値をpositionに代入
-            position = Math.floor(target.offset().top) - headerHeight;
-            // positionの位置に移動
-            $("html, body").animate({scrollTop:position}, 500);
-        }
-    });
+    //     // urlに「#」が含まれていれば
+    //     if (url.indexOf("#") != -1) {
+    //         // urlを#で分割して配列に格納
+    //         const anchor = url.split("#");
+    //         // 分割した最後の文字列（#◯◯の部分）をtargetに代入
+    //         const targetId = anchor[anchor.length - 1];  // ハッシュ部分を取得
+    //         const target = $('#' + targetId);  // ターゲット要素を取得
     
-     //同ページのリンククリックによるスムーススクロール
-    $(function () {
-        $('a[href*="#"]').on('click', function () {
-        var scrollSpeed = 400;
-        var navigationHeight = $(".p-header").innerHeight();
-        var scrollToTarget = $(this.hash === '#' || '' ? 'html' : this.hash);
-        if (!scrollToTarget.length) return;
-        var scrollPosition = scrollToTarget.offset().top - navigationHeight;
-        $('html, body').animate({
-            scrollTop: scrollPosition
-        }, scrollSpeed, 'swing');
-        return false;
+    //         // リンク先の位置が正しく取得できた場合にスクロール
+    //         if (target.length) {
+    //             // リンク先の位置からheaderHeightの高さを引いた値をpositionに代入
+    //             const position = Math.floor(target.offset().top) - headerHeight;
+    //             // positionの位置に移動
+    //             $("html, body").animate({scrollTop: position}, 300);
+    //         } else {
+    //             console.log("ターゲット要素が見つかりません: ", targetId);
+    //         }
+    //     }
+    // }
+    //別ページのリンククリックによるスムーススクロール
+  $(function() {
+    $('body').hide().fadeIn(1500); // 最初は非表示にして1.5秒かけてフェードイン！
+
+    let pageHash = window.location.hash;
+    if (pageHash) {
+      let scrollToElement = $(pageHash); // `data-id`ではなく、`id`属性をターゲットに
+      if (!scrollToElement.length) return;
+      
+      // フェードイン完了後にスムーススクロールを実行
+      $('body').fadeIn(1500, function() {
+        setTimeout(function() { // スクロール処理を遅らせる
+            history.replaceState('', '', './'); // ハッシュをURLから削除
+            let locationOffset = scrollToElement.offset().top; // ターゲット要素の位置を取得
+            let navigationBarHeight = $('.p-header').innerHeight(); // ヘッダーの高さを取得
+            locationOffset = locationOffset - navigationBarHeight; // スクロール位置を調整
+            $('html, body').animate({
+                scrollTop: locationOffset
+            }, 300, 'swing'); // スムーススクロールの実行
+        }, 500); // 500ミリ秒（0.5秒）遅らせる
         });
+    }
+  });
+
+  //同ページのリンククリックによるスムーススクロール
+  $(function() {
+    $('a[href*="#"]').on('click', function() {
+      const scrollSpeed = 400;
+      const navigationHeight = $(".p-header").innerHeight();
+      const scrollToTarget = $(this.hash === '#' || '' ? 'html' : this.hash)
+      if (!scrollToTarget.length) return;
+      const scrollPosition = scrollToTarget.offset().top - navigationHeight;
+      $('html, body').animate({
+          scrollTop: scrollPosition
+      }, scrollSpeed, 'swing');
+      return false;
     });
+  });
+    
+    
+    // ページがロードされた時点でスムーススクロールを実行
+    // $(document).ready(function() {
+    //     // ページがロードされた時点でスムーススクロールを実行
+    //     $(window).on('load', function() {
+    //         setTimeout(smoothScroll, 500);  // 500msの遅延
+    //     });
+    
+    //     // 初回アクセス時の処理
+    //     if (!sessionStorage.getItem('access')) {
+    //         sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
+    //         // 初回アクセス時の特別な処理をここに記述
+    //     }
+    
+    //     // 2回目以降アクセス時の処理
+    //     // ここに2回目以降の特別な処理を記述することも可能
+    // });
+
+    // URLのハッシュが変更された場合にもスムーススクロールを実行
+    // $(window).on('hashchange', function() {
+    //     smoothScroll();
+    // });
+    
+    // URLが変更された場合（ブラウザの戻る・進む操作など）にもスムーススクロールを実行
+    // window.addEventListener('popstate', function() {
+    //     smoothScroll();
+    // });
+    
+
+     //同ページのリンククリックによるスムーススクロール
+    // $(function () {
+    //     $('a[href*="#"]').on('click', function () {
+    //     var scrollSpeed = 400;
+    //     var navigationHeight = $(".p-header").innerHeight();
+    //     var scrollToTarget = $(this.hash === '#' || '' ? 'html' : this.hash);
+    //     if (!scrollToTarget.length) return;
+    //     var scrollPosition = scrollToTarget.offset().top - navigationHeight;
+    //     $('html, body').animate({
+    //         scrollTop: scrollPosition
+    //     }, scrollSpeed, 'swing');
+    //     return false;
+    //     });
+    // });
         
       
 
@@ -148,7 +222,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         pauseOnHover: false, 
         slidesToShow: 4,
         dots: true,
-        arrows: false,
+        arrows: true,
         responsive: [
             {
                 breakpoint: 900,
@@ -252,129 +326,69 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 
     /*********************スクロールエフェクト**************************/
-    const sections = document.querySelectorAll("[data-section]");
-    window.addEventListener('load', () => {
-        ScrollTrigger.refresh();
-    });
+        const sections = document.querySelectorAll("[data-section]"); 
 
-    // sections.forEach((section) => {
-    //     const inner = section.querySelector("[data-section-inner]");
-    //     const lastElement = sections.lastElementChild; // sectionsの最後の要素を取得
-    
-    //     // 全体のスクロール用トリガー
-    //     ScrollTrigger.create({
-    //         trigger: section,
-            
-    //         start: "center center",
-    //         end: "bottom 30%",
-    //         onEnter: () => {
-    //             gsap.set(inner, {
-    //                 position: "fixed",
-    //                 top: "15%",
-    //                 // duration: 0.5, // アニメーションのスピード
-    //                 // ease: "power2.out"
-    //             });
-    //         },
-    //         onLeaveBack: () => {
-    //             gsap.set(inner, {
-    //                 position: "absolute",
-    //                 top: "initial",
-    //                 bottom: "auto",
-    //                 // duration: 0.5, // アニメーションのスピード
-    //                 // ease: "power2.inOut"
-    //             });
-    //         },
-            
-    //         // onLeave: () => {
-    //         //     gsap.set(inner, {
-    //         //         position: "absolute", // fixedを解除してabsoluteに変更
-    //         //         top: "auto",          // 元の位置に戻すための調整
-    //         //         bottom: "0",          // absoluteの時にボトムに固定
-    //         //         // duration: 0.5,        // アニメーションのスピード
-    //         //         // ease: "power2.out"
-    //         //     });
-    //         // }
-    //     });
-    
-    //     // 最後の要素のスクロール用トリガー
-    //     ScrollTrigger.create({
-    //         trigger: lastElement,  // innerの最後の要素をトリガーに
-    //         // markers: 'true',
-    //         start: "cemter cemter", // 最後の要素が画面下に到達した時に発火
-    //         end: "bottom bottom", // 最後の要素が画面下に到達した時に発火
-    //         onLeave: () => {
-    //             gsap.set(inner, {
-    //                 position: "absolute", // fixedを解除してabsoluteに変更
-    //                 top: "auto",          // 元の位置に戻すための調整
-    //                 bottom: "0",          // absoluteの時にボトムに固定
-    //                 // duration: 0.5,        // アニメーションのスピード
-    //                 // ease: "power2.out"
-    //             });
-    //         },
-    //     });
-    // });
+        for (let i = 0; i < sections.length; i++) {
+            const section = sections[i];
+            const inner = section.querySelector("[data-section-inner]");
+            const lastElement = sections[sections.length - 1]; // sectionsの最後の要素を取得
 
-
-   for (let i = 0; i < sections.length; i++) {
-    const section = sections[i];
-    const inner = section.querySelector("[data-section-inner]");
-    const lastElement = sections[sections.length - 1]; // sectionsの最後の要素を取得
-
-    // 全体のスクロール用トリガー
-    ScrollTrigger.create({
-        trigger: section,
-        
-        start: "center center",
-        end: "bottom 30%",
-        onEnter: () => {
-            // スクロール時にinnerを固定表示
-            gsap.set(inner, {
-                position: "fixed",
-                top: "15%",
-                // duration: 0.5, // アニメーションのスピード
-                // ease: "power2.out"
-            });
-        },
-        onLeaveBack: () => {
-            // 戻った時に元に戻す
-            gsap.set(inner, {
-                position: "absolute",
-                top: "initial",
-                bottom: "auto",
-                // duration: 0.5, // アニメーションのスピード
-                // ease: "power2.inOut"
-            });
-        }
-    });
-
-    // 最後のセクションだけ別の処理
-    if (section === lastElement) {
-        ScrollTrigger.create({
-            trigger: section,
-            start: "top top",
-            end: "top top",
-            onEnter: () => {
-                // 何もせずスクロールを続行
-            },
-            onLeave: () => {
-                // 最後のセクションでabsoluteに切り替える
-                sections.forEach((sec) => {
-                    const innerSec = sec.querySelector("[data-section-inner]");
-                    gsap.set(innerSec, {
-                        position: "absolute",
-                        top: "auto",          // 元の位置に戻すための調整
-                        bottom: "0",          // absoluteの時にボトムに固定
-                        // duration: 0.5,        // アニメーションのスピード
+            // 全体のスクロール用トリガー
+            ScrollTrigger.create({
+                trigger: section,
+                
+                start: "center center",
+                end: "bottom 30%",
+                onEnter: () => {
+                    // スクロール時にinnerを固定表示
+                    gsap.set(inner, {
+                        position: "fixed",
+                        top: "15%",
+                        // duration: 0.5, // アニメーションのスピード
                         // ease: "power2.out"
                     });
+                },
+                refreshPriority: 1, // リフレッシュの優先度を設定
+                onLeaveBack: () => {
+                    // 戻った時に元に戻す
+                    gsap.set(inner, {
+                        position: "absolute",
+                        top: "initial",
+                        bottom: "auto",
+                        // duration: 0.5, // アニメーションのスピード
+                        // ease: "power2.inOut"
+                    });
+                },
+                invalidateOnRefresh: true // リフレッシュ時に再計算
+            });
+
+            // 最後のセクションだけ別の処理
+            if (section === lastElement) {
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: "top top",
+                    end: "top top",
+                    onEnter: () => {
+                        // 何もせずスクロールを続行
+                    },
+                    onLeave: () => {
+                        // 最後のセクションでabsoluteに切り替える
+                        sections.forEach((sec) => {
+                            const innerSec = sec.querySelector("[data-section-inner]");
+                            gsap.set(innerSec, {
+                                position: "absolute",
+                                top: "auto",          // 元の位置に戻すための調整
+                                bottom: "0",          // absoluteの時にボトムに固定
+                                // duration: 0.5,        // アニメーションのスピード
+                                // ease: "power2.out"
+                            });
+                        });
+                    }
                 });
             }
-        });
-    }
-}
+        }
 
-    
-    
+        gsap.delayedCall(0.2, ScrollTrigger.refresh);
 
     
     /***************** ローディングアニメーション ***********************/
