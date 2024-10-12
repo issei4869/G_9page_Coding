@@ -213,42 +213,6 @@
     }
   }
   
-  /* ulタグ */
-  .scroll-list {
-      display: flex;
-      list-style: none;
-      padding-inline: 0;
-      margin-inline: 0;
-      gap: 0;
-      background-color: skyblue;
-      overflow: hidden;
-    }
-
-    /* liタグ */
-    .scroll-list li {
-      color: #fff;
-      font-size: 3em;
-      font-weight: bold;
-      white-space: nowrap;
-      padding: 0 1em 0 0;
-      margin: 0;
-      animation: marquee-left 16s linear infinite;
-    }
-
-    /* PCの時のフォントサイズ */
-    @media (min-width: 600px) {
-      .scroll-list li {
-        font-size: 8vw;
-      }
-    }
-
-    /* アニメーション */
-    @keyframes marquee-left {
-      100% {
-        transform: translateX(-100%);
-      }
-    }
-    }
       
   </style>
 
@@ -256,12 +220,57 @@
 
     <%- include(ejsPath + '/common/_header' , { btncolor:'' }); %>
     <main>
-
-      
-      
       <!-- 下層ページMV -->
       <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:' EQUIPMENT', heading_ja:'機材一覧'}) %>
       
+      <!-- slickスライダー -->
+      <h2 class="ejs-style-title">slickスライダー</h2>
+
+      <div class="p-service">
+        <div class="p-service__inner">
+          <div class="p-service__slick p-service-slick">
+            <ul class="p-service-slick__list js-service-slick">
+              <li class="p-service-slick__item p-service-card">
+                <a href="#">
+                  <div class="p-service-card__img">
+                <img src="../assets/images/common/top-new_equipment1.jpg" alt="省略">
+                  </div>
+                  <p class="p-service-card__text">タイトルタイトル</p>
+                </a>
+              </li>
+              <li class="p-service-slick__item p-service-card">
+                <a href="#">
+                  <div class="p-service-card__img">
+                <img src="../assets/images/common/top-new_equipment2.jpg" alt="省略">
+                  </div>
+                  <p class="p-service-card__text">タイトルタイトル</p>
+                </a>
+              </li>
+              <li class="p-service-slick__item p-service-card">
+                <a href="#">
+                  <div class="p-service-card__img">
+                <img src="../assets/images/common/top-new_equipment3.jpg" alt="省略">
+                  </div>
+                  <p class="p-service-card__text">タイトルタイトル</p>
+                </a>
+              </li>
+              <li class="p-service-slick__item p-service-card">
+                <a href="#">
+                  <div class="p-service-card__img">
+                <img src="../assets/images/common/top-new_equipment4.jpg" alt="省略">
+                  </div>
+                  <p class="p-service-card__text">タイトルタイトル</p>
+                </a>
+              </li>
+            </ul>
+            <div class="p-service-slick__arrow-wrap">
+              <div class="p-service-slick__arrow p-service-slick__arrow--prev js-service-slick-arrow-prev"></div>
+              <div class="p-service-slick__arrow p-service-slick__arrow--next js-service-slick-arrow-next"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- page topボタン -->
       <h2 class="ejs-style-title">page top</h2>
       <!-- prettier-ignore -->

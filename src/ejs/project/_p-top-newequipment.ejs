@@ -53,33 +53,27 @@ let cards = [
         anima:''
       }) %>
     </div>
-    <div class="p-top-newequipment__swiper">
-      <div class="p-top-newequipment__js swiper js-newequipment-swiper">
-        <ul class="p-top-newequipment__wrapper swiper-wrapper">
-          <% cards.forEach(function(card) { %>
-            <li class="p-top-newequipment__slide swiper-slide">
-              <%- include(project + '/_p-newequipment-card', {
-                url: card.url,
-                img: card.img,
-                alt: card.alt,
-                tab: card.tab,
-                date: card.date,
-                datetime: card.datetime,
-                text: card.text
-              }) %>
-            </li>
-          <% }); %>
-        </ul>
+    <div class="p-top-newequipment__slick">
+      <ul class="p-top-newequipment__list js-service-slick">
+        <% cards.forEach(function(card) { %>
+          <li class="p-top-newequipment__item">
+            <%- include(project + '/_p-newequipment-card', {
+              url: card.url,
+              img: card.img,
+              alt: card.alt,
+              tab: card.tab,
+              date: card.date,
+              datetime: card.datetime,
+              text: card.text
+            }) %>
+          </li>
+        <% }); %>
+      </ul>
+      <div class="p-top-newequipment__arrow-wrap">
+        <div class="p-top-newequipment__arrow p-top-newequipment__arrow--prev js-service-arrow-prev"></div>
+        <div class="p-top-newequipment__arrow p-top-newequipment__arrow--next js-service-arrow-next"></div>
       </div>
-    </div>
-    <div class="p-top-newequipment__button">
-      <div class="p-top-newequipment__prev swiper-button-prev js-newequipment-arrow"></div>
-      <div class="p-top-newequipment__next swiper-button-next js-newequipment-arrow"></div>
-      <div class="p-top-newequipment__scrollbar swiper-scrollbar"></div>
-    </div>
-
-    <div class="p-top-newequipment__btn">
-      <%- include(project + './component/_c-btn2', { link: 'equipment.html', text: '機材一覧へ' }) %>
+      
     </div>
   </div>
 </div>

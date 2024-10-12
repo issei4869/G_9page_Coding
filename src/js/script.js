@@ -101,51 +101,26 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 
     /////////////////////// スライダー ///////////////////////
-    // リサイズ処理（PC時のみ矢印表示）
-    const service_slideLength = document.querySelectorAll('.js-newequipment-swiper .swiper-slide').length;
-    $(window).resize(function () {
-        service_arrow();
-    });
-    service_arrow();
-    function service_arrow() {
-       
-        $('.js-newequipment-arrow').show();
-        
-    }
-
-    /*****スライダー*****/
-    var service_swiper = new Swiper('.js-newequipment-swiper', {
-        loop: true,
+    $(".js-service-slick").slick({
+        autoplay: true,
+        autoplaySpeed: 2000,
         speed: 2000,
-        slidesPerView: 1.5,
-        spaceBetween: 24,
-        slidesPerGroup: 1,
-        centeredSlides: true,
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-        },
-        breakpoints: {
-            900: {
-                slidesPerView: 3.485,
-                spaceBetween: 39,
-                centeredSlides: false,
+        adaptiveHeight: false,
+        pauseOnFocus: false,
+        pauseOnHover: false, 
+        slidesToShow: 3,
+        responsive: [
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 1,
+                    centerMode: true, // 中央寄せ表示
+                    centerPadding: '100px', // 前後のスライドの見切れ幅
+                },
             },
-            1920: {
-                slidesPerView: 4,
-                spaceBetween: 39,
-                centeredSlides: false,
-            },
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        scrollbar: {
-            el: '.swiper-scrollbar',
-            hide: false,
-            draggable: true,
-        }
+        ],
+        prevArrow: $(".js-service-arrow-prev"),
+        nextArrow: $(".js-service-arrow-next")
     });
     
 
