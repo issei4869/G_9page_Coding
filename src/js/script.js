@@ -235,10 +235,10 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 
     /*********************スクロールエフェクト**************************/
-    // const sections = document.querySelectorAll("[data-section]");
-    // window.addEventListener('load', () => {
-    //     ScrollTrigger.refresh();
-    // });
+    const sections = document.querySelectorAll("[data-section]");
+    window.addEventListener('load', () => {
+        ScrollTrigger.refresh();
+    });
 
     // sections.forEach((section) => {
     //     const inner = section.querySelector("[data-section-inner]");
@@ -247,7 +247,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     //     // 全体のスクロール用トリガー
     //     ScrollTrigger.create({
     //         trigger: section,
-    //         // markers: 'true',
+            
     //         start: "center center",
     //         end: "bottom 30%",
     //         onEnter: () => {
@@ -267,6 +267,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     //                 // ease: "power2.inOut"
     //             });
     //         },
+            
     //         // onLeave: () => {
     //         //     gsap.set(inner, {
     //         //         position: "absolute", // fixedを解除してabsoluteに変更
@@ -281,8 +282,9 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     //     // 最後の要素のスクロール用トリガー
     //     ScrollTrigger.create({
     //         trigger: lastElement,  // innerの最後の要素をトリガーに
-    //         start: "bottom bottom", // 最後の要素が画面下に到達した時に発火
-    //         // end: "bottom top", // 最後の要素が画面下に到達した時に発火
+    //         // markers: 'true',
+    //         start: "cemter cemter", // 最後の要素が画面下に到達した時に発火
+    //         end: "bottom bottom", // 最後の要素が画面下に到達した時に発火
     //         onLeave: () => {
     //             gsap.set(inner, {
     //                 position: "absolute", // fixedを解除してabsoluteに変更
@@ -294,6 +296,67 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     //         },
     //     });
     // });
+
+
+   for (let i = 0; i < sections.length; i++) {
+    const section = sections[i];
+    const inner = section.querySelector("[data-section-inner]");
+    const lastElement = sections[sections.length - 1]; // sectionsの最後の要素を取得
+
+    // 全体のスクロール用トリガー
+    ScrollTrigger.create({
+        trigger: section,
+        
+        start: "center center",
+        end: "bottom 30%",
+        onEnter: () => {
+            // スクロール時にinnerを固定表示
+            gsap.set(inner, {
+                position: "fixed",
+                top: "15%",
+                // duration: 0.5, // アニメーションのスピード
+                // ease: "power2.out"
+            });
+        },
+        onLeaveBack: () => {
+            // 戻った時に元に戻す
+            gsap.set(inner, {
+                position: "absolute",
+                top: "initial",
+                bottom: "auto",
+                // duration: 0.5, // アニメーションのスピード
+                // ease: "power2.inOut"
+            });
+        }
+    });
+
+    // 最後のセクションだけ別の処理
+    if (section === lastElement) {
+        ScrollTrigger.create({
+            trigger: section,
+            start: "top top",
+            end: "top top",
+            onEnter: () => {
+                // 何もせずスクロールを続行
+            },
+            onLeave: () => {
+                // 最後のセクションでabsoluteに切り替える
+                sections.forEach((sec) => {
+                    const innerSec = sec.querySelector("[data-section-inner]");
+                    gsap.set(innerSec, {
+                        position: "absolute",
+                        top: "auto",          // 元の位置に戻すための調整
+                        bottom: "0",          // absoluteの時にボトムに固定
+                        // duration: 0.5,        // アニメーションのスピード
+                        // ease: "power2.out"
+                    });
+                });
+            }
+        });
+    }
+}
+
+    
     
 
     
