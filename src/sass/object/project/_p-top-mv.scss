@@ -76,25 +76,34 @@
     transform-origin: top right;
     transform: rotate(90deg) translateX(100%);
     // font-size: clamp(120px,30.77vw,489px);
-    font-size: rem(120);
     z-index: 1;
-    line-height: 1;
-    font-weight: $bold;
-    color: #FFFCEC;
+    
     @include mq('md') {
-        transform: rotate(0) translateX(0%);
-        font-size: rem(489);
-        line-height: 1;
-        font-weight: $bold;
-        letter-spacing: 0.02em;
-        font-family: $third-font-family;
-        color: #FFFCEC;
-        z-index: 0;
+        transform: rotate(0) translateX(50%);
+        // font-size: rem(489);
+        // line-height: 1;
+        // font-weight: $bold;
+        // letter-spacing: 0.02em;
+        // font-family: $third-font-family;
+        // color: #FFFCEC;
+        // z-index: 0;
+        // display: flex;
+        // gap: rem(40);
+        // margin-top: rem(100);
+        // animation: scrollSample01 20s infinite linear;
         display: flex;
-        gap: rem(40);
-        margin-top: rem(100);
-        animation: scrollSample01 50s infinite linear .5s both;
+        list-style: none;
+        padding-inline: 0;
+        margin-inline: 0;
+        gap: 0;
+        overflow: hidden;
     }
+}
+
+// ロゴタイトルが自動で流れる
+@keyframes scrollSample01{
+    // 0% { transform: translateX(50%)}
+    100% { transform: translateX(-100%)}
 }
 
 .p-top-mv__pctitle:nth-child(1)  {
@@ -103,12 +112,19 @@
     }
 }
 
-.p-top-mv__pctitle span {
+.p-top-mv__pctitle li {
+    font-size: rem(120);
+    line-height: 1;
+    font-weight: $bold;
+    color: #FFFCEC;
     @include mq('md') {
-        font-size: rem(489);;
+        font-size: rem(489);
         color: $accent-white;
         font-weight: $bold;
         white-space : nowrap;
+        padding-left: rem(40);
+        // width: calc(500vw / 3);
+        animation: scrollSample01 16s infinite linear;
     }
 }
 
@@ -212,13 +228,6 @@
 .p-top-mv__text {
 
 }
-
-// ロゴタイトルが自動で流れる
-@keyframes scrollSample01{
-    from { transform: translateX(0)}
-    to { transform: translateX(-100%)}
-}
-
 
 /* 0.5秒間かけてフェードイン */
 .fadeInleft {

@@ -35,10 +35,10 @@
 .c-section-heading__eng {
     font-family: $second-font-family;
     font-size: rem(50);
+    margin-top: rem(10);
+    line-height: 1;
     @include mq("md") {
         font-size: rem(80);
-        line-height: 1;
-        margin-top: rem(10);
     }
 }
 

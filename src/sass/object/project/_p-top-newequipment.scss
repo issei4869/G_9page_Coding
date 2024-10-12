@@ -20,8 +20,8 @@
   content: "";
   background-color: $accent-white;
   top: rem(69);
-  left: 0;
-  width: 100vw;
+  right: 24%;
+  width: rem(899);
   height: 100%;
   z-index: -1;
   @include mq('md') {

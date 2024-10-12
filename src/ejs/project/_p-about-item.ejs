@@ -6,14 +6,16 @@
 <div class="p-about-item<%- colorClass %>">
     <!-- <div class="p-about-item__inner"> -->
         <div class="p-about-item__content">
-            <p class="p-about-item__text">
-                <%- text %>
-            </p>
-            <div class="p-about-item__btn">
-                <%- include(ejsPath + './component/_c-btn1', {
-                    link: link,
-                    text: btntext
-                }) %>
+            <div class="p-about-item__left">
+                <p class="p-about-item__text">
+                    <%- text %>
+                </p>
+                <div class="p-about-item__btn">
+                    <%- include(ejsPath + './component/_c-btn1', {
+                        link: link,
+                        text: btntext
+                    }) %>
+                </div>
             </div>
             <div class="p-about-item__img">
                 <img src="<%- img %>" alt="<%- alt %>" />

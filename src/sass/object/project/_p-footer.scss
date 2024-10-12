@@ -26,7 +26,7 @@
 .p-footer__navigation {
   
   @include mq('md') {
-    width: 67%;
+    
   }
 }
 
@@ -47,13 +47,18 @@
 
 }
 
+.p-footer__nav-item + .p-footer__nav-item {
+  @include mq('md') {
+    margin-top: rem(26);
+  }
+}
+
 .p-footer__nav-item a {
   color: $accent-white;
   font-family: $second-font-family;
   font-weight: $bold;
-  display: inline-block;
+  display: inline-flex;
   text-transform: uppercase;
-  width: 100%;
   transition: all 0.3s;
   // padding: rem(13) 0 rem(13) rem(59);
   color: transparent; /* テキスト本体は透明にする */
@@ -69,7 +74,8 @@
   @include mq('md') {
     font-size: rem(68);
     letter-spacing: -0.01em;
-    padding: rem(13) 0  rem(13) rem(59);
+    padding-left: rem(39);
+    // padding: rem(13) 0  rem(13) rem(59);
   }
 }
 
@@ -89,32 +95,39 @@
   text-shadow: 0 0 0 #fff, 0 3.0em 0 #fff; /* 2つの影の位置を上方向に1.5emずつずらす */
 }
 
+.p-footer__nav-item:nth-child(6) {
+  @include mq('md') {
+    margin-top: rem(15);
+  }
+}
+
 .p-footer__nav-item:nth-child(6) a {
   position: relative;
   @include mq('md') {
     font-size: rem(140);
-    padding-top: rem(70);
+    margin-top: rem(70);
     letter-spacing: -0.05em;
+    padding-right: 110px;
   }
 }
 
 .p-footer__nav-item:nth-child(6) a::after {
   position: absolute;
   content: "";
-  right: rem(83);
-  bottom: rem(80);
+  right: rem(39);
+  bottom: rem(71);
   mask-image: url(../images/common/contact-arrow.svg);
   mask-repeat: no-repeat;
   mask-position: center center;
   mask-size: cover;
   background-color: $accent-white;
-  width: rem(18);
-  height: rem(13);
+  width: rem(28);
+  height: rem(28);
   transition: all .3s;
 }
 
-.p-footer__nav-item a:hover.p-footer__nav-item:nth-child(6) a::after {
-  right: rem(50);
+.p-footer__nav-item:nth-child(6) a:hover::after {
+  right: 0;
   bottom: rem(120);
 }
 
@@ -128,6 +141,9 @@
     font-weight: $bold;
     font-size: rem(17);
     letter-spacing: 0.1em;
+    display: inline-block;
+    left: 50%;
+    transform: translateY(-50%);
   }
 }
 

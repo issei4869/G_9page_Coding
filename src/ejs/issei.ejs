@@ -211,8 +211,44 @@
     .contact button {
         padding: 10px 20px;
     }
-}
-    
+  }
+  
+  /* ulタグ */
+  .scroll-list {
+      display: flex;
+      list-style: none;
+      padding-inline: 0;
+      margin-inline: 0;
+      gap: 0;
+      background-color: skyblue;
+      overflow: hidden;
+    }
+
+    /* liタグ */
+    .scroll-list li {
+      color: #fff;
+      font-size: 3em;
+      font-weight: bold;
+      white-space: nowrap;
+      padding: 0 1em 0 0;
+      margin: 0;
+      animation: marquee-left 16s linear infinite;
+    }
+
+    /* PCの時のフォントサイズ */
+    @media (min-width: 600px) {
+      .scroll-list li {
+        font-size: 8vw;
+      }
+    }
+
+    /* アニメーション */
+    @keyframes marquee-left {
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    }
       
   </style>
 
@@ -238,6 +274,13 @@
           <p>記事3: これが3番目の記事です。</p>
         </div>
       </div>
+
+
+      <ul class="scroll-list">
+        <li>Hello World!</li>
+        <li>Hello World!</li>
+        <li>Hello World!</li>
+      </ul>
       
       <!-- ボタン① -->
       <h2 class="ejs-style-title">FV</h2>
