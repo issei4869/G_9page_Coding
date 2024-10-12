@@ -19,6 +19,44 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         $('body').fadeIn(1500); //1秒かけてフェードイン！
 	
     });
+
+
+    /*********************アンカーリンク（ヘッダー分の高さを引く）**************************/
+
+     //別ページのリンククリックによるスムーススクロール
+     $(window).on('load', function() {
+        // ページのURLを取得
+        const url = $(location).attr('href'),
+        // headerの高さを取得してそれに30px追加した値をheaderHeightに代入
+        headerHeight = $('.p-header').outerHeight() + 30;
+    
+        // urlに「#」が含まれていれば
+        if(url.indexOf("#") != -1){
+            // urlを#で分割して配列に格納
+            const anchor = url.split("#"),
+            // 分割した最後の文字列（#◯◯の部分）をtargetに代入
+            target = $('#' + anchor[anchor.length - 1]),
+            // リンク先の位置からheaderHeightの高さを引いた値をpositionに代入
+            position = Math.floor(target.offset().top) - headerHeight;
+            // positionの位置に移動
+            $("html, body").animate({scrollTop:position}, 500);
+        }
+    });
+    
+     //同ページのリンククリックによるスムーススクロール
+    $(function () {
+        $('a[href*="#"]').on('click', function () {
+        var scrollSpeed = 400;
+        var navigationHeight = $(".p-header").innerHeight();
+        var scrollToTarget = $(this.hash === '#' || '' ? 'html' : this.hash);
+        if (!scrollToTarget.length) return;
+        var scrollPosition = scrollToTarget.offset().top - navigationHeight;
+        $('html, body').animate({
+            scrollTop: scrollPosition
+        }, scrollSpeed, 'swing');
+        return false;
+        });
+    });
         
       
 
@@ -108,7 +146,9 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         adaptiveHeight: false,
         pauseOnFocus: false,
         pauseOnHover: false, 
-        slidesToShow: 3,
+        slidesToShow: 4,
+        dots: true,
+        arrows: false,
         responsive: [
             {
                 breakpoint: 900,
@@ -122,6 +162,8 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         prevArrow: $(".js-service-arrow-prev"),
         nextArrow: $(".js-service-arrow-next")
     });
+
+    
     
 
 
