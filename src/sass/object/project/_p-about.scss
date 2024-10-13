@@ -55,12 +55,6 @@
     }
 }
 
-.p-about__heading--info {
-    @include mq('md') {
-        top: rem(-4);
-    }
-}
-
 .p-about__content {
     width: 100%;
     margin-top: rem(30);
@@ -108,9 +102,16 @@
 }
 
 // モディファイア
+.p-about__heading--info {
+    @include mq('md') {
+        top: rem(-4);
+    }
+}
+
 .p-about__heading--endroll {
     @include mq('md') {
         max-width: initial;
+        margin-top: rem(-12);
     }
 }
 

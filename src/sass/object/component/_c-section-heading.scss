@@ -13,9 +13,9 @@
 .c-section-heading__ja {
     font-size: rem(16);
     position: relative;
-    padding-left: rem(9);
+    padding-left: rem(11);
     text-align: left;
-    letter-spacing: 0.09em;
+    // letter-spacing: 0.09em;
     @include mq("md") {
         
     }
@@ -31,6 +31,13 @@
     border-radius: 50%;
     width: rem(6);
     height: rem(6);
+}
+
+.c-section-heading__margin {
+    @include mq('md') {
+        margin-top: rem(6);
+        margin-left: rem(4);
+    }
 }
 
 .c-section-heading__eng {
@@ -70,5 +77,13 @@
     font-size: rem(50);
     @include mq('md') {
         font-size: rem(54);
+        letter-spacing: 0.02em;
+        margin-top: rem(15);
+    }
+}
+
+.c-section-heading--endroll .c-section-heading__ja {
+    @include mq('md') {
+        letter-spacing: 0.02em;
     }
 }

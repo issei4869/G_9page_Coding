@@ -13,7 +13,7 @@
     font-weight: $bold;
     font-size: rem(38);
     text-align: center;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     line-height: 1;
 }
 
@@ -23,7 +23,7 @@
     display: flex;
     justify-content: center;
     @include mq('md') {
-        margin-top: rem(133);
+        margin-top: rem(130);
     }
 }
 
@@ -35,9 +35,10 @@
     font-family: $second-font-family;
     color: #8A8A8A;
     letter-spacing: 0.05em;
-    line-height: 1;
+    line-height: calc(10 / 14);
+    font-size: rem(14);
     @include mq('md') {
-        padding: 0 rem(47);
+        padding: 0 rem(48);
     }
 }
 
@@ -61,7 +62,7 @@
 .p-sub-topics__cards {
     margin-top: rem(40);
     @include mq('md') {
-        margin-top: rem(54);
+        margin-top: rem(58);
     }
 }
 

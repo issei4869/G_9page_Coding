@@ -10,7 +10,7 @@
   transition: all 0.3s;
   @include mq('md') {
     max-width: rem(321);
-    padding: rem(20) 0;
+    padding: rem(14) 0;
   }
 }
 

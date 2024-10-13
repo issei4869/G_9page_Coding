@@ -5,7 +5,7 @@
   display: inline-block;
   max-width: rem(280);
   width: 100%;
-  padding: rem(14) 0;
+  padding: rem(13) 0;
   background-color: $accent-yellow;
   text-align: center;
   transition: all 0.3s;
@@ -34,7 +34,7 @@
   content: '';
   position: absolute;
   top: 50%;
-  right: rem(10);
+  right: rem(17);
   transform: translateY(-50%);
   mask-image: url(../../assets/images/common/arrow.svg);
   background-color: $black;

@@ -34,27 +34,27 @@
   // }
 }
 
-.p-about-item::before {
-  position: absolute;
-  content: "Service";
-  top: rem(10);
-  left: rem(27);
-  width: rem(43);
-  height: rem(12);
-  color: $accent-white;
-  @include mq('md') {
-    top: rem(23);
-  }
-}
+// .p-about-item::before {
+//   position: absolute;
+//   content: "Service";
+//   top: rem(10);
+//   left: rem(27);
+//   width: rem(43);
+//   height: rem(12);
+//   color: $accent-white;
+//   @include mq('md') {
+//     top: rem(23);
+//   }
+// }
 
 
 .p-about-item__content {
   // padding: rem(10) rem(10) rem(30) rem(10);
   @include mq('md') {
-    margin-top: rem(50);
+    // margin-top: rem(50);
     padding: 0;
     display: flex;
-    
+    gap: rem(62);
   }
 }
 
@@ -67,6 +67,12 @@
     margin-top: 0;
     font-size: rem(24);
     letter-spacing: 0.03em;
+  }
+}
+
+.p-about-item__left {
+  @include mq('md') {
+    margin-top: rem(49);
   }
 }
 
@@ -98,13 +104,26 @@
   object-fit: cover;
 }
 
+.p-about-item__service {
+  position: absolute;
+  top: rem(10);
+  left: rem(27);
+  font-size: rem(12);
+  font-family: $second-font-family;
+  color: $accent-white;
+  @include mq('md') {
+    top: rem(20);
+  }
+}
+
 .p-about-item__number {
   display: none;
   @include mq('md') {
     display: block;
     position: absolute;
-    bottom: 0;
-    left: rem(54);
+    bottom: rem(-16);
+    left: rem(49);
+    line-height: 1;
     font-family: $second-font-family;
     color: $accent-white;
     font-size: rem(138);
@@ -118,11 +137,11 @@
 
 .p-about-item--inversion .p-about-item__text,
 .p-about-item--inversion .p-about-item__number,
-.p-about-item--inversion::before {
+.p-about-item--inversion .p-about-item__service {
   color: $font-color;
 }
 
-.p-about-item__left:hover + .p-about-item__img img {
+.p-about-item__left:hover ~ .p-about-item__img {
   transform: scale(1.2);
   transition: all .6s;
 }

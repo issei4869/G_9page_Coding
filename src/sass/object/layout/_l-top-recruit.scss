@@ -1,7 +1,7 @@
 @use 'global' as *;
 
-.l-sub-topics {
+.l-top-recruit {
     @include mq('md') {
-        margin-top: rem(147);
+        margin-top: rem(158);
     }
 }

@@ -223,6 +223,9 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         slidesToShow: 4,
         dots: true,
         arrows: true,
+        centerMode: false,
+        variableWidth: true,
+        // rightPadding: '200px', // 右のスライドの見切れ幅
         responsive: [
             {
                 breakpoint: 900,
@@ -237,6 +240,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         nextArrow: $(".js-service-arrow-next")
     });
 
+    
     
     
 

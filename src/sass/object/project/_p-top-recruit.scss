@@ -31,14 +31,13 @@
         justify-content: space-between;
         flex-direction: row;
         background: rgba(255, 255, 255, 0.8);
-        margin: rem(50) auto;
         text-align: left;
     }
   }
 
   .p-top-recruit__left {
     @include mq('md') {
-        padding: rem(110) 0 rem(110) rem(84);
+        padding: rem(110) 0 rem(98) rem(84);
     }
     // background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
   }
@@ -60,13 +59,12 @@
 
   .p-top-recruit__left h2 {
     font-size: rem(60);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.05em;
     font-family: $second-font-family;
-    margin-top: rem(22);
   }
 
   .p-top-recruit__btn {
-    margin-top: rem(43);
+    margin-top: rem(30);
     
   }
 
@@ -74,8 +72,8 @@
     width: 100%;
     display: none;
       @include mq('md') {
-          width: 59%;
-          clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+          width: 61.5%;
+          clip-path: polygon(8.5% 0, 100% 0, 100% 100%, 0% 100%);
           display: block;
        }
   }

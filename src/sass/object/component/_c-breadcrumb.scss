@@ -57,3 +57,10 @@
   content: '';
   margin: 0;
 }
+
+.c-breadcrumb__item--ja {
+  font-family: $base-font-family;
+  @include mq('md') {
+    font-size: rem(20);
+  }
+}

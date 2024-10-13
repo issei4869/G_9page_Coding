@@ -11,12 +11,24 @@
 <nav class="c-breadcrumb<%= colorClass %><%= BreadcrumbClass %>" aria-label="現在位置">
   <ul class="c-breadcrumb__items">
     <li class="c-breadcrumb__item"><a href="index.html">top</a></li>
-    <% for (let i = 0; i < breadcrumb.length; i++) { %> <% if (i === breadcrumb.length - 1) { %>
-    <li class="c-breadcrumb__item active"><%= breadcrumb[i].title %></li>
-    <% } else { %>
-    <li class="c-breadcrumb__item">
-      <a href="<%= breadcrumb[i].url %>"><%= breadcrumb[i].title %></a>
-    </li>
-    <% } %> <% } %>
+    <% for (let i = 0; i < breadcrumb.length; i++) { %> 
+      <% if (i === breadcrumb.length - 1) { %>
+        <% if (/[^\x01-\x7E\xA1-\xDF]+/.test(breadcrumb[i].title)) { %>
+          <li class="c-breadcrumb__item active c-breadcrumb__item--ja"><%= breadcrumb[i].title %></li>
+        <% } else { %>
+          <li class="c-breadcrumb__item active"><%= breadcrumb[i].title %></li>
+        <% } %>
+      <% } else { %>
+        <% if (/[^\x01-\x7E\xA1-\xDF]+/.test(breadcrumb[i].title)) { %>
+          <li class="c-breadcrumb__item--ja">
+            <a href="<%= breadcrumb[i].url %>"><%= breadcrumb[i].title %></a>
+          </li>
+        <% } else { %>
+          <li class="c-breadcrumb__item">
+            <a href="<%= breadcrumb[i].url %>"><%= breadcrumb[i].title %></a>
+          </li>
+        <% } %>
+      <% } %>
+    <% } %>
   </ul>
 </nav>

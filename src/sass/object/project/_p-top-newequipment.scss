@@ -185,6 +185,7 @@
 .p-top-newequipment__inner {
     @include mq(md){
        position: relative;
+       padding-bottom: rem(79);
     }
 }
 
@@ -192,14 +193,14 @@
     position: absolute;
     content: "";
     background-color: $accent-white;
-    top: rem(69);
+    top: rem(79);
     right: 24%;
     width: rem(899);
     height: 100%;
     z-index: -1;
     @include mq('md') {
       width: rem(1266);
-      left: rem(-79);
+      left: rem(-82);
     }
   }
 
@@ -214,11 +215,15 @@
   @include mq('md') {
     margin-right: calc(50% - 50vw);
     margin-left: 0;
+    margin-top: rem(71);
   }
 }
 
 .p-top-newequipment__item {
-    margin: 0 rem(5);
+    margin: 0 rem(10);
+    @include mq('md') {
+      
+    }
 }
 
 .p-top-newequipment__arrow-wrap {
@@ -227,6 +232,7 @@
     justify-content: left;
     @include mq(md){
         display: flex;
+        margin-top: rem(75);
     }
 }
 
@@ -245,7 +251,7 @@
 }
 
 .p-top-newequipment__arrow.p-top-newequipment__arrow--next {
-    margin-left: rem(7);
+    margin-left: rem(6);
 }
 
 .p-top-newequipment__arrow::before {
@@ -317,6 +323,19 @@
   background: #404040;
   animation: progress 60s;
   width: 100%;
+}
+
+.p-top-newequipment__btn {
+  margin-top: rem(60);
+  text-align: center;
+  @include mq('md') {
+    position: absolute;
+    content: "";
+    top: 5.5%;
+    right: rem(26);
+    width: rem(215);
+    margin-top: 0;
+  }
 }
 
 

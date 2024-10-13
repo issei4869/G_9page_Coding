@@ -6,6 +6,7 @@
   width: 100%;
   height: 100%;
   transition: all .6s;
+  max-width: rem(409);
 }
 
 .p-newequipment-card__img {
@@ -26,7 +27,7 @@
 .p-newequipment-card__wrapper {
   display: flex;
   align-items: center;
-  gap: rem(10);
+  gap: rem(15);
   margin-top: rem(10);
   // flex-grow: 1;
   @include mq('md') {
@@ -68,11 +69,16 @@
   color: $black;
   @include mq(md){
     font-size: rem(21);
-    margin-top: rem(10);
+    margin-top: rem(15);
   }
 }
 
 .p-newequipment-card:hover .p-newequipment-card__img img {
   transform: scale(1.2);
   transition: all .6s;
+}
+
+.slick-dots {
+  bottom: rem(-105);
+  left: -7%;
 }

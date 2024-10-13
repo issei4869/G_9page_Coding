@@ -22,13 +22,14 @@
         line-height: calc(36 / 17);
         letter-spacing: 0.02em;
         color: $font-color;
+        margin-top: rem(3);
     }
 }
 
 .p-top-about__items {
     margin-top: rem(60);
     @include mq('md') {
-        margin-top: rem(80);
+        margin-top: rem(72);
     }
 }
 

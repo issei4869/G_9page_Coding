@@ -20,7 +20,7 @@
 .p-policy__items {
     margin-top: rem(20);
     @include mq(md){
-        margin-top: rem(40);
+        margin-top: rem(25);
     }
 }
 
@@ -31,7 +31,7 @@
 .p-policy__item + .p-policy__item {
     margin-top: rem(20);
     @include mq(md){
-        margin-top: rem(40);
+        margin-top: rem(26);
     }
 }
 
@@ -49,8 +49,11 @@
 .p-policy__description {
     font-size: rem(10);
     line-height: calc(240 / 100);
+    max-width: rem(1239);
+    letter-spacing: 0.02em;
     @include mq(md){
         font-size: rem(15);
+        margin-top: rem(24);
     }
 }
 
