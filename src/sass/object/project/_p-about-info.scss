@@ -54,8 +54,8 @@
     letter-spacing: 0.02em;
     @include mq('md') {
         max-width: rem(693);
-        margin-top: rem(32);
-        padding-left: rem(9);
+        margin-top: rem(24);
+        padding-left: rem(11);
     }
 }
 

@@ -11,7 +11,7 @@
     padding: rem(60) rem(40);
     margin-top: rem(50);
     @include mq('md') {
-        padding: rem(66) rem(98) rem(61);
+        padding: rem(66) rem(105) rem(58);
         margin-top: rem(227);
     }
 }
@@ -34,14 +34,17 @@
     color: $black;
     @include mq('md') {
         margin-top: rem(71);
-        padding-left: rem(83);
+        padding-left: rem(88);
         padding-right: rem(126);
         
     }
 }
 
 .p-about-description__title {
-
+    @include mq('md') {
+        font-size: rem(18);
+        letter-spacing: 0.01em;
+    }
 }
 
 .p-about-description__list {
