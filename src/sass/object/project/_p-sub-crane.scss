@@ -35,10 +35,10 @@
 }
 
 .p-sub-crane__content {
-    margin-top: rem(80);
+    // margin-top: rem(80);
     width: 100%;
     @include mq('md') {
         max-width: rem(1270);
-        margin-top: rem(8);
+        // margin-top: rem(8);
     }
 }

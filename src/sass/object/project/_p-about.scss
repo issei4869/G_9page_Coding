@@ -4,7 +4,7 @@
     padding: rem(80) 0;
     background-color: #FBFBFB;
     @include mq('md') {
-        padding-top: rem(152);
+        padding-top: rem(160);
         padding-bottom: rem(150);
     }
 }
@@ -15,7 +15,8 @@
 
 .p-about__inner.l-inner {
     @include mq('md') {
-        padding: 0 rem(66);
+        padding-left: rem(62);
+        padding-right: rem(73);
         margin-left: 0;
         margin-right: auto;
         max-width: rem(1664);

@@ -2,11 +2,12 @@
 
 .p-footer {
   background-color: $black;
+  position: relative;
 }
 
 .p-footer__inner {
   margin: 0 auto;
-  padding: rem(20);
+  padding: rem(20) rem(59) rem(20) rem(20);
   @include mq('md') {
     max-width: rem(1920);
   }
@@ -17,7 +18,7 @@
   flex-direction: column-reverse;
   @include mq('md') {
     flex-direction: row;
-    padding: rem(133) 0 rem(93) 0;
+    padding: rem(119) 0 rem(93);
     position: relative;
     justify-content: space-between;
   }
@@ -131,11 +132,11 @@
   bottom: rem(120);
 }
 
-.p-footer__nav-item:last-child a {
+.p-footer__nav-item--policy a {
   @include mq('md') {
     content: "";
     position: absolute;
-    bottom: rem(6);
+    bottom: rem(32);
     text-align: center;
     font-family: $second-font-family;
     font-weight: $bold;
@@ -143,7 +144,8 @@
     letter-spacing: 0.1em;
     display: inline-block;
     left: 50%;
-    transform: translateY(-50%);
+    transform: translateX(-50%);
+    padding-right: 0;
   }
 }
 
@@ -151,8 +153,7 @@
   margin: 0 auto;
   gap: rem(60);
   @include mq('md') {
-    margin-top: rem(38);
-    margin: 0;
+    margin: rem(-5) 0 0 0;
   }
 }
 
@@ -161,13 +162,13 @@
   margin: 0 auto;
   @include mq('md') {
     max-width: rem(250);
-    margin: 0;
+    // margin: 0;
   }
 }
 
 .p-footer__contacts-info {
   @include mq('md') {
-    margin-top: rem(260);
+    margin-top: rem(325);
   }
 }
 
@@ -231,7 +232,8 @@
   color: $accent-white;
   font-family: $second-font-family;
   font-size: rem(18);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.17em;
+  margin-top: rem(4);
 }
 
 .p-footer__mail {

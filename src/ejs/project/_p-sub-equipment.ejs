@@ -1,5 +1,5 @@
 
-<%
+<!-- <%
 project='.' ; ejsPath='.'
 
 let cards = [
@@ -48,32 +48,30 @@ let cards = [
     ]
   }
 ]
-%>
+%> -->
 
-<% cards.forEach(function(card) { %>
-  <div id="<%- card.id %>" class="l-sub-equipment p-sub-equipment p-sub-equipment--<%- card.bgcolor %>">
-    <div class="p-sub-equipment__inner l-inner">
-        <h2 class="p-sub-equipment__heading l-box fadeIn"><%- card.title %></h2>
-        <div class="p-sub-equipment__category l-box fadeIn">
-            <div class="p-sub-equipment__tab"><%- card.tab %></div>
-            <span></span>
-        </div>
-        <div class="p-sub-equipment__items">
-            <% card.content.forEach(function(item) { %>
-                <a href="<%- item.link %>" class="p-sub-equipment__item l-box fadeIn">
-                  <div class="p-sub-equipment__img">
-                    <img src="<%- item.img %>" alt="<%- item.alt %>">
-                  </div>
-                  <div class="p-sub-equipment__wrapper">
-                    <p class="p-sub-equipment__text"><%- item.text %></p>
-                    <span class="p-sub-equipment__iconbg">
-                      <i class="p-sub-equipment__icon"></i>
-                    </span>
-                  </div>
-                </a>
-            <% }); %>
-        </div>
-    </div>
+<div id="<%- id %>" class="p-sub-equipment p-sub-equipment--<%- bgcolor %>">
+  <div class="p-sub-equipment__inner l-inner">
+      <h2 class="p-sub-equipment__heading l-box fadeIn"><%- title %></h2>
+      <div class="p-sub-equipment__category l-box fadeIn">
+          <div class="p-sub-equipment__tab"><%- tab %></div>
+          <span></span>
+      </div>
+      <div class="p-sub-equipment__items p-sub-equipment__items--<%- bgcolor %>">
+          <% content.forEach(function(item) { %>
+              <a href="<%- item.link %>" class="p-sub-equipment__item l-box fadeIn">
+                <div class="p-sub-equipment__img">
+                  <img src="<%- item.img %>" alt="<%- item.alt %>">
+                </div>
+                <div class="p-sub-equipment__wrapper">
+                  <p class="p-sub-equipment__text"><%- item.text %></p>
+                  <span class="p-sub-equipment__iconbg">
+                    <i class="p-sub-equipment__icon"></i>
+                  </span>
+                </div>
+              </a>
+          <% }); %>
+      </div>
   </div>
-<% }); %>
+</div>
 

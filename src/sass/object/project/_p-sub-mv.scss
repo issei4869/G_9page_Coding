@@ -16,8 +16,8 @@
     top: 50%;
     // transform: translateY(-75%)
     @include mq('md') {
-        left: rem(58);
-        top: 35%;
+        left: rem(62);
+        top: 38%;
     }
 }
 
@@ -41,6 +41,6 @@
     margin-top: rem(4);
     @include mq("md") {
         font-size: rem(32);
-        margin-top: rem(47);
+        margin-top: rem(21);
     }
 }

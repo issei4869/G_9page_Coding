@@ -19,12 +19,59 @@
         ] }); %>
       </div>
 
-      <div class="l-top-160">
-        <%- include(ejsPath + '/project/_p-sub-equipment' ) %>
+      <div class="l-sub-equipment">
+        <%- include(ejsPath + '/project/_p-sub-equipment' , {
+          title: 'Special equipment',
+          tab: '特殊機材',
+          bgcolor: '',
+          id: 'equipment',
+          content: [
+            {link: 'crane.html', img: './assets/images/common/special_equipment1.jpg', alt: 'クレーン', text: 'クレーン'},
+            {link: 'crane.html', img: './assets/images/common/special_equipment2.jpg', alt: 'リモートヘッド', text: 'リモートヘッド'},
+            {link: 'crane.html', img: './assets/images/common/special_equipment3.jpg', alt: 'ドリー', text: 'ドリー'},
+            {link: 'crane.html', img: './assets/images/common/special_equipment4.jpg', alt: 'ジフ', text: 'ジフ'},
+            {link: 'crane.html', img: './assets/images/common/special_equipment5.jpg', alt: 'ジンバル', text: 'ジンバル'},
+            {link: 'crane.html', img: './assets/images/common/special_equipment6.jpg', alt: '電気自動車', text: '電気自動車'},
+            {link: 'crane.html', img: './assets/images/common/special_equipment7.jpg', alt: 'カーマウント', text: 'カーマウント'}
+          ]
+        })%>
+      </div>
+      <div class="l-sub-equipment--2">
+        <%- include(ejsPath + '/project/_p-sub-equipment' , {
+          title: 'Special effects',
+          tab: '特殊効果',
+          bgcolor: 'white',
+          id: 'effects',
+          content: [
+            {link: 'crane.html', img: './assets/images/common/special_effects1.jpg', alt: '雨', text: '雨'},
+            {link: 'crane.html', img: './assets/images/common/special_effects2.jpg', alt: '風', text: '風'},
+            {link: 'crane.html', img: './assets/images/common/special_effects3.jpg', alt: '雪', text: '雪'},
+            {link: 'crane.html', img: './assets/images/common/special_effects4.jpg', alt: '煙', text: '煙'}
+          ]
+        })%>
+      </div>
+      <div class="l-sub-equipment--3">
+        <%- include(ejsPath + '/project/_p-sub-equipment' , {
+          title: 'Rental equipment',
+          tab: 'レンタル機材',
+          bgcolor: '',
+          id: 'rental',
+          content: [
+            {link: 'crane.html', img: './assets/images/common/rental_equipment1.jpg', alt: 'イントレ', text: 'イントレ'},
+            {link: 'crane.html', img: './assets/images/common/rental_equipment2.jpg', alt: '移動車', text: '移動者'},
+            {link: 'crane.html', img: './assets/images/common/rental_equipment3.jpg', alt: 'レール', text: 'レール'},
+            {link: 'crane.html', img: './assets/images/common/rental_equipment4.jpg', alt: '円形レール', text: '円形レール'},
+            {link: 'crane.html', img: './assets/images/common/rental_equipment5.jpg', alt: 'ミニジフ', text: 'ミニジフ'},
+            {link: 'crane.html', img: './assets/images/common/rental_equipment6.jpg', alt: '防振', text: '防振'},
+            {link: 'crane.html', img: './assets/images/common/rental_equipment7.jpg', alt: 'スライダー', text: 'スライダー'},
+            {link: 'crane.html', img: './assets/images/common/rental_equipment8.jpg', alt: 'グリップキット', text: 'グリップキット'},
+            {link: 'crane.html', img: './assets/images/common/rental_equipment9.jpg', alt: 'その他', text: 'その他'},
+          ]
+        })%>
       </div>
 
     </main>
-    <div class="l-top-160">
+    <div class="l-equipment-footer">
       <%- include(ejsPath + '/common/_footer' ) %>
     </div>
     <div class="l-totop">

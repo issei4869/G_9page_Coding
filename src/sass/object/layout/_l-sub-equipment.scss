@@ -1,8 +1,22 @@
 @use 'global' as *;
 
-.l-sub-equipment + .l-sub-equipment {
+.l-sub-equipment {
     margin-top: rem(80);
     @include mq('md') {
-        margin-top: rem(160);
+        margin-top: rem(65);
+    }
+}
+
+.l-sub-equipment--2 {
+    margin-top: rem(80);
+    @include mq('md') {
+        margin-top: rem(165);
+    }
+}
+
+.l-sub-equipment--3 {
+    margin-top: rem(80);
+    @include mq('md') {
+        margin-top: rem(146);
     }
 }

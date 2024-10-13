@@ -8,7 +8,7 @@
     background-color: $accent-white;
     padding: rem(80) 0;
     @include mq('md') {
-        padding: rem(160) 0;
+        padding: rem(146) 0 rem(162);
     }
 }
 
@@ -28,7 +28,7 @@
     align-items: center;
     gap: rem(10);
     @include mq('md') {
-        margin-top: rem(24);
+        margin-top: rem(11);
     }
 }
 
@@ -59,7 +59,13 @@
     @include mq('md') {
         gap: rem(64) rem(20);
         grid-template-columns: repeat(3, 1fr);
-        margin-top: rem(54);
+        margin-top: rem(63);
+    }
+}
+
+.p-sub-equipment__items--white {
+    @include mq('md') {
+        margin-top: rem(34);
     }
 }
 
