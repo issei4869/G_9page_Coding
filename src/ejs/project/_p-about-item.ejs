@@ -5,22 +5,18 @@
 
 <div class="p-about-item<%- colorClass %>">
     <!-- <div class="p-about-item__inner"> -->
-        <div class="p-about-item__content">
-            <div class="p-about-item__left">
-                <p class="p-about-item__text">
-                    <%- text %>
-                </p>
-                <div class="p-about-item__btn">
-                    <%- include(ejsPath + './component/_c-btn1', {
-                        link: link,
-                        text: btntext
-                    }) %>
-                </div>
-            </div>
             <div class="p-about-item__img">
                 <img src="<%- img %>" alt="<%- alt %>" />
             </div>
-        </div>
+            <p class="p-about-item__text">
+                <%- text %>
+            </p>
+            <div class="p-about-item__btn">
+                <%- include(ejsPath + './component/_c-btn1', {
+                    link: link,
+                    text: btntext
+                }) %>
+            </div>
         <p class="p-about-item__service">Service</p>
         <p class="p-about-item__number"><%- number %></p>
     <!-- </div> -->

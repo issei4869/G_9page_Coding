@@ -17,12 +17,13 @@
 }
 
 .p-sp-nav__head {
-  height: rem(85);
+  height: rem(91);
   background-color: $font-color;
 }
 
 .p-sp-nav__items {
-  padding: 0 rem(10);
+  padding-left: rem(12);
+  padding-right: rem(15);
 }
 
 .p-sp-nav__item {
@@ -32,7 +33,7 @@
 .p-sp-nav__item a {
   display: inline-block;
   width: 100%;
-  padding: rem(35) 0;
+  padding: rem(29) 0;
   border-bottom: 1px solid #EEEEEE;
   position: relative;
 }

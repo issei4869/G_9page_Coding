@@ -2,11 +2,13 @@
 
 .c-totop {
     position: relative;
-    display: inline-block;
-    width: rem(145);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // display: inline-block;
+    width: rem(80);
     // width: 100%;
-    height: rem(145);
-    padding: rem(59) 0;
+    height: rem(80);
     background-color: $black;
     border: 1px solid $accent-white;
     text-align: center;
@@ -14,20 +16,26 @@
     border-radius: 50%;
     opacity: 0;
     visibility: hidden;
-    
   @include mq('md') {
-
+    width: rem(145);
+    height: rem(145);
+    padding: rem(59) 0;
   }
 }
 
 .c-totop__text {
     position: relative;
-    font-size: rem(13);
-    line-height: calc(27 / 13);
+    
+    font-size: rem(10);
+    line-height: 1;
     font-family: $second-font-family;
     color: $accent-white;
     transition: all 0.3s;
     letter-spacing: 0.06em;
+    @include mq('md') {
+        font-size: rem(13);
+        line-height: calc(27 / 13);
+    }
 }
 
 .c-totop::before {

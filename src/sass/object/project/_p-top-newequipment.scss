@@ -183,8 +183,9 @@
 }
 
 .p-top-newequipment__inner {
+  position: relative;
+  padding-bottom: rem(90);
     @include mq(md){
-       position: relative;
        padding-bottom: rem(79);
     }
 }
@@ -193,14 +194,16 @@
     position: absolute;
     content: "";
     background-color: $accent-white;
-    top: rem(79);
-    right: 24%;
+    top: rem(53);
+    right: 11%;
     width: rem(899);
     height: 100%;
     z-index: -1;
     @include mq('md') {
+      top: rem(75);
       width: rem(1266);
       left: rem(-82);
+      right: 24%;
     }
   }
 
@@ -212,6 +215,7 @@
 .p-top-newequipment__list {
   width: 100vw;
   margin: 0 calc(50% - 50vw);
+  margin-top: rem(50);
   @include mq('md') {
     margin-right: calc(50% - 50vw);
     margin-left: 0;
@@ -227,11 +231,10 @@
 }
 
 .p-top-newequipment__arrow-wrap {
-    margin-top: rem(70);
-    display: none;
-    justify-content: left;
+    margin-top: rem(24);
+    // justify-content: left;
+    display: flex;
     @include mq(md){
-        display: flex;
         margin-top: rem(75);
     }
 }

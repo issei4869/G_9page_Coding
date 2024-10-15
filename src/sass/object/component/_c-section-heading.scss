@@ -34,6 +34,7 @@
 }
 
 .c-section-heading__margin {
+    margin-top: rem(3);
     @include mq('md') {
         margin-top: rem(6);
         margin-left: rem(4);
@@ -58,6 +59,7 @@
 /////////////// モディファイア //////////////////
 .c-section-heading--company .c-section-heading__ja {
     color: $font-color;
+    letter-spacing: 0.02em;
 }
 
 .c-section-heading--company .c-section-heading__eng {

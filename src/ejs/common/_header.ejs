@@ -2,7 +2,7 @@
   <div class="p-header__inner">
     <h1 class="p-header__logo">
       <!-- colorが空（''）であれば白いロゴ、『green』なら緑色のロゴが表示される -->
-      <%- include(ejsPath + './component/_c-logo', { link: 'index.html' }) %>
+      <%- include(ejsPath + './component/_c-logo', { link: '/' }) %>
     </h1>
     <div class="p-header__drawer">
       <!-- prettier-ignore -->
@@ -23,9 +23,7 @@
         }) %>
       </nav>
     </div>
-    
-     
         <!-- prettier-ignore -->
         <%- include(ejsPath + './project/_p-sp-nav') %>
-
+  </div>
 </header>

@@ -42,7 +42,7 @@
 .p-topics-detail__content h2,
 .p-topics-detail__content h3,
 .p-topics-detail__content p {
-    color: $font-color;
+    color: #262626;
     line-height: 1;
     width: 100%;
     @include mq('md') {
@@ -53,7 +53,7 @@
 .p-topics-detail__content h2,
 .p-topics-detail__content h3,
 .p-topics-detail__content text {
-    color: $medium;
+    font-weight: $medium;
 }
 
 .p-topics-detail__content h1 {

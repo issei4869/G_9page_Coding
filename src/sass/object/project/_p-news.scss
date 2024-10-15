@@ -22,14 +22,14 @@
     color: $accent-white;
     letter-spacing: 0.02em;
     line-height: 1;
-    padding-right: rem(22);
+    padding-right: rem(15);
     font-size: rem(10);
     letter-spacing: 0.02em;
     border-right: 1px solid $accent-white;
     font-family: $second-font-family;
     @include mq('md') {
         font-size: rem(17);
-        
+        padding-right: rem(22);
     }
 }
 
@@ -43,9 +43,13 @@
     display: inline-flex;
     width: 100%;
     align-items: center;
-    gap: rem(22);
-    padding: rem(29) rem(40) rem(29) rem(25);
+    gap: rem(8);
+    padding: rem(29) rem(40) rem(29) rem(15);
     margin-top: 0;
+    @include mq('md') {
+        padding-left: rem(27);
+        gap: rem(22);
+    }
 }
 
 .p-news__date,

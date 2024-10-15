@@ -3,17 +3,12 @@
 <html lang="ja">
   <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath, page:
   json[pageData] }) %>
-  <style>
-    body {
-      display: none;
-    }
-  </style>
   <body>
     <%- include(ejsPath + '/common/_header' , { btncolor:'' }); %>
     <main>
       <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:' TOPICS', heading_ja:'トピックス'}) %>
 
-      <div class="l-breadcrumb--topics">
+      <div class="l-breadcrumb l-breadcrumb--topics">
         <%- include(ejsPath + '/component/_c-breadcrumb', { color:'', breadcrumb: [ 
         { title:"Topics", url: "topics.html" },
         { title:"年末休暇のお知らせ", url: "" }

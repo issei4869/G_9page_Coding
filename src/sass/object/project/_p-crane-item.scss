@@ -23,6 +23,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: all .6s;
 }
 
 .p-crane-item__content {
@@ -167,4 +168,9 @@
   background-color: #C4C4C4;
   aspect-ratio: 623 / 469;
   max-width: rem(623);
+}
+
+.p-crane-item__img:hover.p-crane-item__img img {
+  transform: scale(1.2);
+  transition: all .6s;
 }

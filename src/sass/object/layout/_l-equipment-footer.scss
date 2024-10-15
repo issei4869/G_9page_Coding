@@ -1,6 +1,7 @@
 @use 'global' as *;
 
 .l-equipment-footer {
+    margin-top: rem(80);
     @include mq('md') {
         margin-top: rem(150);
     }

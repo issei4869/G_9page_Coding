@@ -228,11 +228,21 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         // rightPadding: '200px', // 右のスライドの見切れ幅
         responsive: [
             {
-                breakpoint: 900,
+                breakpoint: 500,
                 settings: {
                     slidesToShow: 1,
                     centerMode: true, // 中央寄せ表示
                     centerPadding: '100px', // 前後のスライドの見切れ幅
+                    variableWidth: false,
+                },
+            },
+            {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 2,
+                    centerMode: true, // 中央寄せ表示
+                    centerPadding: '100px', // 前後のスライドの見切れ幅
+                    variableWidth: false,
                 },
             },
         ],

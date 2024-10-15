@@ -3,11 +3,6 @@
 <html lang="ja">
   <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath, page:
   json[pageData] }) %>
-  <style>
-    body {
-      display: none;
-    }
-  </style>
   <body>
     <%- include(ejsPath + '/common/_header' , { btncolor:'' }); %>
     <main>
@@ -81,7 +76,6 @@
           <%- include(ejsPath + '/project/_p-about-company' ) %>
         </div>
       </div>
-    </div>
   </main>
   <div class="l-about-footer">
     <%- include(ejsPath + '/common/_footer' ) %>

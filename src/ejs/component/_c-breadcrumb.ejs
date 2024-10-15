@@ -10,7 +10,7 @@
 <!-- パンくずリスト（Breadcrumb NavXT） -->
 <nav class="c-breadcrumb<%= colorClass %><%= BreadcrumbClass %>" aria-label="現在位置">
   <ul class="c-breadcrumb__items">
-    <li class="c-breadcrumb__item"><a href="index.html">top</a></li>
+    <li class="c-breadcrumb__item"><a href="/">top</a></li>
     <% for (let i = 0; i < breadcrumb.length; i++) { %> 
       <% if (i === breadcrumb.length - 1) { %>
         <% if (/[^\x01-\x7E\xA1-\xDF]+/.test(breadcrumb[i].title)) { %>

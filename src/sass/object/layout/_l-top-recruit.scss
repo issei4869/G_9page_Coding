@@ -1,7 +1,8 @@
 @use 'global' as *;
 
 .l-top-recruit {
+    margin-top: rem(80);
     @include mq('md') {
-        margin-top: rem(158);
+        margin-top: rem(161);
     }
 }

@@ -101,12 +101,13 @@
 }
 
 .c-btn2__icon::before {
-    translate: 0 0;
+    transform: translateX(0);
     background-color: $accent-white;
 }
 
 .c-btn2__icon::after {
-    translate: rem(-45) 0;
+    transform: translateX(-100%);
+    transition: all .5s;
     background-color: $black;
 }
 
@@ -119,7 +120,8 @@
 }
 
 .c-btn2:hover .c-btn2__icon::after {
-    translate: 0 0;
+    transform: translateX(0);
+    transition: all .5s;
 }
 
 /* ---------- ボタン共通設定 | ここまで ---------- */

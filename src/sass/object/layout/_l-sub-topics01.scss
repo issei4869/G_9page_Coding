@@ -1,6 +1,7 @@
 @use 'global' as *;
 
 .l-sub-topics01 {
+    margin-top: rem(80);
     @include mq('md') {
         margin-top: rem(158);
     }

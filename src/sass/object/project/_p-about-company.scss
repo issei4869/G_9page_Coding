@@ -22,7 +22,7 @@
     margin-top: rem(40);
     @include mq('md') {
         margin-top: rem(59);
-        padding: rem(95) rem(107);
+        padding: rem(95) rem(107) rem(89);
     }
 }
 
@@ -36,7 +36,7 @@
     font-weight: $bold;
     @include mq(md){
         display: flex;
-        padding: rem(22) rem(40);
+        padding: rem(22) rem(40) rem(23);
         font-size: rem(16);
     }
 }

@@ -12,7 +12,7 @@
     border-top: 1px solid #DFDFDF;
     font-weight: $bold;
     @include mq(md){
-        padding: rem(50) 0;
+        padding: rem(49) 0;
         font-size: rem(20);
     }
 }
@@ -23,6 +23,7 @@
     flex-shrink: 0;
     @include mq(md){
         max-width: rem(172);
+        line-height: calc(29 / 20);
     }
 }
 
@@ -46,16 +47,15 @@
 
 .p-about-info__text {
     font-weight: $bold;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.03em;
     color: #262626;
     line-height: 1;
     width: 100%;
     line-height: 1.45;
-    letter-spacing: 0.02em;
     @include mq('md') {
         max-width: rem(693);
         margin-top: rem(24);
-        padding-left: rem(11);
+        padding-left: rem(8);
     }
 }
 

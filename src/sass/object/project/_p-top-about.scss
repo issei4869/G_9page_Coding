@@ -13,10 +13,11 @@
 }
 
 .p-top-about__heading {
-
+    margin-top: rem(80);
 }
 
 .p-top-about__text {
+    margin-top: rem(3);
     @include mq('md') {
         font-size: rem(17);
         line-height: calc(36 / 17);
@@ -35,7 +36,10 @@
 
 .p-top-about__item {
     position: relative;
-    height: rem(616);
+    height: rem(600);
+    @include mq('md') {
+        height: rem(616);
+    }
 }
 
 .p-top-about__item-inner {
