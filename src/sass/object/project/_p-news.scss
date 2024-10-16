@@ -36,7 +36,7 @@
 .p-news__contents  {
     // display : inline-block;
     // white-space : nowrap;
-    animation: flowing 5s linear infinite;    /*アニメーション*/
+    animation: flowing 10s linear infinite;    /*アニメーション*/
 }
 
 .p-news__content {
@@ -76,25 +76,25 @@
     0% { 
         transform: translateY(-68%);
     }
-    25% {
+    18% {
         transform: translateY(-34%); /* p-news__content 要素3つ目 */
         animation-play-state: paused; /* 停止 */
     }
-    30% {
+    28% {
         transform: translateY(-34%); /* 再生 */
     }
-    50% {
+    46% {
         transform: translateY(0); /* p-news__content 要素2つ目 */
         animation-play-state: paused; /* 停止 */
     }
-    55% {
+    56% {
         transform: translateY(0); /* 再生 */
     }
-    75% {
+    74% {
         transform: translateY(33%); /* p-news__content 要素1つ目 */
         animation-play-state: paused; /* 停止 */
     }
-    80% {
+    84% {
         transform: translateY(33%); /* 再生 */
     }
     100% { 

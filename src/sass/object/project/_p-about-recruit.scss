@@ -10,7 +10,7 @@
     padding: rem(60) rem(40);
     margin-top: rem(50);
     @include mq('md') {
-        padding: rem(105) rem(109) rem(86);
+        padding: rem(105) rem(103) rem(86);
         margin-top: rem(118);
     }
 }
@@ -25,8 +25,10 @@
 }
 
 .p-about-recruit__checkbox label {
-    display: block;
     counter-increment: total; /* "checkbox"クラスの数をカウント */
+    display: flex;
+    gap: rem(16);
+    align-items: baseline;
     @include mq(md){
         
     }
@@ -40,30 +42,18 @@
 }
 
 .p-about-recruit__checkbox input {
-	display: none;
-}
-
-.p-about-recruit__checkbox input + span {
-    cursor: pointer;
-    display: inline-block;
-    padding: 0 0 0 rem(30);
-    position: relative;
-}
-
-.p-about-recruit__checkbox input + span::before {
+	// display: none;
     content: "";
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    position: relative;
     background: $accent-white;
     border: 1px solid #3B3B3B;
     display: block;
     width: rem(12);
     height: rem(12);
+    flex-shrink: 0;
 }
 
-.p-about-recruit__checkbox input + span::after {
+.p-about-recruit__checkbox input::after {
     content: "";
     margin-top: rem(-2);
     position: absolute;
@@ -79,7 +69,23 @@
     opacity: 0;
 }
 
-.p-about-recruit__checkbox input:checked + span::after {
+.p-about-recruit__checkbox input + span {
+    cursor: pointer;
+    display: inline-block;
+    // padding: 0 0 0 rem(30);
+    position: relative;
+    line-height: 1;
+    padding-top: rem(8);
+    padding-bottom: rem(9);
+}
+
+// .p-about-recruit__checkbox input + span::before {
+    
+// }
+
+
+
+.p-about-recruit__checkbox input:checked::after {
     opacity: 1;
     counter-increment: checked; /* チェックされているcheckboxの数をカウント */
 }
@@ -115,12 +121,6 @@
 .p-about-recruit__heading,
 .p-about-recruit__text {
     line-height: 1.7;
-}
-
-.p-about-recruit__checkbox input + span {
-    line-height: 1;
-    padding-top: rem(8);
-    padding-bottom: rem(9);
 }
 
 .p-about-recruit__heading {

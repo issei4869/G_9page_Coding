@@ -76,7 +76,9 @@
 
 .c-section-heading--endroll .c-section-heading__eng {
     color: $font-color;
-    font-size: rem(50);
+    font-size: rem(26);
+    font-family: $base-font-family;
+    display: flex;
     @include mq('md') {
         font-size: rem(54);
         letter-spacing: 0.02em;

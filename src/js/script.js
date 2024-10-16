@@ -251,7 +251,28 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     });
 
     
-    
+    // const swiper = new Swiper('.js-service-slick', {
+    //     loop: true,
+    //     speed: 2000,
+    //     slidesPerView: 3.8,
+    //     slidesPerGroup: 1,
+    //     spaceBetween: 24,
+    //     freeMode: false,        
+    //     scrollbar: {
+    //         el: '.swiper-scrollbar',//.swiper-scrollbarをスクロールバーに指定
+    //         hide: false,// スクロールバーが常に表示される
+    //         draggable: true, // スクロールバーをドラッグ可能にする
+    //         dragSize: 100,
+    //     },
+    //     mousewheel: {
+    //         forceToAxis: true,  // 水平方向のみのスクロールに制限
+    //         sensitivity: 0.5,   // スクロール感度の調整
+    //       },
+    //     autoplay: {
+    //         delay: 3000, // 3秒ごとにスライドを切り替える
+    //         disableOnInteraction: false, //ユーザーが操作しても自動再生を無効にしない
+    //     },
+    // });
     
 
 
@@ -351,13 +372,13 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             ScrollTrigger.create({
                 trigger: section,
                 
-                start: "center center",
+                start: "top top",
                 end: "bottom 30%",
                 onEnter: () => {
                     // スクロール時にinnerを固定表示
                     gsap.set(inner, {
-                        position: "fixed",
-                        top: "15%",
+                        position: "sticky",
+                        top: "0",
                         // duration: 0.5, // アニメーションのスピード
                         // ease: "power2.out"
                     });

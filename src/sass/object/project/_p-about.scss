@@ -42,7 +42,6 @@
 
 .p-about__heading {
     width: 100%;
-    text-align: center;
     z-index: 1;
     @include mq('md') {
         position: absolute;
@@ -50,7 +49,6 @@
         top: rem(-57);
         left: 0;
         max-width: calc((451 / 1533) * 100%);
-        text-align: left;
         letter-spacing: 0.138em;
     }
 }

@@ -17,6 +17,7 @@
     font-family: $second-font-family;
     color: $black;
     letter-spacing: 0.035em;
+    font-size: rem(26);
     @include mq('md') {
         font-size: rem(80);
     }
@@ -33,12 +34,12 @@
 }
 
 .p-sub-equipment__tab {
-    font-size: rem(12);
+    font-size: rem(14);
     font-weight: $bold;
     color: $black;
     background-color: $accent-yellow;
     border-radius: 22px;
-    padding: rem(3) rem(10);
+    padding: rem(4) rem(11);
     @include mq('md') {
         font-size: rem(17);
         line-height: calc(25 / 17);
