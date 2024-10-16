@@ -249,6 +249,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         prevArrow: $(".js-service-arrow-prev"),
         nextArrow: $(".js-service-arrow-next")
     });
+    
 
     
     // const swiper = new Swiper('.js-service-slick', {
@@ -372,15 +373,14 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             ScrollTrigger.create({
                 trigger: section,
                 
-                start: "top top",
+                start: "center center",
                 end: "bottom 30%",
                 onEnter: () => {
                     // スクロール時にinnerを固定表示
                     gsap.set(inner, {
-                        position: "sticky",
-                        top: "0",
-                        // duration: 0.5, // アニメーションのスピード
-                        // ease: "power2.out"
+                        position: "fixed",
+                        top: "15%",
+                        width: "90%",
                     });
                 },
                 refreshPriority: 1, // リフレッシュの優先度を設定
@@ -390,8 +390,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
                         position: "absolute",
                         top: "initial",
                         bottom: "auto",
-                        // duration: 0.5, // アニメーションのスピード
-                        // ease: "power2.inOut"
                     });
                 },
                 invalidateOnRefresh: true // リフレッシュ時に再計算
@@ -401,7 +399,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             if (section === lastElement) {
                 ScrollTrigger.create({
                     trigger: section,
-                    start: "top top",
+                    start: "center center",
                     end: "top top",
                     onEnter: () => {
                         // 何もせずスクロールを続行
@@ -414,8 +412,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
                                 position: "absolute",
                                 top: "auto",          // 元の位置に戻すための調整
                                 bottom: "0",          // absoluteの時にボトムに固定
-                                // duration: 0.5,        // アニメーションのスピード
-                                // ease: "power2.out"
                             });
                         });
                     }

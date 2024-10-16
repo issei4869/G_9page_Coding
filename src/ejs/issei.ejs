@@ -33,7 +33,101 @@
       visibility: hidden;
     } */
 
-    
+    #item-detail-thumbnail {
+  position: relative;
+
+  .slick-counter {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+    font-size: 13px;
+    color: #000;
+    line-height: 1.2;
+  }
+
+  .slide-item-prev-btn,
+  .slide-item-next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 20;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 60px;
+    line-height: 40px;
+
+    i {
+      font-size: 20px;
+      color: gray;
+    }
+  }
+
+  .slide-item-prev-btn {
+    left: -10px;
+  }
+
+  .slide-item-next-btn {
+    right: -10px;
+  }
+}
+
+#item-detail-thumbnail-list {
+  .slick-list {
+    overflow-x: scroll;
+    white-space: nowrap;
+
+    @media screen and (min-width: 769px) {
+      overflow-x: initial;
+      white-space: initial;
+    }
+
+    .slick-track {
+      transform: translate3d(0px, 0px, 0px);
+      display: flex;
+      width: auto;
+      display: inline-block;
+
+      @media screen and (min-width: 769px) {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    .slick-current {
+      border: 2px solid #b0a773;
+      opacity: 0.7;
+    }
+  }
+
+  .itemsubimg {
+    width: 29.5%;
+    border-color: transparent;
+    border-width: 2px;
+    float: none;
+
+    @media screen and (min-width: 769px) {
+      float: left;
+    }
+
+    &:nth-child(3n) {
+      margin-right: 5%;
+
+      @media screen and (min-width: 769px) {
+        margin-right: 0;
+      }
+    }
+
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+
 
     .container {
       height: 100px; /* 見える範囲の高さを設定 */
@@ -228,50 +322,33 @@
       <!-- slickスライダー -->
       <h2 class="ejs-style-title">slickスライダー</h2>
 
-      <div class="p-service">
-        <div class="p-service__inner">
-          <div class="p-service__slick p-service-slick">
-            <ul class="p-service-slick__list js-service-slick">
-              <li class="p-service-slick__item p-service-card">
-                <a href="#">
-                  <div class="p-service-card__img">
-                <img src="../assets/images/common/top-new_equipment1.jpg" alt="省略">
-                  </div>
-                  <p class="p-service-card__text">タイトルタイトル</p>
-                </a>
-              </li>
-              <li class="p-service-slick__item p-service-card">
-                <a href="#">
-                  <div class="p-service-card__img">
-                <img src="../assets/images/common/top-new_equipment2.jpg" alt="省略">
-                  </div>
-                  <p class="p-service-card__text">タイトルタイトル</p>
-                </a>
-              </li>
-              <li class="p-service-slick__item p-service-card">
-                <a href="#">
-                  <div class="p-service-card__img">
-                <img src="../assets/images/common/top-new_equipment3.jpg" alt="省略">
-                  </div>
-                  <p class="p-service-card__text">タイトルタイトル</p>
-                </a>
-              </li>
-              <li class="p-service-slick__item p-service-card">
-                <a href="#">
-                  <div class="p-service-card__img">
-                <img src="../assets/images/common/top-new_equipment4.jpg" alt="省略">
-                  </div>
-                  <p class="p-service-card__text">タイトルタイトル</p>
-                </a>
-              </li>
-            </ul>
-            <div class="p-service-slick__arrow-wrap">
-              <div class="p-service-slick__arrow p-service-slick__arrow--prev js-service-slick-arrow-prev"></div>
-              <div class="p-service-slick__arrow p-service-slick__arrow--next js-service-slick-arrow-next"></div>
+      <<div class="item-photo">
+        <!-- 大きく表示される画像 -->
+        <div class="itemimg" id="item-detail-thumbnail">
+            <div class="item-detail-thumbnail-inner">
+                <img src="./assets/images/common/crane1.jpg" alt="">
             </div>
-          </div>
+            <div class="item-detail-thumbnail-inner">
+                <img src="./assets/images/common/crane2.jpg" alt="">
+            </div>
+            <div class="item-detail-thumbnail-inner">
+                <img src="./assets/images/common/crane3.jpg" alt="">
+            </div>
         </div>
-      </div>
+        <div class="itemsubimgs" id="item-detail-thumbnail-list">
+            <!-- サムネイルの一覧画像 -->
+            <div class="itemsubimg">
+                <img src="./assets/images/common/crane1.jpg" alt="">
+            </div>
+            <div class="itemsubimg">
+                <img src="./assets/images/common/crane2.jpg" alt="">
+            </div>
+            <div class="itemsubimg">
+                <img src="./assets/images/common/crane3.jpg" alt="">
+            </div>
+        </div>
+    </div>
+    
 
       <!-- page topボタン -->
       <h2 class="ejs-style-title">page top</h2>
