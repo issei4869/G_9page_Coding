@@ -380,6 +380,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
                     gsap.set(inner, {
                         position: "fixed",
                         top: "15%",
+                        width: "90%",
                     });
                 },
                 refreshPriority: 1, // リフレッシュの優先度を設定

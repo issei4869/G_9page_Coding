@@ -22,6 +22,8 @@
   display: flex;
   text-transform: capitalize;
   white-space: nowrap;
+  position: relative;
+  margin-right: rem(35);
   @include mq('md') {
     font-size: rem(24);
   }
@@ -35,10 +37,7 @@
   -webkit-line-clamp: 2; /* 表示する行数を2行に設定 */
   overflow: hidden;
   color: $black;
-}
-
-.c-breadcrumb--white .c-breadcrumb__item:last-of-type {
-  color: $accent-white;
+  margin-right: 0;
 }
 
 .c-breadcrumb__item:not(last-of-type) {
@@ -46,16 +45,26 @@
 }
 
 .c-breadcrumb__item::after {
-  content: '>';
+  content: '';
   display: inline-block;
   color: #8A8A8A;
-  margin-left: rem(6);
-  margin-right: rem(13);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: rem(-21);
+  mask-image: url(../../assets/images/common/breadcrumb-arrow.svg);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  background-color: $font-color;
+  width: rem(7);
+  height: rem(15);
 }
 
 .c-breadcrumb__item:last-of-type::after {
   content: '';
   margin: 0;
+  background-image: none;
 }
 
 .c-breadcrumb__item--ja {
@@ -64,3 +73,18 @@
     font-size: rem(20);
   }
 }
+
+
+/////////// モディファイア /////////// 
+.c-breadcrumb--white .c-breadcrumb__item:last-of-type {
+  color: $accent-white;
+}
+
+.c-breadcrumb--white .c-breadcrumb__item::after {
+  background-color: #8A8A8A;
+}
+
+.c-breadcrumb--white .c-breadcrumb__item:nth-last-of-type(2)::after {
+  background-color: $accent-white;
+}
+
