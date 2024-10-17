@@ -4,6 +4,7 @@ $startFrom: sp;
 // デフォルト値を設定
 $mediaquerys: (
   sm: "screen",
+  no: "screen",
   md: "screen",
   lg: "screen",
   xl: "screen",
@@ -13,6 +14,7 @@ $mediaquerys: (
   //スマホファースト
   $breakpoints: (
     sm: 320,
+    no: 500,
     md: 900,
     lg: 1280,
     xl: 1921,
@@ -22,6 +24,7 @@ $mediaquerys: (
   $mediaquerys: (
     sm: "screen and (min-width: #{map-get($breakpoints,'sm')}px)",
     md: "screen and (min-width: #{map-get($breakpoints,'md')}px)",
+    no: "screen and (min-width: #{map-get($breakpoints,'no')}px)",
     lg: "screen and (min-width: #{map-get($breakpoints,'lg')}px)",
     xl: "screen and (min-width: #{map-get($breakpoints,'xl')}px)",
   );
@@ -30,10 +33,12 @@ $mediaquerys: (
     xl: 1920,
     lg: 1279,
     md: 899,
+    no: 499,
     sm: 319,
   );
   $mediaquerys: (
     sm: "screen and (max-width: #{map-get($breakpoints,'sm')}px)",
+    no: "screen and (max-width: #{map-get($breakpoints,'no')}px)",
     md: "screen and (max-width: #{map-get($breakpoints,'md')}px)",
     lg: "screen and (max-width: #{map-get($breakpoints,'lg')}px)",
     xl: "screen and (min-width: #{map-get($breakpoints,'xl')}px)",

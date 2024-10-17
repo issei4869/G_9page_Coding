@@ -51,10 +51,12 @@
         max-width: rem(1005);
         position: relative;
         z-index: 1;
+        display: inline-block;
     }
 }
 
-.p-top-mv__left-img img {
+.p-top-mv__left-img img,
+.p-top-mv__left-img source {
     width: 100%;
     height: 100%;
     object-fit: cover;

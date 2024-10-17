@@ -439,17 +439,42 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     
     // const animation = document.querySelector('.p-one-animation');
 
-    $(window).scroll(function () {
-        var target = $(".p-top-about__heading");
+    // $(window).scroll(function () {
+    //     var target = $(".p-top-newequipment__heading");
         
-        if (target.length > 0) { // ターゲットが存在するか確認
-          var top = target.offset().top;
-          var position = top - $(window).height();
-          if ($(window).scrollTop() > position) {
-            animation.classList.add('is-text');
-          }
+    //     if (target.length > 0) { // ターゲットが存在するか確認
+    //       var top = target.offset().top;
+    //       var position = top - $(window).height();
+    //       if ($(window).scrollTop() > position) {
+    //         animation.classList.add('is-text');
+    //       }
+    //     }
+    // });
+
+    $(window).scroll(function () {
+        var aboutHeading = $(".p-top-about__heading");
+        var newEquipmentHeading = $(".p-top-newequipment__heading");
+    
+        // p-top-about__heading の処理
+        if (aboutHeading.length > 0) { // ターゲットが存在するか確認
+            var aboutTop = aboutHeading.offset().top;
+            var aboutPosition = aboutTop - $(window).height();
+            if ($(window).scrollTop() > aboutPosition) {
+                animation.classList.add('is-text'); // クラス追加
+            }
+        }
+    
+        // p-top-newequipment__heading の処理
+        if (newEquipmentHeading.length > 0) { // ターゲットが存在するか確認
+            var equipmentTop = newEquipmentHeading.offset().top;
+            var equipmentPosition = equipmentTop - $(window).height();
+            if ($(window).scrollTop() > equipmentPosition) {
+                newEquipmentHeading.find('.p-one-animation').addClass('is-text'); // 子要素にクラス追加
+            }
         }
     });
+
+
 
     // var text1 = document.querySelector('.text1');
     // var text2 = document.querySelector('.text2');  

@@ -52,6 +52,7 @@
     line-height: 1;
     width: 100%;
     line-height: 1.45;
+    margin-top: rem(10);
     @include mq('md') {
         max-width: rem(693);
         margin-top: rem(24);

@@ -57,6 +57,8 @@
 .p-sub-equipment__items {
     margin-top: rem(40);
     display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(32) rem(20);
     @include mq('md') {
         gap: rem(64) rem(20);
         grid-template-columns: repeat(3, 1fr);
@@ -74,13 +76,6 @@
     
     @include mq('md') {
         
-    }
-}
-
-.p-sub-equipment__item + .p-sub-equipment__item {
-    margin-top: rem(32);
-    @include mq('md') {
-        margin-top: 0;
     }
 }
 

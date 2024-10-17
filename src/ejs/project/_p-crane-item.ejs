@@ -22,7 +22,9 @@ let lists = [
         <div class="p-crane-item__wrapper">
             <h3 class="p-crane-item__title"><%- title %></h3>
             <!-- prettier-ignore -->
-            <%- include(project + ejsPath + '/component/_c-tab' ,{text:tabtext, color:tabcolor}) %>
+            <div class="p-crane-item__tab">
+                <%- include(project + ejsPath + '/component/_c-tab' ,{text:tabtext, color:tabcolor}) %>
+            </div>
         </div>
         <dl class="p-crane-item__list-items">
             <% lists.forEach(function(list) { %>
