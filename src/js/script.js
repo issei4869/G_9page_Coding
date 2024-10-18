@@ -225,6 +225,9 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         arrows: true,
         centerMode: false,
         variableWidth: true,
+        swipeToSlide: true,
+        draggable: true,
+        swipe: true,
         // rightPadding: '200px', // 右のスライドの見切れ幅
         responsive: [
             {
@@ -362,64 +365,97 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 
     /*********************スクロールエフェクト**************************/
-        const sections = document.querySelectorAll("[data-section]"); 
+        // const sections = document.querySelectorAll("[data-section]"); 
 
-        for (let i = 0; i < sections.length; i++) {
-            const section = sections[i];
-            const inner = section.querySelector("[data-section-inner]");
-            const lastElement = sections[sections.length - 1]; // sectionsの最後の要素を取得
+        // for (let i = 0; i < sections.length; i++) {
+        //     const section = sections[i];
+        //     const inner = section.querySelector("[data-section-inner]");
+        //     const lastElement = sections[sections.length - 1]; // sectionsの最後の要素を取得
 
-            // 全体のスクロール用トリガー
+        //     // 全体のスクロール用トリガー
+        //     ScrollTrigger.create({
+        //         trigger: section,
+                
+        //         start: "center center",
+        //         end: "bottom 30%",
+        //         onEnter: () => {
+        //             // スクロール時にinnerを固定表示
+        //             gsap.set(inner, {
+        //                 position: "fixed",
+        //                 top: "15%",
+        //                 width: "90%",
+        //             });
+        //         },
+        //         refreshPriority: 1, // リフレッシュの優先度を設定
+        //         onLeaveBack: () => {
+        //             // 戻った時に元に戻す
+        //             gsap.set(inner, {
+        //                 position: "absolute",
+        //                 top: "initial",
+        //                 bottom: "auto",
+        //             });
+        //         },
+        //         invalidateOnRefresh: true // リフレッシュ時に再計算
+        //     });
+
+        //     // 最後のセクションだけ別の処理
+        //     if (section === lastElement) {
+        //         ScrollTrigger.create({
+        //             trigger: section,
+        //             start: "center center",
+        //             end: "top top",
+        //             onEnter: () => {
+        //                 // 何もせずスクロールを続行
+        //             },
+        //             onLeave: () => {
+        //                 // 最後のセクションでabsoluteに切り替える
+        //                 sections.forEach((sec) => {
+        //                     const innerSec = sec.querySelector("[data-section-inner]");
+        //                     gsap.set(innerSec, {
+        //                         position: "absolute",
+        //                         top: "auto",          // 元の位置に戻すための調整
+        //                         bottom: "0",          // absoluteの時にボトムに固定
+        //                     });
+        //                 });
+        //             }
+        //         });
+        //     }
+        // }
+
+        // gsap.delayedCall(0.2, ScrollTrigger.refresh);
+
+
+        var sections = document.querySelectorAll("[data-section]"); 
+        sections.forEach((section, index) => {
+            let pinTarget = section.querySelector("[data-section-inner]");
             ScrollTrigger.create({
                 trigger: section,
-                
                 start: "center center",
-                end: "bottom 30%",
-                onEnter: () => {
-                    // スクロール時にinnerを固定表示
-                    gsap.set(inner, {
-                        position: "fixed",
-                        top: "15%",
-                        width: "90%",
-                    });
-                },
-                refreshPriority: 1, // リフレッシュの優先度を設定
-                onLeaveBack: () => {
-                    // 戻った時に元に戻す
-                    gsap.set(inner, {
-                        position: "absolute",
-                        top: "initial",
-                        bottom: "auto",
-                    });
-                },
-                invalidateOnRefresh: true // リフレッシュ時に再計算
+                endTrigger: sections[sections.length - 1],
+                end: "center center",
+                pin: pinTarget,
+                invalidateOnRefresh: true, //リフレッシュ時に再計算
             });
+            
+        });
 
-            // 最後のセクションだけ別の処理
-            if (section === lastElement) {
-                ScrollTrigger.create({
-                    trigger: section,
-                    start: "center center",
-                    end: "top top",
-                    onEnter: () => {
-                        // 何もせずスクロールを続行
-                    },
-                    onLeave: () => {
-                        // 最後のセクションでabsoluteに切り替える
-                        sections.forEach((sec) => {
-                            const innerSec = sec.querySelector("[data-section-inner]");
-                            gsap.set(innerSec, {
-                                position: "absolute",
-                                top: "auto",          // 元の位置に戻すための調整
-                                bottom: "0",          // absoluteの時にボトムに固定
-                            });
-                        });
-                    }
-                });
-            }
+        function resizeCard() {
+            let aboutItems = document.querySelectorAll(".p-about-item");
+            let aboutItemsHeight = [];
+            aboutItems.forEach((item) => {
+                item.style.minHeight = 'auto';
+            });
+            aboutItems.forEach((item) => {
+                aboutItemsHeight.push(item.offsetHeight);
+            });
+            let maxHeight = Math.max(...aboutItemsHeight);
+            aboutItems.forEach((item) => {
+                item.style.minHeight = maxHeight + 'px';
+            });
         }
 
-        gsap.delayedCall(0.2, ScrollTrigger.refresh);
+        setTimeout(resizeCard, 1000);
+        window.addEventListener('resize', resizeCard);
 
     
     /***************** ローディングアニメーション ***********************/

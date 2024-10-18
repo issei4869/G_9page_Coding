@@ -123,8 +123,8 @@ select::-ms-expand {
 
 [data-section-inner] {
   will-change: position, transform;
-  position: absolute; /* 初期描画時はabsoluteで固定 */
-  top: 0;
-  left: 0;
+  // position: absolute; /* 初期描画時はabsoluteで固定 */
+  // top: 0;
+  // left: 0;
   width: 100%;
 }
