@@ -3,7 +3,7 @@
 .p-about-item {
   background-color: $font-color;
   border-radius: 20px;
-  padding: rem(40) rem(20);
+  padding: rem(46) rem(16) rem(56);
   // position: relative;
   position: relative;
   // height: inherit;
@@ -37,12 +37,36 @@
 
 .p-about-item--01::after {
   background-image: url(../../assets/images/common/about-01.png);
+  width: rem(60);
+  height: rem(46);
+  right: rem(17);
+  @include mq('md') {
+    width: rem(128);
+    height: rem(101);
+    left: rem(54);
+  }
 }
 .p-about-item--02::after {
   background-image: url(../../assets/images/common/about-02.png);
+  width: rem(72);
+  height: rem(47);
+  right: rem(16);
+  @include mq('md') {
+    width: rem(152);
+    height: rem(101);
+    left: rem(54);
+  }
 }
 .p-about-item--03::after {
   background-image: url(../../assets/images/common/about-03.png);
+  width: rem(74);
+  height: rem(48);
+  right: rem(17);
+  @include mq('md') {
+    width: rem(156);
+    height: rem(101);
+    left: rem(52);
+  }
 }
 
 
@@ -93,12 +117,11 @@
   font-size: rem(16);
   font-weight: $bold;
   color: $accent-white;
-  margin-top: rem(10);
+  margin-top: rem(15);
+  letter-spacing: 0.03em;
   order: 2; //追加
   @include mq('md') {
-    margin-top: rem(49);
     font-size: rem(24);
-    letter-spacing: 0.03em;
     width: 45%;
   }
 }
@@ -106,7 +129,7 @@
 .p-about-item__btn {
   width: rem(200);
   margin: 0 auto;
-  margin-top: rem(24);
+  margin-top: rem(30);
   transition: all .6s;
   order: 3; //追加
   @include mq('md') {
@@ -141,13 +164,14 @@
 
 .p-about-item__service {
   position: absolute;
-  top: rem(10);
-  left: rem(27);
-  font-size: rem(12);
+  top: rem(14);
+  left: rem(15);
+  font-size: rem(13);
   font-family: $second-font-family;
   color: $accent-white;
   @include mq('md') {
     top: rem(20);
+    left: rem(27);
   }
 }
 

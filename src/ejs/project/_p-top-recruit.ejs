@@ -4,22 +4,14 @@
 
 <div class="p-top-recruit">
     <div class="p-top-recruit__inner l-inner">
-        <div class="p-top-recruit__heading">
-            <%- include(ejsPath + './component/_c-section-heading', { 
-              page: "", 
-              heading_eng:'RECRUIT', 
-              heading_ja:'採用情報',
-              anima:''
-            }) %>
+        <div class="p-top-recruit__btn">
+            <%- include(project + './component/_c-btn3', { link: 'about.html#points', text: '募集要項へ' }) %>
         </div>
         <div class="p-top-recruit__content">
             <div class="p-top-recruit__left">
                 <p>採用情報</p>
                 <h2>RECRUIT</h2>
             </div>            
-        </div>
-        <div class="p-top-recruit__btn">
-            <%- include(project + './component/_c-btn3', { link: 'about.html#points', text: '募集要項へ' }) %>
         </div>
     </div>
 </div>

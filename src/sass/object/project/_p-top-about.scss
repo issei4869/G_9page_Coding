@@ -36,8 +36,8 @@
 
 .p-top-about__item {
     position: relative;
-    height: rem(600);
-    @include mq('md') {
+    height: rem(580);
+    @include mq('no') {
         height: rem(616);
     }
 }
