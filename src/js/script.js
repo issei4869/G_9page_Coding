@@ -213,45 +213,45 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 
     /////////////////////// スライダー ///////////////////////
-    $(".js-service-slick").slick({
-        autoplay: true,
-        autoplaySpeed: 2000,
-        speed: 2000,
-        adaptiveHeight: false,
-        pauseOnFocus: false,
-        pauseOnHover: false, 
-        slidesToShow: 4,
-        dots: true,
-        arrows: true,
-        centerMode: false,
-        variableWidth: true,
-        swipeToSlide: true,
-        draggable: true,
-        swipe: true,
-        // rightPadding: '200px', // 右のスライドの見切れ幅
-        responsive: [
-            {
-                breakpoint: 500,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: true, // 中央寄せ表示
-                    centerPadding: '100px', // 前後のスライドの見切れ幅
-                    variableWidth: false,
-                },
-            },
-            {
-                breakpoint: 900,
-                settings: {
-                    slidesToShow: 2,
-                    centerMode: true, // 中央寄せ表示
-                    centerPadding: '100px', // 前後のスライドの見切れ幅
-                    variableWidth: false,
-                },
-            },
-        ],
-        prevArrow: $(".js-service-arrow-prev"),
-        nextArrow: $(".js-service-arrow-next")
-    });
+    // $(".js-service-slick").slick({
+    //     autoplay: true,
+    //     autoplaySpeed: 2000,
+    //     speed: 2000,
+    //     adaptiveHeight: false,
+    //     pauseOnFocus: false,
+    //     pauseOnHover: false, 
+    //     slidesToShow: 4,
+    //     dots: true,
+    //     arrows: true,
+    //     centerMode: false,
+    //     variableWidth: true,
+    //     swipeToSlide: true,
+    //     draggable: true,
+    //     swipe: true,
+    //     // rightPadding: '200px', // 右のスライドの見切れ幅
+    //     responsive: [
+    //         {
+    //             breakpoint: 500,
+    //             settings: {
+    //                 slidesToShow: 1,
+    //                 centerMode: true, // 中央寄せ表示
+    //                 centerPadding: '100px', // 前後のスライドの見切れ幅
+    //                 variableWidth: false,
+    //             },
+    //         },
+    //         {
+    //             breakpoint: 900,
+    //             settings: {
+    //                 slidesToShow: 2,
+    //                 centerMode: true, // 中央寄せ表示
+    //                 centerPadding: '100px', // 前後のスライドの見切れ幅
+    //                 variableWidth: false,
+    //             },
+    //         },
+    //     ],
+    //     prevArrow: $(".js-service-arrow-prev"),
+    //     nextArrow: $(".js-service-arrow-next")
+    // });
     
 
     
@@ -277,6 +277,45 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     //         disableOnInteraction: false, //ユーザーが操作しても自動再生を無効にしない
     //     },
     // });
+
+
+    /////////////////////// Campaignスライダー ///////////////////////
+    // Campaignリサイズ処理（PC時のみ矢印表示）
+    const service_slideLength = document.querySelectorAll('.js-newequipment-swiper .swiper-slide').length;
+    $(window).resize(function () {
+        service_arrow();
+    });
+    service_arrow();
+    function service_arrow() {
+        $('.js-newequipment-arrow').show();
+    }
+    /*****Campaignスライダー*****/
+    var service_swiper = new Swiper('.js-newequipment-swiper', {
+        loop: true,
+        speed: 2000,
+        slidesPerView: 1.27,
+        spaceBetween: 24,
+        centeredSlides: true, 
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
+        breakpoints: {
+            900: {
+                slidesPerView: 3.485,
+                spaceBetween: 39,
+                centeredSlides: false, 
+            },
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
     
 
 
