@@ -496,6 +496,8 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         setTimeout(resizeCard, 1000);
         window.addEventListener('resize', resizeCard);
 
+        gsap.delayedCall(0.2, ScrollTrigger.refresh);
+
     
     /***************** ローディングアニメーション ***********************/
         // document.addEventListener('DOMContentLoaded', function() {

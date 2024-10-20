@@ -87,11 +87,10 @@
 
 .p-sub-equipment__img img {
     width: 100%;
-    aspect-ratio: 280 / 188;
+    aspect-ratio: 1;
     object-fit: cover;
     transition: .6s;
     @include mq('md') {
-        aspect-ratio: 409 / 409;
     }
 }
 

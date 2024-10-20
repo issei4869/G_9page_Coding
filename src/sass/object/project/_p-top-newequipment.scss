@@ -395,10 +395,15 @@
 
 .swiper-pagination {
   width: 100%;
-  bottom: rem(65);
   @include mq(md){
       width: 75%;
-      bottom: rem(40);
+  }
+}
+
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: rem(98);
+  @include mq('md') {
+    bottom: 10px;
   }
 }
 

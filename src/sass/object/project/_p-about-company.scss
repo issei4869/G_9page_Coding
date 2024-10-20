@@ -51,7 +51,6 @@
 }
 
 .p-about-company__description {
-    margin-left: rem(10);
     margin-top: rem(8);
     @include mq('md') {
         margin-left: rem(48);
