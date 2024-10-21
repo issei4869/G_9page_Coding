@@ -200,17 +200,34 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 
     // 全ページ共通下からふわっとフェードイン
-    $(window).on('scroll load', function(){        /* ページロード時、またはスクロールされた時*/
-        var scroll = $(this).scrollTop();            /* 現在のスクロール量を測定 */
-        var windowHeight = $(window).height();       /* ウィンドウの高さを測定 */
-        $('.fadeIn').each(function(){                /* 「fadeIn」のクラスがついているものを1つずつ確認し・・・ */
-          var cntPos = $(this).offset().top;         /* 対象の要素の上からの距離を測定 */
-          if(scroll > cntPos - windowHeight + windowHeight / 3){  /* 要素がある位置までスクロールされていたら */
-            $(this).addClass('active');              /* 「active」のクラスを付与 */
-          }
+    // $(window).on('scroll load', function(){        /* ページロード時、またはスクロールされた時*/
+    //     var scroll = $(this).scrollTop();            /* 現在のスクロール量を測定 */
+    //     var windowHeight = $(window).height();       /* ウィンドウの高さを測定 */
+    //     $('.fadeIn').each(function(){                /* 「fadeIn」のクラスがついているものを1つずつ確認し・・・ */
+    //       var cntPos = $(this).offset().top;         /* 対象の要素の上からの距離を測定 */
+    //       if(scroll > cntPos - windowHeight + windowHeight / 3){  /* 要素がある位置までスクロールされていたら */
+    //         $(this).addClass('active');              /* 「active」のクラスを付与 */
+    //       }
+    //     });
+    // });
+
+    $(window).on('scroll load', function(){  /* ページロード時、またはスクロールされた時 */
+        var scroll = $(this).scrollTop();    /* 現在のスクロール量を測定 */
+        var windowHeight = $(window).height(); /* ウィンドウの高さを測定 */
+    
+        // 「fadeIn」のクラスがついているものを1つずつ確認
+        $('.fadeIn').each(function(){
+            var cntPos = $(this).offset().top; /* 対象の要素の上からの距離を測定 */
+    
+            // 要素がスクロールで見える位置、または最初の表示位置で見えていたらフェードイン
+            if(scroll > cntPos - windowHeight + windowHeight / 3){  
+                $(this).addClass('active');   /* 「active」のクラスを付与 */
+            } else if (cntPos < scroll + windowHeight) {
+                // ページロード時に見えている要素もフェードイン
+                $(this).addClass('active');
+            }
         });
     });
-
 
     /////////////////////// スライダー ///////////////////////
     // $(".js-service-slick").slick({
@@ -296,10 +313,10 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         slidesPerView: 1.27,
         spaceBetween: 20,
         centeredSlides: true, 
-        // autoplay: {
-        //     delay: 2000,
-        //     disableOnInteraction: false,
-        // },
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        },
         breakpoints: {
             900: {
                 slidesPerView: 3.76,
