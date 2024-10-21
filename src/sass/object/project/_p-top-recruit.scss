@@ -22,9 +22,9 @@
     border-radius: 10px;
     overflow: hidden;
     position: relative;
+    display: flex;
     @include mq('md') {
       border-radius: 10px;
-      display: flex;
     }
 }
 
@@ -48,17 +48,34 @@
 
   .p-top-recruit__left {
     width: 100%;
-    clip-path: polygon(0 0%, 100% 0, 100% 100%, 0% 100%);
-    background: rgba(255, 255, 255, 0.8); /* 半透明の背景 */
+    // clip-path: polygon(0 0%, 100% 0, 100% 100%, 0% 100%);
+    // background: rgba(255, 255, 255, 0.8); /* 半透明の背景 */
+    // border-radius: 10px 0 0 10px;
     // backdrop-filter: blur(9.67px); /* 全体にぼかし効果 */
     // clip-path: polygon(0 0, 100% 0, 70% 100%, 0% 100%); /* 斜めの形状にクリップ */
     padding: rem(47) 0 rem(89);
-    border-radius: 10px 0 0 10px;
+    // z-index: 2;
     @include mq('md') {
         padding: rem(110) 0 rem(196) rem(84);
         // backdrop-filter: blur(20px);
-        clip-path: polygon(0 0%, 100% 0, 88% 100%, 0% 100%);
-        width: 43.8%;
+        // clip-path: polygon(0 0%, 100% 0, 88% 100%, 0% 100%);
+        // width: 43.8%;
+    }
+  }
+
+  .p-top-recruit__content::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // clip-path: polygon(0 0%, 100% 0, 100% 100%, 0% 100%);
+    background: rgba(255, 255, 255, 0.8); /* 半透明の背景 */
+    border-radius: 10px 0 0 10px;
+    @include mq('md') {
+      clip-path: polygon(0 0%, 100% 0, 88% 100%, 0% 100%);
+      width: 43.8%;
     }
   }
 

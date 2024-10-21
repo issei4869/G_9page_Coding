@@ -343,26 +343,32 @@
 
 
 @use 'global' as *;
+
 .p-top-newequipment {
   overflow: hidden;
 }
 .p-top-newequipment__inner {
   position: relative;
-  
+  padding-bottom: rem(80);
+  @include mq('md') {
+    padding-bottom: rem(191);
+  }
 }
 
 .p-top-newequipment__inner::before {
   position: absolute;
   content: "";
   background-color: $accent-white;
-  top: rem(69);
-  right: 24%;
+  top: 8%;
+  right: var(--child-width); /* 計算した値が設定されない場合はデフォルト値を指定 */
   width: rem(899);
   height: 100%;
   z-index: -1;
   @include mq('md') {
     width: rem(1266);
+    top: rem(69);
     left: rem(-79);
+    right: 0;
   }
 }
 
@@ -381,7 +387,7 @@
   // margin: 0 calc(50% - 50vw);
   //width: 100vw;
   @include mq('md') {
-    margin-top: rem(71);
+    margin-top: rem(66);
     margin-right: calc(50% - 50vw);
   }
 }
@@ -402,16 +408,31 @@
 
 .swiper-pagination-bullets.swiper-pagination-horizontal {
   bottom: rem(98);
+  text-align: left;
+  position: static;
+  margin-top: rem(100);
   @include mq('md') {
-    bottom: 10px;
+    bottom: 12%;
+    left: 5%;
+    text-align: center;
+    position: absolute;
+    margin-top: 0;
   }
 }
 
 .swiper-pagination .swiper-pagination-bullet {
-  width: 12%;
+  width: 20%;
   height: rem(3);
   border-radius: initial;
   transition: .3s;
+  @include mq('md') {
+    width: 17%;
+  }
+}
+
+//バーを1直線にする
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0;
 }
 
 .swiper-pagination .swiper-pagination-bullet-active {
@@ -419,16 +440,20 @@
 }
 
 .p-top-newequipment__button {
-  margin-top: rem(40);
   display: flex;
   gap: rem(30);
   justify-content: left;
   align-items: center;
-  // position: relative;
+  position: absolute;
+  bottom: rem(251);
+  left: rem(10);
   @include mq('md') {
     margin-top: rem(70);
+    bottom: 10%;
   }
+
 }
+
 .p-top-newequipment__button .p-top-newequipment__prev,
 .p-top-newequipment__button .p-top-newequipment__next {
   position: relative;
@@ -498,5 +523,3 @@
 .swiper-horizontal > .swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
   position: relative;
 }
-
-

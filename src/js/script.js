@@ -294,16 +294,16 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         loop: true,
         speed: 2000,
         slidesPerView: 1.27,
-        spaceBetween: 24,
+        spaceBetween: 20,
         centeredSlides: true, 
-        autoplay: {
-            delay: 2000,
-            disableOnInteraction: false,
-        },
+        // autoplay: {
+        //     delay: 2000,
+        //     disableOnInteraction: false,
+        // },
         breakpoints: {
             900: {
-                slidesPerView: 3.485,
-                spaceBetween: 39,
+                slidesPerView: 3.76,
+                spaceBetween: 20,
                 centeredSlides: false, 
             },
         },
@@ -367,7 +367,15 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         });
     });
     }
-
+    
+    /////////////////////// New EquipmentセクションSP版白背景位置調節 ///////////////////////
+    $(document).ready(function() {
+        var parentWidth = $('.p-top-newequipment__inner').width(); //innerの幅取得
+        var childWidth = $('.p-top-newequipment__inner').find('.c-section-heading').width(); //セクションタイトルの幅取得
+        var calculatedValue = parentWidth - childWidth;
+        $('.p-top-newequipment__inner').css('--child-width', calculatedValue + 'px');
+    });
+    
 
     /////////////////////// チェックボックスカウント ///////////////////////
     const checkboxes = document.querySelectorAll('.p-about-recruit__checkbox input[type="checkbox"]');
