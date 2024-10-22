@@ -177,6 +177,8 @@
 }
 
 .p-crane-item__img:hover.p-crane-item__img img {
-  transform: scale(1.2);
-  transition: all .6s;
+  @include mq('md') {
+    transform: scale(1.2);
+    transition: all .6s;
+  }
 }

@@ -1,3 +1,23 @@
+// loadイベントのみ外に出す
+$(window).on('load', function(){
+
+    var scroll = $(this).scrollTop();    /* 現在のスクロール量を測定 */
+    var windowHeight = $(window).height(); /* ウィンドウの高さを測定 */
+    
+    // まず「fadeIn」要素から「active」クラスをリセット
+    $('.fadeIn').removeClass('active');
+    
+    $('.fadeIn').each(function(){
+        var cntPos = $(this).offset().top; /* 対象の要素の上からの距離を測定 */
+
+        // ページロード時に見えている要素もフェードイン
+        if (cntPos < scroll + windowHeight) {
+            $(this).addClass('active');
+        }
+    });
+});
+
+
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
     /////////////////////// ページトップへ戻るボタン ///////////////////////
     var pagetop = $('#page-topbtn');
@@ -211,7 +231,44 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     //     });
     // });
 
-    $(window).on('scroll load', function(){  /* ページロード時、またはスクロールされた時 */
+    // $(window).on('scroll load', function(){  /* ページロード時、またはスクロールされた時 */
+    //     var scroll = $(this).scrollTop();    /* 現在のスクロール量を測定 */
+    //     var windowHeight = $(window).height(); /* ウィンドウの高さを測定 */
+    
+    //     // 「fadeIn」のクラスがついているものを1つずつ確認
+    //     $('.fadeIn').each(function(){
+    //         var cntPos = $(this).offset().top; /* 対象の要素の上からの距離を測定 */
+    
+    //         // 要素がスクロールで見える位置、または最初の表示位置で見えていたらフェードイン
+    //         if(scroll > cntPos - windowHeight + windowHeight / 3){  
+    //             $(this).addClass('active');   /* 「active」のクラスを付与 */
+    //         } else if (cntPos < scroll + windowHeight) {
+    //             // ページロード時に見えている要素もフェードイン
+    //             $(this).addClass('active');
+    //         }
+    //     });
+    // });
+
+    // $(window).on('scroll load pageshow', function(event){  /* ページロード、スクロール、キャッシュ復元時 */
+    //     var scroll = $(this).scrollTop();    /* 現在のスクロール量を測定 */
+    //     var windowHeight = $(window).height(); /* ウィンドウの高さを測定 */
+    
+    //     // 「fadeIn」のクラスがついているものを1つずつ確認
+    //     $('.fadeIn').each(function(){
+    //         var cntPos = $(this).offset().top; /* 対象の要素の上からの距離を測定 */
+    
+    //         // 要素がスクロールで見える位置、または最初の表示位置で見えていたらフェードイン
+    //         if(scroll > cntPos - windowHeight + windowHeight / 3){  
+    //             $(this).addClass('active');   /* 「active」のクラスを付与 */
+    //         } else if (cntPos < scroll + windowHeight) {
+    //             // ページロード時に見えている要素もフェードイン
+    //             $(this).addClass('active');
+    //         }
+    //     });
+    // });
+
+
+    $(window).on('scroll pageshow', function(event){  /* ページスクロール、キャッシュ復元時 */
         var scroll = $(this).scrollTop();    /* 現在のスクロール量を測定 */
         var windowHeight = $(window).height(); /* ウィンドウの高さを測定 */
     
@@ -638,3 +695,4 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
     
 });
+
