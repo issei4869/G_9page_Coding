@@ -37,7 +37,9 @@ body {
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   scroll-behavior: smooth;
-  display: none;
+  // display: none;
+  opacity: 0;
+  transition: opacity 1.5s;
 }
 
 .bodyblack {

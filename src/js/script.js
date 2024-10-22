@@ -1,13 +1,13 @@
 // loadイベントのみ外に出す
-$(window).on('load', function(){
+$(window).on('load', function () {
 
     var scroll = $(this).scrollTop();    /* 現在のスクロール量を測定 */
     var windowHeight = $(window).height(); /* ウィンドウの高さを測定 */
-    
+
     // まず「fadeIn」要素から「active」クラスをリセット
     $('.fadeIn').removeClass('active');
-    
-    $('.fadeIn').each(function(){
+
+    $('.fadeIn').each(function () {
         var cntPos = $(this).offset().top; /* 対象の要素の上からの距離を測定 */
 
         // ページロード時に見えている要素もフェードイン
@@ -23,9 +23,9 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     var pagetop = $('#page-topbtn');
     $(window).scroll(function () {
         if ($(this).scrollTop() > 100) {
-        jQuery('.c-totop').addClass('is-show');
+            jQuery('.c-totop').addClass('is-show');
         } else {
-        jQuery('.c-totop').removeClass('is-show');
+            jQuery('.c-totop').removeClass('is-show');
         }
     });
 
@@ -35,21 +35,21 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     });
 
     $(function () {
-        
-        
-	
+
+
+
     });
 
 
     /*********************アンカーリンク（ヘッダー分の高さを引く）**************************/
 
-     //別ページのリンククリックによるスムーススクロール
+    //別ページのリンククリックによるスムーススクロール
     //  function smoothScroll() {
     //     // ページのURLを取得
     //     const url = $(location).attr('href'),
     //     // headerの高さを取得してそれに30px追加した値をheaderHeightに代入
     //     headerHeight = $('.p-header').outerHeight() + 30;
-    
+
     //     // urlに「#」が含まれていれば
     //     if (url.indexOf("#") != -1) {
     //         // urlを#で分割して配列に格納
@@ -57,7 +57,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     //         // 分割した最後の文字列（#◯◯の部分）をtargetに代入
     //         const targetId = anchor[anchor.length - 1];  // ハッシュ部分を取得
     //         const target = $('#' + targetId);  // ターゲット要素を取得
-    
+
     //         // リンク先の位置が正しく取得できた場合にスクロール
     //         if (target.length) {
     //             // リンク先の位置からheaderHeightの高さを引いた値をpositionに代入
@@ -70,58 +70,66 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     //     }
     // }
     //別ページのリンククリックによるスムーススクロール
-  $(function() {
-    $('body').hide().fadeIn(1500); // 最初は非表示にして1.5秒かけてフェードイン！
+    $(function () {
+        $('body').css('opacity', '1');
+        // $('body').hide().fadeIn(1500); // 最初は非表示にして1.5秒かけてフェードイン！
 
-    let pageHash = window.location.hash;
-    if (pageHash) {
-      let scrollToElement = $(pageHash); // `data-id`ではなく、`id`属性をターゲットに
-      if (!scrollToElement.length) return;
-      
-      // フェードイン完了後にスムーススクロールを実行
-      $('body').fadeIn(1500, function() {
-        setTimeout(function() { // スクロール処理を遅らせる
-            history.replaceState('', '', './'); // ハッシュをURLから削除
-            let locationOffset = scrollToElement.offset().top; // ターゲット要素の位置を取得
-            let navigationBarHeight = $('.p-header').innerHeight(); // ヘッダーの高さを取得
-            locationOffset = locationOffset - navigationBarHeight; // スクロール位置を調整
-            $('html, body').animate({
-                scrollTop: locationOffset
-            }, 300, 'swing'); // スムーススクロールの実行
-        }, 500); // 500ミリ秒（0.5秒）遅らせる
-        });
-    }
-  });
-
-  //同ページのリンククリックによるスムーススクロール
-  $(function() {
-    $('a[href*="#"]').on('click', function() {
-      const scrollSpeed = 400;
-      const navigationHeight = $(".p-header").innerHeight();
-      const scrollToTarget = $(this.hash === '#' || '' ? 'html' : this.hash)
-      if (!scrollToTarget.length) return;
-      const scrollPosition = scrollToTarget.offset().top - navigationHeight;
-      $('html, body').animate({
-          scrollTop: scrollPosition
-      }, scrollSpeed, 'swing');
-      return false;
+        let pageHash = window.location.hash;
+        if (pageHash) {
+            let scrollToElement = $(pageHash); // `data-id`ではなく、`id`属性をターゲットに
+            if (!scrollToElement.length) return;
+            
+            // フェードイン完了後にスムーススクロールを実行
+            $('body').fadeIn(1500, function () {
+                setTimeout(function () { // スクロール処理を遅らせる
+                    history.replaceState('', '', './'); // ハッシュをURLから削除
+                    let locationOffset = scrollToElement.offset().top; // ターゲット要素の位置を取得
+                    let navigationBarHeight = $('.p-header').innerHeight(); // ヘッダーの高さを取得
+                    console.log(scrollToElement);
+                    if(pageHash === '#recruit' || pageHash === '#points') {
+                        locationOffset = locationOffset - navigationBarHeight - 30;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+                    }
+                    else {
+                        locationOffset = locationOffset - navigationBarHeight; 
+                    }
+                    $('html, body').animate({
+                        scrollTop: locationOffset
+                    }, 300, 'swing'); // スムーススクロールの実行
+                }, 
+                500); // 500ミリ秒（0.5秒）遅らせる
+            });
+        }
     });
-  });
-    
-    
+
+    //同ページのリンククリックによるスムーススクロール
+    $(function () {
+        $('a[href*="#"]').on('click', function () {
+            const scrollSpeed = 400;
+            const navigationHeight = $(".p-header").innerHeight();
+            const scrollToTarget = $(this.hash === '#' || '' ? 'html' : this.hash)
+            if (!scrollToTarget.length) return;
+            const scrollPosition = scrollToTarget.offset().top - navigationHeight;
+            $('html, body').animate({
+                scrollTop: scrollPosition
+            }, scrollSpeed, 'swing');
+            return false;
+        });
+    });
+
+
     // ページがロードされた時点でスムーススクロールを実行
     // $(document).ready(function() {
     //     // ページがロードされた時点でスムーススクロールを実行
     //     $(window).on('load', function() {
     //         setTimeout(smoothScroll, 500);  // 500msの遅延
     //     });
-    
+
     //     // 初回アクセス時の処理
     //     if (!sessionStorage.getItem('access')) {
     //         sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
     //         // 初回アクセス時の特別な処理をここに記述
     //     }
-    
+
     //     // 2回目以降アクセス時の処理
     //     // ここに2回目以降の特別な処理を記述することも可能
     // });
@@ -130,14 +138,14 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     // $(window).on('hashchange', function() {
     //     smoothScroll();
     // });
-    
+
     // URLが変更された場合（ブラウザの戻る・進む操作など）にもスムーススクロールを実行
     // window.addEventListener('popstate', function() {
     //     smoothScroll();
     // });
-    
 
-     //同ページのリンククリックによるスムーススクロール
+
+    //同ページのリンククリックによるスムーススクロール
     // $(function () {
     //     $('a[href*="#"]').on('click', function () {
     //     var scrollSpeed = 400;
@@ -151,8 +159,8 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     //     return false;
     //     });
     // });
-        
-      
+
+
 
     /*********************カレントページのヘッダーナビに下線**************************/
     // 現在のURLを取得
@@ -184,19 +192,19 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 
 
-    
+
     /////////////////////// ドロワーメニュー ///////////////////////
     $('.js-hamburger').click(function () {
         if ($('.js-hamburger').hasClass('is-active')) {
-        // メニューが閉じられるときの処理
-        $('.js-hamburger').removeClass('is-active');
-        $('.js-sp-nav').fadeOut(300);
-        $('body').removeClass('is-scroll'); // body要素のスクロール固定をOFF
+            // メニューが閉じられるときの処理
+            $('.js-hamburger').removeClass('is-active');
+            $('.js-sp-nav').fadeOut(300);
+            $('body').removeClass('is-scroll'); // body要素のスクロール固定をOFF
         } else {
-        // メニューが開かれるときの処理
-        $('.js-hamburger').addClass('is-active');
-        $('.js-sp-nav').fadeIn(300);
-        $('body').addClass('is-scroll'); // body要素のスクロール固定をON
+            // メニューが開かれるときの処理
+            $('.js-hamburger').addClass('is-active');
+            $('.js-sp-nav').fadeIn(300);
+            $('body').addClass('is-scroll'); // body要素のスクロール固定をON
         }
     });
 
@@ -210,11 +218,11 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     // 画面幅が768px以上になるとメニューが閉じる
     $(window).resize(function () {
         if ($(window).width() >= 768) {
-        if ($('.js-hamburger').hasClass('is-active')) {
-            $('.js-hamburger').removeClass('is-active');
-            $('.js-sp-nav').fadeOut(300);
-            $('body').removeClass('is-scroll'); // body要素のスクロール固定をOFF
-        }
+            if ($('.js-hamburger').hasClass('is-active')) {
+                $('.js-hamburger').removeClass('is-active');
+                $('.js-sp-nav').fadeOut(300);
+                $('body').removeClass('is-scroll'); // body要素のスクロール固定をOFF
+            }
         }
     });
 
@@ -234,11 +242,11 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     // $(window).on('scroll load', function(){  /* ページロード時、またはスクロールされた時 */
     //     var scroll = $(this).scrollTop();    /* 現在のスクロール量を測定 */
     //     var windowHeight = $(window).height(); /* ウィンドウの高さを測定 */
-    
+
     //     // 「fadeIn」のクラスがついているものを1つずつ確認
     //     $('.fadeIn').each(function(){
     //         var cntPos = $(this).offset().top; /* 対象の要素の上からの距離を測定 */
-    
+
     //         // 要素がスクロールで見える位置、または最初の表示位置で見えていたらフェードイン
     //         if(scroll > cntPos - windowHeight + windowHeight / 3){  
     //             $(this).addClass('active');   /* 「active」のクラスを付与 */
@@ -252,11 +260,11 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     // $(window).on('scroll load pageshow', function(event){  /* ページロード、スクロール、キャッシュ復元時 */
     //     var scroll = $(this).scrollTop();    /* 現在のスクロール量を測定 */
     //     var windowHeight = $(window).height(); /* ウィンドウの高さを測定 */
-    
+
     //     // 「fadeIn」のクラスがついているものを1つずつ確認
     //     $('.fadeIn').each(function(){
     //         var cntPos = $(this).offset().top; /* 対象の要素の上からの距離を測定 */
-    
+
     //         // 要素がスクロールで見える位置、または最初の表示位置で見えていたらフェードイン
     //         if(scroll > cntPos - windowHeight + windowHeight / 3){  
     //             $(this).addClass('active');   /* 「active」のクラスを付与 */
@@ -268,16 +276,16 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     // });
 
 
-    $(window).on('scroll pageshow', function(event){  /* ページスクロール、キャッシュ復元時 */
+    $(window).on('scroll pageshow', function (event) {  /* ページスクロール、キャッシュ復元時 */
         var scroll = $(this).scrollTop();    /* 現在のスクロール量を測定 */
         var windowHeight = $(window).height(); /* ウィンドウの高さを測定 */
-    
+
         // 「fadeIn」のクラスがついているものを1つずつ確認
-        $('.fadeIn').each(function(){
+        $('.fadeIn').each(function () {
             var cntPos = $(this).offset().top; /* 対象の要素の上からの距離を測定 */
-    
+
             // 要素がスクロールで見える位置、または最初の表示位置で見えていたらフェードイン
-            if(scroll > cntPos - windowHeight + windowHeight / 3){  
+            if (scroll > cntPos - windowHeight + windowHeight / 3) {
                 $(this).addClass('active');   /* 「active」のクラスを付与 */
             } else if (cntPos < scroll + windowHeight) {
                 // ページロード時に見えている要素もフェードイン
@@ -326,9 +334,9 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     //     prevArrow: $(".js-service-arrow-prev"),
     //     nextArrow: $(".js-service-arrow-next")
     // });
-    
 
-    
+
+
     // const swiper = new Swiper('.js-service-slick', {
     //     loop: true,
     //     speed: 2000,
@@ -369,7 +377,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         speed: 2000,
         slidesPerView: 1.27,
         spaceBetween: 20,
-        centeredSlides: true, 
+        centeredSlides: true,
         autoplay: {
             delay: 2000,
             disableOnInteraction: false,
@@ -378,7 +386,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             900: {
                 slidesPerView: 3.76,
                 spaceBetween: 20,
-                centeredSlides: false, 
+                centeredSlides: false,
             },
         },
         pagination: {
@@ -390,16 +398,16 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             prevEl: '.swiper-button-prev',
         },
     });
-    
+
 
 
     /****************上スクロールでナビゲーション表示**************/
-    $(function() {
-        var startPos = 0,winScrollTop = 0;
-        $(window).on('scroll',function(){
+    $(function () {
+        var startPos = 0, winScrollTop = 0;
+        $(window).on('scroll', function () {
             winScrollTop = $(this).scrollTop();
             if (winScrollTop >= startPos) {
-                if(winScrollTop >= 200){
+                if (winScrollTop >= 200) {
                     $('.p-pc-nav').addClass('hide');
                 }
             } else {
@@ -415,7 +423,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
     const btn = document.querySelector('.p-top-recruit__btn');
     const img = document.querySelector('.p-top-recruit__img img');
-    
+
     if (btn && img) {
         // ボタンにホバーしたときに画像を拡大
         btn.addEventListener('mouseenter', () => {
@@ -432,24 +440,24 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
     /////////////////////// 矢印が一方通行で戻ってくる ///////////////////////
     const arrowLinks = document.querySelectorAll('.p-sub-equipment__item');
-    if(arrowLinks.length > 0) {
-    arrowLinks.forEach((arrowLink) => {
-        arrowLink.addEventListener('mouseenter', function() {
-        arrowLink.classList.add('is-hover');
-        },{
-        once: true
+    if (arrowLinks.length > 0) {
+        arrowLinks.forEach((arrowLink) => {
+            arrowLink.addEventListener('mouseenter', function () {
+                arrowLink.classList.add('is-hover');
+            }, {
+                once: true
+            });
         });
-    });
     }
-    
+
     /////////////////////// New EquipmentセクションSP版白背景位置調節 ///////////////////////
-    $(document).ready(function() {
+    $(document).ready(function () {
         var parentWidth = $('.p-top-newequipment__inner').width(); //innerの幅取得
         var childWidth = $('.p-top-newequipment__inner').find('.c-section-heading').width(); //セクションタイトルの幅取得
         var calculatedValue = parentWidth - childWidth;
         $('.p-top-newequipment__inner').css('--child-width', calculatedValue + 'px');
     });
-    
+
 
     /////////////////////// チェックボックスカウント ///////////////////////
     const checkboxes = document.querySelectorAll('.p-about-recruit__checkbox input[type="checkbox"]');
@@ -462,23 +470,23 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         checkedCountElem.textContent = String(checkedCount).padStart(2, '0');
     }
 
-    if (checkboxes.length ) {
-    // 初期の合計数をセット
+    if (checkboxes.length) {
+        // 初期の合計数をセット
         totalCountElem.textContent = String(checkboxes.length).padStart(2, '0');
-            // ページ読み込み時に一度実行
+        // ページ読み込み時に一度実行
         updateCheckedCount();
 
         // 各チェックボックスにイベントリスナーを追加
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', updateCheckedCount);
         });
-    }   
-    
+    }
+
 
     // setTimeout(function () {
     //     animation.classList.add('is-text');
     // }, 1000);
-    
+
 
     // setInterval(() => {
     // text.classList.toggle('is-active');
@@ -486,121 +494,121 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
 
     /*********************スクロールエフェクト**************************/
-        // const sections = document.querySelectorAll("[data-section]"); 
+    // const sections = document.querySelectorAll("[data-section]"); 
 
-        // for (let i = 0; i < sections.length; i++) {
-        //     const section = sections[i];
-        //     const inner = section.querySelector("[data-section-inner]");
-        //     const lastElement = sections[sections.length - 1]; // sectionsの最後の要素を取得
+    // for (let i = 0; i < sections.length; i++) {
+    //     const section = sections[i];
+    //     const inner = section.querySelector("[data-section-inner]");
+    //     const lastElement = sections[sections.length - 1]; // sectionsの最後の要素を取得
 
-        //     // 全体のスクロール用トリガー
-        //     ScrollTrigger.create({
-        //         trigger: section,
-                
-        //         start: "center center",
-        //         end: "bottom 30%",
-        //         onEnter: () => {
-        //             // スクロール時にinnerを固定表示
-        //             gsap.set(inner, {
-        //                 position: "fixed",
-        //                 top: "15%",
-        //                 width: "90%",
-        //             });
-        //         },
-        //         refreshPriority: 1, // リフレッシュの優先度を設定
-        //         onLeaveBack: () => {
-        //             // 戻った時に元に戻す
-        //             gsap.set(inner, {
-        //                 position: "absolute",
-        //                 top: "initial",
-        //                 bottom: "auto",
-        //             });
-        //         },
-        //         invalidateOnRefresh: true // リフレッシュ時に再計算
-        //     });
+    //     // 全体のスクロール用トリガー
+    //     ScrollTrigger.create({
+    //         trigger: section,
 
-        //     // 最後のセクションだけ別の処理
-        //     if (section === lastElement) {
-        //         ScrollTrigger.create({
-        //             trigger: section,
-        //             start: "center center",
-        //             end: "top top",
-        //             onEnter: () => {
-        //                 // 何もせずスクロールを続行
-        //             },
-        //             onLeave: () => {
-        //                 // 最後のセクションでabsoluteに切り替える
-        //                 sections.forEach((sec) => {
-        //                     const innerSec = sec.querySelector("[data-section-inner]");
-        //                     gsap.set(innerSec, {
-        //                         position: "absolute",
-        //                         top: "auto",          // 元の位置に戻すための調整
-        //                         bottom: "0",          // absoluteの時にボトムに固定
-        //                     });
-        //                 });
-        //             }
-        //         });
-        //     }
-        // }
+    //         start: "center center",
+    //         end: "bottom 30%",
+    //         onEnter: () => {
+    //             // スクロール時にinnerを固定表示
+    //             gsap.set(inner, {
+    //                 position: "fixed",
+    //                 top: "15%",
+    //                 width: "90%",
+    //             });
+    //         },
+    //         refreshPriority: 1, // リフレッシュの優先度を設定
+    //         onLeaveBack: () => {
+    //             // 戻った時に元に戻す
+    //             gsap.set(inner, {
+    //                 position: "absolute",
+    //                 top: "initial",
+    //                 bottom: "auto",
+    //             });
+    //         },
+    //         invalidateOnRefresh: true // リフレッシュ時に再計算
+    //     });
 
-        // gsap.delayedCall(0.2, ScrollTrigger.refresh);
+    //     // 最後のセクションだけ別の処理
+    //     if (section === lastElement) {
+    //         ScrollTrigger.create({
+    //             trigger: section,
+    //             start: "center center",
+    //             end: "top top",
+    //             onEnter: () => {
+    //                 // 何もせずスクロールを続行
+    //             },
+    //             onLeave: () => {
+    //                 // 最後のセクションでabsoluteに切り替える
+    //                 sections.forEach((sec) => {
+    //                     const innerSec = sec.querySelector("[data-section-inner]");
+    //                     gsap.set(innerSec, {
+    //                         position: "absolute",
+    //                         top: "auto",          // 元の位置に戻すための調整
+    //                         bottom: "0",          // absoluteの時にボトムに固定
+    //                     });
+    //                 });
+    //             }
+    //         });
+    //     }
+    // }
+
+    // gsap.delayedCall(0.2, ScrollTrigger.refresh);
 
 
-        var sections = document.querySelectorAll("[data-section]"); 
-        sections.forEach((section, index) => {
-            let pinTarget = section.querySelector("[data-section-inner]");
-            ScrollTrigger.create({
-                trigger: section,
-                start: "center center",
-                endTrigger: sections[sections.length - 1],
-                end: "center center",
-                pin: pinTarget,
-                invalidateOnRefresh: true, //リフレッシュ時に再計算
-            });
-            
+    var sections = document.querySelectorAll("[data-section]");
+    sections.forEach((section, index) => {
+        let pinTarget = section.querySelector("[data-section-inner]");
+        ScrollTrigger.create({
+            trigger: section,
+            start: "center center",
+            endTrigger: sections[sections.length - 1],
+            end: "center center",
+            pin: pinTarget,
+            invalidateOnRefresh: true, //リフレッシュ時に再計算
         });
 
-        function resizeCard() {
-            let aboutItems = document.querySelectorAll(".p-about-item");
-            let aboutItemsHeight = [];
-            aboutItems.forEach((item) => {
-                item.style.minHeight = 'auto';
-            });
-            aboutItems.forEach((item) => {
-                aboutItemsHeight.push(item.offsetHeight);
-            });
-            let maxHeight = Math.max(...aboutItemsHeight);
-            aboutItems.forEach((item) => {
-                item.style.minHeight = maxHeight + 'px';
-            });
-        }
+    });
 
-        setTimeout(resizeCard, 1000);
-        window.addEventListener('resize', resizeCard);
+    function resizeCard() {
+        let aboutItems = document.querySelectorAll(".p-about-item");
+        let aboutItemsHeight = [];
+        aboutItems.forEach((item) => {
+            item.style.minHeight = 'auto';
+        });
+        aboutItems.forEach((item) => {
+            aboutItemsHeight.push(item.offsetHeight);
+        });
+        let maxHeight = Math.max(...aboutItemsHeight);
+        aboutItems.forEach((item) => {
+            item.style.minHeight = maxHeight + 'px';
+        });
+    }
 
-        gsap.delayedCall(0.2, ScrollTrigger.refresh);
+    setTimeout(resizeCard, 1000);
+    window.addEventListener('resize', resizeCard);
 
-    
+    gsap.delayedCall(0.2, ScrollTrigger.refresh);
+
+
     /***************** ローディングアニメーション ***********************/
-        // document.addEventListener('DOMContentLoaded', function() {
-        // トップページでのみ実行するための条件分岐
-        if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
-            // Vivusの初期化
-            new Vivus('mask', {
-                type: 'oneByOne',
-                duration: 350,
-                animTimingFunction: Vivus.EASE_OUT,
-                start: 'autostart'
-            });
-        }
+    // document.addEventListener('DOMContentLoaded', function() {
+    // トップページでのみ実行するための条件分岐
+    if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+        // Vivusの初期化
+        new Vivus('mask', {
+            type: 'oneByOne',
+            duration: 350,
+            animTimingFunction: Vivus.EASE_OUT,
+            start: 'autostart'
+        });
+    }
     // });
 
-    
+
     // const animation = document.querySelector('.p-one-animation');
 
     // $(window).scroll(function () {
     //     var target = $(".p-top-newequipment__heading");
-        
+
     //     if (target.length > 0) { // ターゲットが存在するか確認
     //       var top = target.offset().top;
     //       var position = top - $(window).height();
@@ -613,7 +621,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     $(window).scroll(function () {
         var aboutHeading = $(".p-top-about__heading");
         var newEquipmentHeading = $(".p-top-newequipment__heading");
-    
+
         // p-top-about__heading の処理
         if (aboutHeading.length > 0) { // ターゲットが存在するか確認
             var aboutTop = aboutHeading.offset().top;
@@ -622,7 +630,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
                 animation.classList.add('is-text'); // クラス追加
             }
         }
-    
+
         // p-top-newequipment__heading の処理
         if (newEquipmentHeading.length > 0) { // ターゲットが存在するか確認
             var equipmentTop = newEquipmentHeading.offset().top;
@@ -638,61 +646,61 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     // var text1 = document.querySelector('.text1');
     // var text2 = document.querySelector('.text2');  
     var animation = document.querySelector('.p-one-animation');
-    
-            if (sessionStorage.getItem('access')) {
-                // 2回目以降アクセス時の処理
-                
-                setTimeout(function () {
-                    $(".p-top-mv__left-img").addClass('fadeInleft');
-                    $(".text1").addClass('is-text');
-                    $(".text2").addClass('is-text');
-                }, 1);
-                setTimeout(function () {
-                    $(".p-top-mv__right-img").addClass('fadeInbottom');
-                    
-                }, 100);
-                //横から1文字ずつ表示させる
-                // クラスの付け外しのみ
-                   
-                    // if (text1) {
-                    //   text1.classList.add('is-text');
-                    // }
-                    // if (text2) {
-                    //   text2.classList.add('is-text');
-                    // }
- 
-                  
-                
-            } else {
-                // 初回アクセス時の処理
-                sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
-                $(".p-loading-animation").addClass('is-active');  // ローディングアニメーションを表示
 
-                // 最初に6.5秒間の遅延後にsvg-containerクラスを追加
-                setTimeout(function () {
-                    $(".p-loading-animation").addClass('svg-container');  // 最後の白塗り
-                }, 6500);  // ローディング表示の時間（6.5秒）
+    if (sessionStorage.getItem('access')) {
+        // 2回目以降アクセス時の処理
 
-                // 7.5秒後にローディングアニメーションを非表示にする
-                setTimeout(function () {
-                    $(".p-loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
-                    $(".p-top-mv__left-img").addClass('fadeInleft');
-                    $(".p-top-mv__right-img").addClass('fadeInbottom');
-                    $(".text1").addClass('is-text');
-                    $(".text2").addClass('is-text');
-                      
-                        // if (text1) {
-                        //   text1.classList.add('is-text');
-                        // }
-                        // if (text2) {
-                        //   text2.classList.add('is-text');
-                        // }
-                
-                }, 7500);  // ローディング表示の時間（7.5秒）
-            }
-        
-        // webStorage();
+        setTimeout(function () {
+            $(".p-top-mv__left-img").addClass('fadeInleft');
+            $(".text1").addClass('is-text');
+            $(".text2").addClass('is-text');
+        }, 1);
+        setTimeout(function () {
+            $(".p-top-mv__right-img").addClass('fadeInbottom');
 
-    
+        }, 100);
+        //横から1文字ずつ表示させる
+        // クラスの付け外しのみ
+
+        // if (text1) {
+        //   text1.classList.add('is-text');
+        // }
+        // if (text2) {
+        //   text2.classList.add('is-text');
+        // }
+
+
+
+    } else {
+        // 初回アクセス時の処理
+        sessionStorage.setItem('access', 'true');  // sessionStorageにデータを保存
+        $(".p-loading-animation").addClass('is-active');  // ローディングアニメーションを表示
+
+        // 最初に6.5秒間の遅延後にsvg-containerクラスを追加
+        setTimeout(function () {
+            $(".p-loading-animation").addClass('svg-container');  // 最後の白塗り
+        }, 6500);  // ローディング表示の時間（6.5秒）
+
+        // 7.5秒後にローディングアニメーションを非表示にする
+        setTimeout(function () {
+            $(".p-loading-animation").removeClass('is-active');  // ローディングを非表示にして背景をフェードアウト
+            $(".p-top-mv__left-img").addClass('fadeInleft');
+            $(".p-top-mv__right-img").addClass('fadeInbottom');
+            $(".text1").addClass('is-text');
+            $(".text2").addClass('is-text');
+
+            // if (text1) {
+            //   text1.classList.add('is-text');
+            // }
+            // if (text2) {
+            //   text2.classList.add('is-text');
+            // }
+
+        }, 7500);  // ローディング表示の時間（7.5秒）
+    }
+
+    // webStorage();
+
+
 });
 
