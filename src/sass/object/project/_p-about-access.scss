@@ -57,11 +57,16 @@
     display: inline-block;
     margin-top: rem(5);
     font-size: rem(12);
+    transition: all .3s;
     @include mq('md') {
         margin-top: rem(8);
         // padding-left: rem(3);
         
     }
+}
+
+.p-about-access__google:hover {
+    opacity: 0.7;
 }
 
 .p-about-access__google::after {

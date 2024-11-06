@@ -18,6 +18,7 @@
 
 .p-about-description__text {
     color: $black;
+    line-height: 1.7;
     @include mq('md') {
         font-size: rem(18);
         line-height: 1.8;

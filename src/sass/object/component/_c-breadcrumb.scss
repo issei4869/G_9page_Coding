@@ -24,9 +24,18 @@
   white-space: nowrap;
   position: relative;
   margin-right: rem(35);
+  transition: all .3s;
   @include mq('md') {
     font-size: rem(24);
   }
+}
+
+.c-breadcrumb__item:hover {
+  opacity: 0.7;
+}
+
+.c-breadcrumb__item:hover:last-of-type {
+  opacity: 1;
 }
 
 /* エリプシス処理｜ブログやニュース記事タイトルが表示されることを想定 */

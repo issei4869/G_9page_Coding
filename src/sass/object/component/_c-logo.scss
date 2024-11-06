@@ -2,5 +2,9 @@
 
 .c-logo {
   display: block;
-  transition: all 0.3s;
+  transition: all .3s;
+}
+
+.c-logo:hover {
+  opacity: 0.7;
 }

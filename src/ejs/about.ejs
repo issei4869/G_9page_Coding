@@ -1,4 +1,4 @@
-<% baseUrlPath='.' ; ejsPath='.' ; pageData="top" %>
+<% baseUrlPath='.' ; ejsPath='.' ; pageData="about" %>
 <!DOCTYPE html>
 <html lang="ja">
   <%- include(ejsPath + '/common/_head' ,{ baseUrl: baseUrlPath, page:
@@ -6,7 +6,7 @@
   <body>
     <%- include(ejsPath + '/common/_header' , { btncolor:'' }); %>
     <main>
-      <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:' COMPANY', heading_ja:'会社概要'}) %>
+      <%- include(ejsPath + '/project/_p-sub-mv', {heading_eng:' ABOUT', heading_ja:'会社概要'}) %>
 
       <div class="p-about__img l-box fadeIn">
         <img src="./assets/images/common/company1.jpg" alt="桜の木の前に配置された大型クレーン">

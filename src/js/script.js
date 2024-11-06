@@ -85,9 +85,8 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
                     history.replaceState('', '', './'); // ハッシュをURLから削除
                     let locationOffset = scrollToElement.offset().top; // ターゲット要素の位置を取得
                     let navigationBarHeight = $('.p-header').innerHeight(); // ヘッダーの高さを取得
-                    console.log(scrollToElement);
                     if(pageHash === '#recruit' || pageHash === '#points') {
-                        locationOffset = locationOffset - navigationBarHeight - 30;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+                        locationOffset = locationOffset - navigationBarHeight - 30;
                     }
                     else {
                         locationOffset = locationOffset - navigationBarHeight; 
@@ -181,8 +180,8 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
     for (var i = 0; i < links.length; i++) {
         const linkHref = links[i].href.split("#")[0].split("?")[0]; // リンクのハッシュやクエリを除外
-
-        if (linkHref == href) {
+        console.log(linkHref);
+        if (linkHref == href && links[i].querySelector("p").textContent != "採用情報") {
             const pTag = links[i].querySelector("p"); // aタグ内のpタグを取得
             if (pTag) { // pタグが存在するか確認
                 pTag.classList.add("current");

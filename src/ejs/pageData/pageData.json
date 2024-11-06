@@ -1,12 +1,47 @@
 {
   "top": {
-    "title": "有限会社グリフィス",
-    "description": "有限会社グリフィスディスクリプション",
+    "title": "特殊機材・特殊効果・クレーンレンタル｜有限会社グリフィス",
+    "description": "有限会社グリフィスは映画・CM・TV等あらゆる撮影に関する機材オペレーティング・レンタルを行う会社です。保有機材は機材一覧ページよりご確認ください。",
     "url": "https://hasetest.net/"
   },
-  "tutorial": {
-    "title": "チュートリアルのページタイトル",
-    "description": "チュートリアルのコンテンツです！",
-    "url": "https://turorialtest.com"
+  "about": {
+    "title": "会社概要｜有限会社グリフィス",
+    "description": "会社概要および採用情報をご確認いただけます。｜有限会社グリフィスは映画・CM・TV等あらゆる撮影に関する機材オペレーティング・レンタルを行う会社です。",
+    "url": "https://hasetest.net/about/"
+  },
+  "equipment": {
+    "title": "保有機材一覧｜有限会社グリフィス",
+    "description": "有限会社グリフィスが保有するレンタル機材をご確認いただけるページです。不明点がございましたら、本社までお問い合わせください。",
+    "url": "https://hasetest.net/equipment/"
+  },
+  "crane": {
+    "title": "WP構築で指定",
+    "description": "",
+    "url": "https://hasetest.net/crane/"
+  },
+  "crane01": {
+    "title": "WP構築で指定。",
+    "description": "",
+    "url": "https://hasetest.net/crane01/"
+  },
+  "topics": {
+    "title": "ニュース＆TOPICS｜有限会社グリフィス",
+    "description": "トピックス｜有限会社グリフィスは映画・CM・TV等あらゆる撮影に関する機材オペレーティング・レンタルを行う会社です。",
+    "url": "https://hasetest.net/topics/"
+  },
+  "topics01": {
+    "title": "WP構築で指定。",
+    "description": "",
+    "url": "https://hasetest.net/topics01/"
+  },
+  "policy": {
+    "title": "プライバシーポリシー｜有限会社グリフィス",
+    "description": "プライバシーポリシー｜有限会社グリフィスは映画・CM・TV等あらゆる撮影に関する機材オペレーティング・レンタルを行う会社です。",
+    "url": "https://hasetest.net/policy/"
+  },
+  "404": {
+    "title": "404エラー｜有限会社グリフィス",
+    "description": "404エラー｜有限会社グリフィスは映画・CM・TV等あらゆる撮影に関する機材オペレーティング・レンタルを行う会社です。",
+    "url": "https://hasetest.net/404/"
   }
 }
