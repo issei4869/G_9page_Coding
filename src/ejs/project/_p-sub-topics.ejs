@@ -88,8 +88,8 @@ let cards = [
             <a href="#" class="p-sub-topics__text">BLOG</a>
         </div>
         <ul class="p-sub-topics__cards">
-            <li class="p-sub-topics__card">
-                <% cards.forEach(function(card) { %>
+            <% cards.forEach(function(card) { %>
+                <li class="p-sub-topics__card l-box fadeIn">
                     <%- include(project + '/_p-topics-card', {
                         img: card.img,
                         alt: card.alt,
@@ -97,8 +97,8 @@ let cards = [
                         title: card.title,
                         link: card.link
                     }) %>
-                <% }); %>
-            </li>
+                </li>
+            <% }); %>
         </ul>
         <div class="p-sub-topics__pagenation l-box fadeIn">
             <%- include(project + '/_wp-pagenavi' ) %>

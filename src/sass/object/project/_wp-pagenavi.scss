@@ -8,10 +8,10 @@
 
 .wp-pagenavi a,
 .wp-pagenavi span {
-    // width: rem(56);
-    // height: rem(56);
-
-    padding: rem(19) rem(22) rem(18) rem(23);
+    width: rem(45);
+    height: rem(45);
+    overflow: hidden;
+    // padding: rem(19) rem(22) rem(18) rem(23);
     line-height: calc(19 / 16);
     font-family: $second-font-family;
     font-weight: $bold;
@@ -24,6 +24,10 @@
     align-items: center;
     border-radius: 50%;
     transition: .3s;
+    @include mq('md') {
+        width: rem(56);
+        height: rem(56);
+    }
 }
 
 .wp-pagenavi a {
