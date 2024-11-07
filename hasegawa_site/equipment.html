@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="robots" content="noindex" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <!-- meta情報 -->
+  <title>保有機材一覧｜有限会社グリフィス</title>
+  <meta name="description" content="有限会社グリフィスが保有するレンタル機材をご確認いただけるページです。不明点がございましたら、本社までお問い合わせください。" />
+  <meta property="og:site_name" content="保有機材一覧｜有限会社グリフィス" />
+  <meta property="og:url" content="https://hasetest.net/equipment/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="保有機材一覧｜有限会社グリフィス" />
+  <meta property="og:description" content="有限会社グリフィスが保有するレンタル機材をご確認いただけるページです。不明点がございましたら、本社までお問い合わせください。" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- （画像関連） -->
+  <link rel="icon" href="./assets/images/common/favicon.ico" />
+  <meta property="og:image" content="./assets/images/common/ogp.jpg" />
+  <!-- フォント情報 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <!-- Swiper用css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@5.3.6/dist/simplebar.min.css" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <!-- css -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <!-- Swiper -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/simplebar@5.3.6/dist/simplebar.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.3.2/vivus.js"></script>
+  <script defer src="./assets/js/script.js"></script>
+</head>
+<body>
+  <header class="p-header">
+    <div class="p-header__inner">
+      <h1 class="p-header__logo">
+        <!-- colorが空（''）であれば白いロゴ、『green』なら緑色のロゴが表示される -->
+        <!-- prettier-ignore -->
+        <a href="/" class="c-logo">
+          <img src="./assets/images/common/logo.svg" alt="有限会社グリフィスのロゴ" />
+        </a>
+      </h1>
+      <div class="p-header__drawer">
+        <!-- prettier-ignore -->
+        <div class="p-hamburger js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="p-header__send-btn">
+        <!-- prettier-ignore -->
+        <div class="c-send-btn">
+          <a href="tel:042-486-1420" class="c-send-btn__phone">
+            <div class="c-send-btn__telicon"> 042-486-1420 </div>
+          </a>
+          <a href="mailto:g.info1994@gmail.com" class="c-send-btn__mail">
+          </a>
+        </div>
+        <nav class="p-header__pc-nav">
+          <!-- prettier-ignore -->
+          <!-- prettier-ignore -->
+          <ul class="p-pc-nav">
+            <li class="p-pc-nav__item">
+              <a href="/">
+                <p class="p-pc-nav__title">TOP</p>
+              </a>
+            </li>
+            <li class="p-pc-nav__item">
+              <a href="equipment.html">
+                <p class="p-pc-nav__title">機材一覧</p>
+              </a>
+            </li>
+            <li class="p-pc-nav__item">
+              <a href="about.html">
+                <p class="p-pc-nav__title">会社概要</p>
+              </a>
+            </li>
+            <li class="p-pc-nav__item">
+              <a href="about.html#recruit">
+                <p class="p-pc-nav__title">採用情報</p>
+              </a>
+            </li>
+            <li class="p-pc-nav__item">
+              <a href="topics.html">
+                <p class="p-pc-nav__title">トピックス</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- prettier-ignore -->
+      <nav class="p-sp-nav js-sp-nav">
+        <div class="p-sp-nav__head">
+        </div>
+        <ul class="p-sp-nav__items">
+          <li class="p-sp-nav__item">
+            <a href="/">
+              <p class="p-sp-nav__title">TOP</p>
+            </a>
+          </li>
+          <li class="p-sp-nav__item">
+            <a href="equipment.html">
+              <p class="p-sp-nav__title">機材一覧</p>
+            </a>
+          </li>
+          <li class="p-sp-nav__item">
+            <a href="about.html">
+              <p class="p-sp-nav__title">会社概要</p>
+            </a>
+          </li>
+          <li class="p-sp-nav__item">
+            <a href="about.html#recruit">
+              <p class="p-sp-nav__title">採用情報</p>
+            </a>
+          </li>
+          <li class="p-sp-nav__item">
+            <a href="topics.html">
+              <p class="p-sp-nav__title">トピックス</p>
+            </a>
+          </li>
+        </ul>
+        <div class="l-send-btn">
+          <!-- prettier-ignore -->
+          <div class="c-send-btn">
+            <a href="tel:042-486-1420" class="c-send-btn__phone">
+              <div class="c-send-btn__telicon"> 042-486-1420 </div>
+            </a>
+            <a href="mailto:g.info1994@gmail.com" class="c-send-btn__mail">
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="p-sub-mv">
+      <div class="p-sub-mv__title">
+        <p class="p-sub-mv__eng"> EQUIPMENT</p>
+        <h2 class="p-sub-mv__ja">機材一覧</h2>
+      </div>
+    </div>
+    <div class="l-breadcrumb">
+      <!-- パンくずリストのカラースタイルを指定するためのクラスを生成 -->
+      <!-- prettier-ignore -->
+      <!-- prettier-ignore -->
+      <!-- パンくずリスト（Breadcrumb NavXT） -->
+      <nav class="c-breadcrumb" aria-label="現在位置">
+        <ul class="c-breadcrumb__items">
+          <li class="c-breadcrumb__item"><a href="/">top</a></li>
+          <li class="c-breadcrumb__item active">equipment</li>
+        </ul>
+      </nav>
+    </div>
+    <div class="l-sub-equipment">
+      <!--  -->
+      <div id="equipment" class="p-sub-equipment p-sub-equipment--">
+        <div class="p-sub-equipment__inner l-inner">
+          <h2 class="p-sub-equipment__heading l-box fadeIn">Special equipment</h2>
+          <div class="p-sub-equipment__category l-box fadeIn">
+            <div class="p-sub-equipment__tab">特殊機材</div>
+            <span></span>
+          </div>
+          <div class="p-sub-equipment__items p-sub-equipment__items--">
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/special_equipment1.jpg" alt="クレーン">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">クレーン</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/special_equipment2.jpg" alt="リモートヘッド">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">リモートヘッド</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/special_equipment3.jpg" alt="ドリー">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">ドリー</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/special_equipment4.jpg" alt="ジフ">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">ジフ</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/special_equipment5.jpg" alt="ジンバル">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">ジンバル</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/special_equipment6.jpg" alt="電気自動車">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">電気自動車</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/special_equipment7.jpg" alt="カーマウント">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">カーマウント</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="l-sub-equipment--2">
+      <!--  -->
+      <div id="effects" class="p-sub-equipment p-sub-equipment--white">
+        <div class="p-sub-equipment__inner l-inner">
+          <h2 class="p-sub-equipment__heading l-box fadeIn">Special effects</h2>
+          <div class="p-sub-equipment__category l-box fadeIn">
+            <div class="p-sub-equipment__tab">特殊効果</div>
+            <span></span>
+          </div>
+          <div class="p-sub-equipment__items p-sub-equipment__items--white">
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/special_effects1.jpg" alt="雨">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">雨</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/special_effects2.jpg" alt="風">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">風</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/special_effects3.jpg" alt="雪">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">雪</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/special_effects4.jpg" alt="煙">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">煙</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="l-sub-equipment--3">
+      <!--  -->
+      <div id="rental" class="p-sub-equipment p-sub-equipment--">
+        <div class="p-sub-equipment__inner l-inner">
+          <h2 class="p-sub-equipment__heading l-box fadeIn">Rental equipment</h2>
+          <div class="p-sub-equipment__category l-box fadeIn">
+            <div class="p-sub-equipment__tab">レンタル機材</div>
+            <span></span>
+          </div>
+          <div class="p-sub-equipment__items p-sub-equipment__items--">
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/rental_equipment1.jpg" alt="イントレ">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">イントレ</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/rental_equipment2.jpg" alt="移動車">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">移動者</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/rental_equipment3.jpg" alt="レール">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">レール</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/rental_equipment4.jpg" alt="円形レール">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">円形レール</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/rental_equipment5.jpg" alt="ミニジフ">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">ミニジフ</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/rental_equipment6.jpg" alt="防振">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">防振</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/rental_equipment7.jpg" alt="スライダー">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">スライダー</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/rental_equipment8.jpg" alt="グリップキット">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">グリップキット</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+            <a href="crane.html" class="p-sub-equipment__item l-box fadeIn">
+              <div class="p-sub-equipment__img">
+                <img src="./assets/images/common/rental_equipment9.jpg" alt="その他">
+              </div>
+              <div class="p-sub-equipment__wrapper">
+                <p class="p-sub-equipment__text">その他</p>
+                <span class="p-sub-equipment__iconbg">
+                  <i class="p-sub-equipment__icon"></i>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="l-equipment-footer">
+    <div class="p-footer">
+      <!-- Navigation -->
+      <div class="p-footer__inner">
+        <div class="p-footer__wrapper">
+          <nav class="p-footer__navigation">
+            <ul class="p-footer__nav-list">
+              <li class="p-footer__nav-item">
+                <a href="/" class="p-footer__nav-link">TOP</a>
+              </li>
+              <li class="p-footer__nav-item">
+                <a href="equipment.html">NEW EQUIPMENT</a>
+              </li>
+              <li class="p-footer__nav-item">
+                <a href="about.html">ABOUT</a>
+              </li>
+              <li class="p-footer__nav-item">
+                <a href="about.html#recruit">RECRUIT</a>
+              </li>
+              <li class="p-footer__nav-item">
+                <a href="topics.html">TOPICS</a>
+              </li>
+              <li class="p-footer__nav-item">
+                <a href="mailto:g.info1994@gmail.com">CONTACT</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="p-footer__contents">
+            <!-- Logo -->
+            <div class="p-footer__contents-logo">
+              <!-- prettier-ignore -->
+              <a href="/" class="c-logo">
+                <img src="./assets/images/common/logo.svg" alt="有限会社グリフィスのロゴ" />
+              </a>
+            </div>
+            <!-- Contact Information -->
+            <div class="p-footer__contents-info">
+              <div class="p-footer__content">
+                <h3 class="p-footer__name">有限会社グリフィス</h3>
+                <p class="p-footer__post">〒182-0025</p>
+                <div class="p-footer__flex">
+                  <p class="p-footer__address">東京都調布市多摩川1-11-3</p>
+                  <a href="https://www.google.com/maps/place/%E3%82%B0%E3%83%AA%E3%83%95%E3%82%A3%E3%82%B9/@35.6496662,139.5273814,15z/data=!4m6!3m5!1s0x6018f017850a92a7:0xd83fd994dbc4846f!8m2!3d35.6496662!4d139.5273814!16s%2Fg%2F1thw_gq7?entry=tts&g_ep=EgoyMDI0MDgyOC4wKgBIAVAD" target="_blank" rel="noopener noreferrer" class="p-footer__map">MAP</a>
+                </div>
+                <p class="p-footer__phone">042-485-4552</p>
+                <p class="p-footer__mail">g.info1994@gmail.com</p>
+                <small class="p-footer__copyright">&copy; 2024 GRIFFITH. All Rights Reserved.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-footer__nav-item p-footer__nav-item--policy">
+        <a href="policy.html">PRIVACY POLICY</a>
+      </div>
+    </div>
+  </div>
+  <div class="l-totop">
+    <a href="#" class="c-totop" id="page-topbtn">
+      <span class="c-totop__text">PAGE TOP</span>
+    </a>
+  </div>
+</body>
+</html>

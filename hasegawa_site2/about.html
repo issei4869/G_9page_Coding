@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta name="robots" content="noindex" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="format-detection" content="telephone=no" />
+  <!-- meta情報 -->
+  <title>会社概要｜有限会社グリフィス</title>
+  <meta name="description" content="会社概要および採用情報をご確認いただけます。｜有限会社グリフィスは映画・CM・TV等あらゆる撮影に関する機材オペレーティング・レンタルを行う会社です。" />
+  <meta property="og:site_name" content="会社概要｜有限会社グリフィス" />
+  <meta property="og:url" content="https://hasetest.net/about/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="会社概要｜有限会社グリフィス" />
+  <meta property="og:description" content="会社概要および採用情報をご確認いただけます。｜有限会社グリフィスは映画・CM・TV等あらゆる撮影に関する機材オペレーティング・レンタルを行う会社です。" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <!-- （画像関連） -->
+  <link rel="icon" href="./assets/images/common/favicon.ico" />
+  <meta property="og:image" content="./assets/images/common/ogp.jpg" />
+  <!-- フォント情報 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  <!-- Swiper用css -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@5.3.6/dist/simplebar.min.css" />
+  <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <!-- css -->
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <!-- JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <!-- Swiper -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/simplebar@5.3.6/dist/simplebar.min.js"></script>
+  <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.4/vivus.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.3.2/vivus.js"></script>
+  <script defer src="./assets/js/script.js"></script>
+</head>
+<body>
+  <header class="p-header">
+    <div class="p-header__inner">
+      <h1 class="p-header__logo">
+        <!-- colorが空（''）であれば白いロゴ、『green』なら緑色のロゴが表示される -->
+        <!-- prettier-ignore -->
+        <a href="/" class="c-logo">
+          <img src="./assets/images/common/logo.svg" alt="有限会社グリフィスのロゴ" />
+        </a>
+      </h1>
+      <div class="p-header__drawer">
+        <!-- prettier-ignore -->
+        <div class="p-hamburger js-hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div class="p-header__send-btn">
+        <!-- prettier-ignore -->
+        <div class="c-send-btn">
+          <a href="tel:042-486-1420" class="c-send-btn__phone">
+            <div class="c-send-btn__telicon"> 042-486-1420 </div>
+          </a>
+          <a href="mailto:g.info1994@gmail.com" class="c-send-btn__mail">
+          </a>
+        </div>
+        <nav class="p-header__pc-nav">
+          <!-- prettier-ignore -->
+          <!-- prettier-ignore -->
+          <ul class="p-pc-nav">
+            <li class="p-pc-nav__item">
+              <a href="/">
+                <p class="p-pc-nav__title">TOP</p>
+              </a>
+            </li>
+            <li class="p-pc-nav__item">
+              <a href="equipment.html">
+                <p class="p-pc-nav__title">機材一覧</p>
+              </a>
+            </li>
+            <li class="p-pc-nav__item">
+              <a href="about.html">
+                <p class="p-pc-nav__title">会社概要</p>
+              </a>
+            </li>
+            <li class="p-pc-nav__item">
+              <a href="about.html#recruit">
+                <p class="p-pc-nav__title">採用情報</p>
+              </a>
+            </li>
+            <li class="p-pc-nav__item">
+              <a href="topics.html">
+                <p class="p-pc-nav__title">トピックス</p>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- prettier-ignore -->
+      <nav class="p-sp-nav js-sp-nav">
+        <div class="p-sp-nav__head">
+        </div>
+        <ul class="p-sp-nav__items">
+          <li class="p-sp-nav__item">
+            <a href="/">
+              <p class="p-sp-nav__title">TOP</p>
+            </a>
+          </li>
+          <li class="p-sp-nav__item">
+            <a href="equipment.html">
+              <p class="p-sp-nav__title">機材一覧</p>
+            </a>
+          </li>
+          <li class="p-sp-nav__item">
+            <a href="about.html">
+              <p class="p-sp-nav__title">会社概要</p>
+            </a>
+          </li>
+          <li class="p-sp-nav__item">
+            <a href="about.html#recruit">
+              <p class="p-sp-nav__title">採用情報</p>
+            </a>
+          </li>
+          <li class="p-sp-nav__item">
+            <a href="topics.html">
+              <p class="p-sp-nav__title">トピックス</p>
+            </a>
+          </li>
+        </ul>
+        <div class="l-send-btn">
+          <!-- prettier-ignore -->
+          <div class="c-send-btn">
+            <a href="tel:042-486-1420" class="c-send-btn__phone">
+              <div class="c-send-btn__telicon"> 042-486-1420 </div>
+            </a>
+            <a href="mailto:g.info1994@gmail.com" class="c-send-btn__mail">
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="p-sub-mv">
+      <div class="p-sub-mv__title">
+        <p class="p-sub-mv__eng"> ABOUT</p>
+        <h2 class="p-sub-mv__ja">会社概要</h2>
+      </div>
+    </div>
+    <div class="p-about__img l-box fadeIn">
+      <img src="./assets/images/common/company1.jpg" alt="桜の木の前に配置された大型クレーン">
+    </div>
+    <div class="p-about__bgcolor">
+      <div class="p-about__inner l-inner">
+        <div class="p-about__contents">
+          <div class="p-about__info l-box fadeIn">
+            <div class="p-about__heading p-about__heading--info">
+              <!-- prettier-ignore -->
+              <div class="c-section-heading c-section-heading--company">
+                <h2 class="c-section-heading__ja">企業情報</h2>
+                <p class="c-section-heading__eng">Company Info</p>
+              </div>
+            </div>
+            <div class="p-about__content">
+              <div class="p-about-info">
+                <dl class="p-about-info__list">
+                  <dt class="p-about-info__term">名称</dt>
+                  <dd class="p-about-info__description">有限会社グリフィス</dd>
+                </dl>
+                <dl class="p-about-info__list">
+                  <dt class="p-about-info__term">設立</dt>
+                  <dd class="p-about-info__description">平成6年1月26日</dd>
+                </dl>
+                <dl class="p-about-info__list">
+                  <dt class="p-about-info__term">所在地</dt>
+                  <dd>
+                    <a href="https://www.google.com/maps/place/%E3%82%B0%E3%83%AA%E3%83%95%E3%82%A3%E3%82%B9/@35.6496662,139.5273814,15z/data=!4m6!3m5!1s0x6018f017850a92a7:0xd83fd994dbc4846f!8m2!3d35.6496662!4d139.5273814!16s%2Fg%2F1thw_gq7?entry=tts&g_ep=EgoyMDI0MDgyOC4wKgBIAVAD" target="_blank" rel="noopener noreferrer" class="p-about-info__description">〒182-0025　東京都調布市多摩川1-11-3 </a>
+                  </dd>
+                </dl>
+                <dl class="p-about-info__list">
+                  <dt class="p-about-info__term">事業内容</dt>
+                  <dd class="p-about-info__description">
+                    <p class="p-about-info__point">ＴＶ、ＣＭ、映画、ＰＶ等の撮影効果業務</p>
+                    <p class="p-about-info__point">・撮影用クレーン、ドリーのオペレーター</p>
+                    <p class="p-about-info__point">・撮影用雨降らし、雪降らし、霧、風などのの撮影効果</p>
+                    <p class="p-about-info__point">・イントレ移動車などの特機機材レンタル業務</p>
+                    <p class="p-about-info__point">・撮影用小物の製造販売</p>
+                  </dd>
+                </dl>
+                <dl class="p-about-info__list">
+                  <dt class="p-about-info__term">主要取引先<br>（50音順 敬称略）</dt>
+                  <dd class="p-about-info__description">
+                    <p class="p-about-info__margin">葵プロモーション ＮＨＫ 角川書店 共同テレビジョン</p>
+                    <p class="p-about-info__margin">ギークピクチュアズ 松竹　ＴＢＳテレビ ＴＹＯ テレビ朝日 テレビ東京</p>
+                    <p class="p-about-info__margin">電通クリエーティブＸ 東映 東宝 東北新社 日活 日本テレビ</p>
+                    <p class="p-about-info__margin">博報堂プロダク フジテレビジョン ロボット映像制作各社</p>
+                  </dd>
+                </dl>
+                <dl class="p-about-info__list">
+                  <dt class="p-about-info__term">代表取締役</dt>
+                  <dd class="p-about-info__description">上竹 寛一</dd>
+                </dl>
+                <dl class="p-about-info__list">
+                  <dt class="p-about-info__term">取締役</dt>
+                  <dd class="p-about-info__description">実原 康之</dd>
+                </dl>
+                <dl class="p-about-info__list">
+                  <dt class="p-about-info__term">従業員数</dt>
+                  <dd class="p-about-info__description">15名</dd>
+                </dl>
+                <div class="p-about-info__text">
+                  <a href="tel:042-486-1420" class="p-about-info__text-ja">連絡先 TEL　042-486-1420 </a>
+                  <p class="p-about-info__text-ja">FAX　042-485-4552</p>
+                  <a href="mailto:g.info1994@gmail.com" class="p-about-info__text-ja">Mail　info@grifith1994.com</a>
+                  <p class="p-about-info__text-ja">(メールでのお問い合わせには時間が掛かる場合がありますので お急ぎの方、仕事のご依頼は電話またはFAXにてお願いします。 ) </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="p-about__access l-box fadeIn">
+            <div class="p-about__heading">
+              <!-- prettier-ignore -->
+              <div class="c-section-heading c-section-heading--company">
+                <h2 class="c-section-heading__ja">アクセス</h2>
+                <p class="c-section-heading__eng">Access</p>
+              </div>
+            </div>
+            <div class="p-about__content">
+              <div class="p-about-access">
+                <div class="p-about-access__map">
+                  <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12968.439219838921!2d139.5273814!3d35.6496662!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f017850a92a7%3A0xd83fd994dbc4846f!2z44Kw44Oq44OV44Kj44K5!5e0!3m2!1sja!2sjp!4v1727652071778!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <div class="p-about-access__text">
+                  <p class="p-about-access__post">〒182-0025</p>
+                  <p class="p-about-access__address">東京都調布市多摩川1-11-3 </p>
+                  <a href="https://www.google.com/maps/place/%E3%82%B0%E3%83%AA%E3%83%95%E3%82%A3%E3%82%B9/@35.6496662,139.5273814,15z/data=!4m6!3m5!1s0x6018f017850a92a7:0xd83fd994dbc4846f!8m2!3d35.6496662!4d139.5273814!16s%2Fg%2F1thw_gq7?entry=tts&g_ep=EgoyMDI0MDgyOC4wKgBIAVAD" target="_blank" rel="noopener noreferrer" class="p-about-access__google">Google Map</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-about__inner l-inner">
+      <div class="p-about__contents">
+        <div class="p-about__recruit l-box fadeIn">
+          <div id="recruit" class="p-about__heading">
+            <!-- prettier-ignore -->
+            <div class="c-section-heading c-section-heading--company">
+              <h2 class="c-section-heading__ja">採用情報</h2>
+              <p class="c-section-heading__eng">Recruit</p>
+            </div>
+          </div>
+          <div class="p-about__content">
+            <div class="p-about-recruit">
+              <p class="p-about-recruit__heading"> グリフィスでは映画、テレビ、ＣＭ等の現場スタッフを募集しております。<br> 映像創りに興味のある方、体を動かすのが好きな方、映画好きの方、テレビ好きの方、もちろん未経験の方も一緒に撮影現場で元気に働きましょう。まずは下記のチェックシートをお試しください。 </p>
+              <div class="p-about-recruit__content">
+                <div class="p-about-recruit__checkbox">
+                  <label><input type="checkbox"><span>自分の部屋で１人でいるのは嫌いだ</span></label>
+                  <label><input type="checkbox"><span>暇をつぶすのは得意だ</span></label>
+                  <label><input type="checkbox"><span>劇場又はビデオで月に三本以上映画を観ている</span></label>
+                  <label><input type="checkbox"><span>旅行に行くのが好き</span></label>
+                  <label><input type="checkbox"><span>ごはんを食べるのが早いとよく言われる </span></label>
+                  <label><input type="checkbox"><span>酒の席に誘われると断れない</span></label>
+                  <label><input type="checkbox"><span>映画を観て泣いたことがある</span></label>
+                  <label><input type="checkbox"><span>お寿司と焼肉では、焼肉のほうが好き </span></label>
+                  <label><input type="checkbox"><span>スポーツは観るよりやるほうが好き</span></label>
+                  <label><input type="checkbox"><span>電車より車が好き</span></label>
+                  <div class="p-about-recruit__result">
+                    <span class="p-about-recruit__checked-count"></span>/<span class="p-about-recruit__total-count"></span>
+                  </div>
+                </div>
+                <p class="p-about-recruit__text">３つ以上チェックがある方はすぐに履歴書を用意してお電話ください。 <br>お待ちしています。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-about__description l-box fadeIn">
+          <div class="p-about__heading p-about__heading--endroll">
+            <!-- prettier-ignore -->
+            <div class="c-section-heading c-section-heading--endroll">
+              <h2 class="c-section-heading__ja">仕事内容について</h2>
+              <p class="c-section-heading__eng">「エンドロールに名を刻め」</p>
+            </div>
+          </div>
+          <div class="p-about__content">
+            <div class="p-about-description">
+              <div class="p-about-description__content">
+                <div class="p-about-description__text"> 映画やテレビの制作は演出部、制作部、撮影部、照明部、美術部等々のパートがあります。 私たちの会社は特機部という部門を担当しています。 <br>
+                  <br>あまり聞きなれない特機とは何か？ <br>脚本をもとに監督が演出プランを練り、演出プランをもとに撮影監督（カメラマン）が映像のイメージを創ります。このイメージを特殊機械を使って実現させるのが特機部の仕事です。 <br>
+                  <br>大型クレーン、小型クレーン、ドリーなどを俳優の動きに合わせて操作します。 また、映画やテレビには必ずと言っていい程、雨、雪、風、霧の場面があります。この雨、雪、風、霧も私たちが創っています。 <br>
+                  <br>あなたの降らした雨が映画館で人々に感動を与えることになるでしょう。 <br>そして、エンディングロールにあなたの名前が刻まれます。 <br>
+                </div>
+              </div>
+              <div class="p-about-description__work">
+                <div class="p-about-description__title">グリフェイスの主な作品歴 </div>
+                <dl class="p-about-description__list">
+                  <dt class="p-about-description__term">【映画】</dt>
+                  <dd class="p-about-description__description">キングダム、東京リベンジャ－ズ、ネバーランド、シンウルトラマン、ある男 <br>その他多数 </dd>
+                </dl>
+                <dl class="p-about-description__list">
+                  <dt class="p-about-description__term">【TVドラマ】</dt>
+                  <dd class="p-about-description__description">クロサギ、サイレント、エルピス、どうする家康、アトムの童 <br>その他多数</dd>
+                </dl>
+                <dl class="p-about-description__list">
+                  <dt class="p-about-description__term">【配信ドラマ】</dt>
+                  <dd class="p-about-description__description">ファーストラブ、ガンニバル、全裸監督、TokyoVise <br>その他多数 </dd>
+                </dl>
+                <dl class="p-about-description__list">
+                  <dt class="p-about-description__term">【MV】</dt>
+                  <dd class="p-about-description__description">髭男dism、SEKAI NO OWARI、ももいろクローバーZ、乃木坂46 <br>その他多数 </dd>
+                </dl>
+                <dl class="p-about-description__list">
+                  <dt class="p-about-description__term">【CM】</dt>
+                  <dd class="p-about-description__description">TOYOYA　HONDA　niko and ...　SOFTBANK　BOSS　ユニクロ <br>その他多数</dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-about__inner p-about__inner--company l-inner">
+      <div class="p-about__company l-box fadeIn">
+        <div id="points" class="p-about-company">
+          <div class="p-about-company__title">募集要項 </div>
+          <div class="p-about-company__content">
+            <dl class="p-about-company__list">
+              <dt class="p-about-company__term">仕事内容</dt>
+              <dd class="p-about-company__description">撮影用特殊機械操作等</dd>
+            </dl>
+            <dl class="p-about-company__list">
+              <dt class="p-about-company__term">給与</dt>
+              <dd class="p-about-company__description">￥200,000〜￥250,000（諸手当を含む） <br>但し、入社日より３ヶ月間は見習研修期間となります。</dd>
+            </dl>
+            <dl class="p-about-company__list">
+              <dt class="p-about-company__term">勤務地</dt>
+              <dd class="p-about-company__description">社内業務の場合は調布市の弊社 <br>現場勤務の場合は都内スタジオ、ロケ地 <br>また、地方にロケに行く事もあります。</dd>
+            </dl>
+            <dl class="p-about-company__list">
+              <dt class="p-about-company__term">勤務時間</dt>
+              <dd class="p-about-company__description">（仮）【固定時間制・標準労働時間制】 <br>勤務時間：8:00〜17:00（休憩：1時間） <br>備考： </dd>
+            </dl>
+            <dl class="p-about-company__list">
+              <dt class="p-about-company__term">休日</dt>
+              <dd class="p-about-company__description">（仮）週休2日制（日曜・祝日） <br>・夏季、年末年始休暇 <br>・年間休日105日 </dd>
+            </dl>
+            <dl class="p-about-company__list">
+              <dt class="p-about-company__term">応募条件</dt>
+              <dd class="p-about-company__description">（仮） </dd>
+            </dl>
+            <dl class="p-about-company__list">
+              <dt class="p-about-company__term">待遇</dt>
+              <dd class="p-about-company__description">（仮） </dd>
+            </dl>
+            <dl class="p-about-company__list">
+              <dt class="p-about-company__term">応募方法</dt>
+              <dd class="p-about-company__description">随時面接しておりますので、下記連絡先までお電話ください。 <br>また、ご質問等ございましたらお気軽に連絡してください。 <br>
+                <br>東京都調布市多摩川1-11-3 <br>有限会社グリフィス　採用担当　上竹 <br>TEL　042-486-1420
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="l-about-footer">
+    <div class="p-footer">
+      <!-- Navigation -->
+      <div class="p-footer__inner">
+        <div class="p-footer__wrapper">
+          <nav class="p-footer__navigation">
+            <ul class="p-footer__nav-list">
+              <li class="p-footer__nav-item">
+                <a href="/" class="p-footer__nav-link">TOP</a>
+              </li>
+              <li class="p-footer__nav-item">
+                <a href="equipment.html">NEW EQUIPMENT</a>
+              </li>
+              <li class="p-footer__nav-item">
+                <a href="about.html">ABOUT</a>
+              </li>
+              <li class="p-footer__nav-item">
+                <a href="about.html#recruit">RECRUIT</a>
+              </li>
+              <li class="p-footer__nav-item">
+                <a href="topics.html">TOPICS</a>
+              </li>
+              <li class="p-footer__nav-item">
+                <a href="mailto:g.info1994@gmail.com">CONTACT</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="p-footer__contents">
+            <!-- Logo -->
+            <div class="p-footer__contents-logo">
+              <!-- prettier-ignore -->
+              <a href="/" class="c-logo">
+                <img src="./assets/images/common/logo.svg" alt="有限会社グリフィスのロゴ" />
+              </a>
+            </div>
+            <!-- Contact Information -->
+            <div class="p-footer__contents-info">
+              <div class="p-footer__content">
+                <h3 class="p-footer__name">有限会社グリフィス</h3>
+                <p class="p-footer__post">〒182-0025</p>
+                <div class="p-footer__flex">
+                  <p class="p-footer__address">東京都調布市多摩川1-11-3</p>
+                  <a href="https://www.google.com/maps/place/%E3%82%B0%E3%83%AA%E3%83%95%E3%82%A3%E3%82%B9/@35.6496662,139.5273814,15z/data=!4m6!3m5!1s0x6018f017850a92a7:0xd83fd994dbc4846f!8m2!3d35.6496662!4d139.5273814!16s%2Fg%2F1thw_gq7?entry=tts&g_ep=EgoyMDI0MDgyOC4wKgBIAVAD" target="_blank" rel="noopener noreferrer" class="p-footer__map">MAP</a>
+                </div>
+                <p class="p-footer__phone">042-485-4552</p>
+                <p class="p-footer__mail">g.info1994@gmail.com</p>
+                <small class="p-footer__copyright">&copy; 2024 GRIFFITH. All Rights Reserved.</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-footer__nav-item p-footer__nav-item--policy">
+        <a href="policy.html">PRIVACY POLICY</a>
+      </div>
+    </div>
+  </div>
+  <div class="l-totop">
+    <a href="#" class="c-totop" id="page-topbtn">
+      <span class="c-totop__text">PAGE TOP</span>
+    </a>
+  </div>
+</body>
+</html>
